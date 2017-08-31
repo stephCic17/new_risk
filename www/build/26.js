@@ -5,10 +5,10 @@ webpackJsonp([26],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step12_1PageModule", function() { return Step12_1PageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step10PageModule", function() { return Step10PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step12_1__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step10__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var Step12_1PageModule = (function () {
-    function Step12_1PageModule() {
+var Step10PageModule = (function () {
+    function Step10PageModule() {
     }
-    return Step12_1PageModule;
+    return Step10PageModule;
 }());
-Step12_1PageModule = __decorate([
+Step10PageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__step12_1__["a" /* Step12_1Page */],
+            __WEBPACK_IMPORTED_MODULE_2__step10__["a" /* Step10Page */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__step12_1__["a" /* Step12_1Page */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__step10__["a" /* Step10Page */]),
         ],
     })
-], Step12_1PageModule);
+], Step10PageModule);
 
-//# sourceMappingURL=step12-1.module.js.map
+//# sourceMappingURL=step10.module.js.map
 
 /***/ })
 

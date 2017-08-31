@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Step7Page } from '../step7/step7';
 import { Step8Page } from '../step8/step8';
-
+import { Step11Page } from '../step11/step11';
 /**
  * Generated class for the Step6Page page.
  *
@@ -69,7 +69,12 @@ export class Step6Page {
        else
        {
          this.valueTestGyneco.bigChild = this.result;
-         if (this.valueTestGyneco.nbChild > 1)
+         if (this.valueTestGyneco.nbChild == 1 && this.result == 1)
+         this.navCtrl.push(Step11Page, {
+               userParams: this.valueTestGyneco,
+                QuestionText: this.QuestionText
+             });  
+         else if (this.valueTestGyneco.nbChild > 1)
            this.navCtrl.push(Step7Page, {
                userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText

@@ -24,7 +24,7 @@ export class Step12_1Page {
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   	 this.valueTestGyneco = navParams.get('userParams');
   	  this.QuestionText = navParams.get('QuestionText');
-  
+   console.log(this.QuestionText);
   }
 
   ionViewDidLoad() {

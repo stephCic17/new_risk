@@ -68,20 +68,18 @@ export class Step4Page {
 	   	else
 	   	{
 	   		this.valueTestGyneco.child = this.result;
-	   		
 	   		if (this.result == 1)
 	   		{
-           this.valueTestGyneco.psychoTest3 = "Vous et votre accouchement";
-           this.valueTestGyneco.psychoTest3_1 = "forceps";
-           this.valueTestGyneco.psychoTest3_2 = "ventouse";
-           this.valueTestGyneco.psychoTest3_3 = "césarienne en urgence";
-           this.valueTestGyneco.psychoTest3_4 = "anesthésie générale";
-           this.valueTestGyneco.psychoTest3_5 = "hémorragie";
-           this.valueTestGyneco.psychoTest3_6 = "Séparation avec le bébé à la naissance pendant plus de 6 heures";
-           this.valueTestGyneco.psychoTest3_7 = "penser que j'allais mourrir en accouchant";
-           this.valueTestGyneco.psychoTest3_8 = "penser que mon bébé allait mourrir";
-           this.valueTestGyneco.psychoTest3_9 = "j'ai subit un accouchement traumatique";
-
+           this.QuestionText.psychoTest3 = "Vous et votre accouchement";
+           this.QuestionText.psychoTest3_1 = "forceps";
+           this.QuestionText.psychoTest3_2 = "ventouse";
+           this.QuestionText.psychoTest3_3 = "césarienne en urgence";
+           this.QuestionText.psychoTest3_4 = "anesthésie générale";
+           this.QuestionText.psychoTest3_5 = "hémorragie";
+           this.QuestionText.psychoTest3_6 = "Séparation avec le bébé à la naissance pendant plus de 6 heures";
+           this.QuestionText.psychoTest3_7 = "penser que j'allais mourrir en accouchant";
+           this.QuestionText.psychoTest3_8 = "penser que mon bébé allait mourrir";
+           this.QuestionText.psychoTest3_9 = "j'ai subit un accouchement traumatique";
 		   		this.navCtrl.push(Step5Page, {
 	   				userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText

@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { Step2Page } from '../step2/step2';
 import { Step4Page } from '../step4/step4';
 /**
  * Generated class for the Step3Page page.

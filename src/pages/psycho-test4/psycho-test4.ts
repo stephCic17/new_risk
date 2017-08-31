@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Step13Page } from '../step13/step13';
+import { ResultPage } from '../result/result';
 /**
  * Generated class for the PsychoTest4Page page.
  *
@@ -28,13 +29,17 @@ export class PsychoTest4Page {
 	@ViewChild('HPtravel') HPtravel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+ 	this.valueTestGyneco = navParams.get('userParams');
+    this.QuestionText = navParams.get('QuestionText');
+ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PsychoTest4Page');
   }
 
 	goNextStep() {
+
+		this.valueTestGyneco.psycho4 = [];
 
 		if (this.angoisseCrise.value)
 		this.valueTestGyneco.psycho4.angoisseCrise = this.angoisseCrise.value;
@@ -53,7 +58,7 @@ export class PsychoTest4Page {
 		if (this.HPtravel.value)
 		this.valueTestGyneco.psycho4.HPtravel = this.HPtravel.value;
 
- 	 	this.navCtrl.push(Step13Page, {
+ 	 	this.navCtrl.push(ResultPage, {
               userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText
           });  

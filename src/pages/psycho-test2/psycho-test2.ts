@@ -30,7 +30,7 @@ export class PsychoTest2Page {
   @ViewChild('ChildChroniqueSeek') ChildChroniqueSeek;
   @ViewChild('DieBabyP') DieBabyP;
   @ViewChild('PregnantTraumaPsy') PregnantTraumaPsy;
-  @ViewChild('TraumaExperience') TraumaExperience; 
+  @ViewChild('TraumaExperiencePsy') TraumaExperiencePsy; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
  	 this.valueTestGyneco = navParams.get('userParams');
@@ -42,8 +42,7 @@ export class PsychoTest2Page {
     console.log('ionViewDidLoad PsychoTest2Page');
   }
 goNextStep(){
-  this.valueTestGyneco.psycho2 = [];
-
+    this.valueTestGyneco.psycho2 = [];
     if (this.fausseCouche.value)
       this.valueTestGyneco.psycho2.fausseCouche = this.fausseCouche.value;
     if (this.IVG.value)
@@ -66,10 +65,10 @@ goNextStep(){
       this.valueTestGyneco.psycho2.DieBabyP = this.DieBabyP.value;
     if (this.PregnantTraumaPsy.value)
       this.valueTestGyneco.psycho2.PregnantTraumaPsy = this.PregnantTraumaPsy.value;
-    if (this.TraumaExperience.value)
-      this.valueTestGyneco.psycho2.TraumaExperience = this.TraumaExperience.value; 
+    if (this.TraumaExperiencePsy.value)
+      this.valueTestGyneco.psycho2.TraumaExperiencePsy = this.TraumaExperiencePsy.value; 
 
-        if (this.fausseCouche == true)
+        if (this.fausseCouche.value == true)
            this.navCtrl.push(Step13Page, {
               userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText

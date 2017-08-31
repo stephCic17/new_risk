@@ -1,14 +1,14 @@
 webpackJsonp([32],{
 
-/***/ 321:
+/***/ 331:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PsychoTest3PageModule", function() { return PsychoTest3PageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PsychoTest1PageModule", function() { return PsychoTest1PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test3__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test1__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PsychoTest3PageModule = (function () {
-    function PsychoTest3PageModule() {
+var PsychoTest1PageModule = (function () {
+    function PsychoTest1PageModule() {
     }
-    return PsychoTest3PageModule;
+    return PsychoTest1PageModule;
 }());
-PsychoTest3PageModule = __decorate([
+PsychoTest1PageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__psycho_test3__["a" /* PsychoTest3Page */],
+            __WEBPACK_IMPORTED_MODULE_2__psycho_test1__["a" /* PsychoTest1Page */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__psycho_test3__["a" /* PsychoTest3Page */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__psycho_test1__["a" /* PsychoTest1Page */]),
         ],
     })
-], PsychoTest3PageModule);
+], PsychoTest1PageModule);
 
-//# sourceMappingURL=psycho-test3.module.js.map
+//# sourceMappingURL=psycho-test1.module.js.map
 
 /***/ })
 

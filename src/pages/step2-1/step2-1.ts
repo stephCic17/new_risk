@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { IvgInfoPage } from '../ivg-info/ivg-info';
-import { Step3Page } from '../step3/step3';
 import { PsychoTest1Page } from '../psycho-test1/psycho-test1';
 /**
  * Generated class for the Step2_1Page page.

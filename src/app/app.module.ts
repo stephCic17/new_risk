@@ -37,8 +37,6 @@ import { Step23Page } from '../pages/step23/step23';
 import { Step24Page } from '../pages/step24/step24';
 import { Step25Page } from '../pages/step25/step25';
 import { Step26Page } from '../pages/step26/step26';
-import { Step27Page } from '../pages/step27/step27';
-import { Step28Page } from '../pages/step28/step28';
 import { PsychoTest1Page } from '../pages/psycho-test1/psycho-test1';
 import { PsychoTest2Page } from '../pages/psycho-test2/psycho-test2';
 import { PsychoTest3Page } from '../pages/psycho-test3/psycho-test3';
@@ -85,8 +83,6 @@ import { IonicStorageModule } from '@ionic/storage';
     Step24Page,
     Step25Page,
     Step26Page,
-    Step27Page,
-    Step28Page,
     PsychoTest1Page,
     PsychoTest2Page,
     PsychoTest3Page,
@@ -134,8 +130,6 @@ import { IonicStorageModule } from '@ionic/storage';
     Step24Page,
     Step25Page,
     Step26Page,
-    Step27Page,
-    Step28Page,
     PsychoTest1Page,
     PsychoTest2Page,
     PsychoTest3Page,
