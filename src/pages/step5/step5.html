@@ -1,0 +1,26 @@
+<!--
+  Generated template for the Step5Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>step5</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	
+<h3 class="form-question-title">{{QuestionText.step5}}</h3>
+	<ion-item>
+	<ion-label floating></ion-label>
+		<ion-input type="number" #nbChild></ion-input>
+	</ion-item>
+			<button ion-button (click)="goNextStep()">
+				Valider
+			</button>
+</ion-content>
