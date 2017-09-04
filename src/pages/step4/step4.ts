@@ -80,6 +80,7 @@ export class Step4Page {
            this.QuestionText.psychoTest3_7 = "penser que j'allais mourrir en accouchant";
            this.QuestionText.psychoTest3_8 = "penser que mon bébé allait mourrir";
            this.QuestionText.psychoTest3_9 = "j'ai subit un accouchement traumatique";
+           
 		   		this.navCtrl.push(Step5Page, {
 	   				userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText
