@@ -50,10 +50,9 @@ IvgInfoPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step15Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step16_step16__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,76 +64,98 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 /**
- * Generated class for the Step15Page page.
+ * Generated class for the ResultPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step15Page = (function () {
-    function Step15Page(navCtrl, navParams, alertCtrl) {
+var ResultPage = (function () {
+    function ResultPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
+        this.resultRisk = 0;
     }
-    Step15Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step15Page');
-    };
-    Step15Page.prototype.yesClick = function () {
-        if (this.no.value == true) {
-            this.no.value = false;
+    ResultPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ResultPage');
+        console.log(this.valueTestGyneco);
+        if (this.valueTestGyneco.age > 42)
+            this.resultRisk += 50;
+        else if (this.valueTestGyneco.age == 42)
+            this.resultRisk += 20;
+        else if (this.valueTestGyneco.age > 38)
+            this.resultRisk += 2;
+        if (this.valueTestGyneco.alcool > 10)
+            this.resultRisk += 400;
+        if (this.valueTestGyneco.smoke == 1)
+            this.resultRisk += 2;
+        if (this.valueTestGyneco.child == 1) {
+            if (this.valueTestGyneco.Cesarienne == 1)
+                this.resultRisk += 2;
+            if (this.valueTestGyneco.BigChild == 1)
+                this.resultRisk += 50;
+            if (this.valueTestGyneco.lessChild == 1)
+                this.resultRisk += 50;
+            if (this.valueTestGyneco.preEclampsy == 1)
+                this.resultRisk += 50;
+            if (this.valueTestGyneco.pregnantDiabete == 1)
+                this.resultRisk += 2;
+            if (this.valueTestGyneco.premaChild == 1)
+                this.resultRisk += 50;
         }
-    };
-    Step15Page.prototype.noClick = function () {
-        if (this.yes.value == true) {
-            this.yes.value = false;
+        if (this.valueTestGyneco.nbFausseCouche > 0)
+            this.resultRisk += 2;
+        if (this.valueTestGyneco.diabete == 1)
+            this.resultRisk += 50;
+        if (this.valueTestGyneco.epilepsy == 1)
+            this.resultRisk += 200;
+        if (this.valueTestGyneco.highBloodPresure == 1)
+            this.resultRisk += 2;
+        if (this.valueTestGyneco.phlebite == 1)
+            this.resultRisk += 2;
+        if (this.valueTestGyneco.medicament == 1) {
+            if (this.valueTestGyneco.medicament1 == 1)
+                this.resultRisk += 200;
+            if (this.valueTestGyneco.medicament2 == 1)
+                this.resultRisk += 200;
+            if (this.valueTestGyneco.medicament3 == 1)
+                this.resultRisk += 2;
+            if (this.valueTestGyneco.medicament4 == 1)
+                this.resultRisk += 200;
+            if (this.valueTestGyneco.medicament5 == 1)
+                this.resultRisk += 2;
         }
-    };
-    Step15Page.prototype.goNextStep = function () {
-        if (this.yes.value == true)
-            this.result = 1;
-        else if (this.no.value == true)
-            this.result = 0;
-        else
-            this.result = -1;
-        if (this.result == -1) {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Selectionnez au moins une des réponses',
-                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-                buttons: ['OK']
-            });
-            alert_1.present();
+        if (this.valueTestGyneco.IMC > 28)
+            this.resultRisk += 50;
+        if (this.valueTestGyneco.IMC > 22)
+            this.resultRisk += 20;
+        if (this.valueTestGyneco.IMC > 17)
+            this.resultRisk += 0;
+        if (this.valueTestGyneco.IMC < 17)
+            this.resultRisk += 50;
+        if (this.valueTestGyneco.Work == 1) {
+            if (this.valueTestGyneco.timeTravel > 90)
+                this.resultRisk += 2;
+            if (this.valueTestGyneco.standingWork == 1)
+                this.resultRisk += 2;
+            if (this.valueTestGyneco.nbWork > 10)
+                this.resultRisk += 2;
         }
-        else {
-            this.valueTestGyneco.epilepsy = this.result;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step16_step16__["a" /* Step16Page */], {
-                userParams: this.valueTestGyneco,
-                QuestionText: this.QuestionText
-            });
-        }
+        console.log(this.resultRisk);
     };
-    return Step15Page;
+    return ResultPage;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
-    __metadata("design:type", Object)
-], Step15Page.prototype, "yes", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
-    __metadata("design:type", Object)
-], Step15Page.prototype, "no", void 0);
-Step15Page = __decorate([
+ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step15',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step15/step15.html"*/'<!--\n  Generated template for the Step15Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step15</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step15}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step15/step15.html"*/,
+        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step15Page);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+], ResultPage);
 
-//# sourceMappingURL=step15.js.map
+var _a, _b;
+//# sourceMappingURL=result.js.map
 
 /***/ }),
 
@@ -142,10 +163,10 @@ Step15Page = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step16Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step26Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step17_step17__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test4_psycho_test4__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -159,33 +180,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Step16Page page.
+ * Generated class for the Step26Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step16Page = (function () {
-    function Step16Page(navCtrl, navParams, alertCtrl) {
+var Step26Page = (function () {
+    function Step26Page(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
         this.QuestionText = navParams.get('QuestionText');
     }
-    Step16Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step16Page');
+    Step26Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step26Page');
     };
-    Step16Page.prototype.yesClick = function () {
+    Step26Page.prototype.yesClick = function () {
         if (this.no.value == true) {
             this.no.value = false;
         }
     };
-    Step16Page.prototype.noClick = function () {
+    Step26Page.prototype.noClick = function () {
         if (this.yes.value == true) {
             this.yes.value = false;
         }
     };
-    Step16Page.prototype.goNextStep = function () {
+    Step26Page.prototype.goNextStep = function () {
         if (this.yes.value == true)
             this.result = 1;
         else if (this.no.value == true)
@@ -201,32 +222,32 @@ var Step16Page = (function () {
             alert_1.present();
         }
         else {
-            this.valueTestGyneco.phlebite = this.result;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step17_step17__["a" /* Step17Page */], {
+            this.valueTestGyneco.standingWork = this.result;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__psycho_test4_psycho_test4__["a" /* PsychoTest4Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
         }
     };
-    return Step16Page;
+    return Step26Page;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
     __metadata("design:type", Object)
-], Step16Page.prototype, "yes", void 0);
+], Step26Page.prototype, "yes", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
     __metadata("design:type", Object)
-], Step16Page.prototype, "no", void 0);
-Step16Page = __decorate([
+], Step26Page.prototype, "no", void 0);
+Step26Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step16',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step16/step16.html"*/'<!--\n  Generated template for the Step16Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step16</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step16}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step16/step16.html"*/,
+        selector: 'page-step26',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step26/step26.html"*/'<!--\n  Generated template for the Step26Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step26</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step26}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step26/step26.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step16Page);
+], Step26Page);
 
-//# sourceMappingURL=step16.js.map
+//# sourceMappingURL=step26.js.map
 
 /***/ }),
 
@@ -234,10 +255,10 @@ Step16Page = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step17Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step25Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step18_step18__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step26_step26__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -251,74 +272,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Step17Page page.
+ * Generated class for the Step25Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step17Page = (function () {
-    function Step17Page(navCtrl, navParams, alertCtrl) {
+var Step25Page = (function () {
+    function Step25Page(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
         this.QuestionText = navParams.get('QuestionText');
     }
-    Step17Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step17Page');
+    Step25Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step25Page');
     };
-    Step17Page.prototype.yesClick = function () {
-        if (this.no.value == true) {
-            this.no.value = false;
-        }
-    };
-    Step17Page.prototype.noClick = function () {
-        if (this.yes.value == true) {
-            this.yes.value = false;
-        }
-    };
-    Step17Page.prototype.goNextStep = function () {
-        if (this.yes.value == true)
-            this.result = 1;
-        else if (this.no.value == true)
-            this.result = 0;
-        else
-            this.result = -1;
-        if (this.result == -1) {
+    Step25Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.timeTravel = this.timeTravel.value;
+        if (!this.timeTravel.value) {
             var alert_1 = this.alertCtrl.create({
-                title: 'Selectionnez au moins une des réponses',
+                title: 'Rentrez votre poids',
                 subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
                 buttons: ['OK']
             });
             alert_1.present();
         }
         else {
-            this.valueTestGyneco.highBloodPresure = this.result;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step18_step18__["a" /* Step18Page */], {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step26_step26__["a" /* Step26Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
         }
     };
-    return Step17Page;
+    return Step25Page;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('timeTravel'),
     __metadata("design:type", Object)
-], Step17Page.prototype, "yes", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
-    __metadata("design:type", Object)
-], Step17Page.prototype, "no", void 0);
-Step17Page = __decorate([
+], Step25Page.prototype, "timeTravel", void 0);
+Step25Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step17',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step17/step17.html"*/'<!--\n  Generated template for the Step17Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step17</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step17}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step17/step17.html"*/,
+        selector: 'page-step25',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step25/step25.html"*/'<!--\n  Generated template for the Step25Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step25</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step25}}</h3>\n	<ion-item>\n		<ion-label floating>en minutes</ion-label>\n	    <ion-input type="number" #timeTravel></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step25/step25.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step17Page);
+], Step25Page);
 
-//# sourceMappingURL=step17.js.map
+//# sourceMappingURL=step25.js.map
 
 /***/ }),
 
@@ -326,10 +327,10 @@ Step17Page = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step18Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step24Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step19_step19__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step25_step25__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -343,33 +344,107 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Step18Page page.
+ * Generated class for the Step24Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step18Page = (function () {
-    function Step18Page(navCtrl, navParams, alertCtrl) {
+var Step24Page = (function () {
+    function Step24Page(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
         this.QuestionText = navParams.get('QuestionText');
     }
-    Step18Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step18Page');
+    Step24Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step24Page');
     };
-    Step18Page.prototype.yesClick = function () {
+    Step24Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.nbWork = this.nbWork.value;
+        if (!this.nbWork.value) {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Rentrez le nombre d\'heure de travail',
+                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                buttons: ['OK']
+            });
+            alert_1.present();
+        }
+        else {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step25_step25__["a" /* Step25Page */], {
+                userParams: this.valueTestGyneco,
+                QuestionText: this.QuestionText
+            });
+        }
+    };
+    return Step24Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('nbWork'),
+    __metadata("design:type", Object)
+], Step24Page.prototype, "nbWork", void 0);
+Step24Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step24',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step24/step24.html"*/'<!--\n  Generated template for the Step24Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step24</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step24}}</h3>\n	<ion-item>\n		<ion-label floating>en heure</ion-label>\n	    <ion-input type="number" #nbWork></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step24/step24.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], Step24Page);
+
+//# sourceMappingURL=step24.js.map
+
+/***/ }),
+
+/***/ 112:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step23Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step24_step24__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test4_psycho_test4__ = __webpack_require__(51);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the Step23Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step23Page = (function () {
+    function Step23Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step23Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step23Page');
+    };
+    Step23Page.prototype.yesClick = function () {
         if (this.no.value == true) {
             this.no.value = false;
         }
     };
-    Step18Page.prototype.noClick = function () {
+    Step23Page.prototype.noClick = function () {
         if (this.yes.value == true) {
             this.yes.value = false;
         }
     };
-    Step18Page.prototype.goNextStep = function () {
+    Step23Page.prototype.goNextStep = function () {
         if (this.yes.value == true)
             this.result = 1;
         else if (this.no.value == true)
@@ -385,44 +460,208 @@ var Step18Page = (function () {
             alert_1.present();
         }
         else {
-            this.valueTestGyneco.diabete = this.result;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step19_step19__["a" /* Step19Page */], {
+            this.valueTestGyneco.work = this.result;
+            if (this.result == 1)
+                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step24_step24__["a" /* Step24Page */], {
+                    userParams: this.valueTestGyneco,
+                    QuestionText: this.QuestionText
+                });
+            else
+                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__psycho_test4_psycho_test4__["a" /* PsychoTest4Page */], {
+                    userParams: this.valueTestGyneco,
+                    QuestionText: this.QuestionText
+                });
+        }
+    };
+    return Step23Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
+    __metadata("design:type", Object)
+], Step23Page.prototype, "yes", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
+    __metadata("design:type", Object)
+], Step23Page.prototype, "no", void 0);
+Step23Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step23',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step23/step23.html"*/'<!--\n  Generated template for the Step23Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step23</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step23}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step23/step23.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], Step23Page);
+
+//# sourceMappingURL=step23.js.map
+
+/***/ }),
+
+/***/ 113:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step22Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step23_step23__ = __webpack_require__(112);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step22Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step22Page = (function () {
+    function Step22Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step22Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step22Page');
+    };
+    Step22Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.weight = this.weight.value;
+        this.valueTestGyneco.IMC = this.weight.value / Math.pow(this.valueTestGyneco.size / 100, 2);
+        console.log(this.valueTestGyneco.IMC);
+        if (!this.weight.value) {
+            var alert = this.alertCtrl.create({
+                title: 'Rentrez votre poids',
+                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                buttons: ['OK']
+            });
+            alert.present();
+        }
+        else {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step23_step23__["a" /* Step23Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
         }
     };
-    return Step18Page;
+    return Step22Page;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('weight'),
     __metadata("design:type", Object)
-], Step18Page.prototype, "yes", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
-    __metadata("design:type", Object)
-], Step18Page.prototype, "no", void 0);
-Step18Page = __decorate([
+], Step22Page.prototype, "weight", void 0);
+Step22Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step18',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step18/step18.html"*/'<!--\n  Generated template for the Step18Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step18</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step18}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step18/step18.html"*/,
+        selector: 'page-step22',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step22/step22.html"*/'<!--\n  Generated template for the Step22Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step22</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step22}}</h3>\n	<ion-item>\n		<ion-label floating>en kg</ion-label>\n	    <ion-input type="number" #weight></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step22/step22.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step18Page);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+], Step22Page);
 
-//# sourceMappingURL=step18.js.map
+var _a, _b, _c;
+//# sourceMappingURL=step22.js.map
 
 /***/ }),
 
-/***/ 112:
+/***/ 114:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step20Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step21_step21__ = __webpack_require__(52);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step20Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step20Page = (function () {
+    function Step20Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step20Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step20Page');
+    };
+    Step20Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.medicament1 = this.medicament1.value;
+        this.valueTestGyneco.medicament2 = this.medicament2.value;
+        this.valueTestGyneco.medicament3 = this.medicament3.value;
+        this.valueTestGyneco.medicament4 = this.medicament4.value;
+        this.valueTestGyneco.medicament5 = this.medicament5.value;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step21_step21__["a" /* Step21Page */], {
+            userParams: this.valueTestGyneco,
+            QuestionText: this.QuestionText
+        });
+    };
+    return Step20Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament1'),
+    __metadata("design:type", Object)
+], Step20Page.prototype, "medicament1", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament2'),
+    __metadata("design:type", Object)
+], Step20Page.prototype, "medicament2", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament3'),
+    __metadata("design:type", Object)
+], Step20Page.prototype, "medicament3", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament4'),
+    __metadata("design:type", Object)
+], Step20Page.prototype, "medicament4", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament5'),
+    __metadata("design:type", Object)
+], Step20Page.prototype, "medicament5", void 0);
+Step20Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step20',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step20/step20.html"*/'<!--\n  Generated template for the Step20Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step20</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step20}}</h3>\n		<ion-list>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament1}}</ion-label>\n					<ion-checkbox #medicament1></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament2}}</ion-label>\n					<ion-checkbox #medicament2></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament3}}</ion-label>\n					<ion-checkbox #medicament3></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament4}}</ion-label>\n					<ion-checkbox #medicament4></ion-checkbox>\n				</ion-item>\n				<ion-item>			\n					<ion-label>{{QuestionText.medicament5}}</ion-label>\n					<ion-checkbox #medicament5></ion-checkbox>\n				</ion-item>\n		</ion-list>\n		<button ion-button (click)="goNextStep()">\n			Valider\n		</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step20/step20.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+], Step20Page);
+
+var _a, _b, _c;
+//# sourceMappingURL=step20.js.map
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step19Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step20_step20__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step21_step21__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step20_step20__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step21_step21__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -520,14 +759,14 @@ Step19Page = __decorate([
 
 /***/ }),
 
-/***/ 113:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step20Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step18Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step21_step21__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step19_step19__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -541,189 +780,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Step20Page page.
+ * Generated class for the Step18Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step20Page = (function () {
-    function Step20Page(navCtrl, navParams, alertCtrl) {
+var Step18Page = (function () {
+    function Step18Page(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
         this.QuestionText = navParams.get('QuestionText');
     }
-    Step20Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step20Page');
+    Step18Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step18Page');
     };
-    Step20Page.prototype.goNextStep = function () {
-        this.valueTestGyneco.medicament1 = this.medicament1;
-        this.valueTestGyneco.medicament2 = this.medicament2;
-        this.valueTestGyneco.medicament3 = this.medicament3;
-        this.valueTestGyneco.medicament4 = this.medicament4;
-        this.valueTestGyneco.medicament5 = this.medicament5;
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step21_step21__["a" /* Step21Page */], {
-            userParams: this.valueTestGyneco,
-            QuestionText: this.QuestionText
-        });
-    };
-    return Step20Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament1'),
-    __metadata("design:type", Object)
-], Step20Page.prototype, "medicament1", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament2'),
-    __metadata("design:type", Object)
-], Step20Page.prototype, "medicament2", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament3'),
-    __metadata("design:type", Object)
-], Step20Page.prototype, "medicament3", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament4'),
-    __metadata("design:type", Object)
-], Step20Page.prototype, "medicament4", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('medicament5'),
-    __metadata("design:type", Object)
-], Step20Page.prototype, "medicament5", void 0);
-Step20Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step20',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step20/step20.html"*/'<!--\n  Generated template for the Step20Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step20</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step20}}</h3>\n		<ion-list>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament1}}</ion-label>\n					<ion-checkbox #medicament1></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament2}}</ion-label>\n					<ion-checkbox #medicament2></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament3}}</ion-label>\n					<ion-checkbox #medicament3></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament4}}</ion-label>\n					<ion-checkbox #medicament4></ion-checkbox>\n				</ion-item>\n				<ion-item>			\n					<ion-label>{{QuestionText.medicament5}}</ion-label>\n					<ion-checkbox #medicament5></ion-checkbox>\n				</ion-item>\n		</ion-list>\n		<button ion-button (click)="goNextStep()">\n			Valider\n		</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step20/step20.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step20Page);
-
-//# sourceMappingURL=step20.js.map
-
-/***/ }),
-
-/***/ 114:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step22Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step23_step23__ = __webpack_require__(115);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the Step22Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step22Page = (function () {
-    function Step22Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step22Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step22Page');
-    };
-    Step22Page.prototype.goNextStep = function () {
-        this.valueTestGyneco.weight = this.weight.value;
-        if (!this.weight.value) {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Rentrez votre poids',
-                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-                buttons: ['OK']
-            });
-            alert_1.present();
-        }
-        else {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step23_step23__["a" /* Step23Page */], {
-                userParams: this.valueTestGyneco,
-                QuestionText: this.QuestionText
-            });
-        }
-    };
-    return Step22Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('weight'),
-    __metadata("design:type", Object)
-], Step22Page.prototype, "weight", void 0);
-Step22Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step22',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step22/step22.html"*/'<!--\n  Generated template for the Step22Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step22</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step22}}</h3>\n	<ion-item>\n		<ion-label floating>en kg</ion-label>\n	    <ion-input type="number" #weight></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step22/step22.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step22Page);
-
-//# sourceMappingURL=step22.js.map
-
-/***/ }),
-
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step23Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step24_step24__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test4_psycho_test4__ = __webpack_require__(51);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the Step23Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step23Page = (function () {
-    function Step23Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step23Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step23Page');
-    };
-    Step23Page.prototype.yesClick = function () {
+    Step18Page.prototype.yesClick = function () {
         if (this.no.value == true) {
             this.no.value = false;
         }
     };
-    Step23Page.prototype.noClick = function () {
+    Step18Page.prototype.noClick = function () {
         if (this.yes.value == true) {
             this.yes.value = false;
         }
     };
-    Step23Page.prototype.goNextStep = function () {
+    Step18Page.prototype.goNextStep = function () {
         if (this.yes.value == true)
             this.result = 1;
         else if (this.no.value == true)
@@ -739,110 +822,32 @@ var Step23Page = (function () {
             alert_1.present();
         }
         else {
-            this.valueTestGyneco.work = this.result;
-            if (this.result == 1)
-                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step24_step24__["a" /* Step24Page */], {
-                    userParams: this.valueTestGyneco,
-                    QuestionText: this.QuestionText
-                });
-            else
-                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__psycho_test4_psycho_test4__["a" /* PsychoTest4Page */], {
-                    userParams: this.valueTestGyneco,
-                    QuestionText: this.QuestionText
-                });
-        }
-    };
-    return Step23Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
-    __metadata("design:type", Object)
-], Step23Page.prototype, "yes", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
-    __metadata("design:type", Object)
-], Step23Page.prototype, "no", void 0);
-Step23Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step23',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step23/step23.html"*/'<!--\n  Generated template for the Step23Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step23</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step23}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step23/step23.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step23Page);
-
-//# sourceMappingURL=step23.js.map
-
-/***/ }),
-
-/***/ 116:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step24Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step25_step25__ = __webpack_require__(117);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the Step24Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step24Page = (function () {
-    function Step24Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step24Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step24Page');
-    };
-    Step24Page.prototype.goNextStep = function () {
-        this.valueTestGyneco.nbWork = this.nbWork.value;
-        if (!this.nbWork.value) {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Rentrez le nombre d\'heure de travail',
-                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-                buttons: ['OK']
-            });
-            alert_1.present();
-        }
-        else {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step25_step25__["a" /* Step25Page */], {
+            this.valueTestGyneco.diabete = this.result;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step19_step19__["a" /* Step19Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
         }
     };
-    return Step24Page;
+    return Step18Page;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('nbWork'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
     __metadata("design:type", Object)
-], Step24Page.prototype, "nbWork", void 0);
-Step24Page = __decorate([
+], Step18Page.prototype, "yes", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
+    __metadata("design:type", Object)
+], Step18Page.prototype, "no", void 0);
+Step18Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step24',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step24/step24.html"*/'<!--\n  Generated template for the Step24Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step24</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step24}}</h3>\n	<ion-item>\n		<ion-label floating>en heure</ion-label>\n	    <ion-input type="number" #nbWork></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step24/step24.html"*/,
+        selector: 'page-step18',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step18/step18.html"*/'<!--\n  Generated template for the Step18Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step18</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step18}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step18/step18.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step24Page);
+], Step18Page);
 
-//# sourceMappingURL=step24.js.map
+//# sourceMappingURL=step18.js.map
 
 /***/ }),
 
@@ -850,10 +855,10 @@ Step24Page = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step25Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step17Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step26_step26__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step18_step18__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -867,105 +872,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Step25Page page.
+ * Generated class for the Step17Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step25Page = (function () {
-    function Step25Page(navCtrl, navParams, alertCtrl) {
+var Step17Page = (function () {
+    function Step17Page(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
         this.QuestionText = navParams.get('QuestionText');
     }
-    Step25Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step25Page');
+    Step17Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step17Page');
     };
-    Step25Page.prototype.goNextStep = function () {
-        this.valueTestGyneco.timeTravel = this.timeTravel.value;
-        if (!this.timeTravel.value) {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Rentrez votre poids',
-                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-                buttons: ['OK']
-            });
-            alert_1.present();
-        }
-        else {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step26_step26__["a" /* Step26Page */], {
-                userParams: this.valueTestGyneco,
-                QuestionText: this.QuestionText
-            });
-        }
-    };
-    return Step25Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('timeTravel'),
-    __metadata("design:type", Object)
-], Step25Page.prototype, "timeTravel", void 0);
-Step25Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step25',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step25/step25.html"*/'<!--\n  Generated template for the Step25Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step25</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step25}}</h3>\n	<ion-item>\n		<ion-label floating>en minutes</ion-label>\n	    <ion-input type="number" #timeTravel></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step25/step25.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step25Page);
-
-//# sourceMappingURL=step25.js.map
-
-/***/ }),
-
-/***/ 118:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step26Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test4_psycho_test4__ = __webpack_require__(51);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the Step26Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step26Page = (function () {
-    function Step26Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step26Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step26Page');
-    };
-    Step26Page.prototype.yesClick = function () {
+    Step17Page.prototype.yesClick = function () {
         if (this.no.value == true) {
             this.no.value = false;
         }
     };
-    Step26Page.prototype.noClick = function () {
+    Step17Page.prototype.noClick = function () {
         if (this.yes.value == true) {
             this.yes.value = false;
         }
     };
-    Step26Page.prototype.goNextStep = function () {
+    Step17Page.prototype.goNextStep = function () {
         if (this.yes.value == true)
             this.result = 1;
         else if (this.no.value == true)
@@ -981,32 +914,124 @@ var Step26Page = (function () {
             alert_1.present();
         }
         else {
-            this.valueTestGyneco.standingWork = this.result;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__psycho_test4_psycho_test4__["a" /* PsychoTest4Page */], {
+            this.valueTestGyneco.highBloodPresure = this.result;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step18_step18__["a" /* Step18Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
         }
     };
-    return Step26Page;
+    return Step17Page;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
     __metadata("design:type", Object)
-], Step26Page.prototype, "yes", void 0);
+], Step17Page.prototype, "yes", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
     __metadata("design:type", Object)
-], Step26Page.prototype, "no", void 0);
-Step26Page = __decorate([
+], Step17Page.prototype, "no", void 0);
+Step17Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step26',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step26/step26.html"*/'<!--\n  Generated template for the Step26Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step26</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step26}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step26/step26.html"*/,
+        selector: 'page-step17',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step17/step17.html"*/'<!--\n  Generated template for the Step17Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step17</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step17}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step17/step17.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step26Page);
+], Step17Page);
 
-//# sourceMappingURL=step26.js.map
+//# sourceMappingURL=step17.js.map
+
+/***/ }),
+
+/***/ 118:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step16Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step17_step17__ = __webpack_require__(117);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step16Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step16Page = (function () {
+    function Step16Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step16Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step16Page');
+    };
+    Step16Page.prototype.yesClick = function () {
+        if (this.no.value == true) {
+            this.no.value = false;
+        }
+    };
+    Step16Page.prototype.noClick = function () {
+        if (this.yes.value == true) {
+            this.yes.value = false;
+        }
+    };
+    Step16Page.prototype.goNextStep = function () {
+        if (this.yes.value == true)
+            this.result = 1;
+        else if (this.no.value == true)
+            this.result = 0;
+        else
+            this.result = -1;
+        if (this.result == -1) {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Selectionnez au moins une des réponses',
+                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                buttons: ['OK']
+            });
+            alert_1.present();
+        }
+        else {
+            this.valueTestGyneco.phlebite = this.result;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step17_step17__["a" /* Step17Page */], {
+                userParams: this.valueTestGyneco,
+                QuestionText: this.QuestionText
+            });
+        }
+    };
+    return Step16Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
+    __metadata("design:type", Object)
+], Step16Page.prototype, "yes", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
+    __metadata("design:type", Object)
+], Step16Page.prototype, "no", void 0);
+Step16Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step16',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step16/step16.html"*/'<!--\n  Generated template for the Step16Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step16</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step16}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step16/step16.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], Step16Page);
+
+//# sourceMappingURL=step16.js.map
 
 /***/ }),
 
@@ -1014,10 +1039,102 @@ Step26Page = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step15Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step16_step16__ = __webpack_require__(118);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step15Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step15Page = (function () {
+    function Step15Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step15Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step15Page');
+    };
+    Step15Page.prototype.yesClick = function () {
+        if (this.no.value == true) {
+            this.no.value = false;
+        }
+    };
+    Step15Page.prototype.noClick = function () {
+        if (this.yes.value == true) {
+            this.yes.value = false;
+        }
+    };
+    Step15Page.prototype.goNextStep = function () {
+        if (this.yes.value == true)
+            this.result = 1;
+        else if (this.no.value == true)
+            this.result = 0;
+        else
+            this.result = -1;
+        if (this.result == -1) {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Selectionnez au moins une des réponses',
+                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                buttons: ['OK']
+            });
+            alert_1.present();
+        }
+        else {
+            this.valueTestGyneco.epilepsy = this.result;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step16_step16__["a" /* Step16Page */], {
+                userParams: this.valueTestGyneco,
+                QuestionText: this.QuestionText
+            });
+        }
+    };
+    return Step15Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
+    __metadata("design:type", Object)
+], Step15Page.prototype, "yes", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
+    __metadata("design:type", Object)
+], Step15Page.prototype, "no", void 0);
+Step15Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step15',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step15/step15.html"*/'<!--\n  Generated template for the Step15Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step15</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step15}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step15/step15.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], Step15Page);
+
+//# sourceMappingURL=step15.js.map
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step12_1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1051,12 +1168,12 @@ var Step12_1Page = (function () {
     Step12_1Page.prototype.goNextStep = function () {
         this.valueTestGyneco.nbCesarienne = this.nbCesarienne.value;
         if (!this.nbCesarienne.value) {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Rentrez votre age',
                 subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
                 buttons: ['OK']
             });
-            alert.present();
+            alert_1.present();
         }
         else {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__["a" /* PsychoTest3Page */], {
@@ -1076,23 +1193,22 @@ Step12_1Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-step12-1',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step12-1/step12-1.html"*/'<!--\n  Generated template for the Step12_1Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step12_1</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step12_1}}</h3>\n  <ion-item>\n      <ion-label floating>Entrez le nombre</ion-label>\n      <ion-input type="number" #nbCesarienne></ion-input>\n  </ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step12-1/step12-1.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step12_1Page);
 
-var _a, _b, _c;
 //# sourceMappingURL=step12-1.js.map
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step12Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step12_1_step12_1__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step12_1_step12_1__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1184,7 +1300,7 @@ Step12Page = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1192,7 +1308,7 @@ Step12Page = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test1_psycho_test1__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1284,14 +1400,14 @@ Step10Page = __decorate([
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step3Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step4_step4__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step4_step4__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1377,15 +1493,15 @@ Step3Page = __decorate([
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step4Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step5_step5__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test2_psycho_test2__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step5_step5__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test2_psycho_test2__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1434,12 +1550,12 @@ var Step4Page = (function () {
         else
             this.result = -1;
         if (this.result == -1) {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Selectionnez au moins une des réponses',
                 subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
                 buttons: ['OK']
             });
-            alert.present();
+            alert_1.present();
         }
         else {
             this.valueTestGyneco.child = this.result;
@@ -1486,22 +1602,21 @@ Step4Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-step4',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step4/step4.html"*/'<!--\n  Generated template for the Step4Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step4</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n		\n<h3 class="form-question-title">{{QuestionText.step4}}</h3>\n\n			  	<ion-list>\n	  				<ion-item>\n						<ion-label>Oui</ion-label>\n						<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n			 		</ion-item>\n			 		<ion-item>\n						<ion-label>	Non</ion-label>\n						<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n					</ion-item>\n					\n				</ion-list>\n\n\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step4/step4.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step4Page);
 
-var _a, _b, _c;
 //# sourceMappingURL=step4.js.map
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step5Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step6_step6__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step6_step6__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1572,16 +1687,16 @@ Step5Page = __decorate([
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step6Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step7_step7__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step7_step7__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step8_step8__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__step11_step11__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__step11_step11__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1614,14 +1729,12 @@ var Step6Page = (function () {
         console.log('ionViewDidLoad Step6Page');
     };
     Step6Page.prototype.yesClick = function () {
-        if (this.no.value == true) {
+        if (this.no.value == true)
             this.no.value = false;
-        }
     };
     Step6Page.prototype.noClick = function () {
-        if (this.yes.value == true) {
+        if (this.yes.value == true)
             this.yes.value = false;
-        }
     };
     Step6Page.prototype.goNextStep = function () {
         if (this.yes.value == true)
@@ -1631,12 +1744,12 @@ var Step6Page = (function () {
         else
             this.result = -1;
         if (this.result == -1) {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Selectionnez au moins une des réponses',
                 subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
                 buttons: ['OK']
             });
-            alert.present();
+            alert_1.present();
         }
         else {
             this.valueTestGyneco.bigChild = this.result;
@@ -1672,15 +1785,14 @@ Step6Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-step6',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step6/step6.html"*/'<!--\n  Generated template for the Step6Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step6</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	\n	<h3 class="form-question-title">{{QuestionText.step6}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step6/step6.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step6Page);
 
-var _a, _b, _c;
 //# sourceMappingURL=step6.js.map
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1754,14 +1866,14 @@ Step7Page = __decorate([
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step9Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step10_step10__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step10_step10__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1846,15 +1958,15 @@ Step9Page = __decorate([
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PsychoTest2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step13_step13__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step14_step14__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step13_step13__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step14_step14__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1976,15 +2088,14 @@ PsychoTest2Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-psycho-test2',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/psycho-test2/psycho-test2.html"*/'<!--\n  Generated template for the PsychoTest2Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>psychoTest2</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<h3 class="form-question-title">{{QuestionText.psychoTest2}}</h3>\n			<ion-list>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_1}}</ion-label>\n					<ion-checkbox #fausseCouche></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_2}}</ion-label>\n					<ion-checkbox #IVG></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_3}}</ion-label>\n					<ion-checkbox #GEU></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_4}}</ion-label>\n					<ion-checkbox #DieInUtero></ion-checkbox>\n				</ion-item>\n				<ion-item>			\n					<ion-label>{{QuestionText.psychoTest2_5}}</ion-label>\n					<ion-checkbox #IMG></ion-checkbox>\n				</ion-item>\n				<ion-item>					\n					<ion-label>{{QuestionText.psychoTest2_6}}</ion-label>\n					<ion-checkbox #ISG></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_7}}</ion-label>\n					<ion-checkbox #ChildHandicap></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_8}}</ion-label>\n					<ion-checkbox #ChildPrema></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_9}}</ion-label>\n					<ion-checkbox #ChildChroniqueSeek></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_10}}</ion-label>\n					<ion-checkbox #DieBabyP></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_11}}</ion-label>\n					<ion-checkbox ng-hide="FC == 0 && GEU == 0 && DieInUtero == 0 && ISG == 0 && ChildHandicap == 0 && ChildPrema == 0 && ChildChroniqueSeek == 0 && DieBabyP == 0 && IVG == 0  " #PregnantTraumaPsy></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest2_12}}</ion-label>\n					<ion-checkbox #TraumaExperiencePsy></ion-checkbox>\n				</ion-item>\n			</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/psycho-test2/psycho-test2.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
 ], PsychoTest2Page);
 
-var _a, _b;
 //# sourceMappingURL=psycho-test2.js.map
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2101,14 +2212,14 @@ Step2_1Page = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenstruationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_1_step2_1__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_1_step2_1__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2177,14 +2288,14 @@ MenstruationPage = __decorate([
 
 /***/ }),
 
-/***/ 131:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menstruation_menstruation__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menstruation_menstruation__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test1_psycho_test1__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2293,14 +2404,14 @@ Step2Page = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_step2__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_step2__ = __webpack_require__(132);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2365,7 +2476,7 @@ Step1Page = __decorate([
 
 /***/ }),
 
-/***/ 140:
+/***/ 141:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -2378,11 +2489,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 140;
+webpackEmptyAsyncContext.id = 141;
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -2391,139 +2502,139 @@ var map = {
 		34
 	],
 	"../pages/menstruation/menstruation.module": [
-		333,
+		334,
 		33
 	],
 	"../pages/psycho-test1/psycho-test1.module": [
-		331,
+		332,
 		32
 	],
 	"../pages/psycho-test2/psycho-test2.module": [
-		328,
+		329,
 		31
 	],
 	"../pages/psycho-test3/psycho-test3.module": [
-		318,
+		319,
 		30
 	],
 	"../pages/psycho-test4/psycho-test4.module": [
-		303,
+		304,
 		29
 	],
 	"../pages/result/result.module": [
-		336,
+		303,
 		28
 	],
 	"../pages/step1/step1.module": [
-		335,
+		336,
 		27
 	],
 	"../pages/step10/step10.module": [
-		322,
+		323,
 		26
 	],
 	"../pages/step11/step11.module": [
-		321,
+		322,
 		25
 	],
 	"../pages/step12-1/step12-1.module": [
-		319,
+		320,
 		24
 	],
 	"../pages/step12/step12.module": [
-		320,
+		321,
 		23
 	],
 	"../pages/step13/step13.module": [
-		317,
+		318,
 		22
 	],
 	"../pages/step14/step14.module": [
-		316,
+		317,
 		21
 	],
 	"../pages/step15/step15.module": [
-		315,
+		316,
 		20
 	],
 	"../pages/step16/step16.module": [
-		314,
+		315,
 		19
 	],
 	"../pages/step17/step17.module": [
-		313,
+		314,
 		18
 	],
 	"../pages/step18/step18.module": [
-		312,
+		313,
 		17
 	],
 	"../pages/step19/step19.module": [
-		311,
+		312,
 		16
 	],
 	"../pages/step2-1/step2-1.module": [
-		332,
+		333,
 		15
 	],
 	"../pages/step2/step2.module": [
-		334,
+		335,
 		14
 	],
 	"../pages/step20/step20.module": [
-		310,
+		311,
 		13
 	],
 	"../pages/step21/step21.module": [
-		309,
+		310,
 		12
 	],
 	"../pages/step22/step22.module": [
-		308,
+		309,
 		11
 	],
 	"../pages/step23/step23.module": [
-		307,
+		308,
 		10
 	],
 	"../pages/step24/step24.module": [
-		306,
+		307,
 		9
 	],
 	"../pages/step25/step25.module": [
-		305,
+		306,
 		8
 	],
 	"../pages/step26/step26.module": [
-		304,
+		305,
 		7
 	],
 	"../pages/step3/step3.module": [
-		330,
+		331,
 		6
 	],
 	"../pages/step4/step4.module": [
-		329,
+		330,
 		5
 	],
 	"../pages/step5/step5.module": [
-		327,
+		328,
 		4
 	],
 	"../pages/step6/step6.module": [
-		326,
+		327,
 		3
 	],
 	"../pages/step7/step7.module": [
-		325,
+		326,
 		2
 	],
 	"../pages/step8/step8.module": [
-		324,
+		325,
 		1
 	],
 	"../pages/step9/step9.module": [
-		323,
+		324,
 		0
 	]
 };
@@ -2538,19 +2649,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 181;
+webpackAsyncContext.id = 182;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(228);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2580,7 +2691,7 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2615,14 +2726,14 @@ AboutPage = __decorate([
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step1_step1__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step1_step1__ = __webpack_require__(133);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2716,52 +2827,6 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 228:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ResultPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ResultPage = (function () {
-    function ResultPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ResultPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ResultPage');
-    };
-    return ResultPage;
-}());
-ResultPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-], ResultPage);
-
-//# sourceMappingURL=result.js.map
-
-/***/ }),
-
 /***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2785,46 +2850,46 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_result_result__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step1_step1__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_step2_step2__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_step3_step3__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_menstruation_menstruation__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_step2_1_step2_1__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_result_result__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step1_step1__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_step2_step2__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_step3_step3__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_menstruation_menstruation__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_step2_1_step2_1__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_ivg_info_ivg_info__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_step4_step4__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_step5_step5__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_step6_step6__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_step7_step7__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_step4_step4__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_step5_step5__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_step6_step6__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_step7_step7__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_step8_step8__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_step9_step9__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_step10_step10__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_step11_step11__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_step12_step12__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_step12_1_step12_1__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_step13_step13__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_step14_step14__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_step15_step15__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_step16_step16__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_step17_step17__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_step18_step18__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_step19_step19__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_step20_step20__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_step21_step21__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_step22_step22__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_step23_step23__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_step24_step24__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_step25_step25__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_step26_step26__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_step9_step9__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_step10_step10__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_step11_step11__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_step12_step12__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_step12_1_step12_1__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_step13_step13__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_step14_step14__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_step15_step15__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_step16_step16__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_step17_step17__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_step18_step18__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_step19_step19__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_step20_step20__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_step21_step21__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_step22_step22__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_step23_step23__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_step24_step24__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_step25_step25__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_step26_step26__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_psycho_test1_psycho_test1__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_psycho_test2_psycho_test2__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_psycho_test3_psycho_test3__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_psycho_test2_psycho_test2__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_psycho_test3_psycho_test3__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_psycho_test4_psycho_test4__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_status_bar__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_splash_screen__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_status_bar__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_splash_screen__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__ionic_storage__ = __webpack_require__(298);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2930,6 +2995,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/ivg-info/ivg-info.module#IvgInfoPageModule', name: 'IvgInfoPage', segment: 'ivg-info', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/psycho-test4/psycho-test4.module#PsychoTest4PageModule', name: 'PsychoTest4Page', segment: 'psycho-test4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step26/step26.module#Step26PageModule', name: 'Step26Page', segment: 'step26', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step25/step25.module#Step25PageModule', name: 'Step25Page', segment: 'step25', priority: 'low', defaultHistory: [] },
@@ -2962,8 +3028,7 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step2-1/step2-1.module#Step2_1PageModule', name: 'Step2_1Page', segment: 'step2-1', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/menstruation/menstruation.module#MenstruationPageModule', name: 'MenstruationPage', segment: 'menstruation', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step2/step2.module#Step2PageModule', name: 'Step2Page', segment: 'step2', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step1/step1.module#Step1PageModule', name: 'Step1Page', segment: 'step1', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/step1/step1.module#Step1PageModule', name: 'Step1Page', segment: 'step1', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_44__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -3029,9 +3094,9 @@ AppModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(226);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3072,10 +3137,10 @@ MyApp = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step13Page; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step11Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step14_step14__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step12_step12__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3089,54 +3154,74 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the Step13Page page.
+ * Generated class for the Step11Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var Step13Page = (function () {
-    function Step13Page(navCtrl, navParams, alertCtrl) {
+var Step11Page = (function () {
+    function Step11Page(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
         this.valueTestGyneco = navParams.get('userParams');
         this.QuestionText = navParams.get('QuestionText');
     }
-    Step13Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step13Page');
+    Step11Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step11Page');
     };
-    Step13Page.prototype.goNextStep = function () {
-        this.valueTestGyneco.nbFausseCouche = this.nbFausseCouche.value;
-        if (!this.nbFausseCouche.value) {
+    Step11Page.prototype.yesClick = function () {
+        if (this.no.value == true) {
+            this.no.value = false;
+        }
+    };
+    Step11Page.prototype.noClick = function () {
+        if (this.yes.value == true) {
+            this.yes.value = false;
+        }
+    };
+    Step11Page.prototype.goNextStep = function () {
+        if (this.yes.value == true)
+            this.result = 1;
+        else if (this.no.value == true)
+            this.result = 0;
+        else
+            this.result = -1;
+        if (this.result == -1) {
             var alert_1 = this.alertCtrl.create({
-                title: 'Rentrez le nombre de fausse couche',
+                title: 'Selectionnez au moins une des réponses',
                 subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
                 buttons: ['OK']
             });
             alert_1.present();
         }
         else {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step14_step14__["a" /* Step14Page */], {
+            this.valueTestGyneco.pregnantDiabete = this.result;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step12_step12__["a" /* Step12Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
         }
     };
-    return Step13Page;
+    return Step11Page;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('nbFausseCouche'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
     __metadata("design:type", Object)
-], Step13Page.prototype, "nbFausseCouche", void 0);
-Step13Page = __decorate([
+], Step11Page.prototype, "yes", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
+    __metadata("design:type", Object)
+], Step11Page.prototype, "no", void 0);
+Step11Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step13',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step13/step13.html"*/'<!--\n  Generated template for the Step13Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step13</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step13}}</h3>\n	<ion-item>\n	<ion-label floating>Entrez le nombre</ion-label>\n		<ion-input type="number" #nbFausseCouche></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step13/step13.html"*/,
+        selector: 'page-step11',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step11/step11.html"*/'<!--\n  Generated template for the Step11Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step11</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step11}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step11/step11.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step13Page);
+], Step11Page);
 
-//# sourceMappingURL=step13.js.map
+//# sourceMappingURL=step11.js.map
 
 /***/ }),
 
@@ -3147,7 +3232,7 @@ Step13Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PsychoTest1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3_step3__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3_step3__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3233,7 +3318,7 @@ PsychoTest1Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PsychoTest4Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3324,10 +3409,9 @@ PsychoTest4Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-psycho-test4',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/psycho-test4/psycho-test4.html"*/'<!--\n  Generated template for the PsychoTest4Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>psychoTest4</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<h3 class="form-question-title">{{QuestionText.PsychoTest4}}</h3>\n	<ion-list>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest4_1}}</ion-label>\n					<ion-checkbox #angoisseCrise></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest4_2}}</ion-label>\n					<ion-checkbox #boulimie></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest4_3}}</ion-label>\n					<ion-checkbox #anorexie></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest4_4}}</ion-label>\n					<ion-checkbox #TOC></ion-checkbox>\n				</ion-item>\n				<ion-item>			\n					<ion-label>{{QuestionText.psychoTest4_5}}</ion-label>\n					<ion-checkbox #depression></ion-checkbox>\n				</ion-item>\n				<ion-item>					\n					<ion-label>{{QuestionText.psychoTest4_6}}</ion-label>\n					<ion-checkbox #phobie></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest4_7}}</ion-label>\n					<ion-checkbox #bipolaire></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.psychoTest4_8}}</ion-label>\n					<ion-checkbox #HPtravel></ion-checkbox>\n				</ion-item>\n			</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/psycho-test4/psycho-test4.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
 ], PsychoTest4Page);
 
-var _a, _b;
 //# sourceMappingURL=psycho-test4.js.map
 
 /***/ }),
@@ -3336,72 +3420,10 @@ var _a, _b;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step14Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step15_step15__ = __webpack_require__(108);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the Step14Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step14Page = (function () {
-    function Step14Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step14Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step14Page');
-    };
-    Step14Page.prototype.goNextStep = function () {
-        this.valueTestGyneco.alcool = this.alcool;
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step15_step15__["a" /* Step15Page */], {
-            userParams: this.valueTestGyneco,
-            QuestionText: this.QuestionText
-        });
-    };
-    return Step14Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('alcool'),
-    __metadata("design:type", Object)
-], Step14Page.prototype, "alcool", void 0);
-Step14Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step14',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step14/step14.html"*/'<!--\n  Generated template for the Step14Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step14</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step14}}</h3>\n\n			<ion-item>   \n				<ion-range max=30 #alcool>   \n					<ion-icon range-right max=30></ion-icon>\n				</ion-range>\n			</ion-item>\n			<p>{{alcool.value}}</p>\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step14/step14.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step14Page);
-
-//# sourceMappingURL=step14.js.map
-
-/***/ }),
-
-/***/ 53:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step21Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step22_step22__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step22_step22__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3466,14 +3488,149 @@ Step21Page = __decorate([
 
 /***/ }),
 
+/***/ 53:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step14Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step15_step15__ = __webpack_require__(119);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step14Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step14Page = (function () {
+    function Step14Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step14Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step14Page');
+    };
+    Step14Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.alcool = this.alcool.value;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step15_step15__["a" /* Step15Page */], {
+            userParams: this.valueTestGyneco,
+            QuestionText: this.QuestionText
+        });
+    };
+    return Step14Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('alcool'),
+    __metadata("design:type", Object)
+], Step14Page.prototype, "alcool", void 0);
+Step14Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step14',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step14/step14.html"*/'<!--\n  Generated template for the Step14Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step14</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step14}}</h3>\n\n			<ion-item>   \n				<ion-range max=30 #alcool>   \n					<ion-icon range-right max=30></ion-icon>\n				</ion-range>\n			</ion-item>\n			<p>{{alcool.value}}</p>\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step14/step14.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+], Step14Page);
+
+var _a, _b, _c;
+//# sourceMappingURL=step14.js.map
+
+/***/ }),
+
 /***/ 54:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step13Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step14_step14__ = __webpack_require__(53);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step13Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step13Page = (function () {
+    function Step13Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step13Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step13Page');
+    };
+    Step13Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.nbFausseCouche = this.nbFausseCouche.value;
+        if (!this.nbFausseCouche.value) {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Rentrez le nombre de fausse couche',
+                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                buttons: ['OK']
+            });
+            alert_1.present();
+        }
+        else {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step14_step14__["a" /* Step14Page */], {
+                userParams: this.valueTestGyneco,
+                QuestionText: this.QuestionText
+            });
+        }
+    };
+    return Step13Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('nbFausseCouche'),
+    __metadata("design:type", Object)
+], Step13Page.prototype, "nbFausseCouche", void 0);
+Step13Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step13',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step13/step13.html"*/'<!--\n  Generated template for the Step13Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step13</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step13}}</h3>\n	<ion-item>\n	<ion-label floating>Entrez le nombre</ion-label>\n		<ion-input type="number" #nbFausseCouche></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step13/step13.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], Step13Page);
+
+//# sourceMappingURL=step13.js.map
+
+/***/ }),
+
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PsychoTest3Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step13_step13__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step13_step13__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3576,98 +3733,6 @@ PsychoTest3Page = __decorate([
 
 /***/ }),
 
-/***/ 55:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step11Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step12_step12__ = __webpack_require__(120);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the Step11Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step11Page = (function () {
-    function Step11Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step11Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step11Page');
-    };
-    Step11Page.prototype.yesClick = function () {
-        if (this.no.value == true) {
-            this.no.value = false;
-        }
-    };
-    Step11Page.prototype.noClick = function () {
-        if (this.yes.value == true) {
-            this.yes.value = false;
-        }
-    };
-    Step11Page.prototype.goNextStep = function () {
-        if (this.yes.value == true)
-            this.result = 1;
-        else if (this.no.value == true)
-            this.result = 0;
-        else
-            this.result = -1;
-        if (this.result == -1) {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Selectionnez au moins une des réponses',
-                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-                buttons: ['OK']
-            });
-            alert_1.present();
-        }
-        else {
-            this.valueTestGyneco.pregnantDiabete = this.result;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step12_step12__["a" /* Step12Page */], {
-                userParams: this.valueTestGyneco,
-                QuestionText: this.QuestionText
-            });
-        }
-    };
-    return Step11Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('yes'),
-    __metadata("design:type", Object)
-], Step11Page.prototype, "yes", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('no'),
-    __metadata("design:type", Object)
-], Step11Page.prototype, "no", void 0);
-Step11Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step11',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step11/step11.html"*/'<!--\n  Generated template for the Step11Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step11</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step11}}</h3>\n	<ion-list>\n		<ion-item>\n			<ion-label>Oui</ion-label>\n			<ion-checkbox (click)="yesClick()" #yes></ion-checkbox>\n		</ion-item>\n		<ion-item>\n			<ion-label>	Non</ion-label>\n			<ion-checkbox (click)="noClick()" #no></ion-checkbox>\n		</ion-item>				\n	</ion-list>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step11/step11.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step11Page);
-
-//# sourceMappingURL=step11.js.map
-
-/***/ }),
-
 /***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3675,8 +3740,8 @@ Step11Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step8Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step9_step9__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step9_step9__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

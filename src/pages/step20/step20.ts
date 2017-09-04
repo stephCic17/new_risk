@@ -37,11 +37,11 @@ export class Step20Page {
   }
   goNextStep(){
 
-      this.valueTestGyneco.medicament1 = this.medicament1;
-      this.valueTestGyneco.medicament2 = this.medicament2;
-      this.valueTestGyneco.medicament3 = this.medicament3;
-      this.valueTestGyneco.medicament4 = this.medicament4;
-      this.valueTestGyneco.medicament5 = this.medicament5;
+      this.valueTestGyneco.medicament1 = this.medicament1.value;
+      this.valueTestGyneco.medicament2 = this.medicament2.value;
+      this.valueTestGyneco.medicament3 = this.medicament3.value;
+      this.valueTestGyneco.medicament4 = this.medicament4.value;
+      this.valueTestGyneco.medicament5 = this.medicament5.value;
 
       this.navCtrl.push(Step21Page, {
           userParams: this.valueTestGyneco,

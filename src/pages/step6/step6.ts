@@ -38,15 +38,11 @@ export class Step6Page {
   }
   yesClick() {
       if ( this.no.value == true)
-      {
         this.no.value = false;
-      }
     }
     noClick() {
       if (this.yes.value == true)
-      {
         this.yes.value = false;
-      }
     }
     
   goNextStep(){

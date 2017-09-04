@@ -33,7 +33,8 @@ export class Step22Page {
   }
 goNextStep(){
   this.valueTestGyneco.weight = this.weight.value;
-
+  this.valueTestGyneco.IMC = this.weight.value / Math.pow(this.valueTestGyneco.size/100, 2);
+  console.log(this.valueTestGyneco.IMC);
     if (!this.weight.value)
     {
       let alert = this.alertCtrl.create({

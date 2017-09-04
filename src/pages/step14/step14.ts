@@ -33,7 +33,7 @@ export class Step14Page {
 
   goNextStep(){
     
-    this.valueTestGyneco.alcool = this.alcool;
+    this.valueTestGyneco.alcool = this.alcool.value;
      this.navCtrl.push(Step15Page, {
               userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText
