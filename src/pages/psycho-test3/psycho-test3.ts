@@ -41,24 +41,45 @@ export class PsychoTest3Page {
 
   goNextStep() {
 
-    if (this.forceps.value)
-   	  this.valueTestGyneco.psycho3.forceps = this.forceps.value;
-    if (this.ventouse.value)
-  	  this.valueTestGyneco.psycho3.ventouse = this.ventouse.value;
-    if (this.cesarienneUrgence.value)
-  	  this.valueTestGyneco.psycho3.cesarienneUrgence = this.cesarienneUrgence.value;
-    if(this.generalAnest.value)
-  	  this.valueTestGyneco.psycho3.generalAnest = this.generalAnest.value;
-    if(this.hemorragie.value)
-  	   this.valueTestGyneco.psycho3.hemorragie = this.hemorragie.value;
-    if(this.babySeparation.value)
-  	  this.valueTestGyneco.psycho3.babySeparation = this.babySeparation.value;
-    if(this.dieDelivery.value)
-  	  this.valueTestGyneco.psycho3.dieDelivery = this.dieDelivery.value;
-    if(this.psyDieBaby.value)
-  	  this.valueTestGyneco.psycho3.psyDieBaby = this.psyDieBaby.value;
-    if(this.traumaDelivery.value)
-  	  this.valueTestGyneco.psycho3.traumaDelivery = this.traumaDelivery.value;
+    this.valueTestGyneco.psycho3 =[];
+    this.valueTestGyneco.psycho3.result = 0;
+
+    if (this.forceps.value) {
+   	  this.valueTestGyneco.psycho3.forceps = 1;
+      this.valueTestGyneco.psycho3.result += 1;
+    }
+    if (this.ventouse.value) {
+  	  this.valueTestGyneco.psycho3.ventouse = 1;
+      this.valueTestGyneco.psycho3.result += 2;
+    }
+    if (this.cesarienneUrgence.value) {
+  	  this.valueTestGyneco.psycho3.cesarienneUrgence = 1;
+      this.valueTestGyneco.psycho3.result += 2;
+    }
+    if(this.generalAnest.value) {
+  	  this.valueTestGyneco.psycho3.generalAnest = 1;
+      this.valueTestGyneco.psycho3.result += 1;
+    }
+    if(this.hemorragie.value) {
+  	   this.valueTestGyneco.psycho3.hemorragie = 1;
+      this.valueTestGyneco.psycho3.result += 2;
+     }
+    if(this.babySeparation.value) {
+  	  this.valueTestGyneco.psycho3.babySeparation = 1;
+      this.valueTestGyneco.psycho3.result += 5;
+    }
+    if(this.dieDelivery.value) {
+  	  this.valueTestGyneco.psycho3.dieDelivery = 1;
+      this.valueTestGyneco.psycho3.result += 2;
+    }
+    if(this.psyDieBaby.value) {
+  	  this.valueTestGyneco.psycho3.psyDieBaby = 1;
+      this.valueTestGyneco.psycho3.result += 5;
+    }
+    if(this.traumaDelivery.value) {
+  	  this.valueTestGyneco.psycho3.traumaDelivery = 1;
+      this.valueTestGyneco.psycho3.result += 5;
+    }
 
   	this.navCtrl.push(Step13Page, {
               userParams: this.valueTestGyneco,

@@ -43,41 +43,64 @@ export class PsychoTest2Page {
   }
 goNextStep(){
     this.valueTestGyneco.psycho2 = [];
-    if (this.fausseCouche.value)
-      this.valueTestGyneco.psycho2.fausseCouche = this.fausseCouche.value;
-    if (this.IVG.value)
-      this.valueTestGyneco.psycho2.IVG = this.IVG.value;
-    if (this.GEU.value)
-      this.valueTestGyneco.psycho2.GEU = this.GEU.value;
-    if (this.DieInUtero.value)
-      this.valueTestGyneco.psycho2.DieInUtero = this.DieInUtero.value;
-    if (this.IMG.value)
-      this.valueTestGyneco.psycho2.IMG = this.IMG.value;
-    if (this.ISG.value)
-      this.valueTestGyneco.psycho2.ISG = this.ISG.value;
-    if (this.ChildHandicap.value)
-      this.valueTestGyneco.psycho2.ChildHandicap = this.ChildHandicap.value;
-    if (this.ChildPrema.value)
-      this.valueTestGyneco.psycho2.ChildPrema = this.ChildPrema.value;
-    if (this.ChildChroniqueSeek.value)
-      this.valueTestGyneco.psycho2.ChildChroniqueSeek = this.ChildChroniqueSeek.value;
-    if (this.DieBabyP.value)
-      this.valueTestGyneco.psycho2.DieBabyP = this.DieBabyP.value;
-    if (this.PregnantTraumaPsy.value)
-      this.valueTestGyneco.psycho2.PregnantTraumaPsy = this.PregnantTraumaPsy.value;
-    if (this.TraumaExperiencePsy.value)
-      this.valueTestGyneco.psycho2.TraumaExperiencePsy = this.TraumaExperiencePsy.value; 
+    this.valueTestGyneco.psycho2.result = 0;
 
-        if (this.fausseCouche.value == true)
-           this.navCtrl.push(Step13Page, {
+    if (this.IVG.value) {
+      this.valueTestGyneco.psycho2.IVG = 1;
+      this.valueTestGyneco.psycho2.result += 1;
+    }
+    if (this.GEU.value) {
+      this.valueTestGyneco.psycho2.GEU = 1;
+      this.valueTestGyneco.psycho2.result += 1;
+    }
+    if (this.DieInUtero.value) {
+      this.valueTestGyneco.psycho2.DieInUtero = 1;
+      this.valueTestGyneco.psycho2.result += 2;
+    }
+    if (this.IMG.value) {
+      this.valueTestGyneco.psycho2.IMG = 1;
+      this.valueTestGyneco.psycho2.result += 2;
+    }
+    if (this.ISG.value) {
+      this.valueTestGyneco.psycho2.ISG = 1;
+      this.valueTestGyneco.psycho2.result += 3;
+    }
+    if (this.ChildHandicap.value) {
+      this.valueTestGyneco.psycho2.ChildHandicap = 1;
+      this.valueTestGyneco.psycho2.result += 3;
+    }
+    if (this.ChildPrema.value) {
+      this.valueTestGyneco.psycho2.ChildPrema = 1;
+      this.valueTestGyneco.psycho2.result += 1;
+    }
+    if (this.ChildChroniqueSeek.value) {
+      this.valueTestGyneco.psycho2.ChildChroniqueSeek = 1;
+      this.valueTestGyneco.psycho2.result += 3;
+    }
+    if (this.DieBabyP.value) {
+      this.valueTestGyneco.psycho2.DieBabyP = 1;
+      this.valueTestGyneco.psycho2.result += 2;
+    }
+    if (this.PregnantTraumaPsy.value) {
+      this.valueTestGyneco.psycho2.PregnantTraumaPsy = 1;
+      this.valueTestGyneco.psycho2.result += 10;
+    }
+    if (this.TraumaExperiencePsy.value) {
+      this.valueTestGyneco.psycho2.TraumaExperiencePsy = 1; 
+      this.valueTestGyneco.psycho2.result += 10;
+      }
+        if (this.fausseCouche.value == true) {
+          this.valueTestGyneco.fausseCouche = 1;
+          this.valueTestGyneco.psycho2.result += 2;
+          this.navCtrl.push(Step13Page, {
               userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText
           });  
+         }
          else
          this.navCtrl.push(Step14Page, {
               userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText
           });  
-         
-       }
+    }
 }

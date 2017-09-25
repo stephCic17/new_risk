@@ -65,8 +65,9 @@ export class Step12Page {
        }
        else
        {
+         console.log(this.valueTestGyneco);
          this.valueTestGyneco.Cesarienne = this.result;
-         if (this.valueTestGyneco.child == 1)
+         if (this.valueTestGyneco.nbChild == 1 || this.result == 0)
          this.navCtrl.push(PsychoTest3Page, {
               userParams: this.valueTestGyneco,
               QuestionText: this.QuestionText

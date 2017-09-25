@@ -40,23 +40,39 @@ export class PsychoTest4Page {
 	goNextStep() {
 
 		this.valueTestGyneco.psycho4 = [];
-
-		if (this.angoisseCrise.value)
-		this.valueTestGyneco.psycho4.angoisseCrise = this.angoisseCrise.value;
-		if (this.boulimie.value)
-		this.valueTestGyneco.psycho4.boulimie = this.boulimie.value;
-		if (this.anorexie.value)
-		this.valueTestGyneco.psycho4.anorexie = this.anorexie.value;
-		if (this.TOC.value)
-		this.valueTestGyneco.psycho4.TOC = this.TOC.value;
-		if (this.depression.value)
-		this.valueTestGyneco.psycho4.depression = this.depression.value;
-		if (this.phobie.value)
-		this.valueTestGyneco.psycho4.phobie = this.phobie.value;
-		if (this.bipolaire.value)
-		this.valueTestGyneco.psycho4.bipolaire = this.bipolaire.value;
-		if (this.HPtravel.value)
-		this.valueTestGyneco.psycho4.HPtravel = this.HPtravel.value;
+		this.valueTestGyneco.psycho4.result = 0;
+		if (this.angoisseCrise.value) {
+			this.valueTestGyneco.psycho4.angoisseCrise = 1;
+			this.valueTestGyneco.psycho4 += 2;
+		}
+		if (this.boulimie.value) {
+			this.valueTestGyneco.psycho4.boulimie = 1;
+			this.valueTestGyneco.psycho4.result += 2;
+		}
+		if (this.anorexie.value) {
+			this.valueTestGyneco.psycho4.anorexie = 1;
+			this.valueTestGyneco.psycho4.result += 2;
+		}
+		if (this.TOC.value) {
+			this.valueTestGyneco.psycho4.TOC = 1;
+			this.valueTestGyneco.psycho4.result += 1;
+		}
+		if (this.depression.value) {
+			this.valueTestGyneco.psycho4.depression = 1;
+			this.valueTestGyneco.psycho4.result += 2;
+		}
+		if (this.phobie.value) {
+			this.valueTestGyneco.psycho4.phobie = 1;
+			this.valueTestGyneco.psycho4.result += 1;
+		}
+		if (this.bipolaire.value) {
+			this.valueTestGyneco.psycho4.bipolaire = 1;
+			this.valueTestGyneco.psycho4.result += 2;
+		}
+		if (this.HPtravel.value) {
+			this.valueTestGyneco.psycho4.HPtravel = 1;
+			this.valueTestGyneco.psycho4.result += 2;
+		}
 
  	 	this.navCtrl.push(ResultPage, {
               userParams: this.valueTestGyneco,

@@ -39,16 +39,30 @@ export class PsychoTest1Page {
   }
 
   goNextStep(){
+
+    this.valueTestGyneco.psycho1 = [];
+    this.valueTestGyneco.psycho1.result = 0;
+
       if (this.procreation.value)
       {
-        this.valueTestGyneco.procreation = this.procreation.value;
-        this.valueTestGyneco.yearsProcreation = this.yearsProcreation.value;
-        this.valueTestGyneco.nbProcreation = this.nbProcreation.value;
+        this.valueTestGyneco.psycho1.result += 1;
+        this.valueTestGyneco.psycho1.procreation = this.procreation.value;
+        this.valueTestGyneco.psycho1.yearsProcreation = this.yearsProcreation.value;
+        this.valueTestGyneco.psycho1.nbProcreation = this.nbProcreation.value;
+        if (this.yearsProcreation.value <= 2)
+          this.valueTestGyneco.psycho1.result += 1;
+        else if (this.yearsProcreation.value > 2)
+          this.valueTestGyneco.psycho1.result += 2;
       }
-      if (this.oocyteDonation.value)
-        this.valueTestGyneco.oocyteDonation = this.oocyteDonation.value;
-      if (this.spermDonation.value)
-        this.valueTestGyneco.spermDonation = this.spermDonation.value;
+      if (this.oocyteDonation.value) {
+        this.valueTestGyneco.psycho1.oocyteDonation = this.oocyteDonation.value;
+        this.valueTestGyneco.psycho1.result += 2;
+
+      }
+      if (this.spermDonation.value) {
+        this.valueTestGyneco.psycho1.spermDonation = this.spermDonation.value;
+        this.valueTestGyneco.psycho1.result += 2;
+      }
 
       this.navCtrl.push(Step3Page, {
             userParams: this.valueTestGyneco,

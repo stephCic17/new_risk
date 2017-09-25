@@ -17,11 +17,14 @@
 	<h3 class="form-question-title">
 			{{QuestionText.step1}}
 	</h3>
+	<p>toto</p>
+	<h1 *ngFor="let test of tests">{{test.name}}</h1>
+	<p>titi</p>
 	<ion-item>
 	<ion-label floating>Age en année</ion-label>
 		<ion-input type="number" #age></ion-input>
 	</ion-item>
-			<button ion-button (click)="goNextStep()">
+			<button ion-button class="center-button-box" (click)="goNextStep()">
 				Valider
 			</button>
 </ion-content>

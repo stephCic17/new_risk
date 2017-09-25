@@ -15,4 +15,10 @@
 
 <ion-content padding>
 
+<ion-slides>
+	<ion-slide *ngFor="let r of risk">
+		<h1>{{r.text}}</h1>
+	</ion-slide>
+</ion-slides>
+
 </ion-content>

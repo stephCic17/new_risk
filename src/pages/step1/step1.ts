@@ -21,6 +21,7 @@ export class Step1Page {
 	
   valueTestGyneco: any;
   QuestionText:any;
+  tests:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
 
@@ -30,6 +31,10 @@ export class Step1Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Step1Page');
+    this.tests = [];
+    this.tests.push({name:1});
+    this.tests.push({name:2});
+    console.log(this.tests);
   }
 
   goNextStep(){

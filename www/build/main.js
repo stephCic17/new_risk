@@ -78,8 +78,9 @@ var ResultPage = (function () {
         this.resultRisk = 0;
     }
     ResultPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ResultPage');
         console.log(this.valueTestGyneco);
+        this.result = [];
+        this.risk = [];
         if (this.valueTestGyneco.age > 42)
             this.resultRisk += 50;
         else if (this.valueTestGyneco.age == 42)
@@ -142,19 +143,168 @@ var ResultPage = (function () {
             if (this.valueTestGyneco.nbWork > 10)
                 this.resultRisk += 2;
         }
-        console.log(this.resultRisk);
+        if (this.resultRisk >= 200)
+            this.result.riskAssment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
+        else if (this.resultRisk >= 50)
+            this.result.riskAssment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
+        else if (this.resultRisk >= 20)
+            this.result.riskAssment = "D'apres vos réponses vous présentez une grossesse à risque.";
+        else
+            this.result.riskAssment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
+        if (this.valueTestGyneco.age < 42)
+            this.risk.push({ text: "A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale" });
+        else if (this.valueTestGyneco.age > 42)
+            this.risk.push({ text: "A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale" });
+        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push({ text: "Vous fumez, ce qui peut entrainer de nombreuses complications." });
+        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push({ text: "Vous fumez, ce qui peut entrainer de nombreuses complications." });
+        else if (this.valueTestGyneco.smoke == 1)
+            this.risk.push({ text: "Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse." });
+        if (this.valueTestGyneco.bigChild == 1)
+            this.risk.push({ text: "Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse." });
+        if (this.valueTestGyneco.premaChild == 0 && this.valueTestGyneco.smallChild == 1)
+            this.risk.push({ text: "Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %" });
+        if (this.valueTestGyneco.nbFausseCouche >= 3)
+            this.risk.push({ text: "Vous avez un nombre élevé de fausse couches" });
+        if (this.valueTestGyneco.IMG)
+            this.risk.push({ text: "Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive" });
+        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0)
+            this.risk.push({ text: "Vous consommez de l'alcool" });
+        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push({ text: "Stoppez votre consommation d'alcool !" });
+        if (this.valueTestGyneco.alcool >= 10 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push({ text: "Vous consommez une quantité d'alcool importante" });
+        if (this.valueTestGyneco.epilepsy == 1)
+            this.risk.push({ text: "Votre epilepsie" });
+        if (this.valueTestGyneco.phlebite == 1)
+            this.risk.push({ text: "Votre antécédent de phlébite" });
+        if (this.valueTestGyneco.highBloodPresure == 1)
+            this.risk.push({ text: "Votre hypertension" });
+        if (this.valueTestGyneco.IMC < 18.5)
+            this.risk.push({ text: "Votre MAIGREUR" });
+        else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
+            this.risk.push({ text: "Votre obésité" });
+        else if (this.valueTestGyneco.IMC > 40)
+            this.risk.push({ text: "Votre obésité massive" });
+        if (this.valueTestGyneco.nbWork > 10 && this.valueTestGyneco.nbWork <= 12)
+            this.risk.push({ text: "Votre nombre d'heure de travail est élevé." });
+        if (this.valueTestGyneco.nbWork > 12)
+            this.risk.push({ text: "Votre nombre d'heure de travail est vraiment très élevé" });
+        if (this.valueTestGyneco.timeTravel > 90)
+            this.risk.push({ text: "Votre temps de trajet pour aller au travail est élevé" });
+        if (this.valueTestGyneco.standingWork == 1)
+            this.risk.push({ text: "Vous travaillez debout plus de 6 heures par jour" });
+        console.log(this.risk);
+    };
+    ResultPage.prototype.definePositif = function () {
+        if (this.valueTestGyneco.feelingPregnant == 1)
+            this.result.positif.push("Félicitation vous êtes enceinte !");
+        if (this.valueTestGyneco.child == 0 && this.valueTestGyneco.feelingPregnant == 1)
+            this.result.positif.push("Félicitation vous allez avoir votre premier enfant");
+        if (this.valueTestGyneco.age < 38)
+            this.result.positif.push("Vous avez le bon l'âge optimal pour faire un enfant");
+        else
+            this.result.positif.push("Être plus âgée pour élever ses enfants est ausi un gage de maturité !");
+        if (this.valueTestGyneco.IMG == 1)
+            this.result.positif.push("La plus grande partie des anomalies foetales sont des accidents et leur récidive est rare");
+        if (!this.valueTestGyneco.work)
+            this.result.positif.push("Vous ne travaillez pas, vous pouvez donc prendre le temps de vous occuper de vous et préparer la venue de votre enfant");
+    };
+    ResultPage.prototype.defineRisk = function () {
+        if (this.valueTestGyneco.age < 42)
+            this.risk.push("A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale");
+        else if (this.valueTestGyneco.age > 42)
+            this.risk.push("A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale");
+        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
+        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
+        else if (this.valueTestGyneco.smoke == 1)
+            this.risk.push("Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse.");
+        if (this.valueTestGyneco.bigChild == 1)
+            this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");
+        if (this.valueTestGyneco.premaChild == 0 && this.valueTestGyneco.smallChild == 1)
+            this.risk.push("Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %");
+        if (this.valueTestGyneco.nbFausseCouche >= 3)
+            this.risk.push("Vous avez un nombre élevé de fausse couches");
+        if (this.valueTestGyneco.IMG)
+            this.risk.push("Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive");
+        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0)
+            this.risk.push("Vous consommez de l'alcool");
+        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push("Stoppez votre consommation d'alcool !");
+        if (this.valueTestGyneco.alcool >= 10 && this.valueTestGyneco.pregnant == 1)
+            this.risk.push("Vous consommez une quantité d'alcool importante");
+        if (this.valueTestGyneco.epilepsy == 1)
+            this.risk.push("Votre epilepsie");
+        if (this.valueTestGyneco.phlebite == 1)
+            this.risk.push("Votre antécédent de phlébite");
+        if (this.valueTestGyneco.highBloodPresure == 1)
+            this.risk.push("Votre hypertension");
+        if (this.valueTestGyneco.IMC < 18.5)
+            this.risk.push("Votre MAIGREUR");
+        else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
+            this.risk.push("Votre obésité");
+        else if (this.valueTestGyneco.IMC > 40)
+            this.risk.push("Votre obésité massive");
+        if (this.valueTestGyneco.nbWork > 10 && this.valueTestGyneco.nbWork <= 12)
+            this.risk.push("Votre nombre d'heure de travail est élevé.");
+        if (this.valueTestGyneco.nbWork > 12)
+            this.risk.push("Votre nombre d'heure de travail est vraiment très élevé");
+        if (this.valueTestGyneco.timeTravel > 90)
+            this.risk.push("Votre temps de trajet pour aller au travail est élevé");
+        if (this.valueTestGyneco.standingWork == 1)
+            this.risk.push("Vous travaillez debout plus de 6 heures par jour");
+    };
+    ResultPage.prototype.defineConseil = function () {
+        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
+            this.result.conseil.push("Arrêtez de fumer !");
+        else if (this.valueTestGyneco.smoke == 1)
+            this.result.conseil.push("Arrêtez de fumer avant d'entammer une grossesse !");
+        if (this.valueTestGyneco.bigChild)
+            this.result.conseil.push("Effectuez un dépistage de diabète de grossesse.");
+        if (this.valueTestGyneco.bigChild == 1 && this.valueTestGyneco.pregnantDiabete == 1)
+            this.result.conseil.push("Effectuez un dépistage de diabète de grossesse");
+        if (this.valueTestGyneco.nbFausseCouche >= 3)
+            this.result.conseil.push("Effectuez un bilan de fausse couche à répétition et bénéficiez d'une prise en charge adaptée en fonction des résultats de ce bilan.");
+        if (this.valueTestGyneco.IMG == 1)
+            this.result.conseil.push("Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale.");
+        if (this.valueTestGyneco.alcool >= 10 && this.valueTestGyneco.pregnant == 1)
+            this.result.conseil.push("Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool");
+        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0 && this.valueTestGyneco.pregnant == 1)
+            this.result.conseil.push("Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!");
+        if (this.valueTestGyneco.medicament1 == 1)
+            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+        if (this.valueTestGyneco.medicament2 == 1)
+            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des anticoagulent et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+        if (this.valueTestGyneco.medicament3 == 1)
+            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+        if (this.valueTestGyneco.medicament4 == 1)
+            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+        if (this.valueTestGyneco.medicament5 == 1)
+            this.result.conseil.push("");
+        if (this.valueTestGyneco.IMC < 18.5)
+            this.result.conseil.push("Alimentez-vous correctement");
+        else if (this.valueTestGyneco.IMC > 40)
+            this.result.conseil.push("Vous devez être prise en charge dans un centre spécialisé.");
+        if (this.valueTestGyneco.nbWork > 10)
+            this.result.conseil.push("Essayer d'aménager vos heures de travail");
+        if (this.valueTestGyneco.timeTravel > 90)
+            this.result.conseil.push("Essayer d'aménager vos heures de présence au travail pour diminuer les temps de trajets");
+        if (this.valueTestGyneco.standingWork == 1)
+            this.result.conseil.push("Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour");
     };
     return ResultPage;
 }());
 ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
+        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-slides>\n	<ion-slide *ngFor="let r of risk">\n		<h1>{{r.text}}</h1>\n	</ion-slide>\n</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
 ], ResultPage);
 
-var _a, _b;
 //# sourceMappingURL=result.js.map
 
 /***/ }),
@@ -537,12 +687,12 @@ var Step22Page = (function () {
         this.valueTestGyneco.IMC = this.weight.value / Math.pow(this.valueTestGyneco.size / 100, 2);
         console.log(this.valueTestGyneco.IMC);
         if (!this.weight.value) {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Rentrez votre poids',
                 subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
                 buttons: ['OK']
             });
-            alert.present();
+            alert_1.present();
         }
         else {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step23_step23__["a" /* Step23Page */], {
@@ -562,10 +712,9 @@ Step22Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-step22',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step22/step22.html"*/'<!--\n  Generated template for the Step22Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step22</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step22}}</h3>\n	<ion-item>\n		<ion-label floating>en kg</ion-label>\n	    <ion-input type="number" #weight></ion-input>\n	</ion-item>\n	<button ion-button (click)="goNextStep()">\n		Valider\n	</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step22/step22.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step22Page);
 
-var _a, _b, _c;
 //# sourceMappingURL=step22.js.map
 
 /***/ }),
@@ -645,10 +794,9 @@ Step20Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-step20',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step20/step20.html"*/'<!--\n  Generated template for the Step20Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step20</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step20}}</h3>\n		<ion-list>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament1}}</ion-label>\n					<ion-checkbox #medicament1></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament2}}</ion-label>\n					<ion-checkbox #medicament2></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament3}}</ion-label>\n					<ion-checkbox #medicament3></ion-checkbox>\n				</ion-item>\n				<ion-item>	\n					<ion-label>{{QuestionText.medicament4}}</ion-label>\n					<ion-checkbox #medicament4></ion-checkbox>\n				</ion-item>\n				<ion-item>			\n					<ion-label>{{QuestionText.medicament5}}</ion-label>\n					<ion-checkbox #medicament5></ion-checkbox>\n				</ion-item>\n		</ion-list>\n		<button ion-button (click)="goNextStep()">\n			Valider\n		</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step20/step20.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step20Page);
 
-var _a, _b, _c;
 //# sourceMappingURL=step20.js.map
 
 /***/ }),
@@ -1265,8 +1413,9 @@ var Step12Page = (function () {
             alert_1.present();
         }
         else {
+            console.log(this.valueTestGyneco);
             this.valueTestGyneco.Cesarienne = this.result;
-            if (this.valueTestGyneco.child == 1)
+            if (this.valueTestGyneco.nbChild == 1 || this.result == 0)
                 this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__["a" /* PsychoTest3Page */], {
                     userParams: this.valueTestGyneco,
                     QuestionText: this.QuestionText
@@ -1501,7 +1650,7 @@ Step3Page = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step5_step5__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test2_psycho_test2__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test2_psycho_test2__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1694,9 +1843,8 @@ Step5Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step6Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step7_step7__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step8_step8__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__step11_step11__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step8_step8__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1706,7 +1854,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1753,18 +1900,14 @@ var Step6Page = (function () {
         }
         else {
             this.valueTestGyneco.bigChild = this.result;
+            console.log(this.valueTestGyneco);
             if (this.valueTestGyneco.nbChild == 1 && this.result == 1)
-                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__step11_step11__["a" /* Step11Page */], {
-                    userParams: this.valueTestGyneco,
-                    QuestionText: this.QuestionText
-                });
-            else if (this.valueTestGyneco.nbChild > 1)
-                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step7_step7__["a" /* Step7Page */], {
+                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__step11_step11__["a" /* Step11Page */], {
                     userParams: this.valueTestGyneco,
                     QuestionText: this.QuestionText
                 });
             else
-                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__step8_step8__["a" /* Step8Page */], {
+                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step8_step8__["a" /* Step8Page */], {
                     userParams: this.valueTestGyneco,
                     QuestionText: this.QuestionText
                 });
@@ -1793,80 +1936,6 @@ Step6Page = __decorate([
 /***/ }),
 
 /***/ 127:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step7Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step8_step8__ = __webpack_require__(56);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the Step7Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var Step7Page = (function () {
-    function Step7Page(navCtrl, navParams, alertCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.valueTestGyneco = navParams.get('userParams');
-        this.QuestionText = navParams.get('QuestionText');
-    }
-    Step7Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad Step7Page');
-    };
-    Step7Page.prototype.goNextStep = function () {
-        this.valueTestGyneco = [];
-        this.valueTestGyneco.age = this.nbBigChild.value;
-        if (!this.nbBigChild.value || this.nbBigChild.value == 0) {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Rentrez votre age',
-                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-                buttons: ['OK']
-            });
-            alert_1.present();
-        }
-        else {
-            this.valueTestGyneco.nbBigChild = this.nbBigChild.value;
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step8_step8__["a" /* Step8Page */], {
-                userParams: this.valueTestGyneco,
-                QuestionText: this.QuestionText
-            });
-        }
-    };
-    return Step7Page;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('nbBigChild'),
-    __metadata("design:type", Object)
-], Step7Page.prototype, "nbBigChild", void 0);
-Step7Page = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step7',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step7/step7.html"*/'<!--\n  Generated template for the Step7Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step7</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step7}}</h3>\n\n	<ion-item>\n	<ion-label floating>Age en année</ion-label>\n		<ion-input type="number" #nbBigChild></ion-input>\n	</ion-item>\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step7/step7.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-], Step7Page);
-
-//# sourceMappingURL=step7.js.map
-
-/***/ }),
-
-/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1958,7 +2027,7 @@ Step9Page = __decorate([
 
 /***/ }),
 
-/***/ 129:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1998,35 +2067,59 @@ var PsychoTest2Page = (function () {
     };
     PsychoTest2Page.prototype.goNextStep = function () {
         this.valueTestGyneco.psycho2 = [];
-        if (this.fausseCouche.value)
-            this.valueTestGyneco.psycho2.fausseCouche = this.fausseCouche.value;
-        if (this.IVG.value)
-            this.valueTestGyneco.psycho2.IVG = this.IVG.value;
-        if (this.GEU.value)
-            this.valueTestGyneco.psycho2.GEU = this.GEU.value;
-        if (this.DieInUtero.value)
-            this.valueTestGyneco.psycho2.DieInUtero = this.DieInUtero.value;
-        if (this.IMG.value)
-            this.valueTestGyneco.psycho2.IMG = this.IMG.value;
-        if (this.ISG.value)
-            this.valueTestGyneco.psycho2.ISG = this.ISG.value;
-        if (this.ChildHandicap.value)
-            this.valueTestGyneco.psycho2.ChildHandicap = this.ChildHandicap.value;
-        if (this.ChildPrema.value)
-            this.valueTestGyneco.psycho2.ChildPrema = this.ChildPrema.value;
-        if (this.ChildChroniqueSeek.value)
-            this.valueTestGyneco.psycho2.ChildChroniqueSeek = this.ChildChroniqueSeek.value;
-        if (this.DieBabyP.value)
-            this.valueTestGyneco.psycho2.DieBabyP = this.DieBabyP.value;
-        if (this.PregnantTraumaPsy.value)
-            this.valueTestGyneco.psycho2.PregnantTraumaPsy = this.PregnantTraumaPsy.value;
-        if (this.TraumaExperiencePsy.value)
-            this.valueTestGyneco.psycho2.TraumaExperiencePsy = this.TraumaExperiencePsy.value;
-        if (this.fausseCouche.value == true)
+        this.valueTestGyneco.psycho2.result = 0;
+        if (this.IVG.value) {
+            this.valueTestGyneco.psycho2.IVG = 1;
+            this.valueTestGyneco.psycho2.result += 1;
+        }
+        if (this.GEU.value) {
+            this.valueTestGyneco.psycho2.GEU = 1;
+            this.valueTestGyneco.psycho2.result += 1;
+        }
+        if (this.DieInUtero.value) {
+            this.valueTestGyneco.psycho2.DieInUtero = 1;
+            this.valueTestGyneco.psycho2.result += 2;
+        }
+        if (this.IMG.value) {
+            this.valueTestGyneco.psycho2.IMG = 1;
+            this.valueTestGyneco.psycho2.result += 2;
+        }
+        if (this.ISG.value) {
+            this.valueTestGyneco.psycho2.ISG = 1;
+            this.valueTestGyneco.psycho2.result += 3;
+        }
+        if (this.ChildHandicap.value) {
+            this.valueTestGyneco.psycho2.ChildHandicap = 1;
+            this.valueTestGyneco.psycho2.result += 3;
+        }
+        if (this.ChildPrema.value) {
+            this.valueTestGyneco.psycho2.ChildPrema = 1;
+            this.valueTestGyneco.psycho2.result += 1;
+        }
+        if (this.ChildChroniqueSeek.value) {
+            this.valueTestGyneco.psycho2.ChildChroniqueSeek = 1;
+            this.valueTestGyneco.psycho2.result += 3;
+        }
+        if (this.DieBabyP.value) {
+            this.valueTestGyneco.psycho2.DieBabyP = 1;
+            this.valueTestGyneco.psycho2.result += 2;
+        }
+        if (this.PregnantTraumaPsy.value) {
+            this.valueTestGyneco.psycho2.PregnantTraumaPsy = 1;
+            this.valueTestGyneco.psycho2.result += 10;
+        }
+        if (this.TraumaExperiencePsy.value) {
+            this.valueTestGyneco.psycho2.TraumaExperiencePsy = 1;
+            this.valueTestGyneco.psycho2.result += 10;
+        }
+        if (this.fausseCouche.value == true) {
+            this.valueTestGyneco.fausseCouche = 1;
+            this.valueTestGyneco.psycho2.result += 2;
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step13_step13__["a" /* Step13Page */], {
                 userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
             });
+        }
         else
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__step14_step14__["a" /* Step14Page */], {
                 userParams: this.valueTestGyneco,
@@ -2095,7 +2188,7 @@ PsychoTest2Page = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2212,14 +2305,14 @@ Step2_1Page = __decorate([
 
 /***/ }),
 
-/***/ 131:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenstruationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_1_step2_1__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_1_step2_1__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2288,14 +2381,14 @@ MenstruationPage = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menstruation_menstruation__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menstruation_menstruation__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test1_psycho_test1__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2404,14 +2497,14 @@ Step2Page = __decorate([
 
 /***/ }),
 
-/***/ 133:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_step2__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_step2__ = __webpack_require__(131);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2439,6 +2532,10 @@ var Step1Page = (function () {
     }
     Step1Page.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Step1Page');
+        this.tests = [];
+        this.tests.push({ name: 1 });
+        this.tests.push({ name: 2 });
+        console.log(this.tests);
     };
     Step1Page.prototype.goNextStep = function () {
         this.valueTestGyneco = [];
@@ -2467,7 +2564,7 @@ __decorate([
 Step1Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step1',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/'<!--\n  Generated template for the Step1Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step1</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">\n			{{QuestionText.step1}}\n	</h3>\n	<ion-item>\n	<ion-label floating>Age en année</ion-label>\n		<ion-input type="number" #age></ion-input>\n	</ion-item>\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/,
+        selector: 'page-step1',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/'<!--\n  Generated template for the Step1Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step1</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">\n			{{QuestionText.step1}}\n	</h3>\n	<p>toto</p>\n	<h1 *ngFor="let test of tests">{{test.name}}</h1>\n	<p>titi</p>\n	<ion-item>\n	<ion-label floating>Age en année</ion-label>\n		<ion-input type="number" #age></ion-input>\n	</ion-item>\n			<button ion-button class="center-button-box" (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step1Page);
@@ -2476,7 +2573,7 @@ Step1Page = __decorate([
 
 /***/ }),
 
-/***/ 141:
+/***/ 140:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -2489,11 +2586,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 141;
+webpackEmptyAsyncContext.id = 140;
 
 /***/ }),
 
-/***/ 182:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -2649,19 +2746,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 182;
+webpackAsyncContext.id = 181;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 226:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(227);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2691,7 +2788,7 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 227:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2726,14 +2823,14 @@ AboutPage = __decorate([
 
 /***/ }),
 
-/***/ 228:
+/***/ 227:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step1_step1__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step1_step1__ = __webpack_require__(132);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2818,12 +2915,86 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <img class="logo" src="../../assets/img/logo.png"/>\n  <h2>Bienvenue !</h2>\n  <p>\n    Ciconia est une application de sante dediée à la grossesse en cours ou future. Elle évalue si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale.\n  </p>\n  <button ion-button (click)="openStep1()">\n      Commencer\n  </button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <img class="logo" src="../../assets/img/logo.png"/>\n  <h2>Bienvenue !</h2>\n  <p>\n    Ciconia est une application de sante dediée à la grossesse en cours ou future. Elle évalue si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale.\n  </p>\n  <div class="center-button-box">\n  <button ion-button class="button button-block button-calm" (click)="openStep1()">\n      Commencer\n  </button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step7Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step8_step8__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the Step7Page page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Step7Page = (function () {
+    function Step7Page(navCtrl, navParams, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.valueTestGyneco = navParams.get('userParams');
+        this.QuestionText = navParams.get('QuestionText');
+    }
+    Step7Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Step7Page');
+    };
+    Step7Page.prototype.goNextStep = function () {
+        this.valueTestGyneco = [];
+        this.valueTestGyneco.age = this.nbBigChild.value;
+        if (!this.nbBigChild.value || this.nbBigChild.value == 0) {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Rentrez votre age',
+                subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                buttons: ['OK']
+            });
+            alert_1.present();
+        }
+        else {
+            this.valueTestGyneco.nbBigChild = this.nbBigChild.value;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step8_step8__["a" /* Step8Page */], {
+                userParams: this.valueTestGyneco,
+                QuestionText: this.QuestionText
+            });
+        }
+    };
+    return Step7Page;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('nbBigChild'),
+    __metadata("design:type", Object)
+], Step7Page.prototype, "nbBigChild", void 0);
+Step7Page = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-step7',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step7/step7.html"*/'<!--\n  Generated template for the Step7Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step7</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step7}}</h3>\n\n	<ion-item>\n	<ion-label floating>Age en année</ion-label>\n		<ion-input type="number" #nbBigChild></ion-input>\n	</ion-item>\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step7/step7.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+], Step7Page);
+
+//# sourceMappingURL=step7.js.map
 
 /***/ }),
 
@@ -2850,22 +3021,22 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_result_result__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step1_step1__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_step2_step2__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step1_step1__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_step2_step2__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_step3_step3__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_menstruation_menstruation__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_step2_1_step2_1__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_menstruation_menstruation__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_step2_1_step2_1__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_ivg_info_ivg_info__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_step4_step4__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_step5_step5__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_step6_step6__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_step7_step7__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_step7_step7__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_step8_step8__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_step9_step9__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_step9_step9__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_step10_step10__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_step11_step11__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_step12_step12__ = __webpack_require__(121);
@@ -2885,11 +3056,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_step25_step25__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_step26_step26__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_psycho_test1_psycho_test1__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_psycho_test2_psycho_test2__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_psycho_test2_psycho_test2__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_psycho_test3_psycho_test3__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_psycho_test4_psycho_test4__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_status_bar__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_splash_screen__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_status_bar__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_splash_screen__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__ionic_storage__ = __webpack_require__(298);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3094,9 +3265,9 @@ AppModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(225);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3124,7 +3295,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n<ion-header>\n\n  <ion-navbar class="bar-stable">\n<div class="progress-bar">\n        <div id="progression" class="progress-bar-state">\n        </div>\n      </div>\n       <ion-back-button class="button-clear">\n      </ion-back-button>\n   </ion-navbar>'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -3263,15 +3434,26 @@ var PsychoTest1Page = (function () {
         console.log(this.procreation.value);
     };
     PsychoTest1Page.prototype.goNextStep = function () {
+        this.valueTestGyneco.psycho1 = [];
+        this.valueTestGyneco.psycho1.result = 0;
         if (this.procreation.value) {
-            this.valueTestGyneco.procreation = this.procreation.value;
-            this.valueTestGyneco.yearsProcreation = this.yearsProcreation.value;
-            this.valueTestGyneco.nbProcreation = this.nbProcreation.value;
+            this.valueTestGyneco.psycho1.result += 1;
+            this.valueTestGyneco.psycho1.procreation = this.procreation.value;
+            this.valueTestGyneco.psycho1.yearsProcreation = this.yearsProcreation.value;
+            this.valueTestGyneco.psycho1.nbProcreation = this.nbProcreation.value;
+            if (this.yearsProcreation.value <= 2)
+                this.valueTestGyneco.psycho1.result += 1;
+            else if (this.yearsProcreation.value > 2)
+                this.valueTestGyneco.psycho1.result += 2;
         }
-        if (this.oocyteDonation.value)
-            this.valueTestGyneco.oocyteDonation = this.oocyteDonation.value;
-        if (this.spermDonation.value)
-            this.valueTestGyneco.spermDonation = this.spermDonation.value;
+        if (this.oocyteDonation.value) {
+            this.valueTestGyneco.psycho1.oocyteDonation = this.oocyteDonation.value;
+            this.valueTestGyneco.psycho1.result += 2;
+        }
+        if (this.spermDonation.value) {
+            this.valueTestGyneco.psycho1.spermDonation = this.spermDonation.value;
+            this.valueTestGyneco.psycho1.result += 2;
+        }
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step3_step3__["a" /* Step3Page */], {
             userParams: this.valueTestGyneco,
             QuestionText: this.QuestionText
@@ -3349,22 +3531,39 @@ var PsychoTest4Page = (function () {
     };
     PsychoTest4Page.prototype.goNextStep = function () {
         this.valueTestGyneco.psycho4 = [];
-        if (this.angoisseCrise.value)
-            this.valueTestGyneco.psycho4.angoisseCrise = this.angoisseCrise.value;
-        if (this.boulimie.value)
-            this.valueTestGyneco.psycho4.boulimie = this.boulimie.value;
-        if (this.anorexie.value)
-            this.valueTestGyneco.psycho4.anorexie = this.anorexie.value;
-        if (this.TOC.value)
-            this.valueTestGyneco.psycho4.TOC = this.TOC.value;
-        if (this.depression.value)
-            this.valueTestGyneco.psycho4.depression = this.depression.value;
-        if (this.phobie.value)
-            this.valueTestGyneco.psycho4.phobie = this.phobie.value;
-        if (this.bipolaire.value)
-            this.valueTestGyneco.psycho4.bipolaire = this.bipolaire.value;
-        if (this.HPtravel.value)
-            this.valueTestGyneco.psycho4.HPtravel = this.HPtravel.value;
+        this.valueTestGyneco.psycho4.result = 0;
+        if (this.angoisseCrise.value) {
+            this.valueTestGyneco.psycho4.angoisseCrise = 1;
+            this.valueTestGyneco.psycho4 += 2;
+        }
+        if (this.boulimie.value) {
+            this.valueTestGyneco.psycho4.boulimie = 1;
+            this.valueTestGyneco.psycho4.result += 2;
+        }
+        if (this.anorexie.value) {
+            this.valueTestGyneco.psycho4.anorexie = 1;
+            this.valueTestGyneco.psycho4.result += 2;
+        }
+        if (this.TOC.value) {
+            this.valueTestGyneco.psycho4.TOC = 1;
+            this.valueTestGyneco.psycho4.result += 1;
+        }
+        if (this.depression.value) {
+            this.valueTestGyneco.psycho4.depression = 1;
+            this.valueTestGyneco.psycho4.result += 2;
+        }
+        if (this.phobie.value) {
+            this.valueTestGyneco.psycho4.phobie = 1;
+            this.valueTestGyneco.psycho4.result += 1;
+        }
+        if (this.bipolaire.value) {
+            this.valueTestGyneco.psycho4.bipolaire = 1;
+            this.valueTestGyneco.psycho4.result += 2;
+        }
+        if (this.HPtravel.value) {
+            this.valueTestGyneco.psycho4.HPtravel = 1;
+            this.valueTestGyneco.psycho4.result += 2;
+        }
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__result_result__["a" /* ResultPage */], {
             userParams: this.valueTestGyneco,
             QuestionText: this.QuestionText
@@ -3543,10 +3742,9 @@ Step14Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-step14',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step14/step14.html"*/'<!--\n  Generated template for the Step14Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step14</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<h3 class="form-question-title">{{QuestionText.step14}}</h3>\n\n			<ion-item>   \n				<ion-range max=30 #alcool>   \n					<ion-icon range-right max=30></ion-icon>\n				</ion-range>\n			</ion-item>\n			<p>{{alcool.value}}</p>\n			<button ion-button (click)="goNextStep()">\n				Valider\n			</button>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step14/step14.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step14Page);
 
-var _a, _b, _c;
 //# sourceMappingURL=step14.js.map
 
 /***/ }),
@@ -3660,24 +3858,44 @@ var PsychoTest3Page = (function () {
         console.log('ionViewDidLoad PsychoTest3Page');
     };
     PsychoTest3Page.prototype.goNextStep = function () {
-        if (this.forceps.value)
-            this.valueTestGyneco.psycho3.forceps = this.forceps.value;
-        if (this.ventouse.value)
-            this.valueTestGyneco.psycho3.ventouse = this.ventouse.value;
-        if (this.cesarienneUrgence.value)
-            this.valueTestGyneco.psycho3.cesarienneUrgence = this.cesarienneUrgence.value;
-        if (this.generalAnest.value)
-            this.valueTestGyneco.psycho3.generalAnest = this.generalAnest.value;
-        if (this.hemorragie.value)
-            this.valueTestGyneco.psycho3.hemorragie = this.hemorragie.value;
-        if (this.babySeparation.value)
-            this.valueTestGyneco.psycho3.babySeparation = this.babySeparation.value;
-        if (this.dieDelivery.value)
-            this.valueTestGyneco.psycho3.dieDelivery = this.dieDelivery.value;
-        if (this.psyDieBaby.value)
-            this.valueTestGyneco.psycho3.psyDieBaby = this.psyDieBaby.value;
-        if (this.traumaDelivery.value)
-            this.valueTestGyneco.psycho3.traumaDelivery = this.traumaDelivery.value;
+        this.valueTestGyneco.psycho3 = [];
+        this.valueTestGyneco.psycho3.result = 0;
+        if (this.forceps.value) {
+            this.valueTestGyneco.psycho3.forceps = 1;
+            this.valueTestGyneco.psycho3.result += 1;
+        }
+        if (this.ventouse.value) {
+            this.valueTestGyneco.psycho3.ventouse = 1;
+            this.valueTestGyneco.psycho3.result += 2;
+        }
+        if (this.cesarienneUrgence.value) {
+            this.valueTestGyneco.psycho3.cesarienneUrgence = 1;
+            this.valueTestGyneco.psycho3.result += 2;
+        }
+        if (this.generalAnest.value) {
+            this.valueTestGyneco.psycho3.generalAnest = 1;
+            this.valueTestGyneco.psycho3.result += 1;
+        }
+        if (this.hemorragie.value) {
+            this.valueTestGyneco.psycho3.hemorragie = 1;
+            this.valueTestGyneco.psycho3.result += 2;
+        }
+        if (this.babySeparation.value) {
+            this.valueTestGyneco.psycho3.babySeparation = 1;
+            this.valueTestGyneco.psycho3.result += 5;
+        }
+        if (this.dieDelivery.value) {
+            this.valueTestGyneco.psycho3.dieDelivery = 1;
+            this.valueTestGyneco.psycho3.result += 2;
+        }
+        if (this.psyDieBaby.value) {
+            this.valueTestGyneco.psycho3.psyDieBaby = 1;
+            this.valueTestGyneco.psycho3.result += 5;
+        }
+        if (this.traumaDelivery.value) {
+            this.valueTestGyneco.psycho3.traumaDelivery = 1;
+            this.valueTestGyneco.psycho3.result += 5;
+        }
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__step13_step13__["a" /* Step13Page */], {
             userParams: this.valueTestGyneco,
             QuestionText: this.QuestionText
@@ -3740,7 +3958,7 @@ PsychoTest3Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step8Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step9_step9__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step9_step9__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(39);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

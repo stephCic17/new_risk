@@ -18,7 +18,7 @@ import { Step11Page } from '../step11/step11';
 
 export class Step6Page {
 
-  valueTestGyneco: any;
+  valueTestGyneco:any;
   QuestionText:any;
  
   @ViewChild('yes') yes;
@@ -65,16 +65,12 @@ export class Step6Page {
        else
        {
          this.valueTestGyneco.bigChild = this.result;
+         console.log(this.valueTestGyneco);
          if (this.valueTestGyneco.nbChild == 1 && this.result == 1)
          this.navCtrl.push(Step11Page, {
                userParams: this.valueTestGyneco,
                 QuestionText: this.QuestionText
-             });  
-         else if (this.valueTestGyneco.nbChild > 1)
-           this.navCtrl.push(Step7Page, {
-               userParams: this.valueTestGyneco,
-                QuestionText: this.QuestionText
-             });  
+             });
          else
             this.navCtrl.push(Step8Page, {
                userParams: this.valueTestGyneco,
