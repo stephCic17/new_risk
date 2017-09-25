@@ -3295,7 +3295,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n<ion-header>\n\n  <ion-navbar class="bar-stable">\n<div class="progress-bar">\n        <div id="progression" class="progress-bar-state">\n        </div>\n      </div>\n       <ion-back-button class="button-clear">\n      </ion-back-button>\n   </ion-navbar>'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n<ion-header>\n\n  <ion-navbar class="bar-stable">\n<div class="progress-bar">\n        <div id="progression" class="progress-bar-state">\n        </div>\n      </div>\n   </ion-navbar>'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
