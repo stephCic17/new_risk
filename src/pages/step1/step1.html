@@ -14,6 +14,8 @@
 
 
 <ion-content padding>
+<div class="slidebox">
+<div class="slideContent">
 	<h3 class="form-question-title">
 			{{QuestionText.step1}}
 	</h3>
@@ -22,7 +24,11 @@
 	<ion-label floating>Age en année</ion-label>
 		<ion-input type="number" #age></ion-input>
 	</ion-item>
-			<button ion-button class="center-button-box" (click)="goNextStep()">
+	</div>
+	</div>
+	<div class="next">
+			<button ion-button class="button next-button touch" (click)="goNextStep()">
 				Valider
 			</button>
+			</div>
 </ion-content>

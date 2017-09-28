@@ -14,11 +14,62 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-   .form-question-title
-   {
-    color: #529599;
-   }
-   .scroll-content {
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:100,200,300,400,500,600,700,800");
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #609297;
+  font-family: "Open Sans";
+ }
+
+p {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Open Sans";
+  font-size: 1em; }
+
+input:not([type="radio"]) {
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  border: 1px dashed #bababa;
+  width: 80%; }
+  input:not([type="radio"]):focus {
+    outline: 1px solid #609297;
+    outline: 0; }
+ion-header {
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: block;
+    width: 100%;}
+    .toolbar-md {
+    	max-height:0px;
+    	min-height:0px;}
+.slidebox{
+	width: 100%;
+    height: 100%;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    display: flex;
+}
+.slideContent{
+	    position: absolute;
+    margin-right: 10px;
+        align-items: center;
+}
+.form-question-title
+{
+   color: #529599;
+}
+.scroll-content {
   display: table !important;
   width: 100% !important;
   height: calc(100% - 44px) !important;
@@ -168,4 +219,59 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #96B1B4;
+}
+.tab-button {
+	display: none;
+	}
+.touch {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    z-index: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #609297;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 10px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .05rem;
+    cursor: pointer;
+}
+.touch {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    z-index: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.welcome-wrapper {
+  position: absolute;
+  margin-right: 10px; }
+
+.welcome-content {
+  transform: scale(1.2);
+  transition: all 350ms 100ms ease; }
+  .welcome-content.visible {
+    transform: scale(1); }
+.next{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-top: 1px solid #fafafa;
+    transition: all 150ms cubic-bezier(0.4, 0, 1, 1);
+    transform: translateY(100%);
 }
