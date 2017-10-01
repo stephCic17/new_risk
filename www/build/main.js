@@ -2423,7 +2423,7 @@ __decorate([
 ], Step1Page.prototype, "age", void 0);
 Step1Page = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-step1',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/'<!--\n  Generated template for the Step1Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step1</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<div class="slidebox">\n<div class="slideContent">\n	<h3 class="form-question-title">\n			{{QuestionText.step1}}\n	</h3>\n\n	<ion-item>\n	<ion-label floating>Age en année</ion-label>\n		<ion-input type="number" #age></ion-input>\n	</ion-item>\n	</div>\n	\n	<div class="next">\n			<button ion-button class="button next-button touch" (click)="goNextStep()">\n				Valider\n			</button>\n	</div>\n			</div>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/,
+        selector: 'page-step1',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/'<!--\n  Generated template for the Step1Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step1</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<div class="slidebox">\n<div class="slideContent">\n	<h3 class="form-question-title">\n			{{QuestionText.step1}}\n	</h3>\n\n	<ion-item>\n	<ion-label floating>Age en année</ion-label>\n		<ion-input type="number" #age></ion-input>\n	</ion-item>\n	</div>\n	</div>\n	<div class="next">\n			<button ion-button class="button next-button touch">\n				Previous\n			</button>\n			<button ion-button class="button next-button touch" (click)="goNextStep()">\n				Valider\n			</button>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/step1/step1.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], Step1Page);
@@ -3188,7 +3188,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n  <ion-navbar class="bar-stable">\n<div class="progress-bar">\n        <div id="progression" class="progress-bar-state">\n        </div>\n      </div>\n   </ion-navbar>'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
