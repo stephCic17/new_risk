@@ -1,6 +1,6 @@
 webpackJsonp([19],{
 
-/***/ 315:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29,7 +29,7 @@ Step16PageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__step16__["a" /* Step16Page */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__step16__["a" /* Step16Page */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__step16__["a" /* Step16Page */]),
         ],
     })
 ], Step16PageModule);

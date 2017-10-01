@@ -1,6 +1,6 @@
 webpackJsonp([34],{
 
-/***/ 302:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29,7 +29,7 @@ IvgInfoPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__ivg_info__["a" /* IvgInfoPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ivg_info__["a" /* IvgInfoPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ivg_info__["a" /* IvgInfoPage */]),
         ],
     })
 ], IvgInfoPageModule);
