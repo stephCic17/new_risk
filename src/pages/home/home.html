@@ -47,50 +47,45 @@
       </div>
 
     </ion-slide>
-
-    <ion-slide>
-      <h3>Quel âge avez-vous ? </h3>
-      <input type="number">
-    </ion-slide>
-
-    <ion-slide>
-      <h3>Quel est la dâte de vos dernières règles ? </h3>
-      <input type="date">
-    </ion-slide>
-
-    <ion-slide>
-      <h3>Etes-vous enceinte ? </h3>
-      <div class="checkbox">
-        <input id="radio1-1" type="checkbox" name="radio-group">
-        <label for="radio1-1">Oui</label>
-      </div>
-      <div class="checkbox">
-        <input id="radio1-2" type="checkbox" name="radio-group">
-        <label for="radio1-2">Non</label>
-      </div>
-      <div class="checkbox checkbox--large">
-        <input id="radio1-3" type="checkbox" name="radio-group">
-        <label for="radio1-3">Je ne sais pas</label>
-      </div>
-    </ion-slide>
-
-    <ion-slide>
-      <h3>Etes-vous fumeuse ? </h3>
-      <div class="checkbox">
-        <input id="radio2-1" type="checkbox" name="radio-group">
-        <label for="radio2-1">Oui</label>
-      </div>
-      <div class="checkbox">
-        <input id="radio2-2" type="checkbox" name="radio-group">
-        <label for="radio2-2">Non</label>
-      </div>
-      <label class="helper">En savoir plus</label>
-    </ion-slide>
-    <ion-slide>
-        <h4>Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.</h4>
-        <h4>Vous travaillez debout plus de 6 heures par jour</h4>
-        <button class="button touch">Recommencer</button>
-    </ion-slide>
+    <div *ngFor="let question of Question">
+      <ion-slide *ngIf="question.type == 'number'">
+        <h3>{{question.title}}</h3>
+        <input type="number" #AnswerUser>
+      </ion-slide>
+      <ion-slide *ngIf="question.type == 'yesNo'">
+        <h3>{{question.title}}</h3>
+        <div class="checkbox">
+         <input id="radio2-1" type="checkbox" name="radio-group">
+         <label for="radio2-1">Oui</label>
+       </div>
+        <div class="checkbox">
+          <input id="radio2-2" type="checkbox" name="radio-group">
+          <label for="radio2-2">Non</label>
+        </div>
+      </ion-slide>
+      <ion-slide *ngIf="question.type == 'yesNoIdn'">
+        <h3>{{question.title}}</h3>
+        <div class="checkbox">
+          <input id="radio1-1" type="checkbox" name="radio-group">
+          <label for="radio1-1">Oui</label>
+        </div>
+        <div class="checkbox">
+          <input id="radio1-2" type="checkbox" name="radio-group">
+          <label for="radio1-2">Non</label>
+        </div>
+        <div class="checkbox checkbox--large">
+          <input id="radio1-3" type="checkbox" name="radio-group">
+          <label for="radio1-3">Je ne sais pas</label>
+        </div>
+      </ion-slide>
+      <ion-slide *ngIf="question.type == 'date'">
+        <h3>{{question.title}}</h3>
+        <input type="date">
+      </ion-slide>
+      
+    </div>
+    
+    
   </ion-slides>
 
 </ion-content>
