@@ -1,298 +1,61 @@
-// http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:100,200,300,400,500,600,700,800');
+$green: #609297;
 
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-
-@import url("https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:100,200,300,400,500,600,700,800");
 html, body {
   width: 100%;
   height: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  color: #609297;
+  color: $green;
   font-family: "Open Sans";
- }
-
+  font-weight: 100;
+}
 p {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0,0,0,0.5);
   font-family: "Open Sans";
-  font-size: 1em; }
+  font-size: 13px;
+  line-height: 1.5;
+  // text-rendering: geometricPrecision;
+}
 
 input:not([type="radio"]) {
   padding: 10px 10px 10px 10px;
   border-radius: 3px;
   border: 1px dashed #bababa;
-  width: 80%; }
-  input:not([type="radio"]):focus {
-    outline: 1px solid #609297;
-    outline: 0; }
-ion-header {
-    left: 0;
-    top: 0;
-    z-index: 10;
-    display: block;
-    width: 100%;}
-    .toolbar-md {
-    	max-height:0px;
-    	min-height:0px;}
-.slidebox{
-	width: 100%;
-    height: 90%;
-    text-align: center;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-    display: flex;
-}
-.slideContent{
-	    position: absolute;
-    margin-right: 10px;
-        align-items: center;
-}
-.form-question-title
-{
-   color: #529599;
-}
-.scroll-content {
-  display: table !important;
-  width: 100% !important;
-  height: calc(100% - 44px) !important;
-}
-.scroll {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  width: 80%;
+  &:focus {
+    outline: 1px solid $green;
+    outline: 0;
+  }
 }
 
-.center-button-box {
-  text-align: center;
-}
-.progress-bar {
-  min-width:100%;
-  height:8px;
-  border-bottom: 1px solid rgb(245,245,245);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  overflow: none;
+.slide {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* green : #529599 */
-/* ping : #f08c9e */
+@import 'utils/_ease';
+@import 'utils/_font';
 
-.progress-bar-state {
-  background-color: #f08c9e;
-  margin: 0;
-  padding: 0;
-  height: 8px;
-  width: 5px;
-  transition: width 200ms ease;
-}
-.bar {
-  border-top: none;
-  border-bottom: none;
-}
+@import 'components/_base';
+@import 'components/_button';
+@import 'components/_counter';
+@import 'components/_helper';
+@import 'components/_modal';
+@import 'components/_progress';
+@import 'components/_radio';
+@import 'components/_checkbox';
+@import 'components/_touch';
+@import 'components/_next';
+@import 'components/_welcome';
+@import 'components/_result';
 
-.bar .back-button {
-  position: absolute;
-  top: 20px;
-  left: 15px;
-  width: 40px;
-  height: 40px;
-  border: 3px solid grey;
-  padding: 5px;
-  border-radius: 100px;
-  border-color: rgba(139,155,147,0.1)!important;
-}
-
-.bar .back-button .icon {
-  color: #8bc3e4;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  color: #529599;
-}
-
-p {
-  color: rgba(0,0,0,0.6);
-  font-weight: 300;
-  line-height: 1.4;
-}
-input[type=range] {
-  -webkit-appearance: none;
-  width: 100%;
-  margin: 13.8px 0;
-}
-input[type=range]:focus {
-  outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #96B1B4;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: rgb(217,157,164);
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -14px;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #96B1B4;
-}
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #96B1B4;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: rgb(217,157,164);
-  cursor: pointer;
-}
-input[type=range]::-ms-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-  background: #96B1B4;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]::-ms-fill-upper {
-  background: #96B1B4;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: rgb(217,157,164);
-  cursor: pointer;
-  height: 8.4px;
-}
-input[type=range]:focus::-ms-fill-lower {
-  background: #96B1B4;
-}
-input[type=range]:focus::-ms-fill-upper {
-  background: #96B1B4;
-}
-.tab-button {
-	display: none;
-	}
-.touch {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.25s ease;
-    z-index: 0;
-    -webkit-font-smoothing: antialiased;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-
-.button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #609297;
-    color: white;
-    border-radius: 3px;
-    font-size: 14px;
-    margin-top: 10px;
-    position: relative;
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: .05rem;
-    cursor: pointer;
-}
-.touch {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.25s ease;
-    z-index: 0;
-    -webkit-font-smoothing: antialiased;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-.welcome-wrapper {
-  position: absolute;
-  margin-right: 10px; }
-
-.welcome-content {
-  transform: scale(1.2);
-  transition: all 350ms 100ms ease; }
-  .welcome-content.visible {
-    transform: scale(1); }
-.bot{
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    height: 10%;
-    background-color: white;
-    border-top: 1px solid #fafafa;
-    transition: all 150ms cubic-bezier(0.4, 0, 1, 1);
-    transform: translateY(100%);
-}
-
-.next  {
-  text-align: right;
-  width: 48%;
-  height: 70%;
-}
-
-.prev { 
-  top: 3px;
-  color: #609297;
-  width: 48%;
-  height: 70%;
-  transition: all 75ms ease-out;
-  z-index: 9999;
-  cursor: pointer;
-  background-color: transparent;
-  user-select: none;
-  margin-top: 0;
-  border: 1px dashed #bababa
+.visible {
+  opacity: 1;
 }

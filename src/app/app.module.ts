@@ -108,7 +108,7 @@ import { IonicStorageModule } from '@ionic/storage';
     Step9Page,
     Step10Page,
     Step11Page,
-    Step12Page,    
+    Step12Page,
     Step12_1Page,
     Step13Page,
     Step14Page,
@@ -136,4 +136,5 @@ import { IonicStorageModule } from '@ionic/storage';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}

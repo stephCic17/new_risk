@@ -1,0 +1,18 @@
+
+.counter {
+  position: absolute;
+  top: 21px;
+  right: 20px;
+  font-family: "Open Sans";
+  font-size: 12px;
+  color: #eaeaea;
+  opacity: 0;
+  transition: all 150ms ease("swift-out");
+  transform: translateY(-5px);
+  user-select: none;
+  &.visible {
+    opacity: 1;
+    transform: translateY(-0px);
+    transition: all 250ms ease("swift-in");
+  }
+}
