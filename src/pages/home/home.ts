@@ -14,7 +14,7 @@ import { Slides } from 'ionic-angular';
 
 export class HomePage {
   @ViewChild(Slides) slides: Slides;
-  @ViewChild('AnswerUser') AnswerUser;
+  @ViewChild('AnswerUser') userAnswer;
   currentStep = 0;
   totalStep = 4;
   progressWidth = "0%";
@@ -22,6 +22,8 @@ export class HomePage {
   activeLogoWrapper = false;
   activeWelcomeContent = false;
   Question:any;
+  user:any;
+  questionForm:any;
 
   ngOnInit() {
    var self = this;
@@ -42,40 +44,43 @@ export class HomePage {
       this.Question.push(
         {
           id: 1,
+          idForm: "step1",
           title: "Quel âge avez-vous ?",
           type: "number",
-          answer:[
+          answer:
             {
               label: "age en année",
               nextStep: 2
-            }
-          ],
+            },
           answerUser: "yes"        
         });
       this.Question.push(
         {
           id: 2,
+          idForm: "step2",
           title: "Êtes-vous enceinte ?",
           type: "yesNoIdn",
-          answer: [
+          answerYes: 
             {
               label: "Oui",
               nextStep: 3
             },
+          answerNo:
             {
               label: "Non",
               nextStep: 5
             },
+          answerIdn: 
             {
               label: "Je ne sais pas",
               nextStep: 3
-            }
-          ],
+            },
           answerUser: "yes"         
          });
       this.Question.push(
         {
           id: 3,
+          idForm: "step3",
           title: "Quel est la date de vos dernière règle ?",
           type: "date",
           answer: [{
@@ -87,6 +92,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 4,
+          idForm: "step4",
           title:"Est-ce une bonne nouvelle ?",
           type:"yesNoIdn",
           answer:[
@@ -108,6 +114,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 5,
+          idForm: "step5",
           title:"Fumez-vous ?",
           type:"yesNo",
           answer:[
@@ -125,6 +132,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 6,
+          idForm: "step6",
           title:"Avez-vous des enfants ?",
           type: "yesNo",
           answer:[
@@ -142,6 +150,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 7,
+          idForm: "step7",
           title:"Combien avez-vous d'enfant ?",
           type: "number",
           answer:[
@@ -155,6 +164,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 8,
+          idForm: "step8",
           title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
           type: "yesNo",
           answer:[
@@ -172,6 +182,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 9,
+          idForm: "step9",
           title:"Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
           type: "number",
           answer:[
@@ -185,6 +196,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 10,
+          idForm: "step10",
           title:"Avez-vous accouché d'enfant de moins de 2kg200 ?",
           type: "yesNo",
           answer:[
@@ -202,6 +214,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 11,
+          idForm: "step11",
           title: "Votre enfant était il prématuré ?",
           type: "yesNo",
           answer:[
@@ -219,6 +232,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 12,
+          idForm: "step12",
           title: "Avez-vous eu une prééclampsie ?",
           type: "yesNo",
           answer:[
@@ -236,6 +250,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 13,
+          idForm: "step13",
           title:"Avez-vous un antécedent de diabète de grossesse ?",
           type: "yesNo",
           answer:[
@@ -253,6 +268,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 14,
+          idForm: "step14",
           title: "Avez-vous eu une césariennes ?",
           type: "yesNo",
           answer:[
@@ -270,6 +286,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 15,
+          idForm: "step15",
           title: "Combien avez-vous eu de césarienne",
           type: "number",
           answer:[
@@ -284,6 +301,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 17,
+          idForm: "step17",
           title: "Combien de fausse couche avez-vous fait ?",
           type: "number",
           answer:[
@@ -297,6 +315,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 18,
+          idForm: "step18",
           title: "Combien de verres d'alcool buvez-vous par semaine ?",
           type: "number",
           answer:[
@@ -310,6 +329,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 19,
+          idForm: "step19",
           title: "Avez-vous une épilepsie ?",
           type: "yesNo",
           answer:[
@@ -327,6 +347,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 20,
+          idForm: "step20",
           title: "Avez-vous déjà eu une phlébite ?",
           type: "yesNo",
           answer:[
@@ -344,6 +365,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 21,
+          idForm: "step21",
           title: "Avez-vous de l'hypertension artérielle ?",
           type: "yesNo",
           answer:[
@@ -361,6 +383,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 22,
+          idForm: "step22",
           title: "Avez-vous du diabète ?",
           type: "yesNo",
           answer:[
@@ -378,6 +401,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 23,
+          idForm: "step23",
           title:"Prenez vous des médicaments ?",
           type: "yesNo",
           answer:[
@@ -396,6 +420,7 @@ export class HomePage {
 /*      this.Question.push(
         {
           id: 24,
+          idForm: "step",
           title:"Selectionnez les médicaments que vous prenez",
           type:1,
           answer:[
@@ -409,6 +434,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 25,
+          idForm: "step25",
           title: "Quelle est votre taille (en cm) ?",
           type: "number",
           answer:[
@@ -422,6 +448,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 26,
+          idForm: "step26",
           title: "Quel est votre poids (en kg) ?",
           type: "number",
           answer:[
@@ -435,6 +462,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 27,
+          idForm: "step27",
           title: "Travaillez-vous ?",
           type: "yesNo",
           answer:[
@@ -452,6 +480,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 28,
+          idForm: "step28",
           title: "Combien d'heures de travail effectuez-vous par jour ?",
           type: "number",
           answer:[
@@ -465,6 +494,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 29,
+          idForm: "step29",
           title: "Quel est votre temps de trajet par jour (en minute) ?",
           type: "number",
           answer:[
@@ -478,6 +508,7 @@ export class HomePage {
       this.Question.push(
         {
           id: 30,
+          idForm: "step30",
           title: "Travaillez-vous debout plus de 6 heures par jour ?",
           type: "yesNo",
           answer:[
@@ -551,14 +582,21 @@ export class HomePage {
     this.progressWidth = (100 / this.totalStep) * this.currentStep + "%";
   }
 
-  next() {
-    console.log("answer0");
-    console.log(this.AnswerUser.value);
-    this.currentStep++;
-    this.slides.slideTo(this.currentStep, 350);
-    this.updateProgressBar();
+  nextForm(question) {
+   console.log(this.user);
+   console.log(question);
+   this.questionForm = question;
+   console.log(this.questionForm.type);
+  if (this.questionForm.type == "number")
+   this.currentStep = this.questionForm.answer.nextStep;
+   this.slides.slideTo(this.currentStep, 350);
+   this.updateProgressBar();
   }
-
+  next(){
+      this.currentStep++;
+       this.slides.slideTo(this.currentStep, 350);
+      this.updateProgressBar();
+  }
   prev() {
     this.currentStep--;
     this.slides.slideTo(this.currentStep, 350);

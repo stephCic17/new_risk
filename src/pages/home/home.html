@@ -48,9 +48,10 @@
 
     </ion-slide>
     <div *ngFor="let question of Question">
-      <ion-slide *ngIf="question.type == 'number'">
+    <form id={{question.idForm}} novalidate>
+      <ion-slide *ngIf="question.type == 'number'"> 
         <h3>{{question.title}}</h3>
-        <input type="number" #AnswerUser>
+        <input type="number" name="user" [(ngModel)]="user" required>
       </ion-slide>
       <ion-slide *ngIf="question.type == 'yesNo'">
         <h3>{{question.title}}</h3>
@@ -82,7 +83,9 @@
         <h3>{{question.title}}</h3>
         <input type="date">
       </ion-slide>
-      
+         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>
+      </form>
+   
     </div>
     
     
