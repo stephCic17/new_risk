@@ -2546,11 +2546,11 @@ var map = {
 		22
 	],
 	"../pages/step14/step14.module": [
-		315,
+		314,
 		21
 	],
 	"../pages/step15/step15.module": [
-		314,
+		315,
 		20
 	],
 	"../pages/step16/step16.module": [
@@ -2574,11 +2574,11 @@ var map = {
 		15
 	],
 	"../pages/step2/step2.module": [
-		321,
+		322,
 		14
 	],
 	"../pages/step20/step20.module": [
-		322,
+		321,
 		13
 	],
 	"../pages/step21/step21.module": [
@@ -2618,15 +2618,15 @@ var map = {
 		4
 	],
 	"../pages/step6/step6.module": [
-		332,
+		334,
 		3
 	],
 	"../pages/step7/step7.module": [
-		333,
+		332,
 		2
 	],
 	"../pages/step8/step8.module": [
-		334,
+		333,
 		1
 	],
 	"../pages/step9/step9.module": [
@@ -3226,15 +3226,14 @@ var HomePage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
 ], HomePage.prototype, "slides", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button>\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button> -->\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no\n          " [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
     })
 ], HomePage);
 
-var _a;
 // export class HomePage {
 //
 // 	QuestionText:any;
@@ -3640,15 +3639,15 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step12-1/step12-1.module#Step12_1PageModule', name: 'Step12_1Page', segment: 'step12-1', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step12/step12.module#Step12PageModule', name: 'Step12Page', segment: 'step12', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step13/step13.module#Step13PageModule', name: 'Step13Page', segment: 'step13', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step15/step15.module#Step15PageModule', name: 'Step15Page', segment: 'step15', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step14/step14.module#Step14PageModule', name: 'Step14Page', segment: 'step14', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step15/step15.module#Step15PageModule', name: 'Step15Page', segment: 'step15', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step16/step16.module#Step16PageModule', name: 'Step16Page', segment: 'step16', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step17/step17.module#Step17PageModule', name: 'Step17Page', segment: 'step17', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step18/step18.module#Step18PageModule', name: 'Step18Page', segment: 'step18', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step19/step19.module#Step19PageModule', name: 'Step19Page', segment: 'step19', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step2-1/step2-1.module#Step2_1PageModule', name: 'Step2_1Page', segment: 'step2-1', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step2/step2.module#Step2PageModule', name: 'Step2Page', segment: 'step2', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step20/step20.module#Step20PageModule', name: 'Step20Page', segment: 'step20', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step2/step2.module#Step2PageModule', name: 'Step2Page', segment: 'step2', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step21/step21.module#Step21PageModule', name: 'Step21Page', segment: 'step21', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step22/step22.module#Step22PageModule', name: 'Step22Page', segment: 'step22', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step23/step23.module#Step23PageModule', name: 'Step23Page', segment: 'step23', priority: 'low', defaultHistory: [] },
@@ -3658,9 +3657,9 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step3/step3.module#Step3PageModule', name: 'Step3Page', segment: 'step3', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step4/step4.module#Step4PageModule', name: 'Step4Page', segment: 'step4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step5/step5.module#Step5PageModule', name: 'Step5Page', segment: 'step5', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step6/step6.module#Step6PageModule', name: 'Step6Page', segment: 'step6', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step7/step7.module#Step7PageModule', name: 'Step7Page', segment: 'step7', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step8/step8.module#Step8PageModule', name: 'Step8Page', segment: 'step8', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step6/step6.module#Step6PageModule', name: 'Step6Page', segment: 'step6', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step9/step9.module#Step9PageModule', name: 'Step9Page', segment: 'step9', priority: 'low', defaultHistory: [] }
                 ]
             }),
