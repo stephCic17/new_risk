@@ -1893,224 +1893,247 @@ var ResultPage = (function () {
         this.navParams = navParams;
         this.valueTestGyneco = navParams.get('userParams');
         this.resultRisk = 0;
+        console.log("test");
+        console.log(this.valueTestGyneco);
     }
     ResultPage.prototype.ionViewDidLoad = function () {
-        console.log(this.valueTestGyneco);
-        this.result = [];
-        this.risk = [];
-        if (this.valueTestGyneco.age > 42)
-            this.resultRisk += 50;
-        else if (this.valueTestGyneco.age == 42)
-            this.resultRisk += 20;
-        else if (this.valueTestGyneco.age > 38)
-            this.resultRisk += 2;
-        if (this.valueTestGyneco.alcool > 10)
-            this.resultRisk += 400;
-        if (this.valueTestGyneco.smoke == 1)
-            this.resultRisk += 2;
-        if (this.valueTestGyneco.child == 1) {
-            if (this.valueTestGyneco.Cesarienne == 1)
+        /*
+            console.log(this.valueTestGyneco);
+            this.result = [];
+            this.risk = [];
+            if ( this.valueTestGyneco[0].answerUser > 42)
+                this.resultRisk += 50;
+            else if (this.valueTestGyneco[0].answerUser == 42)
+                this.resultRisk += 20;
+            else if (this.valueTestGyneco[0].answerUser > 38)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco.BigChild == 1)
-                this.resultRisk += 50;
-            if (this.valueTestGyneco.lessChild == 1)
-                this.resultRisk += 50;
-            if (this.valueTestGyneco.preEclampsy == 1)
-                this.resultRisk += 50;
-            if (this.valueTestGyneco.pregnantDiabete == 1)
+        
+            if (this.valueTestGyneco[18].answerUser > 10)
+                this.resultRisk += 400;
+            if(this.valueTestGyneco[5].answerUser == 1)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco.premaChild == 1)
+            if (this.valueTestGyneco[6].answerUser == 1)
+            {
+                if (this.valueTestGyneco[14].answerUser == 1)
+                    this.resultRisk += 2;
+                if (this.valueTestGyneco[8].answerUser == 1)
+                    this.resultRisk += 50;
+                if (this.valueTestGyneco[10].answerUser == 1)
+                    this.resultRisk += 50;
+                if (this.valueTestGyneco[12].answerUser == 1)
+                    this.resultRisk += 50;
+                if (this.valueTestGyneco[13].answerUser == 1)
+                    this.resultRisk += 2;
+                if (this.valueTestGyneco[11].answerUser == 1)
+                    this.resultRisk += 50;
+        
+            }
+            if (this.valueTestGyneco[17].answerUser > 0)
+                this.resultRisk += 2;
+            if (this.valueTestGyneco[22].answerUser == 1)
                 this.resultRisk += 50;
-        }
-        if (this.valueTestGyneco.nbFausseCouche > 0)
-            this.resultRisk += 2;
-        if (this.valueTestGyneco.diabete == 1)
-            this.resultRisk += 50;
-        if (this.valueTestGyneco.epilepsy == 1)
-            this.resultRisk += 200;
-        if (this.valueTestGyneco.highBloodPresure == 1)
-            this.resultRisk += 2;
-        if (this.valueTestGyneco.phlebite == 1)
-            this.resultRisk += 2;
-        if (this.valueTestGyneco.medicament == 1) {
-            if (this.valueTestGyneco.medicament1 == 1)
+            if (this.valueTestGyneco.epilepsy == 1)
                 this.resultRisk += 200;
-            if (this.valueTestGyneco.medicament2 == 1)
-                this.resultRisk += 200;
-            if (this.valueTestGyneco.medicament3 == 1)
+            if (this.valueTestGyneco[21].answerUser == 1)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco.medicament4 == 1)
-                this.resultRisk += 200;
-            if (this.valueTestGyneco.medicament5 == 1)
+            if (this.valueTestGyneco[20].answerUser == 1)
                 this.resultRisk += 2;
-        }
-        if (this.valueTestGyneco.IMC > 28)
-            this.resultRisk += 50;
-        if (this.valueTestGyneco.IMC > 22)
-            this.resultRisk += 20;
-        if (this.valueTestGyneco.IMC > 17)
-            this.resultRisk += 0;
-        if (this.valueTestGyneco.IMC < 17)
-            this.resultRisk += 50;
-        if (this.valueTestGyneco.Work == 1) {
-            if (this.valueTestGyneco.timeTravel > 90)
-                this.resultRisk += 2;
-            if (this.valueTestGyneco.standingWork == 1)
-                this.resultRisk += 2;
-            if (this.valueTestGyneco.nbWork > 10)
-                this.resultRisk += 2;
-        }
-        if (this.resultRisk >= 200)
-            this.result.riskAssment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
-        else if (this.resultRisk >= 50)
-            this.result.riskAssment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
-        else if (this.resultRisk >= 20)
-            this.result.riskAssment = "D'apres vos réponses vous présentez une grossesse à risque.";
-        else
-            this.result.riskAssment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
-        if (this.valueTestGyneco.age < 42)
-            this.risk.push({ text: "A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale" });
-        else if (this.valueTestGyneco.age > 42)
-            this.risk.push({ text: "A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale" });
-        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push({ text: "Vous fumez, ce qui peut entrainer de nombreuses complications." });
-        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push({ text: "Vous fumez, ce qui peut entrainer de nombreuses complications." });
-        else if (this.valueTestGyneco.smoke == 1)
-            this.risk.push({ text: "Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse." });
-        if (this.valueTestGyneco.bigChild == 1)
-            this.risk.push({ text: "Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse." });
-        if (this.valueTestGyneco.premaChild == 0 && this.valueTestGyneco.smallChild == 1)
-            this.risk.push({ text: "Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %" });
-        if (this.valueTestGyneco.nbFausseCouche >= 3)
-            this.risk.push({ text: "Vous avez un nombre élevé de fausse couches" });
-        if (this.valueTestGyneco.IMG)
-            this.risk.push({ text: "Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive" });
-        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0)
-            this.risk.push({ text: "Vous consommez de l'alcool" });
-        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push({ text: "Stoppez votre consommation d'alcool !" });
-        if (this.valueTestGyneco.alcool >= 10 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push({ text: "Vous consommez une quantité d'alcool importante" });
-        if (this.valueTestGyneco.epilepsy == 1)
-            this.risk.push({ text: "Votre epilepsie" });
-        if (this.valueTestGyneco.phlebite == 1)
-            this.risk.push({ text: "Votre antécédent de phlébite" });
-        if (this.valueTestGyneco.highBloodPresure == 1)
-            this.risk.push({ text: "Votre hypertension" });
-        if (this.valueTestGyneco.IMC < 18.5)
-            this.risk.push({ text: "Votre MAIGREUR" });
-        else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
-            this.risk.push({ text: "Votre obésité" });
-        else if (this.valueTestGyneco.IMC > 40)
-            this.risk.push({ text: "Votre obésité massive" });
-        if (this.valueTestGyneco.nbWork > 10 && this.valueTestGyneco.nbWork <= 12)
-            this.risk.push({ text: "Votre nombre d'heure de travail est élevé." });
-        if (this.valueTestGyneco.nbWork > 12)
-            this.risk.push({ text: "Votre nombre d'heure de travail est vraiment très élevé" });
-        if (this.valueTestGyneco.timeTravel > 90)
-            this.risk.push({ text: "Votre temps de trajet pour aller au travail est élevé" });
-        if (this.valueTestGyneco.standingWork == 1)
-            this.risk.push({ text: "Vous travaillez debout plus de 6 heures par jour" });
-        console.log(this.risk);
-    };
-    ResultPage.prototype.definePositif = function () {
-        if (this.valueTestGyneco.feelingPregnant == 1)
-            this.result.positif.push("Félicitation vous êtes enceinte !");
-        if (this.valueTestGyneco.child == 0 && this.valueTestGyneco.feelingPregnant == 1)
-            this.result.positif.push("Félicitation vous allez avoir votre premier enfant");
-        if (this.valueTestGyneco.age < 38)
-            this.result.positif.push("Vous avez le bon l'âge optimal pour faire un enfant");
-        else
-            this.result.positif.push("Être plus âgée pour élever ses enfants est ausi un gage de maturité !");
-        if (this.valueTestGyneco.IMG == 1)
-            this.result.positif.push("La plus grande partie des anomalies foetales sont des accidents et leur récidive est rare");
-        if (!this.valueTestGyneco.work)
-            this.result.positif.push("Vous ne travaillez pas, vous pouvez donc prendre le temps de vous occuper de vous et préparer la venue de votre enfant");
-    };
-    ResultPage.prototype.defineRisk = function () {
-        if (this.valueTestGyneco.age < 42)
-            this.risk.push("A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale");
-        else if (this.valueTestGyneco.age > 42)
-            this.risk.push("A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale");
-        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
-        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
-        else if (this.valueTestGyneco.smoke == 1)
-            this.risk.push("Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse.");
-        if (this.valueTestGyneco.bigChild == 1)
-            this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");
-        if (this.valueTestGyneco.premaChild == 0 && this.valueTestGyneco.smallChild == 1)
-            this.risk.push("Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %");
-        if (this.valueTestGyneco.nbFausseCouche >= 3)
-            this.risk.push("Vous avez un nombre élevé de fausse couches");
-        if (this.valueTestGyneco.IMG)
-            this.risk.push("Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive");
-        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0)
-            this.risk.push("Vous consommez de l'alcool");
-        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push("Stoppez votre consommation d'alcool !");
-        if (this.valueTestGyneco.alcool >= 10 && this.valueTestGyneco.pregnant == 1)
-            this.risk.push("Vous consommez une quantité d'alcool importante");
-        if (this.valueTestGyneco.epilepsy == 1)
-            this.risk.push("Votre epilepsie");
-        if (this.valueTestGyneco.phlebite == 1)
-            this.risk.push("Votre antécédent de phlébite");
-        if (this.valueTestGyneco.highBloodPresure == 1)
-            this.risk.push("Votre hypertension");
-        if (this.valueTestGyneco.IMC < 18.5)
-            this.risk.push("Votre MAIGREUR");
-        else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
-            this.risk.push("Votre obésité");
-        else if (this.valueTestGyneco.IMC > 40)
-            this.risk.push("Votre obésité massive");
-        if (this.valueTestGyneco.nbWork > 10 && this.valueTestGyneco.nbWork <= 12)
-            this.risk.push("Votre nombre d'heure de travail est élevé.");
-        if (this.valueTestGyneco.nbWork > 12)
-            this.risk.push("Votre nombre d'heure de travail est vraiment très élevé");
-        if (this.valueTestGyneco.timeTravel > 90)
-            this.risk.push("Votre temps de trajet pour aller au travail est élevé");
-        if (this.valueTestGyneco.standingWork == 1)
-            this.risk.push("Vous travaillez debout plus de 6 heures par jour");
-    };
-    ResultPage.prototype.defineConseil = function () {
-        if (this.valueTestGyneco.smoke == 1 && this.valueTestGyneco.pregnant == 1)
-            this.result.conseil.push("Arrêtez de fumer !");
-        else if (this.valueTestGyneco.smoke == 1)
-            this.result.conseil.push("Arrêtez de fumer avant d'entammer une grossesse !");
-        if (this.valueTestGyneco.bigChild)
-            this.result.conseil.push("Effectuez un dépistage de diabète de grossesse.");
-        if (this.valueTestGyneco.bigChild == 1 && this.valueTestGyneco.pregnantDiabete == 1)
-            this.result.conseil.push("Effectuez un dépistage de diabète de grossesse");
-        if (this.valueTestGyneco.nbFausseCouche >= 3)
-            this.result.conseil.push("Effectuez un bilan de fausse couche à répétition et bénéficiez d'une prise en charge adaptée en fonction des résultats de ce bilan.");
-        if (this.valueTestGyneco.IMG == 1)
-            this.result.conseil.push("Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale.");
-        if (this.valueTestGyneco.alcool >= 10 && this.valueTestGyneco.pregnant == 1)
-            this.result.conseil.push("Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool");
-        if (this.valueTestGyneco.alcool < 10 && this.valueTestGyneco.alcool > 0 && this.valueTestGyneco.pregnant == 1)
-            this.result.conseil.push("Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!");
-        if (this.valueTestGyneco.medicament1 == 1)
-            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
-        if (this.valueTestGyneco.medicament2 == 1)
-            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des anticoagulent et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
-        if (this.valueTestGyneco.medicament3 == 1)
-            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
-        if (this.valueTestGyneco.medicament4 == 1)
-            this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
-        if (this.valueTestGyneco.medicament5 == 1)
-            this.result.conseil.push("");
-        if (this.valueTestGyneco.IMC < 18.5)
-            this.result.conseil.push("Alimentez-vous correctement");
-        else if (this.valueTestGyneco.IMC > 40)
-            this.result.conseil.push("Vous devez être prise en charge dans un centre spécialisé.");
-        if (this.valueTestGyneco.nbWork > 10)
-            this.result.conseil.push("Essayer d'aménager vos heures de travail");
-        if (this.valueTestGyneco.timeTravel > 90)
-            this.result.conseil.push("Essayer d'aménager vos heures de présence au travail pour diminuer les temps de trajets");
-        if (this.valueTestGyneco.standingWork == 1)
-            this.result.conseil.push("Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour");
+            if (this.valueTestGyneco[23].answerUser == 1)
+            {
+                if (this.valueTestGyneco.medicament1 == 1)
+                    this.resultRisk += 200;
+                if (this.valueTestGyneco.medicament2 == 1)
+                    this.resultRisk += 200;
+                if (this.valueTestGyneco.medicament3 == 1)
+                    this.resultRisk += 2;
+                if (this.valueTestGyneco.medicament4 == 1)
+                    this.resultRisk += 200;
+                if (this.valueTestGyneco.medicament5 == 1)
+                    this.resultRisk += 2;
+            }
+            if (this.valueTestGyneco.IMC > 28)
+                this.resultRisk += 50;
+            if (this.valueTestGyneco.IMC > 22)
+                this.resultRisk += 20;
+            if (this.valueTestGyneco.IMC > 17)
+                this.resultRisk += 0;
+            if (this.valueTestGyneco.IMC < 17)
+                this.resultRisk += 50;
+        
+            if (this.valueTestGyneco[27].answerUser == 1)
+            {
+                if (this.valueTestGyneco[29].answerUser > 90)
+                    this.resultRisk += 2;
+                if (this.valueTestGyneco[30].answerUser == 1)
+                    this.resultRisk += 2;
+                if (this.valueTestGyneco[28].answerUser > 10)
+                    this.resultRisk += 2;
+            }
+            if (this.resultRisk >= 200)
+                this.result.riskAssment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
+            else if (this.resultRisk >= 50)
+                this.result.riskAssment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
+            else if (this.resultRisk >= 20)
+                this.result.riskAssment = "D'apres vos réponses vous présentez une grossesse à risque.";
+            else
+                this.result.riskAssment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
+         
+                if (this.valueTestGyneco[0].answerUser < 42)
+                     this.risk.push({text:"A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale"});
+                else if (this.valueTestGyneco[0].answerUser > 42)
+                     this.risk.push({text:"A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"});
+                if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+                     this.risk.push({text:"Vous fumez, ce qui peut entrainer de nombreuses complications."});
+                if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+                     this.risk.push({text:"Vous fumez, ce qui peut entrainer de nombreuses complications."});
+                else if (this.valueTestGyneco[5].answerUser == 1)
+                   this.risk.push({text:"Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse."});
+                if (this.valueTestGyneco[8].answerUser == 1)
+                    this.risk.push({text:"Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."});
+                if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco.smallChild == 1)
+                    this.risk.push({text:"Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %"});
+                if (this.valueTestGyneco[17].answerUser >= 3)
+                    this.risk.push({text:"Vous avez un nombre élevé de fausse couches"});
+                if (this.valueTestGyneco.IMG)
+                    this.risk.push({text:"Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive"});
+                if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0)
+                    this.risk.push({text:"Vous consommez de l'alcool"});
+                if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+                    this.risk.push({text:"Stoppez votre consommation d'alcool !"});
+                if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+                    this.risk.push({text:"Vous consommez une quantité d'alcool importante"});
+                if (this.valueTestGyneco.epilepsy == 1)
+                    this.risk.push({text:"Votre epilepsie"});
+                if (this.valueTestGyneco[20].answerUser == 1)
+                    this.risk.push({text:"Votre antécédent de phlébite"});
+                if (this.valueTestGyneco[21].answerUser == 1)
+                    this.risk.push({text:"Votre hypertension"});
+        
+                if (this.valueTestGyneco.IMC < 18.5)
+                    this.risk.push({text:"Votre MAIGREUR"});
+                else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
+                    this.risk.push({text:"Votre obésité"});
+                else if (this.valueTestGyneco.IMC > 40)
+                    this.risk.push({text:"Votre obésité massive"});
+                
+                if (this.valueTestGyneco[28].answerUser > 10 && this.valueTestGyneco[28].answerUser <= 12)
+                    this.risk.push({text:"Votre nombre d'heure de travail est élevé."});
+                if (this.valueTestGyneco[28].answerUser > 12)
+                    this.risk.push({text:"Votre nombre d'heure de travail est vraiment très élevé"});
+                if (this.valueTestGyneco[29].answerUser > 90)
+                    this.risk.push({text:"Votre temps de trajet pour aller au travail est élevé"});
+                if (this.valueTestGyneco[30].answerUser == 1)
+                    this.risk.push({text:"Vous travaillez debout plus de 6 heures par jour"});
+                console.log(this.risk);
+          }
+             definePositif() {
+        
+                if (this.valueTestGyneco.feelingPregnant == 1)
+                    this.result.positif.push("Félicitation vous êtes enceinte !");
+                if (this.valueTestGyneco[6].answerUser == 0 && this.valueTestGyneco.feelingPregnant == 1)
+                     this.result.positif.push("Félicitation vous allez avoir votre premier enfant");
+                if (this.valueTestGyneco[0].answerUser < 38)
+                     this.result.positif.push("Vous avez le bon l'âge optimal pour faire un enfant");
+                else
+                     this.result.positif.push("Être plus âgée pour élever ses enfants est ausi un gage de maturité !");
+                if (this.valueTestGyneco.IMG == 1)
+                    this.result.positif.push("La plus grande partie des anomalies foetales sont des accidents et leur récidive est rare");
+                if (!this.valueTestGyneco[27].answerUser)
+                     this.result.positif.push("Vous ne travaillez pas, vous pouvez donc prendre le temps de vous occuper de vous et préparer la venue de votre enfant");
+             }
+        
+             defineRisk() {
+        
+                if (this.valueTestGyneco[0].answerUser < 42)
+                     this.risk.push("A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale")
+                else if (this.valueTestGyneco0[0].answerUser > 42)
+                     this.risk.push("A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale");
+                if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+                     this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
+                if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+                     this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
+                else if (this.valueTestGyneco[5].answerUser == 1)
+                   this.risk.push("Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse.");
+                if (this.valueTestGyneco[8].answerUser == 1)
+                    this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");
+                if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco.smallChild == 1)
+                    this.risk.push("Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %");
+                if (this.valueTestGyneco[17].answerUser >= 3)
+                    this.risk.push("Vous avez un nombre élevé de fausse couches");
+                if (this.valueTestGyneco.IMG)
+                    this.risk.push("Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive");
+                if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0)
+                    this.risk.push("Vous consommez de l'alcool");
+                if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+                    this.risk.push("Stoppez votre consommation d'alcool !");
+                if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+                    this.risk.push("Vous consommez une quantité d'alcool importante");
+                if (this.valueTestGyneco.epilepsy == 1)
+                    this.risk.push("Votre epilepsie");
+                if (this.valueTestGyneco[20].answerUser == 1)
+                    this.risk.push("Votre antécédent de phlébite");
+                if (this.valueTestGyneco[21].answerUser == 1)
+                    this.risk.push("Votre hypertension");
+        
+                if (this.valueTestGyneco.IMC < 18.5)
+                    this.risk.push("Votre MAIGREUR");
+                else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
+                    this.risk.push("Votre obésité");
+                else if (this.valueTestGyneco.IMC > 40)
+                    this.risk.push("Votre obésité massive");
+                
+                if (this.valueTestGyneco[28].answerUser > 10 && this.valueTestGyneco[28].answerUser <= 12)
+                    this.risk.push("Votre nombre d'heure de travail est élevé.");
+                if (this.valueTestGyneco[28].answerUser > 12)
+                    this.risk.push("Votre nombre d'heure de travail est vraiment très élevé");
+                if (this.valueTestGyneco[29].answerUser > 90)
+                    this.risk.push("Votre temps de trajet pour aller au travail est élevé");
+                if (this.valueTestGyneco[30].answerUser == 1)
+                    this.risk.push("Vous travaillez debout plus de 6 heures par jour");
+             }
+        
+            defineConseil() {
+            
+                if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+                     this.result.conseil.push("Arrêtez de fumer !");
+                else if (this.valueTestGyneco[5].answerUser == 1)
+                   this.result.conseil.push("Arrêtez de fumer avant d'entammer une grossesse !");
+                if (this.valueTestGyneco[8].answerUser)
+                    this.result.conseil.push("Effectuez un dépistage de diabète de grossesse.");
+                if (this.valueTestGyneco[8].answerUser == 1 && this.valueTestGyneco[13].answerUser == 1)
+                    this.result.conseil.push("Effectuez un dépistage de diabète de grossesse");
+                if (this.valueTestGyneco[17].answerUser >= 3)
+                    this.result.conseil.push("Effectuez un bilan de fausse couche à répétition et bénéficiez d'une prise en charge adaptée en fonction des résultats de ce bilan.");
+                if (this.valueTestGyneco.IMG == 1)
+                    this.result.conseil.push("Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale.");
+                if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+                    this.result.conseil.push("Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool");
+                if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+                    this.result.conseil.push("Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!");
+                
+                if (this.valueTestGyneco.medicament1 == 1)
+                    this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+                if (this.valueTestGyneco.medicament2 == 1)
+                    this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des anticoagulent et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+                if (this.valueTestGyneco.medicament3 == 1)
+                    this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+                if (this.valueTestGyneco.medicament4 == 1)
+                    this.result.conseil.push("Vous devez être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée.");
+                if (this.valueTestGyneco.medicament5 == 1)
+                    this.result.conseil.push("");
+        
+                if (this.valueTestGyneco.IMC < 18.5)
+                    this.result.conseil.push("Alimentez-vous correctement");
+                else if (this.valueTestGyneco.IMC > 40)
+                    this.result.conseil.push("Vous devez être prise en charge dans un centre spécialisé.");
+                
+                if (this.valueTestGyneco[28].answerUser > 10)
+                     this.result.conseil.push("Essayer d'aménager vos heures de travail");
+                if (this.valueTestGyneco[29].answerUser > 90)
+                    this.result.conseil.push("Essayer d'aménager vos heures de présence au travail pour diminuer les temps de trajets");
+                if (this.valueTestGyneco[30].answerUser == 1)
+                    this.result.conseil.push("Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour");
+        */
     };
     return ResultPage;
 }());
@@ -2118,9 +2141,10 @@ ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-slides>\n	<ion-slide *ngFor="let r of risk">\n		<h1>{{r.text}}</h1>\n	</ion-slide>\n</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
 ], ResultPage);
 
+var _a, _b;
 //# sourceMappingURL=result.js.map
 
 /***/ }),
@@ -2574,11 +2598,11 @@ var map = {
 		15
 	],
 	"../pages/step2/step2.module": [
-		322,
+		321,
 		14
 	],
 	"../pages/step20/step20.module": [
-		321,
+		322,
 		13
 	],
 	"../pages/step21/step21.module": [
@@ -2618,15 +2642,15 @@ var map = {
 		4
 	],
 	"../pages/step6/step6.module": [
-		334,
+		332,
 		3
 	],
 	"../pages/step7/step7.module": [
-		332,
+		333,
 		2
 	],
 	"../pages/step8/step8.module": [
-		333,
+		334,
 		1
 	],
 	"../pages/step9/step9.module": [
@@ -2657,6 +2681,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2669,8 +2694,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomePage = (function () {
-    function HomePage() {
+    function HomePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
         this.currentStep = 0;
         this.totalStep = 4;
         this.progressWidth = "0%";
@@ -2680,14 +2709,12 @@ var HomePage = (function () {
     }
     HomePage.prototype.ngOnInit = function () {
         var self = this;
-        console.log(0);
         this.activeLogoWrapper = true;
         setTimeout(function () {
             console.log(1);
             self.activeLogo = true;
         }, 500);
         setTimeout(function () {
-            console.log(2);
             self.activeLogoWrapper = false;
             self.activeWelcomeContent = true;
         }, 2500);
@@ -2702,12 +2729,13 @@ var HomePage = (function () {
                 label: "age en année",
                 nextStep: 2
             },
-            answerUser: "yes"
+            answerUser: 1
         });
         this.Question.push({
             idTable: 1,
             id: 2,
             idForm: "step2",
+            answerUser: 1,
             title: "Êtes-vous enceinte ?",
             type: "yesNoIdn",
             answerYes: {
@@ -2716,25 +2744,24 @@ var HomePage = (function () {
             },
             answerNo: {
                 label: "Non",
-                nextStep: 5
+                nextStep: 6
             },
             answerIdn: {
                 label: "Je ne sais pas",
                 nextStep: 3
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 2,
             id: 3,
+            answerUser: 1,
             idForm: "step3",
             title: "Quel est la date de vos dernière règle ?",
             type: "date",
             answer: {
                 label: "jj/mm/aaaa",
                 nextStep: 4
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 3,
@@ -2742,19 +2769,19 @@ var HomePage = (function () {
             idForm: "step4",
             title: "Est-ce une bonne nouvelle ?",
             type: "yesNoIdn",
+            answerUser: 1,
             answerYes: {
                 label: "Oui",
                 nextStep: 5
             },
             answerNo: {
                 label: "Non",
-                nextStep: 30
+                nextStep: 99
             },
             answerIdn: {
                 label: "Je ne sais pas",
                 nextStep: 30
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 4,
@@ -2762,6 +2789,7 @@ var HomePage = (function () {
             idForm: "step5",
             title: "QUESTIONNAIRE PSYCHO",
             type: "yesNo",
+            answerUser: 1,
             answerYes: {
                 label: "Oui",
                 nextStep: 6
@@ -2769,8 +2797,7 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 6
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 5,
@@ -2778,6 +2805,7 @@ var HomePage = (function () {
             idForm: "step5",
             title: "Fumez-vous ?",
             type: "yesNo",
+            answerUser: 1,
             answerYes: {
                 label: "Oui",
                 nextStep: 7
@@ -2785,12 +2813,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 7
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 6,
             id: 7,
+            answerUser: 1,
             idForm: "step6",
             title: "Avez-vous des enfants ?",
             type: "yesNo",
@@ -2801,24 +2829,24 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 18
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 7,
             id: 8,
+            answerUser: 1,
             idForm: "step7",
             title: "Combien avez-vous d'enfant ?",
             type: "number",
             answer: {
                 label: "nombre d'enfant",
                 nextStep: 9
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 8,
             id: 9,
+            answerUser: 1,
             idForm: "step8",
             title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
             type: "yesNo",
@@ -2829,24 +2857,24 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 11
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 9,
             id: 10,
+            answerUser: 1,
             idForm: "step9",
             title: "Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
             type: "number",
             answer: {
                 label: "nombre d'enfants",
                 nextStep: 11
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 10,
             id: 11,
+            answerUser: 1,
             idForm: "step10",
             title: "Avez-vous accouché d'enfant de moins de 2kg200 ?",
             type: "yesNo",
@@ -2857,12 +2885,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 13
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 11,
             id: 12,
+            answerUser: 1,
             idForm: "step11",
             title: "Votre enfant était il prématuré ?",
             type: "yesNo",
@@ -2873,12 +2901,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 13
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 12,
             id: 13,
+            answerUser: 1,
             idForm: "step12",
             title: "Avez-vous eu une prééclampsie ?",
             type: "yesNo",
@@ -2889,12 +2917,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 14
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 13,
             id: 14,
+            answerUser: 1,
             idForm: "step13",
             title: "Avez-vous un antécedent de diabète de grossesse ?",
             type: "yesNo",
@@ -2905,8 +2933,7 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 15
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 14,
@@ -2921,49 +2948,49 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 17
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 15,
             id: 16,
+            answerUser: 1,
             idForm: "step15",
             title: "Combien avez-vous eu de césarienne",
             type: "number",
             answer: {
                 label: "nombre de cesarienne",
                 nextStep: 17
-            },
-            answerUser: "yes"
+            }
         });
         // question select psycho
         this.Question.push({
             idTable: 17,
             id: 18,
+            answerUser: 1,
             idForm: "step17",
             title: "Combien de fausse couche avez-vous fait ?",
             type: "number",
             answer: {
                 label: "nombre",
                 nextStep: 19
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 18,
             id: 19,
+            answerUser: 1,
             idForm: "step18",
             title: "Combien de verres d'alcool buvez-vous par semaine ?",
             type: "number",
             answer: {
                 label: "nombre par semaine",
                 nextStep: 20
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 19,
             id: 20,
+            answerUser: 1,
             idForm: "step19",
             title: "Avez-vous une épilepsie ?",
             type: "yesNo",
@@ -2974,12 +3001,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 21
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 20,
             id: 21,
+            answerUser: 1,
             idForm: "step20",
             title: "Avez-vous déjà eu une phlébite ?",
             type: "yesNo",
@@ -2990,12 +3017,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 22
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 21,
             id: 22,
+            answerUser: 1,
             idForm: "step21",
             title: "Avez-vous de l'hypertension artérielle ?",
             type: "yesNo",
@@ -3006,12 +3033,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 netStep: 23
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 22,
             id: 23,
+            answerUser: 1,
             idForm: "step22",
             title: "Avez-vous du diabète ?",
             type: "yesNo",
@@ -3022,12 +3049,12 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 24
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 23,
             id: 24,
+            answerUser: 1,
             idForm: "step23",
             title: "Prenez vous des médicaments ?",
             type: "yesNo",
@@ -3038,33 +3065,32 @@ var HomePage = (function () {
             answerNo: {
                 label: "Non",
                 nextStep: 26
-            },
-            answerUser: "yes"
+            }
         });
         //Question select medicament
         this.Question.push({
             idTable: 24,
             id: 25,
+            answerUser: 1,
             idForm: "step",
             title: "Selectionnez les médicaments que vous prenez",
             type: "number",
             answer: {
                 label: "",
                 nextStep: 26
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 25,
             id: 26,
+            answerUser: 1,
             idForm: "step25",
             title: "Quelle est votre taille (en cm) ?",
             type: "number",
             answer: {
                 label: "en cm",
                 nextStep: 27
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 26,
@@ -3075,12 +3101,12 @@ var HomePage = (function () {
             answer: {
                 label: "en kg",
                 nextStep: 28
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 27,
             id: 28,
+            answerUser: 1,
             idForm: "step27",
             title: "Travaillez-vous ?",
             type: "yesNo",
@@ -3090,51 +3116,49 @@ var HomePage = (function () {
             },
             answerNo: {
                 label: "Non",
-                nextStep: 31
-            },
-            answerUser: "yes"
+                nextStep: 99
+            }
         });
         this.Question.push({
             idTable: 28,
             id: 29,
+            answerUser: 1,
             idForm: "step28",
             title: "Combien d'heures de travail effectuez-vous par jour ?",
             type: "number",
             answer: {
                 label: "en heure",
                 nextStep: 30
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 29,
             id: 30,
+            answerUser: 1,
             idForm: "step29",
             title: "Quel est votre temps de trajet par jour (en minute) ?",
             type: "number",
             answer: {
                 label: "en minute",
                 nextStep: 31
-            },
-            answerUser: "yes"
+            }
         });
         this.Question.push({
             idTable: 30,
             id: 31,
+            answerUser: 1,
             idForm: "step30",
             title: "Travaillez-vous debout plus de 6 heures par jour ?",
             type: "yesNo",
             answerYes: {
                 label: "Oui",
-                nextStep: 32
+                nextStep: 99
             },
             answerNo: {
                 label: "Non",
-                nextStep: 32
-            },
-            answerUser: "yes"
+                nextStep: 99
+            }
         });
-        console.log(this.Question[0].type);
         //this.QuestionText.psychoTest1 = "Vous et votre fertilité";
         //this.QuestionText.psychoTest1_1 = "recours à l'aide médicale à la procréation ";
         //this.QuestionText.psychoTest1_2 = "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse";
@@ -3182,58 +3206,75 @@ var HomePage = (function () {
     };
     HomePage.prototype.nextForm = function (question) {
         this.questionForm = question;
-        if (this.questionForm.type == "number")
+        if (this.questionForm.type == "number") {
             this.currentStep = this.questionForm.answer.nextStep;
+            this.Question[this.questionForm.idTable].answerUser = this.number;
+        }
         else if (this.questionForm.type == "yesNoIdn") {
-            if (this.yes)
+            if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
-            else if (this.no)
+                this.Question[this.questionForm.idTable].answerUser = 1;
+            }
+            else if (this.no) {
                 this.currentStep = this.questionForm.answerNo.nextStep;
-            else if (this.idn)
+                this.Question[this.questionForm.idTable].answerUser = 0;
+            }
+            else if (this.idn) {
                 this.currentStep = this.questionForm.answerIdn.nextStep;
-            this.yes = false;
-            this.no = false;
-            this.idn = false;
+                this.Question[this.questionForm.idTable].answerUser = 2;
+            }
         }
         else if (this.questionForm.type == "yesNo") {
-            if (this.yes)
+            if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
-            if (this.no)
+                this.Question[this.questionForm.idTable].answerUser = 1;
+            }
+            if (this.no) {
                 this.currentStep = this.questionForm.answerNo.nextStep;
-            this.yes = false;
-            this.no = false;
+                this.Question[this.questionForm.idTable].answerUser = 0;
+            }
         }
-        else if (this.questionForm.type == "date")
+        else if (this.questionForm.type == "date") {
             this.currentStep = this.questionForm.answer.nextStep;
-        this.number = "";
-        if (this.currentStep > 0) {
-            this.slides.slideTo(this.currentStep, 350);
-            this.updateProgressBar();
+            this.Question[this.questionForm.idTable].answerUser = this.date;
         }
-        this.currentStep = -1;
+        this.number = "";
+        this.yes = false;
+        this.no = false;
+        this.idn = false;
+        this.date = 0;
+        this.slides.slideTo(this.currentStep, 350);
+        this.updateProgressBar();
+        if (this.currentStep == 99) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__result_result__["a" /* ResultPage */], {
+                userParams: this.Question
+            });
+        }
     };
     HomePage.prototype.next = function () {
         this.currentStep++;
         this.slides.slideTo(this.currentStep, 350);
-        this.updateProgressBar();
+        //this.updateProgressBar();
     };
     HomePage.prototype.prev = function () {
-        this.currentStep--;
-        this.slides.slideTo(this.currentStep, 350);
-        this.updateProgressBar();
+        //    this.currentStep--;
+        //  this.slides.slideTo(this.currentStep, 350);
+        // this.updateProgressBar();
     };
     return HomePage;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
 ], HomePage.prototype, "slides", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button> -->\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no\n          " [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
-    })
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button> -->\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no\n          " [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date" name="date" [(ngModel)]="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object])
 ], HomePage);
 
+var _a, _b, _c;
 // export class HomePage {
 //
 // 	QuestionText:any;
@@ -3646,8 +3687,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step18/step18.module#Step18PageModule', name: 'Step18Page', segment: 'step18', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step19/step19.module#Step19PageModule', name: 'Step19Page', segment: 'step19', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step2-1/step2-1.module#Step2_1PageModule', name: 'Step2_1Page', segment: 'step2-1', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step20/step20.module#Step20PageModule', name: 'Step20Page', segment: 'step20', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step2/step2.module#Step2PageModule', name: 'Step2Page', segment: 'step2', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step20/step20.module#Step20PageModule', name: 'Step20Page', segment: 'step20', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step21/step21.module#Step21PageModule', name: 'Step21Page', segment: 'step21', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step22/step22.module#Step22PageModule', name: 'Step22Page', segment: 'step22', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step23/step23.module#Step23PageModule', name: 'Step23Page', segment: 'step23', priority: 'low', defaultHistory: [] },
@@ -3657,9 +3698,9 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step3/step3.module#Step3PageModule', name: 'Step3Page', segment: 'step3', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step4/step4.module#Step4PageModule', name: 'Step4Page', segment: 'step4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step5/step5.module#Step5PageModule', name: 'Step5Page', segment: 'step5', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step6/step6.module#Step6PageModule', name: 'Step6Page', segment: 'step6', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step7/step7.module#Step7PageModule', name: 'Step7Page', segment: 'step7', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step8/step8.module#Step8PageModule', name: 'Step8Page', segment: 'step8', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step6/step6.module#Step6PageModule', name: 'Step6Page', segment: 'step6', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step9/step9.module#Step9PageModule', name: 'Step9Page', segment: 'step9', priority: 'low', defaultHistory: [] }
                 ]
             }),

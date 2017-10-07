@@ -83,7 +83,7 @@
       
       <ion-slide *ngIf="question.type == 'date'">
         <h3>{{question.title}}</h3>
-        <input type="date">
+        <input type="date" name="date" [(ngModel)]="date">
       </ion-slide>
          <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>
       </form>
