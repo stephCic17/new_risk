@@ -20,6 +20,7 @@ export class HomePage {
   activeLogo = false;
   activeLogoWrapper = false;
   activeWelcomeContent = false;
+  isInitialized = false;
   Question:any;
   number:any;
   yes:any;
@@ -27,7 +28,7 @@ export class HomePage {
   idn:any;
   date:any;
   questionForm:any;
-    
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     }
@@ -36,7 +37,6 @@ export class HomePage {
    this.activeLogoWrapper = true;
 
     setTimeout(function() {
-      console.log(1);
       self.activeLogo = true;
     }, 500);
 
@@ -58,17 +58,17 @@ export class HomePage {
               label: "age en année",
               nextStep: 2
             },
-          answerUser: 1       
+          answerUser: 1
         });
       this.Question.push(
         {
           idTable: 1,
           id: 2,
           idForm: "step2",
-          answerUser: 1,        
+          answerUser: 1,
           title: "Êtes-vous enceinte ?",
           type: "yesNoIdn",
-          answerYes: 
+          answerYes:
             {
               label: "Oui",
               nextStep: 3
@@ -78,7 +78,7 @@ export class HomePage {
               label: "Non",
               nextStep: 6
             },
-          answerIdn: 
+          answerIdn:
             {
               label: "Je ne sais pas",
               nextStep: 3
@@ -89,14 +89,14 @@ export class HomePage {
         {
           idTable: 2,
           id: 3,
-          answerUser: 1, 
+          answerUser: 1,
           idForm: "step3",
           title: "Quel est la date de vos dernière règle ?",
           type: "date",
           answer: {
             label: "jj/mm/aaaa",
             nextStep: 4
-          }        
+          }
           });
       this.Question.push(
         {
@@ -105,7 +105,7 @@ export class HomePage {
           idForm: "step4",
           title:"Est-ce une bonne nouvelle ?",
           type:"yesNoIdn",
-          answerUser: 1,       
+          answerUser: 1,
              answerYes:
             {
               label: "Oui",
@@ -120,7 +120,7 @@ export class HomePage {
             {
               label: "Je ne sais pas",
               nextStep: 30
-            } 
+            }
         });
       this.Question.push(
         {
@@ -139,9 +139,9 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 6
-            }       
+            }
         });
-     
+
       this.Question.push(
         {
           idTable: 5,
@@ -149,7 +149,7 @@ export class HomePage {
           idForm: "step5",
           title:"Fumez-vous ?",
           type:"yesNo",
-          answerUser: 1, 
+          answerUser: 1,
           answerYes:
             {
               label: "Oui",
@@ -178,13 +178,13 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 18
-            }      
+            }
         });
       this.Question.push(
         {
           idTable: 7,
           id: 8,
-          answerUser: 1, 
+          answerUser: 1,
           idForm: "step7",
           title:"Combien avez-vous d'enfant ?",
           type: "number",
@@ -192,13 +192,13 @@ export class HomePage {
             {
               label: "nombre d'enfant",
               nextStep: 9
-            }      
+            }
         });
       this.Question.push(
         {
           idTable: 8,
           id: 9,
-          answerUser: 1, 
+          answerUser: 1,
           idForm: "step8",
           title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
           type: "yesNo",
@@ -211,13 +211,13 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 11
-            }      
+            }
         });
       this.Question.push(
         {
           idTable: 9,
           id: 10,
-          answerUser: 1, 
+          answerUser: 1,
           idForm: "step9",
           title:"Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
           type: "number",
@@ -225,13 +225,13 @@ export class HomePage {
             {
               label: "nombre d'enfants",
               nextStep: 11
-            }      
+            }
         });
       this.Question.push(
         {
           idTable: 10,
           id: 11,
-          answerUser: 1, 
+          answerUser: 1,
           idForm: "step10",
           title:"Avez-vous accouché d'enfant de moins de 2kg200 ?",
           type: "yesNo",
@@ -244,7 +244,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 13
-            }      
+            }
         });
       this.Question.push(
         {
@@ -263,7 +263,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 13
-            }      
+            }
         });
       this.Question.push(
         {
@@ -282,7 +282,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 14
-            }     
+            }
         });
       this.Question.push(
         {
@@ -301,7 +301,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 15
-            }      
+            }
         });
       this.Question.push(
         {
@@ -333,7 +333,7 @@ export class HomePage {
             {
               label: "nombre de cesarienne",
               nextStep: 17
-            }      
+            }
         });
       // question select psycho
       this.Question.push(
@@ -348,7 +348,7 @@ export class HomePage {
             {
               label: "nombre",
               nextStep: 19
-            }      
+            }
         });
       this.Question.push(
         {
@@ -362,7 +362,7 @@ export class HomePage {
             {
               label: "nombre par semaine",
               nextStep: 20
-            }     
+            }
         });
       this.Question.push(
         {
@@ -381,7 +381,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 21
-            }     
+            }
         });
       this.Question.push(
         {
@@ -400,7 +400,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 22
-            }     
+            }
         });
       this.Question.push(
         {
@@ -419,7 +419,7 @@ export class HomePage {
             {
               label: "Non",
               netStep: 23
-            }     
+            }
         });
       this.Question.push(
         {
@@ -438,7 +438,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 24
-            }     
+            }
         });
       this.Question.push(
         {
@@ -457,7 +457,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 26
-            }     
+            }
         });
       //Question select medicament
       this.Question.push(
@@ -472,8 +472,8 @@ export class HomePage {
             {
               label: "",
               nextStep: 26
-            }    
-        }); 
+            }
+        });
       this.Question.push(
         {
           idTable: 25,
@@ -486,7 +486,7 @@ export class HomePage {
             {
               label: "en cm",
               nextStep: 27
-            }     
+            }
         });
       this.Question.push(
         {
@@ -499,7 +499,7 @@ export class HomePage {
             {
               label: "en kg",
               nextStep: 28
-            }     
+            }
         });
       this.Question.push(
         {
@@ -518,7 +518,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 99
-            }      
+            }
         });
       this.Question.push(
         {
@@ -532,7 +532,7 @@ export class HomePage {
             {
               label: "en heure",
               nextStep: 30
-            }     
+            }
         });
       this.Question.push(
         {
@@ -546,7 +546,7 @@ export class HomePage {
             {
               label: "en minute",
               nextStep: 31
-            }      
+            }
         });
       this.Question.push(
         {
@@ -565,7 +565,7 @@ export class HomePage {
             {
               label: "Non",
               nextStep: 99
-            }     
+            }
         });
 
       //this.QuestionText.psychoTest1 = "Vous et votre fertilité";
@@ -598,21 +598,22 @@ export class HomePage {
        //this.QuestionText.psychoTest4_6 = "Phobie";
        //this.QuestionText.psychoTest4_7 = "trouble bipolaires";
        //this.QuestionText.psychoTest4_8 = "hospitalisation dans un service psychiatrique";
- 
+
 
   }
 
   init() {
+    this.isInitialized = true;
     this.currentStep = this.slides.getActiveIndex();
     this.totalStep = this.slides.length();
 
-//type 1 = number
-// type 2 = Oui non
-//type 3 = oui non je ne sais pas
-// type 4 = select
-// type 5 = date
+    //type 1 = number
+    // type 2 = Oui non
+    //type 3 = oui non je ne sais pas
+    // type 4 = select
+    // type 5 = date
 
-      
+
   }
 
   slideChanged() {
@@ -625,9 +626,9 @@ export class HomePage {
   }
 
   nextForm(question) {
-  
+
     this.questionForm = question;
-  
+
     if (this.questionForm.type == "number")
     {
       this.currentStep = this.questionForm.answer.nextStep;
@@ -661,10 +662,10 @@ export class HomePage {
       }
       if (this.no)
        {
-        this.currentStep = this.questionForm.answerNo.nextStep;    
+        this.currentStep = this.questionForm.answerNo.nextStep;
         this.Question[this.questionForm.idTable].answerUser = 0;
        }
-    }  
+    }
     else if (this.questionForm.type == "date")
      {
         this.currentStep = this.questionForm.answer.nextStep;
@@ -677,15 +678,17 @@ export class HomePage {
     this.date = 0;
     this.slides.slideTo(this.currentStep, 350);
     this.updateProgressBar();
-    
+
     if (this.currentStep == 99) {
       this.navCtrl.push(ResultPage, {
                userParams: this.Question
-             }); 
+             });
     }
 
   }
   next(){
+      if(!this.isInitialized)
+        this.init();
       this.currentStep++;
        this.slides.slideTo(this.currentStep, 350);
       //this.updateProgressBar();
