@@ -596,12 +596,8 @@ export class HomePage {
   }
 
   nextForm(question) {
-    console.log(question);
-
+  
     this.questionForm = question;
-    console.log(this.Question);
-    console.log(this.questionForm);
-    console.log("number", this.number);
     if (this.questionForm.type == "number")
     {
       this.currentStep = this.questionForm.answer.nextStep;

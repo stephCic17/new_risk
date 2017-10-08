@@ -26568,3 +26568,15 @@ input:not([type="radio"]):focus {
 .visible {
   opacity: 1;
 }
+
+page-result .risk {
+  color: red;
+}
+
+page-result .conseil {
+  color: blue;
+}
+
+page-result .positif {
+  color: green;
+}

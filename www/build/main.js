@@ -2304,11 +2304,11 @@ var map = {
 		17
 	],
 	"../pages/step19/step19.module": [
-		320,
+		319,
 		16
 	],
 	"../pages/step2-1/step2-1.module": [
-		319,
+		320,
 		15
 	],
 	"../pages/step2/step2.module": [
@@ -2442,12 +2442,12 @@ var HomePage = (function () {
                 label: "age en année",
                 nextStep: 2
             },
-            answerUser: 1
+            answerUser: -1
         });
         this.Question.push({
             idTable: 1,
             id: 2,
-            answerUser: 1,
+            answerUser: -1,
             title: "Êtes-vous enceinte ?",
             type: "yesNoIdn",
             answerYes: {
@@ -2466,7 +2466,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 2,
             id: 3,
-            answerUser: 1,
+            answerUser: -1,
             title: "Quel est la date de vos dernière règle ?",
             type: "date",
             answer: {
@@ -2479,7 +2479,7 @@ var HomePage = (function () {
             id: 4,
             title: "Est-ce une bonne nouvelle ?",
             type: "yesNoIdn",
-            answerUser: 1,
+            answerUser: -1,
             answerYes: {
                 label: "Oui",
                 nextStep: 5
@@ -2498,7 +2498,7 @@ var HomePage = (function () {
             id: 5,
             title: "QUESTIONNAIRE PSYCHO",
             type: "yesNo",
-            answerUser: 1,
+            answerUser: -1,
             answerYes: {
                 label: "Oui",
                 nextStep: 6
@@ -2513,7 +2513,7 @@ var HomePage = (function () {
             id: 6,
             title: "Fumez-vous ?",
             type: "yesNo",
-            answerUser: 1,
+            answerUser: -1,
             answerYes: {
                 label: "Oui",
                 nextStep: 7
@@ -2526,7 +2526,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 6,
             id: 7,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous des enfants ?",
             type: "yesNo",
             answerYes: {
@@ -2541,7 +2541,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 7,
             id: 8,
-            answerUser: 1,
+            answerUser: -1,
             title: "Combien avez-vous d'enfant ?",
             type: "number",
             answer: {
@@ -2552,7 +2552,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 8,
             id: 9,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
             type: "yesNo",
             answerYes: {
@@ -2567,7 +2567,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 9,
             id: 10,
-            answerUser: 1,
+            answerUser: -1,
             title: "Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
             type: "number",
             answer: {
@@ -2578,7 +2578,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 10,
             id: 11,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous accouché d'enfant de moins de 2kg200 ?",
             type: "yesNo",
             answerYes: {
@@ -2593,7 +2593,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 11,
             id: 12,
-            answerUser: 1,
+            answerUser: -1,
             title: "Votre enfant était il prématuré ?",
             type: "yesNo",
             answerYes: {
@@ -2608,7 +2608,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 12,
             id: 13,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous eu une prééclampsie ?",
             type: "yesNo",
             answerYes: {
@@ -2623,7 +2623,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 13,
             id: 14,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous un antécedent de diabète de grossesse ?",
             type: "yesNo",
             answerYes: {
@@ -2652,7 +2652,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 15,
             id: 16,
-            answerUser: 1,
+            answerUser: -1,
             title: "Combien avez-vous eu de césarienne",
             type: "number",
             answer: {
@@ -2664,7 +2664,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 16,
             id: 17,
-            answerUser: 1,
+            answerUser: -1,
             title: "Combien de fausse couche avez-vous fait ?",
             type: "number",
             answer: {
@@ -2681,12 +2681,12 @@ var HomePage = (function () {
                 label: "nombre par semaine",
                 nextStep: 19
             },
-            answerUser: 1,
+            answerUser: -1,
         });
         this.Question.push({
             idTable: 18,
             id: 19,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous une épilepsie ?",
             type: "yesNo",
             answerYes: {
@@ -2701,7 +2701,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 19,
             id: 20,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous déjà eu une phlébite ?",
             type: "yesNo",
             answerYes: {
@@ -2716,7 +2716,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 20,
             id: 21,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous de l'hypertension artérielle ?",
             type: "yesNo",
             answerYes: {
@@ -2731,7 +2731,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 21,
             id: 22,
-            answerUser: 1,
+            answerUser: -1,
             title: "Avez-vous du diabète ?",
             type: "yesNo",
             answerYes: {
@@ -2746,7 +2746,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 22,
             id: 23,
-            answerUser: 1,
+            answerUser: -1,
             title: "Prenez vous des médicaments ?",
             type: "yesNo",
             answerYes: {
@@ -2762,7 +2762,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 23,
             id: 24,
-            answerUser: 1,
+            answerUser: -1,
             title: "Selectionnez les médicaments que vous prenez",
             type: "number",
             answer: {
@@ -2773,7 +2773,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 24,
             id: 25,
-            answerUser: 1,
+            answerUser: -1,
             title: "Quelle est votre taille (en cm) ?",
             type: "number",
             answer: {
@@ -2794,7 +2794,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 26,
             id: 27,
-            answerUser: 1,
+            answerUser: -1,
             title: "Travaillez-vous ?",
             type: "yesNo",
             answerYes: {
@@ -2809,7 +2809,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 27,
             id: 28,
-            answerUser: 1,
+            answerUser: -1,
             title: "Combien d'heures de travail effectuez-vous par jour ?",
             type: "number",
             answer: {
@@ -2820,7 +2820,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 28,
             id: 29,
-            answerUser: 1,
+            answerUser: -1,
             title: "Quel est votre temps de trajet par jour (en minute) ?",
             type: "number",
             answer: {
@@ -2831,7 +2831,7 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 29,
             id: 30,
-            answerUser: 1,
+            answerUser: -1,
             title: "Travaillez-vous debout plus de 6 heures par jour ?",
             type: "yesNo",
             answerYes: {
@@ -3387,8 +3387,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step16/step16.module#Step16PageModule', name: 'Step16Page', segment: 'step16', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step17/step17.module#Step17PageModule', name: 'Step17Page', segment: 'step17', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step18/step18.module#Step18PageModule', name: 'Step18Page', segment: 'step18', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step2-1/step2-1.module#Step2_1PageModule', name: 'Step2_1Page', segment: 'step2-1', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step19/step19.module#Step19PageModule', name: 'Step19Page', segment: 'step19', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step2-1/step2-1.module#Step2_1PageModule', name: 'Step2_1Page', segment: 'step2-1', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step2/step2.module#Step2PageModule', name: 'Step2Page', segment: 'step2', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step20/step20.module#Step20PageModule', name: 'Step20Page', segment: 'step20', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step21/step21.module#Step21PageModule', name: 'Step21Page', segment: 'step21', priority: 'low', defaultHistory: [] },
@@ -4619,16 +4619,15 @@ var ResultPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
 ], ResultPage.prototype, "slides", void 0);
 ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <ion-slides>\n	<div *ngFor="let r of risk">\n	<ion-slide>\n		<h1>{{r.title}}</h1>\n	</ion-slide>\n	<ion-slide>\n		<h1>{{conseil[r.idConseil].title}}</h1>\n	</ion-slide>\n	<ion-slide>\n	<h1>{{positif[r.idPsotif].title}}</h1>\n	</ion-slide>\n	</div>\n\n</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
+        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n--><!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button>\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Resultat</h2>\n            <p>Resultat</p>\n            <p>{{riskAssessment}}</p>\n            <button class="button touch" (click)="nextBegin()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let r of risk">\n    <ion-slide class="risk">\n		<h1>{{r.title}}</h1>\n	</ion-slide>\n	<ion-slide class="conseil">\n		<h1>{{conseil[r.idConseil].title}}</h1>\n	</ion-slide>\n	<ion-slide class="positif">\n	<h1>{{positif[r.idPositif].title}}</h1>\n	</ion-slide>\n        \n      \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ResultPage);
 
-var _a, _b, _c;
 //# sourceMappingURL=result.js.map
 
 /***/ })

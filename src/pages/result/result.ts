@@ -17,12 +17,18 @@ import { Slides } from 'ionic-angular';
 })
 export class ResultPage {
     @ViewChild(Slides) slides: Slides;
-      currentStep = 0;
-  
+    currentStep = 0;
+    totalStep = 4;
+    progressWidth = "0%";
+    activeLogo = false;
+    activeLogoWrapper = false;
+    activeWelcomeContent = false;
+    isInitialized = false;
 	valueTestGyneco:any;
 	resultRisk:number;
     result:any;
     risk:any;
+    riskAssessment:any;
     conseil:any;
     positif:any;
 
@@ -33,8 +39,40 @@ export class ResultPage {
         console.log("test");
         console.log(this.valueTestGyneco);
     }
+slideChanged() {
+    this.currentStep = this.slides.getActiveIndex();
 
-  ionViewDidLoad() {
+  }
+ nextBegin(){
+
+      this.currentStep++;
+       this.slides.slideTo(this.currentStep, 350);
+      //this.updateProgressBar();
+  }
+  next(){
+
+     
+      this.currentStep++;
+       this.slides.slideTo(this.currentStep, 350);
+      //this.updateProgressBar();
+  }
+  prev() {
+   this.currentStep--;
+    this.slides.slideTo(this.currentStep, 350);
+   // this.updateProgressBar();
+  }
+ ngOnInit() {
+   var self = this;
+   this.activeLogoWrapper = true;
+
+    setTimeout(function() {
+      self.activeLogo = true;
+    }, 500);
+
+    setTimeout(function() {
+      self.activeLogoWrapper = false;
+      self.activeWelcomeContent = true;
+    }, 2500);
 
     console.log(this.valueTestGyneco);
     this.result = [];
@@ -110,13 +148,13 @@ export class ResultPage {
     		this.resultRisk += 2;
     }
     if (this.resultRisk >= 200)
-        this.result.riskAssment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3."; 
+        this.riskAssessment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3."; 
     else if (this.resultRisk >= 50)
-        this.result.riskAssment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3"; 
+        this.riskAssessment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3"; 
     else if (this.resultRisk >= 20)
-        this.result.riskAssment = "D'apres vos réponses vous présentez une grossesse à risque."; 
+        this.riskAssessment = "D'apres vos réponses vous présentez une grossesse à risque."; 
     else 
-        this.result.riskAssment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse."; 
+        this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse."; 
  console.log("debut risk");
         if (this.valueTestGyneco[0].answerUser < 42 && this.valueTestGyneco[0].answerUser >= 38)
              this.risk.push(
@@ -134,7 +172,7 @@ export class ResultPage {
                      idConseil: 0,
                      title:"A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
                  });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
              this.risk.push(
                  {
                      type: "risk",
@@ -142,7 +180,7 @@ export class ResultPage {
                      idConseil: 0,
                      title:"Vous fumez, ce qui peut entrainer de nombreuses complications."
                  });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
              this.risk.push(
                  {
                      type: "risk",
@@ -166,7 +204,7 @@ export class ResultPage {
                      idConseil: 0,
                     title:"Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."});      
 
-        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco.smallChild == 1)
+        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco[10].answerUser == 1)
             this.risk.push(
                 {
                     type: "risk",
@@ -198,7 +236,7 @@ export class ResultPage {
                      idConseil: 0,
                     title:"Vous consommez de l'alcool"
                 });
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push(
                 {
                     type: "risk",
@@ -206,7 +244,7 @@ export class ResultPage {
                      idConseil: 0,
                     title:"Stoppez votre consommation d'alcool !"
                 });
-        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push(
                 {
                     type: "risk",
@@ -299,12 +337,12 @@ export class ResultPage {
         console.log(this.risk);
         console.log("debut positif");
 
-        if (this.valueTestGyneco.feelingPregnant == 1)
+        if (this.valueTestGyneco[3].answerUser == 1)
             this.positif.push(
                 {
                   title: "Félicitation vous êtes enceinte !"
                 });
-        if (this.valueTestGyneco[6].answerUser == 0 && this.valueTestGyneco.feelingPregnant == 1)
+        if (this.valueTestGyneco[6].answerUser == 0 && this.valueTestGyneco[3].answerUser == 1)
              this.positif.push(
                  {
                   title:  "Félicitation vous allez avoir votre premier enfant"
@@ -332,7 +370,7 @@ export class ResultPage {
    
          console.log("debut conseil");
     
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
              this.conseil.push(
                  {
                      title: "Arrêtez de fumer !"
@@ -362,12 +400,12 @@ export class ResultPage {
                 {
                    title:"Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale."
                 }); 
-        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
             this.conseil.push(
                 {
                    title:"Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool"
                 });
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco[1].answerUser == 1)
             this.conseil.push(
                 {
                   title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
@@ -440,16 +478,16 @@ export class ResultPage {
         else if (this.valueTestGyneco0[0].answerUser > 42)
              this.risk.push("A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
              });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
              this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications."
              });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
              this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
         else if (this.valueTestGyneco[5].answerUser == 1)
            this.risk.push("Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse.");
         if (this.valueTestGyneco[8].answerUser == 1)
             this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");         
-        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco.smallChild == 1)
+        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco[10].answerUser == 1)
             this.risk.push("Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %");
         if (this.valueTestGyneco[17].answerUser >= 3)
             this.risk.push("Vous avez un nombre élevé de fausse couches");
@@ -457,9 +495,9 @@ export class ResultPage {
             this.risk.push("Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive");
         if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0)
             this.risk.push("Vous consommez de l'alcool");
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push("Stoppez votre consommation d'alcool !");
-        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push("Vous consommez une quantité d'alcool importante");
         if (this.valueTestGyneco.epilepsy == 1)
             this.risk.push("Votre epilepsie");
