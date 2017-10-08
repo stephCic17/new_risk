@@ -50,7 +50,6 @@ export class HomePage {
         {
           idTable: 0,
           id: 1,
-          idForm: "step1",
           title: "Quel âge avez-vous ?",
           type: "number",
           answer:
@@ -64,7 +63,6 @@ export class HomePage {
         {
           idTable: 1,
           id: 2,
-          idForm: "step2",
           answerUser: 1,        
           title: "Êtes-vous enceinte ?",
           type: "yesNoIdn",
@@ -90,7 +88,6 @@ export class HomePage {
           idTable: 2,
           id: 3,
           answerUser: 1, 
-          idForm: "step3",
           title: "Quel est la date de vos dernière règle ?",
           type: "date",
           answer: {
@@ -102,7 +99,6 @@ export class HomePage {
         {
           idTable: 3,
           id: 4,
-          idForm: "step4",
           title:"Est-ce une bonne nouvelle ?",
           type:"yesNoIdn",
           answerUser: 1,       
@@ -126,7 +122,6 @@ export class HomePage {
         {
           idTable: 4,
           id: 5,
-          idForm: "step5",
           title:"QUESTIONNAIRE PSYCHO",
           type:"yesNo",
           answerUser: 1,
@@ -146,7 +141,6 @@ export class HomePage {
         {
           idTable: 5,
           id: 6,
-          idForm: "step5",
           title:"Fumez-vous ?",
           type:"yesNo",
           answerUser: 1, 
@@ -166,7 +160,6 @@ export class HomePage {
           idTable: 6,
           id: 7,
           answerUser: 1 ,
-          idForm: "step6",
           title:"Avez-vous des enfants ?",
           type: "yesNo",
           answerYes:
@@ -185,7 +178,6 @@ export class HomePage {
           idTable: 7,
           id: 8,
           answerUser: 1, 
-          idForm: "step7",
           title:"Combien avez-vous d'enfant ?",
           type: "number",
           answer:
@@ -199,7 +191,6 @@ export class HomePage {
           idTable: 8,
           id: 9,
           answerUser: 1, 
-          idForm: "step8",
           title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
           type: "yesNo",
           answerYes:
@@ -218,7 +209,6 @@ export class HomePage {
           idTable: 9,
           id: 10,
           answerUser: 1, 
-          idForm: "step9",
           title:"Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
           type: "number",
           answer:
@@ -232,7 +222,6 @@ export class HomePage {
           idTable: 10,
           id: 11,
           answerUser: 1, 
-          idForm: "step10",
           title:"Avez-vous accouché d'enfant de moins de 2kg200 ?",
           type: "yesNo",
           answerYes:
@@ -251,7 +240,6 @@ export class HomePage {
           idTable: 11,
           id: 12,
           answerUser: 1,
-          idForm: "step11",
           title: "Votre enfant était il prématuré ?",
           type: "yesNo",
           answerYes:
@@ -270,7 +258,6 @@ export class HomePage {
           idTable: 12,
           id: 13,
           answerUser: 1,
-          idForm: "step12",
           title: "Avez-vous eu une prééclampsie ?",
           type: "yesNo",
           answerYes:
@@ -289,7 +276,6 @@ export class HomePage {
           idTable: 13,
           id: 14,
           answerUser: 1,
-          idForm: "step13",
           title:"Avez-vous un antécedent de diabète de grossesse ?",
           type: "yesNo",
           answerYes:
@@ -307,7 +293,6 @@ export class HomePage {
         {
           idTable: 14,
           id: 15,
-          idForm: "step14",
           title: "Avez-vous eu une césariennes ?",
           type: "yesNo",
           answerYes:
@@ -326,7 +311,6 @@ export class HomePage {
           idTable: 15,
           id: 16,
           answerUser: 1,
-          idForm: "step15",
           title: "Combien avez-vous eu de césarienne",
           type: "number",
           answer:
@@ -338,39 +322,54 @@ export class HomePage {
       // question select psycho
       this.Question.push(
         {
-          idTable: 17,
-          id: 18,
+          idTable: 16,
+          id: 17,
           answerUser: 1,
-          idForm: "step17",
           title: "Combien de fausse couche avez-vous fait ?",
           type: "number",
           answer:
             {
               label: "nombre",
-              nextStep: 19
+              nextStep: 18
             }      
+        });
+      this.Question.push(
+        {
+          idTable: 17,
+          id: 18,
+          title: "Combien de verres d'alcool buvez-vous par semaine ?",
+          type: "number",
+          answer:
+            {
+              label: "nombre par semaine",
+              nextStep: 19
+            },            
+          answerUser: 1,     
         });
       this.Question.push(
         {
           idTable: 18,
           id: 19,
           answerUser: 1,
-          idForm: "step18",
-          title: "Combien de verres d'alcool buvez-vous par semaine ?",
-          type: "number",
-          answer:
+          title: "Avez-vous une épilepsie ?",
+          type: "yesNo",
+          answerYes:
             {
-              label: "nombre par semaine",
+              label: "Oui",
               nextStep: 20
-            }     
+            },
+          answerNo:
+            {
+              label: "Non",
+              nextStep: 20
+            }    
         });
       this.Question.push(
         {
           idTable: 19,
           id: 20,
           answerUser: 1,
-          idForm: "step19",
-          title: "Avez-vous une épilepsie ?",
+          title: "Avez-vous déjà eu une phlébite ?",
           type: "yesNo",
           answerYes:
             {
@@ -388,8 +387,7 @@ export class HomePage {
           idTable: 20,
           id: 21,
           answerUser: 1,
-          idForm: "step20",
-          title: "Avez-vous déjà eu une phlébite ?",
+          title: "Avez-vous de l'hypertension artérielle ?",
           type: "yesNo",
           answerYes:
             {
@@ -407,8 +405,7 @@ export class HomePage {
           idTable: 21,
           id: 22,
           answerUser: 1,
-          idForm: "step21",
-          title: "Avez-vous de l'hypertension artérielle ?",
+          title: "Avez-vous du diabète ?",
           type: "yesNo",
           answerYes:
             {
@@ -418,7 +415,7 @@ export class HomePage {
           answerNo:
             {
               label: "Non",
-              netStep: 23
+              nextStep: 23
             }     
         });
       this.Question.push(
@@ -426,65 +423,55 @@ export class HomePage {
           idTable: 22,
           id: 23,
           answerUser: 1,
-          idForm: "step22",
-          title: "Avez-vous du diabète ?",
-          type: "yesNo",
-          answerYes:
-            {
-              label: "Oui",
-              nextStep: 24
-            },
-          answerNo:
-            {
-              label: "Non",
-              nextStep: 24
-            }     
-        });
-      this.Question.push(
-        {
-          idTable: 23,
-          id: 24,
-          answerUser: 1,
-          idForm: "step23",
           title:"Prenez vous des médicaments ?",
           type: "yesNo",
           answerYes:
             {
               label: "Oui",
-              nextStep: 25
+              nextStep: 24
             },
           answerNo:
             {
               label: "Non",
-              nextStep: 26
+              nextStep: 25
             }     
         });
       //Question select medicament
       this.Question.push(
         {
-          idTable: 24,
-          id: 25,
+          idTable: 23,
+          id: 24,
           answerUser: 1,
-          idForm: "step",
           title:"Selectionnez les médicaments que vous prenez",
           type: "number",
           answer:
             {
               label: "",
-              nextStep: 26
+              nextStep: 25
             }    
         }); 
       this.Question.push(
         {
-          idTable: 25,
-          id: 26,
+          idTable: 24,
+          id: 25,
           answerUser: 1,
-          idForm: "step25",
           title: "Quelle est votre taille (en cm) ?",
           type: "number",
           answer:
             {
               label: "en cm",
+              nextStep: 26
+            }     
+        });
+      this.Question.push(
+        {
+          idTable: 25,
+          id: 26,
+          title: "Quel est votre poids (en kg) ?",
+          type: "number",
+          answer:
+            {
+              label: "en kg",
               nextStep: 27
             }     
         });
@@ -492,27 +479,13 @@ export class HomePage {
         {
           idTable: 26,
           id: 27,
-          idForm: "step26",
-          title: "Quel est votre poids (en kg) ?",
-          type: "number",
-          answer:
-            {
-              label: "en kg",
-              nextStep: 28
-            }     
-        });
-      this.Question.push(
-        {
-          idTable: 27,
-          id: 28,
           answerUser: 1,
-          idForm: "step27",
           title: "Travaillez-vous ?",
           type: "yesNo",
           answerYes:
             {
               label: "Oui",
-              nextStep: 29
+              nextStep: 28
             },
           answerNo:
             {
@@ -522,38 +495,35 @@ export class HomePage {
         });
       this.Question.push(
         {
-          idTable: 28,
-          id: 29,
+          idTable: 27,
+          id: 28,
           answerUser: 1,
-          idForm: "step28",
           title: "Combien d'heures de travail effectuez-vous par jour ?",
           type: "number",
           answer:
             {
               label: "en heure",
-              nextStep: 30
+              nextStep: 29
             }     
+        });
+      this.Question.push(
+        {
+          idTable: 28,
+          id: 29,
+          answerUser: 1,
+          title: "Quel est votre temps de trajet par jour (en minute) ?",
+          type: "number",
+          answer:
+            {
+              label: "en minute",
+              nextStep: 30
+            }      
         });
       this.Question.push(
         {
           idTable: 29,
           id: 30,
           answerUser: 1,
-          idForm: "step29",
-          title: "Quel est votre temps de trajet par jour (en minute) ?",
-          type: "number",
-          answer:
-            {
-              label: "en minute",
-              nextStep: 31
-            }      
-        });
-      this.Question.push(
-        {
-          idTable: 30,
-          id: 31,
-          answerUser: 1,
-          idForm: "step30",
           title: "Travaillez-vous debout plus de 6 heures par jour ?",
           type: "yesNo",
           answerYes:
@@ -625,13 +595,18 @@ export class HomePage {
   }
 
   nextForm(question) {
-  
+    console.log(question);
+
     this.questionForm = question;
-  
+    console.log(this.Question);
+    console.log(this.questionForm);
+    console.log("number", this.number);
     if (this.questionForm.type == "number")
     {
       this.currentStep = this.questionForm.answer.nextStep;
       this.Question[this.questionForm.idTable].answerUser = this.number;
+      this.slides.slideTo(this.currentStep, 350);
+       this.updateProgressBar();
     }
     else if (this.questionForm.type == "yesNoIdn")
     {
@@ -639,53 +614,62 @@ export class HomePage {
       {
         this.currentStep =this.questionForm.answerYes.nextStep;
         this.Question[this.questionForm.idTable].answerUser = 1;
+        this.slides.slideTo(this.currentStep, 350);
+        this.updateProgressBar();
       }
       else if (this.no)
        {
         this.currentStep =this.questionForm.answerNo.nextStep;
         this.Question[this.questionForm.idTable].answerUser = 0;
+        this.slides.slideTo(this.currentStep, 350);
+        this.updateProgressBar();
 
        }
       else if (this.idn)
         {
-          this.currentStep =this.questionForm.answerIdn.nextStep;
+          this.currentStep = this.questionForm.answerIdn.nextStep;
           this.Question[this.questionForm.idTable].answerUser = 2;
-      }
+          this.slides.slideTo(this.currentStep, 350);
+          this.updateProgressBar();
+        }
     }
     else if (this.questionForm.type == "yesNo")
     {
       if (this.yes)
       {
-        this.currentStep =this.questionForm.answerYes.nextStep;
+        this.currentStep = this.questionForm.answerYes.nextStep;
         this.Question[this.questionForm.idTable].answerUser = 1;
+        this.slides.slideTo(this.currentStep, 350);
+        this.updateProgressBar();
       }
-      if (this.no)
+      else if (this.no)
        {
         this.currentStep = this.questionForm.answerNo.nextStep;    
         this.Question[this.questionForm.idTable].answerUser = 0;
+        this.slides.slideTo(this.currentStep, 350);
+        this.updateProgressBar();
        }
     }  
     else if (this.questionForm.type == "date")
      {
         this.currentStep = this.questionForm.answer.nextStep;
         this.Question[this.questionForm.idTable].answerUser = this.date;
+        this.slides.slideTo(this.currentStep, 350);
+        this.updateProgressBar();
      }
     this.number = "";
     this.yes = false;
     this.no = false;
     this.idn = false;
     this.date = 0;
-    this.slides.slideTo(this.currentStep, 350);
-    this.updateProgressBar();
-    
+        
     if (this.currentStep == 99) {
       this.navCtrl.push(ResultPage, {
                userParams: this.Question
              }); 
     }
-
   }
-  next(){
+  nextBegin(){
       this.currentStep++;
        this.slides.slideTo(this.currentStep, 350);
       //this.updateProgressBar();

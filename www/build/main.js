@@ -2256,7 +2256,7 @@ var map = {
 		29
 	],
 	"../pages/result/result.module": [
-		308,
+		312,
 		28
 	],
 	"../pages/step1/step1.module": [
@@ -2264,27 +2264,27 @@ var map = {
 		27
 	],
 	"../pages/step10/step10.module": [
-		309,
+		308,
 		26
 	],
 	"../pages/step11/step11.module": [
-		310,
+		309,
 		25
 	],
 	"../pages/step12-1/step12-1.module": [
-		311,
+		310,
 		24
 	],
 	"../pages/step12/step12.module": [
-		312,
+		311,
 		23
 	],
 	"../pages/step13/step13.module": [
-		313,
+		314,
 		22
 	],
 	"../pages/step14/step14.module": [
-		314,
+		313,
 		21
 	],
 	"../pages/step15/step15.module": [
@@ -2436,7 +2436,6 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 0,
             id: 1,
-            idForm: "step1",
             title: "Quel âge avez-vous ?",
             type: "number",
             answer: {
@@ -2448,7 +2447,6 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 1,
             id: 2,
-            idForm: "step2",
             answerUser: 1,
             title: "Êtes-vous enceinte ?",
             type: "yesNoIdn",
@@ -2469,7 +2467,6 @@ var HomePage = (function () {
             idTable: 2,
             id: 3,
             answerUser: 1,
-            idForm: "step3",
             title: "Quel est la date de vos dernière règle ?",
             type: "date",
             answer: {
@@ -2480,7 +2477,6 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 3,
             id: 4,
-            idForm: "step4",
             title: "Est-ce une bonne nouvelle ?",
             type: "yesNoIdn",
             answerUser: 1,
@@ -2500,7 +2496,6 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 4,
             id: 5,
-            idForm: "step5",
             title: "QUESTIONNAIRE PSYCHO",
             type: "yesNo",
             answerUser: 1,
@@ -2516,7 +2511,6 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 5,
             id: 6,
-            idForm: "step5",
             title: "Fumez-vous ?",
             type: "yesNo",
             answerUser: 1,
@@ -2533,7 +2527,6 @@ var HomePage = (function () {
             idTable: 6,
             id: 7,
             answerUser: 1,
-            idForm: "step6",
             title: "Avez-vous des enfants ?",
             type: "yesNo",
             answerYes: {
@@ -2549,7 +2542,6 @@ var HomePage = (function () {
             idTable: 7,
             id: 8,
             answerUser: 1,
-            idForm: "step7",
             title: "Combien avez-vous d'enfant ?",
             type: "number",
             answer: {
@@ -2561,7 +2553,6 @@ var HomePage = (function () {
             idTable: 8,
             id: 9,
             answerUser: 1,
-            idForm: "step8",
             title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
             type: "yesNo",
             answerYes: {
@@ -2577,7 +2568,6 @@ var HomePage = (function () {
             idTable: 9,
             id: 10,
             answerUser: 1,
-            idForm: "step9",
             title: "Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
             type: "number",
             answer: {
@@ -2589,7 +2579,6 @@ var HomePage = (function () {
             idTable: 10,
             id: 11,
             answerUser: 1,
-            idForm: "step10",
             title: "Avez-vous accouché d'enfant de moins de 2kg200 ?",
             type: "yesNo",
             answerYes: {
@@ -2605,7 +2594,6 @@ var HomePage = (function () {
             idTable: 11,
             id: 12,
             answerUser: 1,
-            idForm: "step11",
             title: "Votre enfant était il prématuré ?",
             type: "yesNo",
             answerYes: {
@@ -2621,7 +2609,6 @@ var HomePage = (function () {
             idTable: 12,
             id: 13,
             answerUser: 1,
-            idForm: "step12",
             title: "Avez-vous eu une prééclampsie ?",
             type: "yesNo",
             answerYes: {
@@ -2637,7 +2624,6 @@ var HomePage = (function () {
             idTable: 13,
             id: 14,
             answerUser: 1,
-            idForm: "step13",
             title: "Avez-vous un antécedent de diabète de grossesse ?",
             type: "yesNo",
             answerYes: {
@@ -2652,7 +2638,6 @@ var HomePage = (function () {
         this.Question.push({
             idTable: 14,
             id: 15,
-            idForm: "step14",
             title: "Avez-vous eu une césariennes ?",
             type: "yesNo",
             answerYes: {
@@ -2668,7 +2653,6 @@ var HomePage = (function () {
             idTable: 15,
             id: 16,
             answerUser: 1,
-            idForm: "step15",
             title: "Combien avez-vous eu de césarienne",
             type: "number",
             answer: {
@@ -2678,26 +2662,39 @@ var HomePage = (function () {
         });
         // question select psycho
         this.Question.push({
-            idTable: 17,
-            id: 18,
+            idTable: 16,
+            id: 17,
             answerUser: 1,
-            idForm: "step17",
             title: "Combien de fausse couche avez-vous fait ?",
             type: "number",
             answer: {
                 label: "nombre",
-                nextStep: 19
+                nextStep: 18
             }
+        });
+        this.Question.push({
+            idTable: 17,
+            id: 18,
+            title: "Combien de verres d'alcool buvez-vous par semaine ?",
+            type: "number",
+            answer: {
+                label: "nombre par semaine",
+                nextStep: 19
+            },
+            answerUser: 1,
         });
         this.Question.push({
             idTable: 18,
             id: 19,
             answerUser: 1,
-            idForm: "step18",
-            title: "Combien de verres d'alcool buvez-vous par semaine ?",
-            type: "number",
-            answer: {
-                label: "nombre par semaine",
+            title: "Avez-vous une épilepsie ?",
+            type: "yesNo",
+            answerYes: {
+                label: "Oui",
+                nextStep: 20
+            },
+            answerNo: {
+                label: "Non",
                 nextStep: 20
             }
         });
@@ -2705,8 +2702,7 @@ var HomePage = (function () {
             idTable: 19,
             id: 20,
             answerUser: 1,
-            idForm: "step19",
-            title: "Avez-vous une épilepsie ?",
+            title: "Avez-vous déjà eu une phlébite ?",
             type: "yesNo",
             answerYes: {
                 label: "Oui",
@@ -2721,8 +2717,7 @@ var HomePage = (function () {
             idTable: 20,
             id: 21,
             answerUser: 1,
-            idForm: "step20",
-            title: "Avez-vous déjà eu une phlébite ?",
+            title: "Avez-vous de l'hypertension artérielle ?",
             type: "yesNo",
             answerYes: {
                 label: "Oui",
@@ -2737,8 +2732,7 @@ var HomePage = (function () {
             idTable: 21,
             id: 22,
             answerUser: 1,
-            idForm: "step21",
-            title: "Avez-vous de l'hypertension artérielle ?",
+            title: "Avez-vous du diabète ?",
             type: "yesNo",
             answerYes: {
                 label: "Oui",
@@ -2746,87 +2740,66 @@ var HomePage = (function () {
             },
             answerNo: {
                 label: "Non",
-                netStep: 23
+                nextStep: 23
             }
         });
         this.Question.push({
             idTable: 22,
             id: 23,
             answerUser: 1,
-            idForm: "step22",
-            title: "Avez-vous du diabète ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 24
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 24
-            }
-        });
-        this.Question.push({
-            idTable: 23,
-            id: 24,
-            answerUser: 1,
-            idForm: "step23",
             title: "Prenez vous des médicaments ?",
             type: "yesNo",
             answerYes: {
                 label: "Oui",
-                nextStep: 25
+                nextStep: 24
             },
             answerNo: {
                 label: "Non",
-                nextStep: 26
+                nextStep: 25
             }
         });
         //Question select medicament
         this.Question.push({
-            idTable: 24,
-            id: 25,
+            idTable: 23,
+            id: 24,
             answerUser: 1,
-            idForm: "step",
             title: "Selectionnez les médicaments que vous prenez",
             type: "number",
             answer: {
                 label: "",
+                nextStep: 25
+            }
+        });
+        this.Question.push({
+            idTable: 24,
+            id: 25,
+            answerUser: 1,
+            title: "Quelle est votre taille (en cm) ?",
+            type: "number",
+            answer: {
+                label: "en cm",
                 nextStep: 26
             }
         });
         this.Question.push({
             idTable: 25,
             id: 26,
-            answerUser: 1,
-            idForm: "step25",
-            title: "Quelle est votre taille (en cm) ?",
+            title: "Quel est votre poids (en kg) ?",
             type: "number",
             answer: {
-                label: "en cm",
+                label: "en kg",
                 nextStep: 27
             }
         });
         this.Question.push({
             idTable: 26,
             id: 27,
-            idForm: "step26",
-            title: "Quel est votre poids (en kg) ?",
-            type: "number",
-            answer: {
-                label: "en kg",
-                nextStep: 28
-            }
-        });
-        this.Question.push({
-            idTable: 27,
-            id: 28,
             answerUser: 1,
-            idForm: "step27",
             title: "Travaillez-vous ?",
             type: "yesNo",
             answerYes: {
                 label: "Oui",
-                nextStep: 29
+                nextStep: 28
             },
             answerNo: {
                 label: "Non",
@@ -2834,14 +2807,24 @@ var HomePage = (function () {
             }
         });
         this.Question.push({
-            idTable: 28,
-            id: 29,
+            idTable: 27,
+            id: 28,
             answerUser: 1,
-            idForm: "step28",
             title: "Combien d'heures de travail effectuez-vous par jour ?",
             type: "number",
             answer: {
                 label: "en heure",
+                nextStep: 29
+            }
+        });
+        this.Question.push({
+            idTable: 28,
+            id: 29,
+            answerUser: 1,
+            title: "Quel est votre temps de trajet par jour (en minute) ?",
+            type: "number",
+            answer: {
+                label: "en minute",
                 nextStep: 30
             }
         });
@@ -2849,19 +2832,6 @@ var HomePage = (function () {
             idTable: 29,
             id: 30,
             answerUser: 1,
-            idForm: "step29",
-            title: "Quel est votre temps de trajet par jour (en minute) ?",
-            type: "number",
-            answer: {
-                label: "en minute",
-                nextStep: 31
-            }
-        });
-        this.Question.push({
-            idTable: 30,
-            id: 31,
-            answerUser: 1,
-            idForm: "step30",
             title: "Travaillez-vous debout plus de 6 heures par jour ?",
             type: "yesNo",
             answerYes: {
@@ -2919,53 +2889,70 @@ var HomePage = (function () {
         this.progressWidth = (100 / this.totalStep) * this.currentStep + "%";
     };
     HomePage.prototype.nextForm = function (question) {
+        console.log(question);
         this.questionForm = question;
+        console.log(this.Question);
+        console.log(this.questionForm);
+        console.log("number", this.number);
         if (this.questionForm.type == "number") {
             this.currentStep = this.questionForm.answer.nextStep;
             this.Question[this.questionForm.idTable].answerUser = this.number;
+            this.slides.slideTo(this.currentStep, 350);
+            this.updateProgressBar();
         }
         else if (this.questionForm.type == "yesNoIdn") {
             if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
                 this.Question[this.questionForm.idTable].answerUser = 1;
+                this.slides.slideTo(this.currentStep, 350);
+                this.updateProgressBar();
             }
             else if (this.no) {
                 this.currentStep = this.questionForm.answerNo.nextStep;
                 this.Question[this.questionForm.idTable].answerUser = 0;
+                this.slides.slideTo(this.currentStep, 350);
+                this.updateProgressBar();
             }
             else if (this.idn) {
                 this.currentStep = this.questionForm.answerIdn.nextStep;
                 this.Question[this.questionForm.idTable].answerUser = 2;
+                this.slides.slideTo(this.currentStep, 350);
+                this.updateProgressBar();
             }
         }
         else if (this.questionForm.type == "yesNo") {
             if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
                 this.Question[this.questionForm.idTable].answerUser = 1;
+                this.slides.slideTo(this.currentStep, 350);
+                this.updateProgressBar();
             }
-            if (this.no) {
+            else if (this.no) {
                 this.currentStep = this.questionForm.answerNo.nextStep;
                 this.Question[this.questionForm.idTable].answerUser = 0;
+                this.slides.slideTo(this.currentStep, 350);
+                this.updateProgressBar();
             }
         }
         else if (this.questionForm.type == "date") {
             this.currentStep = this.questionForm.answer.nextStep;
             this.Question[this.questionForm.idTable].answerUser = this.date;
+            this.slides.slideTo(this.currentStep, 350);
+            this.updateProgressBar();
         }
         this.number = "";
         this.yes = false;
         this.no = false;
         this.idn = false;
         this.date = 0;
-        this.slides.slideTo(this.currentStep, 350);
-        this.updateProgressBar();
         if (this.currentStep == 99) {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__result_result__["a" /* ResultPage */], {
                 userParams: this.Question
             });
         }
+        this.slides.lockSwipeToNext(-1);
     };
-    HomePage.prototype.next = function () {
+    HomePage.prototype.nextBegin = function () {
         this.currentStep++;
         this.slides.slideTo(this.currentStep, 350);
         //this.updateProgressBar();
@@ -2979,15 +2966,16 @@ var HomePage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
 ], HomePage.prototype, "slides", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button> -->\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no\n          " [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date" name="date" [(ngModel)]="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button> -->\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="nextBegin()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no\n          " [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date" name="date" [(ngModel)]="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object])
 ], HomePage);
 
+var _a, _b, _c;
 // export class HomePage {
 //
 // 	QuestionText:any;
@@ -3387,13 +3375,13 @@ AppModule = __decorate([
                     { loadChildren: '../pages/psycho-test3/psycho-test3.module#PsychoTest3PageModule', name: 'PsychoTest3Page', segment: 'psycho-test3', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/psycho-test4/psycho-test4.module#PsychoTest4PageModule', name: 'PsychoTest4Page', segment: 'psycho-test4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step1/step1.module#Step1PageModule', name: 'Step1Page', segment: 'step1', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step10/step10.module#Step10PageModule', name: 'Step10Page', segment: 'step10', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step11/step11.module#Step11PageModule', name: 'Step11Page', segment: 'step11', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step12-1/step12-1.module#Step12_1PageModule', name: 'Step12_1Page', segment: 'step12-1', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step12/step12.module#Step12PageModule', name: 'Step12Page', segment: 'step12', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step13/step13.module#Step13PageModule', name: 'Step13Page', segment: 'step13', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step14/step14.module#Step14PageModule', name: 'Step14Page', segment: 'step14', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step13/step13.module#Step13PageModule', name: 'Step13Page', segment: 'step13', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step15/step15.module#Step15PageModule', name: 'Step15Page', segment: 'step15', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step16/step16.module#Step16PageModule', name: 'Step16Page', segment: 'step16', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step17/step17.module#Step17PageModule', name: 'Step17Page', segment: 'step17', priority: 'low', defaultHistory: [] },
