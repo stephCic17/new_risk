@@ -14,11 +14,19 @@
 
 
 <ion-content padding>
-
-<ion-slides>
-	<ion-slide *ngFor="let r of risk">
-		<h1>{{r.text}}</h1>
+ <ion-slides>
+	<div *ngFor="let r of risk">
+	<ion-slide>
+		<h1>{{r.title}}</h1>
 	</ion-slide>
+	<ion-slide>
+		<h1>{{conseil[r.idConseil].title}}</h1>
+	</ion-slide>
+	<ion-slide>
+	<h1>{{positif[r.idPsotif].title}}</h1>
+	</ion-slide>
+	</div>
+
 </ion-slides>
 
 </ion-content>

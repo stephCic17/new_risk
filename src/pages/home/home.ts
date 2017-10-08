@@ -57,13 +57,13 @@ export class HomePage {
               label: "age en année",
               nextStep: 2
             },
-          answerUser: 1
+          answerUser: -1
         });
       this.Question.push(
         {
           idTable: 1,
           id: 2,
-          answerUser: 1,
+          answerUser: -1,
           title: "Êtes-vous enceinte ?",
           type: "yesNoIdn",
           answerYes:
@@ -87,7 +87,7 @@ export class HomePage {
         {
           idTable: 2,
           id: 3,
-          answerUser: 1,
+          answerUser: -1,
           title: "Quel est la date de vos dernière règle ?",
           type: "date",
           answer: {
@@ -101,7 +101,7 @@ export class HomePage {
           id: 4,
           title:"Est-ce une bonne nouvelle ?",
           type:"yesNoIdn",
-          answerUser: 1,
+          answerUser: -1,
              answerYes:
             {
               label: "Oui",
@@ -124,7 +124,7 @@ export class HomePage {
           id: 5,
           title:"QUESTIONNAIRE PSYCHO",
           type:"yesNo",
-          answerUser: 1,
+          answerUser: -1,
           answerYes:
             {
               label: "Oui",
@@ -143,7 +143,7 @@ export class HomePage {
           id: 6,
           title:"Fumez-vous ?",
           type:"yesNo",
-          answerUser: 1,
+          answerUser: -1,
           answerYes:
             {
               label: "Oui",
@@ -159,7 +159,7 @@ export class HomePage {
         {
           idTable: 6,
           id: 7,
-          answerUser: 1 ,
+          answerUser: -1 ,
           title:"Avez-vous des enfants ?",
           type: "yesNo",
           answerYes:
@@ -177,7 +177,7 @@ export class HomePage {
         {
           idTable: 7,
           id: 8,
-          answerUser: 1,
+          answerUser: -1,
           title:"Combien avez-vous d'enfant ?",
           type: "number",
           answer:
@@ -190,7 +190,7 @@ export class HomePage {
         {
           idTable: 8,
           id: 9,
-          answerUser: 1,
+          answerUser: -1,
           title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
           type: "yesNo",
           answerYes:
@@ -208,7 +208,7 @@ export class HomePage {
         {
           idTable: 9,
           id: 10,
-          answerUser: 1,
+          answerUser: -1,
           title:"Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
           type: "number",
           answer:
@@ -221,7 +221,7 @@ export class HomePage {
         {
           idTable: 10,
           id: 11,
-          answerUser: 1,
+          answerUser: -1,
           title:"Avez-vous accouché d'enfant de moins de 2kg200 ?",
           type: "yesNo",
           answerYes:
@@ -239,7 +239,7 @@ export class HomePage {
         {
           idTable: 11,
           id: 12,
-          answerUser: 1,
+          answerUser: -1,
           title: "Votre enfant était il prématuré ?",
           type: "yesNo",
           answerYes:
@@ -257,7 +257,7 @@ export class HomePage {
         {
           idTable: 12,
           id: 13,
-          answerUser: 1,
+          answerUser: -1,
           title: "Avez-vous eu une prééclampsie ?",
           type: "yesNo",
           answerYes:
@@ -275,7 +275,7 @@ export class HomePage {
         {
           idTable: 13,
           id: 14,
-          answerUser: 1,
+          answerUser: -1,
           title:"Avez-vous un antécedent de diabète de grossesse ?",
           type: "yesNo",
           answerYes:
@@ -310,7 +310,7 @@ export class HomePage {
         {
           idTable: 15,
           id: 16,
-          answerUser: 1,
+          answerUser: -1,
           title: "Combien avez-vous eu de césarienne",
           type: "number",
           answer:
@@ -324,7 +324,7 @@ export class HomePage {
         {
           idTable: 16,
           id: 17,
-          answerUser: 1,
+          answerUser: -1,
           title: "Combien de fausse couche avez-vous fait ?",
           type: "number",
           answer:
@@ -344,13 +344,13 @@ export class HomePage {
               label: "nombre par semaine",
               nextStep: 19
             },            
-          answerUser: 1,     
+          answerUser: -1,     
         });
       this.Question.push(
         {
           idTable: 18,
           id: 19,
-          answerUser: 1,
+          answerUser: -1,
           title: "Avez-vous une épilepsie ?",
           type: "yesNo",
           answerYes:
@@ -368,7 +368,7 @@ export class HomePage {
         {
           idTable: 19,
           id: 20,
-          answerUser: 1,
+          answerUser: -1,
           title: "Avez-vous déjà eu une phlébite ?",
           type: "yesNo",
           answerYes:
@@ -386,7 +386,7 @@ export class HomePage {
         {
           idTable: 20,
           id: 21,
-          answerUser: 1,
+          answerUser: -1,
           title: "Avez-vous de l'hypertension artérielle ?",
           type: "yesNo",
           answerYes:
@@ -404,7 +404,7 @@ export class HomePage {
         {
           idTable: 21,
           id: 22,
-          answerUser: 1,
+          answerUser: -1,
           title: "Avez-vous du diabète ?",
           type: "yesNo",
           answerYes:
@@ -422,7 +422,7 @@ export class HomePage {
         {
           idTable: 22,
           id: 23,
-          answerUser: 1,
+          answerUser: -1,
           title:"Prenez vous des médicaments ?",
           type: "yesNo",
           answerYes:
@@ -441,7 +441,7 @@ export class HomePage {
         {
           idTable: 23,
           id: 24,
-          answerUser: 1,
+          answerUser: -1,
           title:"Selectionnez les médicaments que vous prenez",
           type: "number",
           answer:
@@ -454,7 +454,7 @@ export class HomePage {
         {
           idTable: 24,
           id: 25,
-          answerUser: 1,
+          answerUser: -1,
           title: "Quelle est votre taille (en cm) ?",
           type: "number",
           answer:
@@ -479,7 +479,7 @@ export class HomePage {
         {
           idTable: 26,
           id: 27,
-          answerUser: 1,
+          answerUser: -1,
           title: "Travaillez-vous ?",
           type: "yesNo",
           answerYes:
@@ -497,7 +497,7 @@ export class HomePage {
         {
           idTable: 27,
           id: 28,
-          answerUser: 1,
+          answerUser: -1,
           title: "Combien d'heures de travail effectuez-vous par jour ?",
           type: "number",
           answer:
@@ -510,7 +510,7 @@ export class HomePage {
         {
           idTable: 28,
           id: 29,
-          answerUser: 1,
+          answerUser: -1,
           title: "Quel est votre temps de trajet par jour (en minute) ?",
           type: "number",
           answer:
@@ -523,7 +523,7 @@ export class HomePage {
         {
           idTable: 29,
           id: 30,
-          answerUser: 1,
+          answerUser: -1,
           title: "Travaillez-vous debout plus de 6 heures par jour ?",
           type: "yesNo",
           answerYes:
