@@ -24,11 +24,11 @@
       <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>
     </div>
   </div>
-  <div [ngClass]="{'visible': currentStep != 0, next: true }" >
-   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>
-    <button class="button next-button touch" (click)="next()">Suivant</button> -->
-  </div>
-  <ion-slides (ionSlideDidChange)="slideChanged()">
+  <!-- <div [ngClass]="{'visible': currentStep != 0, next: true }" >
+    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>
+    <button class="button next-button touch" (click)="handleNext()">Suivant</button>
+  </div> -->
+  <ion-slides #sliderOne (slider)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">
 
     <ion-slide>
 
@@ -40,57 +40,58 @@
           <div [ngClass]="{'visible': activeWelcomeContent, 'welcome-content': true }">
             <h2>Bienvenue !</h2>
             <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>
-            <button class="button touch" (click)="nextBegin()">Commencer</button>
+            <button class="button touch" (click)="next()">Commencer</button>
             <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>
           </div>
         </div>
       </div>
 
     </ion-slide>
-    <div *ngFor="let question of Question">
-    <form id={{question.idForm}} novalidate>
-      <ion-slide *ngIf="question.type == 'number'"> 
-        <h3>{{question.title}}</h3>
-        <input type="number" name="number" [(ngModel)]="number" required>
-      </ion-slide>
-      <ion-slide *ngIf="question.type == 'yesNoIdn'">
-        <h3>{{question.title}}</h3>
-        <div class="checkbox">
-          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">
-          <label for="radio1-1">Oui</label>
+    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">
+      <form id={{question.idForm}} [ngClass]="{'form-wrapper--hidden': changing, 'form-wrapper': true }" novalidate>
+        <ion-slide *ngIf="question.type == 'number'">
+          <h3>{{question.title}}</h3>
+          <input type="number" name="number" [(ngModel)]="number" required>
+        </ion-slide>
+        <ion-slide *ngIf="question.type == 'yesNoIdn'">
+          <h3>{{question.title}}</h3>
+          <div class="checkbox">
+            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes">
+            <label for="radio{{i}}-1">Oui</label>
+          </div>
+          <div class="checkbox">
+            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no">
+            <label for="radio{{i}}-2">Non</label>
+          </div>
+          <div class="checkbox checkbox--large">
+            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn">
+            <label for="radio{{i}}-3">Je ne sais pas</label>
+          </div>
+        </ion-slide>
+        <ion-slide *ngIf="question.type == 'yesNo'">
+          <h3>{{question.title}}</h3>
+          <div class="checkbox">
+            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes">
+            <label for="radio{{i}}-1">Oui</label>
+          </div>
+          <div class="checkbox">
+            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no">
+            <label for="radio{{i}}-2">Non</label>
+          </div>
+        </ion-slide>
+
+        <ion-slide *ngIf="question.type == 'date'">
+          <h3>{{question.title}}</h3>
+          <input type="date" name="date" [(ngModel)]="date">
+        </ion-slide>
+        <div [ngClass]="{'visible': currentStep != 0, next: true }" >
+          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>
         </div>
-        <div class="checkbox">
-          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">
-          <label for="radio1-2">Non</label>
-        </div>
-        <div class="checkbox checkbox--large">
-          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">
-          <label for="radio1-3">Je ne sais pas</label>
-        </div>
-      </ion-slide>
-      <ion-slide *ngIf="question.type == 'yesNo'">
-        <h3>{{question.title}}</h3>
-        <div class="checkbox">
-         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">
-         <label for="radio2-1">Oui</label>
-       </div>
-        <div class="checkbox">
-          <input id="radio2-2" type="checkbox" name="no
-          " [(ngModel)]="no">
-          <label for="radio2-2">Non</label>
-        </div>
-      </ion-slide>
-      
-      <ion-slide *ngIf="question.type == 'date'">
-        <h3>{{question.title}}</h3>
-        <input type="date" name="date" [(ngModel)]="date">
-      </ion-slide>
-         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>
       </form>
-   
+
     </div>
-    
-    
+
+
   </ion-slides>
 
 </ion-content>

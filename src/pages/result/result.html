@@ -1,64 +1,29 @@
-<!--
-  Generated template for the ResultPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
---><!-- <ion-header>
-  <ion-navbar>
-    <ion-title>Ciconia</ion-title>
-  </ion-navbar>
-</ion-header> -->
-
 <ion-content>
-  <div [ngClass]="{'visible': currentStep != 0, counter: true }">
-    {{ currentStep }} / {{ totalStep }}
-  </div>
-  <div class="result-info">
+  <div class="result-info visible" >
     <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>
   </div>
-  <div [ngClass]="{'visible': currentStep != 0, progress: true }">
-    <div class="bar" [ngStyle]="{'width': progressWidth}" ></div>
-  </div>
-  <div [ngClass]="{'visible': currentStep != 0, next: true }" >
-   <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>
-    <button class="button next-button touch" (click)="next()">Suivant</button>
-  </div>
-  <ion-slides (ionSlideDidChange)="slideChanged()">
-
+  <ion-slides pager>
     <ion-slide>
 
       <div class="welcome">
-        <div [ngClass]="{'visible': activeLogoWrapper, 'slide-wrapper logo-wrapper': true }">
-          <div [ngClass]="{'logo--active': activeLogo, logo: true }"></div>
-        </div>
         <div class="slide-wrapper welcome-wrapper">
           <div [ngClass]="{'visible': activeWelcomeContent, 'welcome-content': true }">
-            <h2>Resultat</h2>
-            <p>Resultat</p>
+            <h1>Bravo !</h1>
             <p>{{riskAssessment}}</p>
-            <button class="button touch" (click)="nextBegin()">Commencer</button>
-            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>
           </div>
         </div>
       </div>
 
     </ion-slide>
-    <div *ngFor="let r of risk">
-    <ion-slide class="risk">
-		<h1>{{r.title}}</h1>
-	</ion-slide>
-	<ion-slide class="conseil">
-		<h1>{{conseil[r.idConseil].title}}</h1>
-	</ion-slide>
-	<ion-slide class="positif">
-	<h1>{{positif[r.idPositif].title}}</h1>
-	</ion-slide>
-        
-      
-    </div>
-    
-    
+    <ion-slide *ngFor="let answer of answers" class="risk">
+      <h1>{{answer.title}}</h1>
+    </ion-slide>
+    <ion-slide class="positif">
+      <h1>Et voilà !</h1>
+      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>
+      <button class="button touch" (click)="nextBegin()">Recommencer</button>
+    </ion-slide>
+
   </ion-slides>
 
 </ion-content>
-

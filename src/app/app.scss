@@ -7,6 +7,67 @@ html, body, .form-wrapper, .swiper-slide {
   margin: 0;
 }
 
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 3px;
+}
+
+.swiper-pagination-bullet {
+    border-radius: 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 10px!important;
+    pointer-events: auto;
+    box-sizing: content-box;
+    position: relative;
+    background: none !important;
+    &:after, &:before {
+      border-radius: 100%;
+      content: "";
+      position: absolute;
+      transition: all 200ms ease;
+    }
+    &:before {
+      width: 10px;
+      height: 10px;
+      top:12.5px;
+      left:12.5px;
+      z-index: 2;
+      background: rgba(0,0,0,0.3);
+    }
+    &:after {
+      width: 20px;
+      height: 20px;
+      top:7.5px;
+      left:7.5px;
+      transform: scale(0);
+      background: $green;
+      z-index: 1;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    &:after {
+      transform: scale(1);
+    }
+}
+
+.swiper-pagination {
+  bottom: 30px!important;
+}
+
+
+
+.swiper-slide {
+  opacity: 0.3;
+  transition: all 50ms ease;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transition: all 50ms ease;
+}
+
 * {
   box-sizing: border-box;
 }

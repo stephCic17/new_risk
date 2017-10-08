@@ -13,9 +13,10 @@ import Questions from './questionFile';
 })
 
 export class HomePage {
-  @ViewChild(Slides) slides: Slides;
+  @ViewChild('sliderOne') sliderOne: Slides;
   @ViewChild('realFormButton') realFormButton;
 
+  Questions = [];
   Answers = [];
   totalStep = 0;
   currentStep = 0;
@@ -23,6 +24,7 @@ export class HomePage {
   activeLogoWrapper = false;
   activeWelcomeContent = false;
   isInitialized = false;
+  changing = false;
   Question:any;
   number:any;
   yes:any;
@@ -31,7 +33,7 @@ export class HomePage {
   date:any;
   questionForm:any;
 
-  constructor(private formBuilder: FormBuilder, private renderer: Renderer, public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(private renderer: Renderer, public navCtrl: NavController, public navParams: NavParams) { }
 
   ngOnInit() {
    var self = this;
@@ -48,6 +50,7 @@ export class HomePage {
 
 
     this.Questions = Questions;
+    console.log(this.Questions);
 
     // type 1 = number
     // type 2 = Oui non
@@ -59,18 +62,29 @@ export class HomePage {
 
   init() {
     this.isInitialized = true;
-    this.currentStep = this.slides.getActiveIndex();
-    this.totalStep = this.slides.length();
+    this.currentStep = this.sliderOne.getActiveIndex();
+    this.totalStep = this.sliderOne.length();
+    this.sliderOne.lockSwipeToPrev(true);
+    // this.sliderOne.lockSwipes(true);
+  }
+
+  ionSlideDidChange() {
+    this.changing = false;
+  }
+
+  ionSlideWillChange() {
+    this.changing = true;
   }
 
   slideChanged() {
-    this.currentStep = this.slides.getActiveIndex();
+    this.currentStep = this.sliderOne.getActiveIndex();
   }
 
   ngAfterViewInit() {
   }
 
   handleNext() {
+    console.log(this.renderer);
     let mouseclick = new MouseEvent('click', {bubbles: false});
     setTimeout(() => {
       this.renderer.invokeElementMethod(this.realFormButton.nativeElement, 'dispatchEvent', [mouseclick]);
@@ -79,83 +93,85 @@ export class HomePage {
 
   nextForm(question) {
 
-    console.log(question)
-    //
-    // this.questionForm = question;
-    // console.log(question);
-    // if (this.questionForm.type == "number")
-    // {
-    //   this.currentStep = this.questionForm.answer.nextStep;
-    //   this.Questions[this.questionForm.idTable].answerUser = this.number;
-    //   this.slides.slideTo(this.currentStep, 350);
-    // }
-    // else if (this.questionForm.type == "yesNoIdn")
-    // {
-    //   if (this.yes)
-    //   {
-    //     this.currentStep =this.questionForm.answerYes.nextStep;
-    //     this.Questions[this.questionForm.idTable].answerUser = 1;
-    //     this.slides.slideTo(this.currentStep, 350);
-    //   }
-    //   else if (this.no)
-    //   {
-    //     this.currentStep =this.questionForm.answerNo.nextStep;
-    //     this.Questions[this.questionForm.idTable].answerUser = 0;
-    //     this.slides.slideTo(this.currentStep, 350);
-    //
-    //   }
-    //   else if (this.idn)
-    //   {
-    //     this.currentStep = this.questionForm.answerIdn.nextStep;
-    //     this.Questions[this.questionForm.idTable].answerUser = 2;
-    //     this.slides.slideTo(this.currentStep, 350);
-    //   }
-    // }
-    // else if (this.questionForm.type == "yesNo")
-    // {
-    //   if (this.yes)
-    //   {
-    //     this.currentStep = this.questionForm.answerYes.nextStep;
-    //     this.Questions[this.questionForm.idTable].answerUser = 1;
-    //     this.slides.slideTo(this.currentStep, 350);
-    //   }
-    //   else if (this.no)
-    //   {
-    //     this.currentStep = this.questionForm.answerNo.nextStep;
-    //     this.Questions[this.questionForm.idTable].answerUser = 0;
-    //     this.slides.slideTo(this.currentStep, 350);
-    //   }
-    // }
-    // else if (this.questionForm.type == "date")
-    // {
-    //   this.currentStep = this.questionForm.answer.nextStep;
-    //   this.Questions[this.questionForm.idTable].answerUser = this.date;
-    //   this.slides.slideTo(this.currentStep, 350);
-    // }
+    console.log("before", question);
 
-    // this.number = "";
-    // this.yes = false;
-    // this.no = false;
-    // this.idn = false;
-    // this.date = 0;
+    this.questionForm = question;
+    if (this.questionForm.type == "number")
+    {
+      this.currentStep = this.questionForm.answer.nextStep;
+      this.Questions[this.questionForm.idTable].answerUser = this.number;
+      this.sliderOne.slideTo(this.currentStep, 350);
+    }
+    else if (this.questionForm.type == "yesNoIdn")
+    {
+      if (this.yes)
+      {
+        this.currentStep =this.questionForm.answerYes.nextStep;
+        this.Questions[this.questionForm.idTable].answerUser = 1;
+        this.sliderOne.slideTo(this.currentStep, 350);
+      }
+      else if (this.no)
+      {
+        this.currentStep =this.questionForm.answerNo.nextStep;
+        this.Questions[this.questionForm.idTable].answerUser = 0;
+        this.sliderOne.slideTo(this.currentStep, 350);
 
-    // if (this.currentStep == 99) {
-    //   this.navCtrl.push(ResultPage, {
-    //     userParams: this.Questions
-    //   });
-    // }
+      }
+      else if (this.idn)
+      {
+        this.currentStep = this.questionForm.answerIdn.nextStep;
+        this.Questions[this.questionForm.idTable].answerUser = 2;
+        this.sliderOne.slideTo(this.currentStep, 350);
+      }
+    }
+    else if (this.questionForm.type == "yesNo")
+    {
+      if (this.yes)
+      {
+        this.currentStep = this.questionForm.answerYes.nextStep;
+        this.Questions[this.questionForm.idTable].answerUser = 1;
+        this.sliderOne.slideTo(this.currentStep, 350);
+      }
+      else if (this.no)
+      {
+        this.currentStep = this.questionForm.answerNo.nextStep;
+        this.Questions[this.questionForm.idTable].answerUser = 0;
+        this.sliderOne.slideTo(this.currentStep, 350);
+      }
+    }
+    else if (this.questionForm.type == "date")
+    {
+      this.currentStep = this.questionForm.answer.nextStep;
+      this.Questions[this.questionForm.idTable].answerUser = this.date;
+      this.sliderOne.slideTo(this.currentStep, 350);
+    }
+
+    this.number = "";
+    this.yes = false;
+    this.no = false;
+    this.idn = false;
+    this.date = 0;
+
+    console.log("after", question);
+
+    console.log("questions", this.Questions);
+
+    if (this.currentStep == 99) {
+      this.navCtrl.push(ResultPage, {
+        userParams: this.Questions
+      });
+    }
 
   }
 
-  nextBegin() {
-
+  next() {
     if(!this.isInitialized)
       this.init();
     this.currentStep++;
-    this.slides.slideTo(this.currentStep, 350);
+    this.sliderOne.slideTo(this.currentStep, 350);
   }
   prev() {
      this.currentStep--;
-     this.slides.slideTo(this.currentStep, 350);
+     this.sliderOne.slideTo(this.currentStep, 350);
   }
 }

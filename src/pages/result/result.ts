@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
-/**
- * Generated class for the ResultPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -17,15 +12,11 @@ import { Slides } from 'ionic-angular';
 })
 export class ResultPage {
     @ViewChild(Slides) slides: Slides;
-    currentStep = 0;
-    totalStep = 4;
-    progressWidth = "0%";
-    activeLogo = false;
-    activeLogoWrapper = false;
     activeWelcomeContent = false;
     isInitialized = false;
-	valueTestGyneco:any;
-	resultRisk:number;
+    answers: any;
+    valueTestGyneco:any;
+    resultRisk:number;
     result:any;
     risk:any;
     riskAssessment:any;
@@ -33,47 +24,31 @@ export class ResultPage {
     positif:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-	
+
       	this.valueTestGyneco = navParams.get('userParams');
   	    this.resultRisk = 0;
         console.log("test");
         console.log(this.valueTestGyneco);
     }
-slideChanged() {
-    this.currentStep = this.slides.getActiveIndex();
 
-  }
  nextBegin(){
+   this.navCtrl.push(HomePage);
+  }
 
-      this.currentStep++;
-       this.slides.slideTo(this.currentStep, 350);
-      //this.updateProgressBar();
+  ngAfterViewInit() {
+    console.log("ouéoué");
+    this.slides.lockSwipes(false);
+    this.slides.freeMode = true;
   }
-  next(){
 
-     
-      this.currentStep++;
-       this.slides.slideTo(this.currentStep, 350);
-      //this.updateProgressBar();
-  }
-  prev() {
-   this.currentStep--;
-    this.slides.slideTo(this.currentStep, 350);
-   // this.updateProgressBar();
-  }
  ngOnInit() {
    var self = this;
-   this.activeLogoWrapper = true;
 
     setTimeout(function() {
-      self.activeLogo = true;
-    }, 500);
-
-    setTimeout(function() {
-      self.activeLogoWrapper = false;
       self.activeWelcomeContent = true;
-    }, 2500);
+    }, 250);
 
+    this.slides.lockSwipes(false);
     console.log(this.valueTestGyneco);
     this.result = [];
     this.risk = [];
@@ -148,13 +123,13 @@ slideChanged() {
     		this.resultRisk += 2;
     }
     if (this.resultRisk >= 200)
-        this.riskAssessment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3."; 
+        this.riskAssessment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
     else if (this.resultRisk >= 50)
-        this.riskAssessment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3"; 
+        this.riskAssessment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
     else if (this.resultRisk >= 20)
-        this.riskAssessment = "D'apres vos réponses vous présentez une grossesse à risque."; 
-    else 
-        this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse."; 
+        this.riskAssessment = "D'apres vos réponses vous présentez une grossesse à risque.";
+    else
+        this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
  console.log("debut risk");
         if (this.valueTestGyneco[0].answerUser < 42 && this.valueTestGyneco[0].answerUser >= 38)
              this.risk.push(
@@ -202,7 +177,7 @@ slideChanged() {
                     type: "risk",
                      idPositif: 0,
                      idConseil: 0,
-                    title:"Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."});      
+                    title:"Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."});
 
         if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco[10].answerUser == 1)
             this.risk.push(
@@ -301,7 +276,7 @@ slideChanged() {
                      idConseil: 0,
                     title:"Votre obésité massive"
                 });
-        
+
         if (this.valueTestGyneco[28].answerUser > 10 && this.valueTestGyneco[28].answerUser <= 12)
             this.risk.push(
                 {
@@ -361,15 +336,15 @@ slideChanged() {
             this.positif.push(
                 {
                    title:"La plus grande partie des anomalies foetales sont des accidents et leur récidive est rare"
-                }); 
+                });
         if (!this.valueTestGyneco[27].answerUser)
              this.positif.push(
                  {
                    title: "Vous ne travaillez pas, vous pouvez donc prendre le temps de vous occuper de vous et préparer la venue de votre enfant"
                  });
-   
+
          console.log("debut conseil");
-    
+
         if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
              this.conseil.push(
                  {
@@ -399,7 +374,7 @@ slideChanged() {
             this.conseil.push(
                 {
                    title:"Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale."
-                }); 
+                });
         if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
             this.conseil.push(
                 {
@@ -410,7 +385,7 @@ slideChanged() {
                 {
                   title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
                 });
-     
+
 
         if (this.valueTestGyneco.medicament1 == 1)
             this.conseil.push(
@@ -449,7 +424,7 @@ slideChanged() {
                 {
                    title:"Vous devez être prise en charge dans un centre spécialisé."
                 });
-     
+
 
         if (this.valueTestGyneco[28].answerUser > 10)
              this.conseil.push(
@@ -466,6 +441,9 @@ slideChanged() {
                 {
                    title:"Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour"
                 });
+
+
+        this.answers = this.risk.concat(this.positif).concat(this.conseil);
 
         console.log("risk:",this.risk);
         console.log("positif:",this.positif);
@@ -486,7 +464,7 @@ slideChanged() {
         else if (this.valueTestGyneco[5].answerUser == 1)
            this.risk.push("Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse.");
         if (this.valueTestGyneco[8].answerUser == 1)
-            this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");         
+            this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");
         if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco[10].answerUser == 1)
             this.risk.push("Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %");
         if (this.valueTestGyneco[17].answerUser >= 3)
@@ -512,7 +490,7 @@ slideChanged() {
             this.risk.push("Votre obésité");
         else if (this.valueTestGyneco.IMC > 40)
             this.risk.push("Votre obésité massive");
-        
+
         if (this.valueTestGyneco[28].answerUser > 10 && this.valueTestGyneco[28].answerUser <= 12)
             this.risk.push("Votre nombre d'heure de travail est élevé.");
         if (this.valueTestGyneco[28].answerUser > 12)
