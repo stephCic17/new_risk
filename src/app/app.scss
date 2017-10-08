@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:100,200,300,400,500,600,700,800');
 $green: #609297;
 
-html, body {
+html, body, .form-wrapper, .swiper-slide {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -9,6 +9,10 @@ html, body {
 
 * {
   box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
 }
 
 h1, h2, h3, h4, h5, h6 {

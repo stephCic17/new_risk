@@ -1,7 +1,7 @@
 <!-- <ion-header>
-  <ion-navbar>
-    <ion-title>Ciconia</ion-title>
-  </ion-navbar>
+<ion-navbar>
+<ion-title>Ciconia</ion-title>
+</ion-navbar>
 </ion-header> -->
 
 <ion-content>
@@ -12,7 +12,7 @@
     <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>
   </div>
   <div [ngClass]="{'visible': currentStep != 0, progress: true }">
-    <div class="bar" [ngStyle]="{'width': progressWidth}" ></div>
+    <div class="bar" ng-change="totalStep" [ngStyle]="{'width': (100 / totalStep) * currentStep + '%'}" ></div>
   </div>
   <div class="modal">
     <div class="modal-overlay"></div>
