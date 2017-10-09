@@ -1,6 +1,6 @@
 webpackJsonp([35],{
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45,14 +45,14 @@ IvgInfoPage = __decorate([
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenstruationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_1_step2_1__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_1_step2_1__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -120,14 +120,14 @@ MenstruationPage = __decorate([
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step2_1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ivg_info_ivg_info__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ivg_info_ivg_info__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test1_psycho_test1__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -236,14 +236,14 @@ Step2_1Page = __decorate([
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step3Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step4_step4__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step4_step4__ = __webpack_require__(114);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -328,15 +328,15 @@ Step3Page = __decorate([
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step4Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step5_step5__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test2_psycho_test2__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step5_step5__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test2_psycho_test2__ = __webpack_require__(132);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -443,14 +443,14 @@ Step4Page = __decorate([
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step5Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step6_step6__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step6_step6__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -520,7 +520,7 @@ Step5Page = __decorate([
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -618,14 +618,14 @@ Step6Page = __decorate([
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step9Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step10_step10__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step10_step10__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -709,7 +709,7 @@ Step9Page = __decorate([
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -808,7 +808,7 @@ Step10Page = __decorate([
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -816,7 +816,7 @@ Step10Page = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__psycho_test3_psycho_test3__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step12_1_step12_1__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step12_1_step12_1__ = __webpack_require__(131);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -908,14 +908,14 @@ Step12Page = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step15Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step16_step16__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step16_step16__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -999,14 +999,14 @@ Step15Page = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step16Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step17_step17__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step17_step17__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1090,14 +1090,14 @@ Step16Page = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step17Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step18_step18__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step18_step18__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1181,14 +1181,14 @@ Step17Page = __decorate([
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step18Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step19_step19__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step19_step19__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1272,14 +1272,14 @@ Step18Page = __decorate([
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step19Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step20_step20__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step20_step20__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step21_step21__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1377,7 +1377,7 @@ Step19Page = __decorate([
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1458,14 +1458,14 @@ Step20Page = __decorate([
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step22Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step23_step23__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step23_step23__ = __webpack_require__(127);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1531,14 +1531,14 @@ Step22Page = __decorate([
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step23Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step24_step24__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step24_step24__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test4_psycho_test4__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1630,14 +1630,14 @@ Step23Page = __decorate([
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step24Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step25_step25__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step25_step25__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1701,14 +1701,14 @@ Step24Page = __decorate([
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step25Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step26_step26__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step26_step26__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1772,7 +1772,7 @@ Step25Page = __decorate([
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1863,7 +1863,7 @@ Step26Page = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1935,7 +1935,7 @@ Step12_1Page = __decorate([
 
 /***/ }),
 
-/***/ 131:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2095,14 +2095,14 @@ PsychoTest2Page = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menstruation_menstruation__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menstruation_menstruation__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__psycho_test1_psycho_test1__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2210,7 +2210,7 @@ Step2Page = __decorate([
 
 /***/ }),
 
-/***/ 140:
+/***/ 141:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -2223,72 +2223,72 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 140;
+webpackEmptyAsyncContext.id = 141;
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/ivg-info/ivg-info.module": [
-		301,
+		302,
 		34
 	],
 	"../pages/menstruation/menstruation.module": [
-		302,
+		303,
 		33
 	],
 	"../pages/psycho-test1/psycho-test1.module": [
-		303,
+		304,
 		32
 	],
 	"../pages/psycho-test2/psycho-test2.module": [
-		304,
+		305,
 		31
 	],
 	"../pages/psycho-test3/psycho-test3.module": [
-		305,
+		306,
 		30
 	],
 	"../pages/psycho-test4/psycho-test4.module": [
-		306,
+		307,
 		29
 	],
 	"../pages/result/result.module": [
-		307,
+		308,
 		28
 	],
 	"../pages/step1/step1.module": [
-		308,
+		309,
 		27
 	],
 	"../pages/step10/step10.module": [
-		309,
+		310,
 		26
 	],
 	"../pages/step11/step11.module": [
-		310,
+		311,
 		25
 	],
 	"../pages/step12-1/step12-1.module": [
-		311,
+		312,
 		24
 	],
 	"../pages/step12/step12.module": [
-		312,
+		313,
 		23
 	],
 	"../pages/step13/step13.module": [
-		313,
+		314,
 		22
 	],
 	"../pages/step14/step14.module": [
-		314,
+		315,
 		21
 	],
 	"../pages/step15/step15.module": [
-		315,
+		329,
 		20
 	],
 	"../pages/step16/step16.module": [
@@ -2344,31 +2344,31 @@ var map = {
 		7
 	],
 	"../pages/step3/step3.module": [
-		329,
+		330,
 		6
 	],
 	"../pages/step4/step4.module": [
-		330,
+		331,
 		5
 	],
 	"../pages/step5/step5.module": [
-		331,
+		332,
 		4
 	],
 	"../pages/step6/step6.module": [
-		332,
+		333,
 		3
 	],
 	"../pages/step7/step7.module": [
-		333,
+		334,
 		2
 	],
 	"../pages/step8/step8.module": [
-		334,
+		335,
 		1
 	],
 	"../pages/step9/step9.module": [
-		335,
+		336,
 		0
 	]
 };
@@ -2383,680 +2383,8 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 181;
+webpackAsyncContext.id = 182;
 module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 225:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(58);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var HomePage = (function () {
-    function HomePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.currentStep = 0;
-        this.totalStep = 4;
-        this.progressWidth = "0%";
-        this.activeLogo = false;
-        this.activeLogoWrapper = false;
-        this.activeWelcomeContent = false;
-        this.isInitialized = false;
-    }
-    HomePage.prototype.ngOnInit = function () {
-        var self = this;
-        this.activeLogoWrapper = true;
-        setTimeout(function () {
-            self.activeLogo = true;
-        }, 500);
-        setTimeout(function () {
-            self.activeLogoWrapper = false;
-            self.activeWelcomeContent = true;
-        }, 2500);
-        this.Question = [];
-        this.Question.push({
-            idTable: 0,
-            id: 1,
-            title: "Quel âge avez-vous ?",
-            type: "number",
-            answer: {
-                label: "age en année",
-                nextStep: 2
-            },
-            answerUser: -1
-        });
-        this.Question.push({
-            idTable: 1,
-            id: 2,
-            answerUser: -1,
-            title: "Êtes-vous enceinte ?",
-            type: "yesNoIdn",
-            answerYes: {
-                label: "Oui",
-                nextStep: 3
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 6
-            },
-            answerIdn: {
-                label: "Je ne sais pas",
-                nextStep: 3
-            }
-        });
-        this.Question.push({
-            idTable: 2,
-            id: 3,
-            answerUser: -1,
-            title: "Quel est la date de vos dernière règle ?",
-            type: "date",
-            answer: {
-                label: "jj/mm/aaaa",
-                nextStep: 4
-            }
-        });
-        this.Question.push({
-            idTable: 3,
-            id: 4,
-            title: "Est-ce une bonne nouvelle ?",
-            type: "yesNoIdn",
-            answerUser: -1,
-            answerYes: {
-                label: "Oui",
-                nextStep: 5
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 99
-            },
-            answerIdn: {
-                label: "Je ne sais pas",
-                nextStep: 30
-            }
-        });
-        this.Question.push({
-            idTable: 4,
-            id: 5,
-            title: "QUESTIONNAIRE PSYCHO",
-            type: "yesNo",
-            answerUser: -1,
-            answerYes: {
-                label: "Oui",
-                nextStep: 6
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 6
-            }
-        });
-        this.Question.push({
-            idTable: 5,
-            id: 6,
-            title: "Fumez-vous ?",
-            type: "yesNo",
-            answerUser: -1,
-            answerYes: {
-                label: "Oui",
-                nextStep: 7
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 7
-            }
-        });
-        this.Question.push({
-            idTable: 6,
-            id: 7,
-            answerUser: -1,
-            title: "Avez-vous des enfants ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 8
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 18
-            }
-        });
-        this.Question.push({
-            idTable: 7,
-            id: 8,
-            answerUser: -1,
-            title: "Combien avez-vous d'enfant ?",
-            type: "number",
-            answer: {
-                label: "nombre d'enfant",
-                nextStep: 9
-            }
-        });
-        this.Question.push({
-            idTable: 8,
-            id: 9,
-            answerUser: -1,
-            title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 10
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 11
-            }
-        });
-        this.Question.push({
-            idTable: 9,
-            id: 10,
-            answerUser: -1,
-            title: "Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
-            type: "number",
-            answer: {
-                label: "nombre d'enfants",
-                nextStep: 11
-            }
-        });
-        this.Question.push({
-            idTable: 10,
-            id: 11,
-            answerUser: -1,
-            title: "Avez-vous accouché d'enfant de moins de 2kg200 ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 12
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 13
-            }
-        });
-        this.Question.push({
-            idTable: 11,
-            id: 12,
-            answerUser: -1,
-            title: "Votre enfant était il prématuré ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 13
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 13
-            }
-        });
-        this.Question.push({
-            idTable: 12,
-            id: 13,
-            answerUser: -1,
-            title: "Avez-vous eu une prééclampsie ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 14
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 14
-            }
-        });
-        this.Question.push({
-            idTable: 13,
-            id: 14,
-            answerUser: -1,
-            title: "Avez-vous un antécedent de diabète de grossesse ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 15
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 15
-            }
-        });
-        this.Question.push({
-            idTable: 14,
-            id: 15,
-            title: "Avez-vous eu une césariennes ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 16
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 17
-            }
-        });
-        this.Question.push({
-            idTable: 15,
-            id: 16,
-            answerUser: -1,
-            title: "Combien avez-vous eu de césarienne",
-            type: "number",
-            answer: {
-                label: "nombre de cesarienne",
-                nextStep: 17
-            }
-        });
-        // question select psycho
-        this.Question.push({
-            idTable: 16,
-            id: 17,
-            answerUser: -1,
-            title: "Combien de fausse couche avez-vous fait ?",
-            type: "number",
-            answer: {
-                label: "nombre",
-                nextStep: 18
-            }
-        });
-        this.Question.push({
-            idTable: 17,
-            id: 18,
-            title: "Combien de verres d'alcool buvez-vous par semaine ?",
-            type: "number",
-            answer: {
-                label: "nombre par semaine",
-                nextStep: 19
-            },
-            answerUser: -1,
-        });
-        this.Question.push({
-            idTable: 18,
-            id: 19,
-            answerUser: -1,
-            title: "Avez-vous une épilepsie ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 20
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 20
-            }
-        });
-        this.Question.push({
-            idTable: 19,
-            id: 20,
-            answerUser: -1,
-            title: "Avez-vous déjà eu une phlébite ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 21
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 21
-            }
-        });
-        this.Question.push({
-            idTable: 20,
-            id: 21,
-            answerUser: -1,
-            title: "Avez-vous de l'hypertension artérielle ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 22
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 22
-            }
-        });
-        this.Question.push({
-            idTable: 21,
-            id: 22,
-            answerUser: -1,
-            title: "Avez-vous du diabète ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 23
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 23
-            }
-        });
-        this.Question.push({
-            idTable: 22,
-            id: 23,
-            answerUser: -1,
-            title: "Prenez vous des médicaments ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 24
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 25
-            }
-        });
-        //Question select medicament
-        this.Question.push({
-            idTable: 23,
-            id: 24,
-            answerUser: -1,
-            title: "Selectionnez les médicaments que vous prenez",
-            type: "number",
-            answer: {
-                label: "",
-                nextStep: 25
-            }
-        });
-        this.Question.push({
-            idTable: 24,
-            id: 25,
-            answerUser: -1,
-            title: "Quelle est votre taille (en cm) ?",
-            type: "number",
-            answer: {
-                label: "en cm",
-                nextStep: 26
-            }
-        });
-        this.Question.push({
-            idTable: 25,
-            id: 26,
-            title: "Quel est votre poids (en kg) ?",
-            type: "number",
-            answer: {
-                label: "en kg",
-                nextStep: 27
-            }
-        });
-        this.Question.push({
-            idTable: 26,
-            id: 27,
-            answerUser: -1,
-            title: "Travaillez-vous ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 28
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 99
-            }
-        });
-        this.Question.push({
-            idTable: 27,
-            id: 28,
-            answerUser: -1,
-            title: "Combien d'heures de travail effectuez-vous par jour ?",
-            type: "number",
-            answer: {
-                label: "en heure",
-                nextStep: 29
-            }
-        });
-        this.Question.push({
-            idTable: 28,
-            id: 29,
-            answerUser: -1,
-            title: "Quel est votre temps de trajet par jour (en minute) ?",
-            type: "number",
-            answer: {
-                label: "en minute",
-                nextStep: 30
-            }
-        });
-        this.Question.push({
-            idTable: 29,
-            id: 30,
-            answerUser: -1,
-            title: "Travaillez-vous debout plus de 6 heures par jour ?",
-            type: "yesNo",
-            answerYes: {
-                label: "Oui",
-                nextStep: 99
-            },
-            answerNo: {
-                label: "Non",
-                nextStep: 99
-            }
-        });
-        //this.QuestionText.psychoTest1 = "Vous et votre fertilité";
-        //this.QuestionText.psychoTest1_1 = "recours à l'aide médicale à la procréation ";
-        //this.QuestionText.psychoTest1_2 = "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse";
-        //this.QuestionText.psychoTest1_3 = "combien de fois avez-vous eus recours à l'aide médicale à la procreation";
-        //this.QuestionText.psychoTest1_4 = "Bénéficié d'un don d'ovocyte";
-        //this.QuestionText.psychoTest1_5 = "Bénéficié d'un don de sperme";
-        //this.QuestionText.psychoTest2 = "Avez-vous connu une de ces situation ?";
-        //this.QuestionText.psychoTest2_1 = "Fauche couche";
-        //this.QuestionText.psychoTest2_2 = "Interruption volontaire de grossesse";
-        //this.QuestionText.psychoTest2_3 = "Grossesse extra utérine";
-        //this.QuestionText.psychoTest2_4 = "Mort foetale in utéro";
-        //this.QuestionText.psychoTest2_5 = "Interruption médical de la grossesse";
-        //this.QuestionText.psychoTest2_6 = "Interruption sélective de la grossesse";
-        //this.QuestionText.psychoTest2_7 = "Enfant porteur de handicap";
-        //this.QuestionText.psychoTest2_8 = "Enfant prématuré";
-        //this.QuestionText.psychoTest2_9 = "Enfant atteint d'une maladie chronique";
-        //this.QuestionText.psychoTest2_10 = "Mort d'un enfant";
-        //this.QuestionText.psychoTest2_11 = "Ces expériences ont été traumatiques";
-        //this.QuestionText.psychoTest2_12 = "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques";
-        //this.QuestionText.psychoTest4 = "Vous et votre psychologie";
-        //this.QuestionText.psychoTest4_1 = "Crises d'angoisse";
-        //this.QuestionText.psychoTest4_2 = "Boulimie";
-        //this.QuestionText.psychoTest4_3 = "Anorexie";
-        //this.QuestionText.psychoTest4_4 = "Trouble Obsessionnels compulsif TOC";
-        //this.QuestionText.psychoTest4_5 = "Dépression";
-        //this.QuestionText.psychoTest4_6 = "Phobie";
-        //this.QuestionText.psychoTest4_7 = "trouble bipolaires";
-        //this.QuestionText.psychoTest4_8 = "hospitalisation dans un service psychiatrique";
-    };
-    HomePage.prototype.init = function () {
-        this.isInitialized = true;
-        this.currentStep = this.slides.getActiveIndex();
-        this.totalStep = this.slides.length();
-        //type 1 = number
-        // type 2 = Oui non
-        //type 3 = oui non je ne sais pas
-        // type 4 = select
-        // type 5 = date
-    };
-    HomePage.prototype.slideChanged = function () {
-        this.currentStep = this.slides.getActiveIndex();
-        this.updateProgressBar();
-    };
-    HomePage.prototype.updateProgressBar = function () {
-        this.progressWidth = (100 / this.totalStep) * this.currentStep + "%";
-    };
-    HomePage.prototype.nextForm = function (question) {
-        console.log(question);
-        this.questionForm = question;
-        console.log(this.Question);
-        console.log(this.questionForm);
-        console.log("number", this.number);
-        if (this.questionForm.type == "number") {
-            this.currentStep = this.questionForm.answer.nextStep;
-            this.Question[this.questionForm.idTable].answerUser = this.number;
-            this.slides.slideTo(this.currentStep, 350);
-            this.updateProgressBar();
-        }
-        else if (this.questionForm.type == "yesNoIdn") {
-            if (this.yes) {
-                this.currentStep = this.questionForm.answerYes.nextStep;
-                this.Question[this.questionForm.idTable].answerUser = 1;
-                this.slides.slideTo(this.currentStep, 350);
-                this.updateProgressBar();
-            }
-            else if (this.no) {
-                this.currentStep = this.questionForm.answerNo.nextStep;
-                this.Question[this.questionForm.idTable].answerUser = 0;
-                this.slides.slideTo(this.currentStep, 350);
-                this.updateProgressBar();
-            }
-            else if (this.idn) {
-                this.currentStep = this.questionForm.answerIdn.nextStep;
-                this.Question[this.questionForm.idTable].answerUser = 2;
-                this.slides.slideTo(this.currentStep, 350);
-                this.updateProgressBar();
-            }
-        }
-        else if (this.questionForm.type == "yesNo") {
-            if (this.yes) {
-                this.currentStep = this.questionForm.answerYes.nextStep;
-                this.Question[this.questionForm.idTable].answerUser = 1;
-                this.slides.slideTo(this.currentStep, 350);
-                this.updateProgressBar();
-            }
-            else if (this.no) {
-                this.currentStep = this.questionForm.answerNo.nextStep;
-                this.Question[this.questionForm.idTable].answerUser = 0;
-                this.slides.slideTo(this.currentStep, 350);
-                this.updateProgressBar();
-            }
-        }
-        else if (this.questionForm.type == "date") {
-            this.currentStep = this.questionForm.answer.nextStep;
-            this.Question[this.questionForm.idTable].answerUser = this.date;
-            this.slides.slideTo(this.currentStep, 350);
-            this.updateProgressBar();
-        }
-        this.number = "";
-        this.yes = false;
-        this.no = false;
-        this.idn = false;
-        this.date = 0;
-        if (this.currentStep == 99) {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__result_result__["a" /* ResultPage */], {
-                userParams: this.Question
-            });
-        }
-    };
-    HomePage.prototype.nextBegin = function () {
-        if (!this.isInitialized)
-            this.init();
-        this.currentStep++;
-        this.slides.slideTo(this.currentStep, 350);
-        //this.updateProgressBar();
-    };
-    HomePage.prototype.prev = function () {
-        //    this.currentStep--;
-        //  this.slides.slideTo(this.currentStep, 350);
-        // this.updateProgressBar();
-    };
-    return HomePage;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
-], HomePage.prototype, "slides", void 0);
-HomePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <!-- <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button> -->\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="nextBegin()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let question of Question">\n    <form id={{question.idForm}} novalidate>\n      <ion-slide *ngIf="question.type == \'number\'"> \n        <h3>{{question.title}}</h3>\n        <input type="number" name="number" [(ngModel)]="number" required>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n          <input id="radio1-1" type="checkbox" name="yes" [(ngModel)]="yes">\n          <label for="radio1-1">Oui</label>\n        </div>\n        <div class="checkbox">\n          <input id="radio1-2" type="checkbox" name="no" [(ngModel)]="no">\n          <label for="radio1-2">Non</label>\n        </div>\n        <div class="checkbox checkbox--large">\n          <input id="radio1-3" type="checkbox" name="idn" [(ngModel)]="idn">\n          <label for="radio1-3">Je ne sais pas</label>\n        </div>\n      </ion-slide>\n      <ion-slide *ngIf="question.type == \'yesNo\'">\n        <h3>{{question.title}}</h3>\n        <div class="checkbox">\n         <input id="radio2-1" type="checkbox" name="yes" [(ngModel)]="yes">\n         <label for="radio2-1">Oui</label>\n       </div>\n        <div class="checkbox">\n          <input id="radio2-2" type="checkbox" name="no\n          " [(ngModel)]="no">\n          <label for="radio2-2">Non</label>\n        </div>\n      </ion-slide>\n      \n      <ion-slide *ngIf="question.type == \'date\'">\n        <h3>{{question.title}}</h3>\n        <input type="date" name="date" [(ngModel)]="date">\n      </ion-slide>\n         <button class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n      </form>\n   \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], HomePage);
-
-// export class HomePage {
-//
-// 	QuestionText:any;
-//
-//   constructor(public navCtrl: NavController) {
-//
-//   }
-//
-//
-//   	openStep1() {
-//   		this.QuestionText = [];
-//   		this.QuestionText.step1 = "Quel âge avez-vous ?";
-//   		this.QuestionText.step2 = "Êtes-vous enceinte ?";
-//   		this.QuestionText.step3 = "Fumez-vous ?";
-//   		this.QuestionText.step4 = "Avez-vous des enfants ?";
-//   		this.QuestionText.step5 = "Combien avez-vous d'enfant ?";
-//   		this.QuestionText.step6 = "Avez-vous accouché d'enfants de plus de 4 kilos ?";
-//   		this.QuestionText.step7 = "Combien d'un enfant de plus de 4 kilos avez-vous eus ?";
-//   		this.QuestionText.step8 = "Avez-vous accouché d'enfant de moins de 2kg200 ?";
-//   		this.QuestionText.step9 = "Votre enfant était il prématuré ?";
-//   		this.QuestionText.step10 = "Avez-vous eu une prééclampsie ?";
-//   		this.QuestionText.step11 = "Avez-vous un antécedent de diabète de grossesse ?";
-//   		this.QuestionText.step12 = "Avez-vous eu une césariennes ?";
-//       this.QuestionText.step12_1 = "Combien avez-vous eu de césarienne";
-//  	  	this.QuestionText.step13 = "Combien de fausse couche avez-vous fait ?";
-//    		this.QuestionText.step14 = "Combien de verres d'alcool buvez-vous par semaine ?";
-//  	  	this.QuestionText.step15 = "Avez-vous une épilepsie ?";
-//  	  	this.QuestionText.step16 = "Avez-vous déjà eu une phlébite ?";
-//  	  	this.QuestionText.step17 = "Avez-vous de l'hypertension artérielle ?";
-//  	   	this.QuestionText.step18 = "Avez-vous du diabète ?";
-//  		  this.QuestionText.step19 = "Prenez vous des médicaments ?";
-//  	  	this.QuestionText.step20 = "Selectionnez les médicaments que vous prenez";
-//  		  this.QuestionText.step21 = "Quelle est votre taille (en cm) ?";
-//  	  	this.QuestionText.step22 = "Quel est votre poids (en kg) ?";
-//  	  	this.QuestionText.step23 = "Travaillez-vous ?";
-//  	  	this.QuestionText.step24 = "Combien d'heures de travail effectuez-vous par jour ?";
-//  	  	this.QuestionText.step25 = "Quel est votre temps de trajet par jour (en minute) ?";
-//  	  	this.QuestionText.step26 = "Travaillez-vous debout plus de 6 heures par jour ?";
-//  	  	this.QuestionText.step28 = "";
-//  	  	this.QuestionText.step2_1 = "Est-ce une bonne nouvelle ?";
-//    		this.QuestionText.menstruation = "Quel est la date de vos dernière règle ?";
-//
-//       this.QuestionText.psychoTest1 = "Vous et votre fertilité";
-//       this.QuestionText.psychoTest1_1 = "recours à l'aide médicale à la procréation ";
-//       this.QuestionText.psychoTest1_2 = "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse";
-//       this.QuestionText.psychoTest1_3 = "combien de fois avez-vous eus recours à l'aide médicale à la procreation";
-//       this.QuestionText.psychoTest1_4 = "Bénéficié d'un don d'ovocyte";
-//       this.QuestionText.psychoTest1_5 = "Bénéficié d'un don de sperme";
-//
-//       this.QuestionText.psychoTest2 = "Avez-vous connu une de ces situation ?";
-//       this.QuestionText.psychoTest2_1 = "Fauche couche";
-//       this.QuestionText.psychoTest2_2 = "Interruption volontaire de grossesse";
-//       this.QuestionText.psychoTest2_3 = "Grossesse extra utérine";
-//       this.QuestionText.psychoTest2_4 = "Mort foetale in utéro";
-//       this.QuestionText.psychoTest2_5 = "Interruption médical de la grossesse";
-//       this.QuestionText.psychoTest2_6 = "Interruption sélective de la grossesse";
-//       this.QuestionText.psychoTest2_7 = "Enfant porteur de handicap";
-//       this.QuestionText.psychoTest2_8 = "Enfant prématuré";
-//       this.QuestionText.psychoTest2_9 = "Enfant atteint d'une maladie chronique";
-//       this.QuestionText.psychoTest2_10 = "Mort d'un enfant";
-//       this.QuestionText.psychoTest2_11 = "Ces expériences ont été traumatiques";
-//       this.QuestionText.psychoTest2_12 = "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques";
-//
-//       this.QuestionText.psychoTest4 = "Vous et votre psychologie";
-//       this.QuestionText.psychoTest4_1 = "Crises d'angoisse";
-//       this.QuestionText.psychoTest4_2 = "Boulimie";
-//       this.QuestionText.psychoTest4_3 = "Anorexie";
-//       this.QuestionText.psychoTest4_4 = "Trouble Obsessionnels compulsif TOC";
-//       this.QuestionText.psychoTest4_5 = "Dépression";
-//       this.QuestionText.psychoTest4_6 = "Phobie";
-//       this.QuestionText.psychoTest4_7 = "trouble bipolaires";
-//       this.QuestionText.psychoTest4_8 = "hospitalisation dans un service psychiatrique";
-//
-//   		this.navCtrl.push(Step1Page, {
-//   			QuestionText: this.QuestionText
-//   		});
-//   	}
-//
-// }
-//# sourceMappingURL=home.js.map
 
 /***/ }),
 
@@ -3067,7 +2395,7 @@ HomePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_step2__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step2_step2__ = __webpack_require__(133);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3230,46 +2558,46 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_result_result__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_step1_step1__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_step2_step2__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step3_step3__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_menstruation_menstruation__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_step2_1_step2_1__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_ivg_info_ivg_info__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_step4_step4__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_step5_step5__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_step6_step6__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_step2_step2__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step3_step3__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_menstruation_menstruation__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_step2_1_step2_1__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_ivg_info_ivg_info__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_step4_step4__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_step5_step5__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_step6_step6__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_step7_step7__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_step8_step8__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_step9_step9__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_step10_step10__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_step9_step9__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_step10_step10__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_step11_step11__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_step12_step12__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_step12_1_step12_1__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_step12_step12__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_step12_1_step12_1__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_step13_step13__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_step14_step14__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_step15_step15__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_step16_step16__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_step17_step17__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_step18_step18__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_step19_step19__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_step20_step20__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_step15_step15__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_step16_step16__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_step17_step17__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_step18_step18__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_step19_step19__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_step20_step20__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_step21_step21__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_step22_step22__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_step23_step23__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_step24_step24__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_step25_step25__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_step26_step26__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_step22_step22__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_step23_step23__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_step24_step24__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_step25_step25__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_step26_step26__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_psycho_test1_psycho_test1__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_psycho_test2_psycho_test2__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_psycho_test2_psycho_test2__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_psycho_test3_psycho_test3__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_psycho_test4_psycho_test4__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_status_bar__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__ionic_native_splash_screen__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_storage__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_status_bar__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__ionic_native_splash_screen__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_storage__ = __webpack_require__(298);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3383,7 +2711,6 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step12/step12.module#Step12PageModule', name: 'Step12Page', segment: 'step12', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step13/step13.module#Step13PageModule', name: 'Step13Page', segment: 'step13', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step14/step14.module#Step14PageModule', name: 'Step14Page', segment: 'step14', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step15/step15.module#Step15PageModule', name: 'Step15Page', segment: 'step15', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step16/step16.module#Step16PageModule', name: 'Step16Page', segment: 'step16', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step17/step17.module#Step17PageModule', name: 'Step17Page', segment: 'step17', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step18/step18.module#Step18PageModule', name: 'Step18Page', segment: 'step18', priority: 'low', defaultHistory: [] },
@@ -3397,6 +2724,7 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step24/step24.module#Step24PageModule', name: 'Step24Page', segment: 'step24', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step25/step25.module#Step25PageModule', name: 'Step25Page', segment: 'step25', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step26/step26.module#Step26PageModule', name: 'Step26Page', segment: 'step26', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step15/step15.module#Step15PageModule', name: 'Step15Page', segment: 'step15', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step3/step3.module#Step3PageModule', name: 'Step3Page', segment: 'step3', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step4/step4.module#Step4PageModule', name: 'Step4Page', segment: 'step4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step5/step5.module#Step5PageModule', name: 'Step5Page', segment: 'step5', priority: 'low', defaultHistory: [] },
@@ -3460,16 +2788,591 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 288:
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var Questions = [
+    {
+        idTable: 0,
+        id: 1,
+        title: "Quel âge avez-vous ?",
+        type: "number",
+        answer: {
+            label: "age en année",
+            nextStep: 2
+        },
+        answerUser: -1
+    },
+    {
+        idTable: 1,
+        id: 2,
+        answerUser: -1,
+        title: "Êtes-vous enceinte ?",
+        type: "yesNoIdn",
+        answerYes: {
+            label: "Oui",
+            nextStep: 3
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 5
+        },
+        answerIdn: {
+            label: "Je ne sais pas",
+            nextStep: 3
+        }
+    },
+    {
+        idTable: 2,
+        id: 3,
+        answerUser: -1,
+        title: "Quel est la date de vos dernière règle ?",
+        type: "date",
+        answer: {
+            label: "jj/mm/aaaa",
+            nextStep: 4
+        }
+    },
+    {
+        idTable: 3,
+        id: 4,
+        title: "Est-ce une bonne nouvelle ?",
+        type: "yesNoIdn",
+        answerUser: -1,
+        answerYes: {
+            label: "Oui",
+            nextStep: 5
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 99
+        },
+        answerIdn: {
+            label: "Je ne sais pas",
+            nextStep: 30
+        }
+    },
+    {
+        idTable: 4,
+        id: 5,
+        title: "Vous et votre fertilité",
+        type: "Psycho1",
+        answerUser1: -1,
+        answerUser2: -1,
+        answerUser3: -1,
+        answerUser4: -1,
+        answerUser5: -1,
+        answer1: {
+            label: "recours à l'aide médicale à la procréation",
+        },
+        answer2: {
+            label: "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse",
+        },
+        answer3: {
+            label: "combien de fois avez-vous eus recours à l'aide médicale à la procreation",
+        },
+        answer4: {
+            label: "Bénéficié d'un don d'ovocyte",
+        },
+        answer5: {
+            label: "Bénéficié d'un don de sperme",
+        },
+        nextStep: 6
+    },
+    {
+        idTable: 5,
+        id: 6,
+        title: "Fumez-vous ?",
+        type: "yesNo",
+        answerUser: -1,
+        answerYes: {
+            label: "Oui",
+            nextStep: 6
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 6
+        }
+    },
+    {
+        idTable: 6,
+        id: 7,
+        answerUser: -1,
+        title: "Avez-vous des enfants ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 7
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 17
+        }
+    },
+    {
+        idTable: 7,
+        id: 8,
+        answerUser: -1,
+        title: "Combien avez-vous d'enfant ?",
+        type: "number",
+        answer: {
+            label: "nombre d'enfant",
+            nextStep: 8
+        }
+    },
+    {
+        idTable: 8,
+        id: 9,
+        answerUser: -1,
+        title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 9
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 10
+        }
+    },
+    {
+        idTable: 9,
+        id: 10,
+        answerUser: -1,
+        title: "Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
+        type: "number",
+        answer: {
+            label: "nombre d'enfants",
+            nextStep: 10
+        }
+    },
+    {
+        idTable: 10,
+        id: 11,
+        answerUser: -1,
+        title: "Avez-vous accouché d'enfant de moins de 2kg200 ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 11
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 12
+        }
+    },
+    {
+        idTable: 11,
+        id: 12,
+        answerUser: -1,
+        title: "Votre enfant était il prématuré ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 12
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 12
+        }
+    },
+    {
+        idTable: 12,
+        id: 13,
+        answerUser: -1,
+        title: "Avez-vous eu une prééclampsie ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 13
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 13
+        }
+    },
+    {
+        idTable: 13,
+        id: 14,
+        answerUser: -1,
+        title: "Avez-vous un antécedent de diabète de grossesse ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 14
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 14
+        }
+    },
+    {
+        idTable: 14,
+        id: 15,
+        title: "Avez-vous eu une césariennes ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 15
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 16
+        }
+    },
+    {
+        idTable: 15,
+        id: 16,
+        answerUser: -1,
+        title: "Combien avez-vous eu de césarienne",
+        type: "number",
+        answer: {
+            label: "nombre de cesarienne",
+            nextStep: 16
+        }
+    },
+    {
+        idTable: 16,
+        id: 17,
+        title: "Vous et votre accouchement",
+        type: "multipleChoice",
+        answerUser1: -1,
+        answerUser2: -1,
+        answerUser3: -1,
+        answerUser4: -1,
+        answerUser5: -1,
+        answerUser6: -1,
+        answerUser7: -1,
+        answerUser8: -1,
+        answer1: {
+            label: "forceps",
+        },
+        answer2: {
+            label: "ventouse",
+        },
+        answer3: {
+            label: "césarienne en urgence",
+        },
+        answer4: {
+            label: "anesthésie générale",
+        },
+        answer5: {
+            label: "hémorragie",
+        },
+        answer6: {
+            label: "Séparation avec le bébé à la naissance pendant plus de 6 heures",
+        },
+        answer7: {
+            label: "penser que j'allais mourrir en accouchant",
+        },
+        answer8: {
+            label: "penser que mon bébé allait mourrir",
+        },
+        answer8: {
+            label: "j'ai subit un accouchement traumatique",
+        },
+        nextStep: 17
+    },
+    {
+        idTable: 17,
+        id: 18,
+        title: "Avez-vous connu une de ces situation ?",
+        type: "multipleChoice",
+        answerUser1: -1,
+        answerUser2: -1,
+        answerUser3: -1,
+        answerUser4: -1,
+        answerUser5: -1,
+        answerUser6: -1,
+        answerUser7: -1,
+        answerUser8: -1,
+        answerUser9: -1,
+        answerUser10: -1,
+        answerUser11: -1,
+        answerUser12: -1,
+        answer1: {
+            label: "Fauche couche",
+        },
+        answer2: {
+            label: "Interruption volontaire de grossesse",
+        },
+        answer3: {
+            label: "Grossesse extra utérine",
+        },
+        answer4: {
+            label: "Mort foetale in utéro",
+        },
+        answer5: {
+            label: "Interruption médical de la grossesse",
+        },
+        answer6: {
+            label: "Interruption sélective de la grossesse",
+        },
+        answer7: {
+            label: "Enfant porteur de handicap",
+        },
+        answer8: {
+            label: "Enfant prématuré",
+        },
+        answer9: {
+            label: "Enfant atteint d'une maladie chronique",
+        },
+        answer10: {
+            label: "Mort d'un enfant",
+        },
+        answer11: {
+            label: "Ces expériences ont été traumatiques",
+        },
+        answer12: {
+            label: "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques",
+        },
+        nextStep: 18
+    },
+    {
+        idTable: 18,
+        id: 19,
+        answerUser: -1,
+        title: "Combien de fausse couche avez-vous fait ?",
+        type: "number",
+        answer: {
+            label: "nombre",
+            nextStep: 19
+        }
+    },
+    {
+        idTable: 19,
+        id: 20,
+        title: "Combien de verres d'alcool buvez-vous par semaine ?",
+        type: "number",
+        answer: {
+            label: "nombre par semaine",
+            nextStep: 20
+        },
+        answerUser: -1,
+    },
+    {
+        idTable: 20,
+        id: 21,
+        answerUser: -1,
+        title: "Avez-vous une épilepsie ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 21
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 21
+        }
+    },
+    {
+        idTable: 21,
+        id: 22,
+        answerUser: -1,
+        title: "Avez-vous déjà eu une phlébite ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 22
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 22
+        }
+    },
+    {
+        idTable: 22,
+        id: 23,
+        answerUser: -1,
+        title: "Avez-vous de l'hypertension artérielle ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 23
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 23
+        }
+    },
+    {
+        idTable: 23,
+        id: 24,
+        answerUser: -1,
+        title: "Avez-vous du diabète ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 24
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 24
+        }
+    },
+    {
+        idTable: 24,
+        id: 25,
+        answerUser: -1,
+        title: "Prenez vous des médicaments ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 25
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 26
+        }
+    },
+    {
+        idTable: 25,
+        id: 26,
+        title: "Selectionner les médicament que vous prennez",
+        type: "multipleIf",
+        answerUser1: -1,
+        answerUser2: -1,
+        answerUser3: -1,
+        answerUser4: -1,
+        answerUser5: -1,
+        answerUser6: -1,
+        answerUser7: -1,
+        answerUser8: -1,
+        answer1: {
+            label: "Anti-Epileptique",
+        },
+        answer2: {
+            label: "Anticoagulent",
+        },
+        answer3: {
+            label: "Antihypertenseur",
+        },
+        answer4: {
+            label: "Insuline",
+        },
+        answer5: {
+            label: "Antidepresseur",
+        },
+        nextStep: 26
+    },
+    {
+        idTable: 26,
+        id: 27,
+        answerUser: -1,
+        title: "Quelle est votre taille (en cm) ?",
+        type: "number",
+        answer: {
+            label: "en cm",
+            nextStep: 27
+        }
+    },
+    {
+        idTable: 27,
+        id: 28,
+        title: "Quel est votre poids (en kg) ?",
+        type: "number",
+        answer: {
+            label: "en kg",
+            nextStep: 28
+        }
+    },
+    {
+        idTable: 28,
+        id: 29,
+        answerUser: -1,
+        title: "Travaillez-vous ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 29
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 99
+        }
+    },
+    {
+        idTable: 29,
+        id: 30,
+        answerUser: -1,
+        title: "Combien d'heures de travail effectuez-vous par jour ?",
+        type: "number",
+        answer: {
+            label: "en heure",
+            nextStep: 30
+        }
+    },
+    {
+        idTable: 30,
+        id: 31,
+        answerUser: -1,
+        title: "Quel est votre temps de trajet par jour (en minute) ?",
+        type: "number",
+        answer: {
+            label: "en minute",
+            nextStep: 31
+        }
+    },
+    {
+        idTable: 31,
+        id: 32,
+        answerUser: -1,
+        title: "Travaillez-vous debout plus de 6 heures par jour ?",
+        type: "yesNo",
+        answerYes: {
+            label: "Oui",
+            nextStep: 99
+        },
+        answerNo: {
+            label: "Non",
+            nextStep: 99
+        }
+    }
+];
+/* harmony default export */ __webpack_exports__["a"] = (Questions);
+//this.QuestionText.multipleChoiceTest1 = "Vous et votre fertilité";
+//this.QuestionText.psychoTest1_1 = "recours à l'aide médicale à la procréation ";
+//this.QuestionText.psychoTest1_2 = "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse";
+//this.QuestionText.psychoTest1_3 = "combien de fois avez-vous eus recours à l'aide médicale à la procreation";
+//this.QuestionText.psychoTest1_4 = "Bénéficié d'un don d'ovocyte";
+//this.QuestionText.psychoTest1_5 = "Bénéficié d'un don de sperme";
+//this.QuestionText.psychoTest2 = "Avez-vous connu une de ces situation ?";
+//this.QuestionText.psychoTest2_1 = "Fauche couche";
+//this.QuestionText.psychoTest2_2 = "Interruption volontaire de grossesse";
+//this.QuestionText.psychoTest2_3 = "Grossesse extra utérine";
+//this.QuestionText.psychoTest2_4 = "Mort foetale in utéro";
+//this.QuestionText.psychoTest2_5 = "Interruption médical de la grossesse";
+//this.QuestionText.psychoTest2_6 = "Interruption sélective de la grossesse";
+//this.QuestionText.psychoTest2_7 = "Enfant porteur de handicap";
+//this.QuestionText.psychoTest2_8 = "Enfant prématuré";
+//this.QuestionText.psychoTest2_9 = "Enfant atteint d'une maladie chronique";
+//this.QuestionText.psychoTest2_10 = "Mort d'un enfant";
+//this.QuestionText.psychoTest2_11 = "Ces expériences ont été traumatiques";
+//this.QuestionText.psychoTest2_12 = "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques";
+//this.QuestionText.psychoTest4 = "Vous et votre psychologie";
+//this.QuestionText.psychoTest4_1 = "Crises d'angoisse";
+//this.QuestionText.psychoTest4_2 = "Boulimie";
+//this.QuestionText.psychoTest4_3 = "Anorexie";
+//this.QuestionText.psychoTest4_4 = "Trouble Obsessionnels compulsif TOC";
+//this.QuestionText.psychoTest4_5 = "Dépression";
+//this.QuestionText.psychoTest4_6 = "Phobie";
+//this.QuestionText.psychoTest4_7 = "trouble bipolaires";
+//this.QuestionText.psychoTest4_8 = "hospitalisation dans un service psychiatrique";
+//# sourceMappingURL=questionFile.js.map
+
+/***/ }),
+
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3513,7 +3416,7 @@ MyApp = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PsychoTest1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3_step3__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3_step3__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3609,7 +3512,7 @@ PsychoTest1Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step11Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step12_step12__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step12_step12__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3700,7 +3603,7 @@ Step11Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step8Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step9_step9__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step9_step9__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__step11_step11__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3999,7 +3902,7 @@ Step13Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step14Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step15_step15__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step15_step15__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4060,7 +3963,7 @@ Step14Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Step21Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step22_step22__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step22_step22__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4252,6 +4155,7 @@ PsychoTest4Page = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4265,23 +4169,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the ResultPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 var ResultPage = (function () {
     function ResultPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.currentStep = 0;
+        this.activeWelcomeContent = false;
+        this.isInitialized = false;
         this.valueTestGyneco = navParams.get('userParams');
         this.resultRisk = 0;
         console.log("test");
         console.log(this.valueTestGyneco);
     }
-    ResultPage.prototype.ionViewDidLoad = function () {
+    ResultPage.prototype.nextBegin = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+    };
+    ResultPage.prototype.ngAfterViewInit = function () {
+        console.log("ouéoué");
+        this.slides.lockSwipes(false);
+        this.slides.freeMode = true;
+    };
+    ResultPage.prototype.ngOnInit = function () {
+        var self = this;
+        setTimeout(function () {
+            self.activeWelcomeContent = true;
+        }, 250);
+        this.slides.lockSwipes(false);
         console.log(this.valueTestGyneco);
         this.result = [];
         this.risk = [];
@@ -4350,13 +4263,13 @@ var ResultPage = (function () {
                 this.resultRisk += 2;
         }
         if (this.resultRisk >= 200)
-            this.result.riskAssment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
+            this.riskAssessment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
         else if (this.resultRisk >= 50)
-            this.result.riskAssment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
+            this.riskAssessment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
         else if (this.resultRisk >= 20)
-            this.result.riskAssment = "D'apres vos réponses vous présentez une grossesse à risque.";
+            this.riskAssessment = "D'apres vos réponses vous présentez une grossesse à risque.";
         else
-            this.result.riskAssment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
+            this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
         console.log("debut risk");
         if (this.valueTestGyneco[0].answerUser < 42 && this.valueTestGyneco[0].answerUser >= 38)
             this.risk.push({
@@ -4372,14 +4285,14 @@ var ResultPage = (function () {
                 idConseil: 0,
                 title: "A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
             });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous fumez, ce qui peut entrainer de nombreuses complications."
             });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
@@ -4400,7 +4313,7 @@ var ResultPage = (function () {
                 idConseil: 0,
                 title: "Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."
             });
-        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco.smallChild == 1)
+        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco[10].answerUser == 1)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
@@ -4428,14 +4341,14 @@ var ResultPage = (function () {
                 idConseil: 0,
                 title: "Vous consommez de l'alcool"
             });
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Stoppez votre consommation d'alcool !"
             });
-        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
@@ -4514,11 +4427,11 @@ var ResultPage = (function () {
             });
         console.log(this.risk);
         console.log("debut positif");
-        if (this.valueTestGyneco.feelingPregnant == 1)
+        if (this.valueTestGyneco[3].answerUser == 1)
             this.positif.push({
                 title: "Félicitation vous êtes enceinte !"
             });
-        if (this.valueTestGyneco[6].answerUser == 0 && this.valueTestGyneco.feelingPregnant == 1)
+        if (this.valueTestGyneco[6].answerUser == 0 && this.valueTestGyneco[3].answerUser == 1)
             this.positif.push({
                 title: "Félicitation vous allez avoir votre premier enfant"
             });
@@ -4539,7 +4452,7 @@ var ResultPage = (function () {
                 title: "Vous ne travaillez pas, vous pouvez donc prendre le temps de vous occuper de vous et préparer la venue de votre enfant"
             });
         console.log("debut conseil");
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
             this.conseil.push({
                 title: "Arrêtez de fumer !"
             });
@@ -4563,11 +4476,11 @@ var ResultPage = (function () {
             this.conseil.push({
                 title: "Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale."
             });
-        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
             this.conseil.push({
                 title: "Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool"
             });
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco.pregnant == 1)
+        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco[1].answerUser == 1)
             this.conseil.push({
                 title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
             });
@@ -4611,6 +4524,7 @@ var ResultPage = (function () {
             this.conseil.push({
                 title: "Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour"
             });
+        this.answers = this.risk.concat(this.positif).concat(this.conseil);
         console.log("risk:", this.risk);
         console.log("positif:", this.positif);
         console.log("conseil:", this.conseil);
@@ -4623,12 +4537,213 @@ __decorate([
 ], ResultPage.prototype, "slides", void 0);
 ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n--><!-- <ion-header>\n  <ion-navbar>\n    <ion-title>Ciconia</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" [ngStyle]="{\'width\': progressWidth}" ></div>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n   <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="next()">Suivant</button>\n  </div>\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Resultat</h2>\n            <p>Resultat</p>\n            <p>{{riskAssessment}}</p>\n            <button class="button touch" (click)="nextBegin()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div *ngFor="let r of risk">\n    <ion-slide class="risk">\n		<h1>{{r.title}}</h1>\n	</ion-slide>\n	<ion-slide class="conseil">\n		<h1>{{conseil[r.idConseil].title}}</h1>\n	</ion-slide>\n	<ion-slide class="positif">\n	<h1>{{positif[r.idPositif].title}}</h1>\n	</ion-slide>\n        \n      \n    </div>\n    \n    \n  </ion-slides>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
+        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<ion-content>\n  <div class="result-info visible" >\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <ion-slides pager>\n    <ion-slide>\n\n      <div class="welcome">\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h1>Bravo !</h1>\n            <p>{{riskAssessment}}</p>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <ion-slide *ngFor="let answer of answers" class="risk">\n      <h1>{{answer.title}}</h1>\n    </ion-slide>\n    <ion-slide class="positif">\n      <h1>Et voilà !</h1>\n      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>\n      <button class="button touch" (click)="nextBegin()">Recommencer</button>\n    </ion-slide>\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ResultPage);
 
 //# sourceMappingURL=result.js.map
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__questionFile__ = __webpack_require__(271);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HomePage = (function () {
+    function HomePage(renderer, navCtrl, navParams) {
+        this.renderer = renderer;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.Questions = [];
+        this.Answers = [];
+        this.totalStep = 0;
+        this.currentStep = 0;
+        this.activeLogo = false;
+        this.activeLogoWrapper = false;
+        this.activeWelcomeContent = false;
+        this.isInitialized = false;
+        this.changing = false;
+    }
+    HomePage.prototype.ngOnInit = function () {
+        var self = this;
+        this.activeLogoWrapper = true;
+        setTimeout(function () {
+            self.activeLogo = true;
+        }, 500);
+        setTimeout(function () {
+            self.activeLogoWrapper = false;
+            self.activeWelcomeContent = true;
+        }, 2500);
+        this.answer = [];
+        this.Questions = __WEBPACK_IMPORTED_MODULE_3__questionFile__["a" /* default */];
+        console.log(this.Questions);
+        // type 1 = number
+        // type 2 = Oui non
+        // type 3 = oui non je ne sais pas
+        // type 4 = select
+        // type 5 = date
+    };
+    HomePage.prototype.init = function () {
+        this.isInitialized = true;
+        this.currentStep = this.sliderOne.getActiveIndex();
+        this.totalStep = this.sliderOne.length();
+        this.sliderOne.lockSwipeToPrev(true);
+        // this.sliderOne.lockSwipes(true);
+    };
+    HomePage.prototype.ionSlideDidChange = function () {
+        this.changing = false;
+    };
+    HomePage.prototype.ionSlideWillChange = function () {
+        this.changing = true;
+    };
+    HomePage.prototype.slideChanged = function () {
+        this.currentStep = this.sliderOne.getActiveIndex();
+    };
+    HomePage.prototype.ngAfterViewInit = function () {
+    };
+    HomePage.prototype.handleNext = function () {
+        var _this = this;
+        console.log(this.renderer);
+        var mouseclick = new MouseEvent('click', { bubbles: false });
+        setTimeout(function () {
+            _this.renderer.invokeElementMethod(_this.realFormButton.nativeElement, 'dispatchEvent', [mouseclick]);
+        }, 10);
+    };
+    HomePage.prototype.nextForm = function (question) {
+        console.log("before", question);
+        this.questionForm = question;
+        if (this.questionForm.type == "number") {
+            this.currentStep = this.questionForm.answer.nextStep;
+            this.Questions[this.questionForm.idTable].answerUser = this.number;
+            this.sliderOne.slideTo(this.currentStep, 350);
+        }
+        else if (this.questionForm.type == "yesNoIdn") {
+            if (this.yes) {
+                this.currentStep = this.questionForm.answerYes.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = 1;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+            else if (this.no) {
+                this.currentStep = this.questionForm.answerNo.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = 0;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+            else if (this.idn) {
+                this.currentStep = this.questionForm.answerIdn.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = 2;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+        }
+        else if (this.questionForm.type == "yesNo") {
+            if (this.yes) {
+                this.currentStep = this.questionForm.answerYes.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = 1;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+            else if (this.no) {
+                this.currentStep = this.questionForm.answerNo.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = 0;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+        }
+        else if (this.questionForm.type == "date") {
+            this.currentStep = this.questionForm.answer.nextStep;
+            this.Questions[this.questionForm.idTable].answerUser = this.date;
+            this.sliderOne.slideTo(this.currentStep, 350);
+        }
+        else if (this.questionForm.type == "multipleChoice"
+            || this.questionForm.type == "multipleIf") {
+            console.log("ICI");
+            this.currentStep = this.questionForm.nextStep;
+            this.Questions[this.questionForm.idTable].answerUser1 = this.answer.one;
+            this.Questions[this.questionForm.idTable].answerUser2 = this.answer.two;
+            this.Questions[this.questionForm.idTable].answerUser3 = this.answer.three;
+            this.Questions[this.questionForm.idTable].answerUser4 = this.answer.four;
+            this.Questions[this.questionForm.idTable].answerUser5 = this.answer.five;
+            this.Questions[this.questionForm.idTable].answerUser6 = this.answer.six;
+            this.Questions[this.questionForm.idTable].answerUser7 = this.answer.seven;
+            this.Questions[this.questionForm.idTable].answerUser8 = this.answer.eight;
+            this.Questions[this.questionForm.idTable].answerUser9 = this.answer.nine;
+            this.Questions[this.questionForm.idTable].answerUser10 = this.answer.ten;
+            this.Questions[this.questionForm.idTable].answerUser11 = this.answer.eleven;
+            this.Questions[this.questionForm.idTable].answerUser12 = this.answer.twelve;
+            this.sliderOne.slideTo(this.currentStep, 350);
+        }
+        this.number = "";
+        this.yes = false;
+        this.no = false;
+        this.idn = false;
+        this.date = 0;
+        this.answer.one = false;
+        this.answer.two = false;
+        this.answer.three = false;
+        this.answer.four = false;
+        this.answer.five = false;
+        this.answer.six = false;
+        this.answer.seven = false;
+        this.answer.eight = false;
+        this.answer.nine = false;
+        this.answer.ten = false;
+        this.answer.eleven = false;
+        this.answer.twelve = false;
+        console.log("after", question);
+        console.log("questions", this.Questions);
+        if (this.currentStep == 99) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__result_result__["a" /* ResultPage */], {
+                userParams: this.Questions
+            });
+        }
+    };
+    HomePage.prototype.next = function () {
+        if (!this.isInitialized)
+            this.init();
+        this.currentStep++;
+        this.sliderOne.slideTo(this.currentStep, 350);
+    };
+    HomePage.prototype.prev = function () {
+        this.currentStep--;
+        this.sliderOne.slideTo(this.currentStep, 350);
+    };
+    return HomePage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('sliderOne'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
+], HomePage.prototype, "sliderOne", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('realFormButton'),
+    __metadata("design:type", Object)
+], HomePage.prototype, "realFormButton", void 0);
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n          <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer2">\n          <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _d || Object])
+], HomePage);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

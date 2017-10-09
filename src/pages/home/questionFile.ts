@@ -25,7 +25,7 @@ const Questions = [
     answerNo:
       {
         label: "Non",
-        nextStep: 6
+        nextStep: 5
       },
     answerIdn:
       {
@@ -69,19 +69,34 @@ const Questions = [
   {
     idTable: 4,
     id: 5,
-    title:"QUESTIONNAIRE PSYCHO",
-    type:"yesNo",
-    answerUser: -1,
-    answerYes:
+    title:"Vous et votre fertilité",
+    type:"Psycho1",
+    answerUser1: -1,
+    answerUser2 :-1,
+    answerUser3: -1,
+    answerUser4 :-1,
+    answerUser5: -1,
+    answer1:
       {
-        label: "Oui",
-        nextStep: 6
+        label: "recours à l'aide médicale à la procréation",
       },
-      answerNo:
+    answer2:
       {
-        label: "Non",
-        nextStep: 6
-      }
+        label: "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse",
+      },
+    answer3:
+      {
+        label: "combien de fois avez-vous eus recours à l'aide médicale à la procreation",
+      },
+    answer4:
+      {
+        label: "Bénéficié d'un don d'ovocyte",
+      },
+    answer5:
+      {
+        label: "Bénéficié d'un don de sperme",
+      },
+    nextStep: 6
   },
   {
     idTable: 5,
@@ -92,12 +107,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 7
+        nextStep: 6
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 7
+        nextStep: 6
       }
     },
   {
@@ -109,12 +124,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 8
+        nextStep: 7
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 18
+        nextStep: 17
       }
   },
   {
@@ -126,7 +141,7 @@ const Questions = [
     answer:
       {
         label: "nombre d'enfant",
-        nextStep: 9
+        nextStep: 8
       }
   },
   {
@@ -138,12 +153,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 10
+        nextStep: 9
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 11
+        nextStep: 10
       }
   },
   {
@@ -155,7 +170,7 @@ const Questions = [
     answer:
       {
         label: "nombre d'enfants",
-        nextStep: 11
+        nextStep: 10
       }
   },
   {
@@ -167,12 +182,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 12
+        nextStep: 11
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 13
+        nextStep: 12
       }
   },
   {
@@ -184,12 +199,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 13
+        nextStep: 12
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 13
+        nextStep: 12
       }
   },
   {
@@ -201,12 +216,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 14
+        nextStep: 13
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 14
+        nextStep: 13
       }
   },
   {
@@ -218,12 +233,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 15
+        nextStep: 14
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 15
+        nextStep: 14
       }
   },
   {
@@ -234,12 +249,12 @@ const Questions = [
     answerYes:
       {
         label: "Oui",
-        nextStep: 16
+        nextStep: 15
       },
     answerNo:
       {
         label: "Non",
-        nextStep: 17
+        nextStep: 16
        }
   },
   {
@@ -251,89 +266,190 @@ const Questions = [
     answer:
       {
         label: "nombre de cesarienne",
-        nextStep: 17
+        nextStep: 16
       }
   },
   {
     idTable: 16,
     id: 17,
+    title:"Vous et votre accouchement",
+    type:"multipleChoice",
+    answerUser1: -1,
+    answerUser2 :-1,
+    answerUser3: -1,
+    answerUser4 :-1,
+    answerUser5: -1,
+    answerUser6: -1,
+    answerUser7: -1,
+    answerUser8: -1,
+    answer1:
+      {
+        label: "forceps",
+      },
+    answer2:
+      {
+        label: "ventouse",
+      },
+    answer3:
+      {
+        label: "césarienne en urgence",
+      },
+    answer4:
+      {
+        label: "anesthésie générale",
+      },
+    answer5:
+      {
+        label: "hémorragie",
+      },
+    answer6:
+      {
+        label: "Séparation avec le bébé à la naissance pendant plus de 6 heures",
+      },
+    answer7:
+      {
+        label: "penser que j'allais mourrir en accouchant",
+      },
+    answer8:
+      {
+        label: "penser que mon bébé allait mourrir",
+      }, 
+      answer8:
+      {
+        label: "j'ai subit un accouchement traumatique",
+      },
+    nextStep: 17
+  },
+  {
+    idTable: 17,
+    id: 18,
+    title:"Avez-vous connu une de ces situation ?",
+    type:"multipleChoice",
+    answerUser1: -1,
+    answerUser2 :-1,
+    answerUser3: -1,
+    answerUser4 :-1,
+    answerUser5: -1,
+    answerUser6: -1,
+    answerUser7: -1,
+    answerUser8: -1,
+    answerUser9: -1,
+    answerUser10: -1,
+    answerUser11: -1,
+    answerUser12: -1,
+    answer1:
+      {
+        label: "Fauche couche",
+      },
+    answer2:
+      {
+        label: "Interruption volontaire de grossesse",
+      },
+    answer3:
+      {
+        label: "Grossesse extra utérine",
+      },
+    answer4:
+      {
+        label: "Mort foetale in utéro",
+      },
+    answer5:
+      {
+        label: "Interruption médical de la grossesse",
+      },
+    answer6:
+      {
+        label: "Interruption sélective de la grossesse",
+      },
+    answer7:
+      {
+        label: "Enfant porteur de handicap",
+      },
+    answer8:
+      {
+        label: "Enfant prématuré",
+      }, 
+    answer9:
+      {
+        label: "Enfant atteint d'une maladie chronique",
+      }, 
+    answer10:
+      {
+        label: "Mort d'un enfant",
+      }, 
+    answer11:
+      {
+        label: "Ces expériences ont été traumatiques",
+      }, 
+    answer12:
+      {
+        label: "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques",
+      },
+    nextStep: 18
+  },
+  {
+    idTable: 18,
+    id: 19,
     answerUser: -1,
     title: "Combien de fausse couche avez-vous fait ?",
     type: "number",
     answer:
       {
         label: "nombre",
-        nextStep: 18
+        nextStep: 19
       }
   },
   {
-    idTable: 17,
-    id: 18,
+    idTable: 19,
+    id: 20,
     title: "Combien de verres d'alcool buvez-vous par semaine ?",
     type: "number",
     answer:
       {
         label: "nombre par semaine",
-        nextStep: 19
+        nextStep: 20
       },
     answerUser: -1,
   },
   {
-    idTable: 18,
-    id: 19,
+    idTable: 20,
+    id: 21,
     answerUser: -1,
     title: "Avez-vous une épilepsie ?",
     type: "yesNo",
     answerYes:
       {
         label: "Oui",
-        nextStep: 20
-      },
-    answerNo:
-      {
-        label: "Non",
-        nextStep: 20
-      }
-  },
-  {
-    idTable: 19,
-    id: 20,
-    answerUser: -1,
-    title: "Avez-vous déjà eu une phlébite ?",
-    type: "yesNo",
-    answerYes:
-      {
-        label: "Oui",
         nextStep: 21
       },
     answerNo:
       {
         label: "Non",
         nextStep: 21
-      }
-  },
-  {
-    idTable: 20,
-    id: 21,
-    answerUser: -1,
-    title: "Avez-vous de l'hypertension artérielle ?",
-    type: "yesNo",
-    answerYes:
-      {
-        label: "Oui",
-        nextStep: 22
-      },
-    answerNo:
-      {
-        label: "Non",
-        nextStep: 22
       }
   },
   {
     idTable: 21,
     id: 22,
     answerUser: -1,
-    title: "Avez-vous du diabète ?",
+    title: "Avez-vous déjà eu une phlébite ?",
+    type: "yesNo",
+    answerYes:
+      {
+        label: "Oui",
+        nextStep: 22
+      },
+    answerNo:
+      {
+        label: "Non",
+        nextStep: 22
+      }
+  },
+  {
+    idTable: 22,
+    id: 23,
+    answerUser: -1,
+    title: "Avez-vous de l'hypertension artérielle ?",
     type: "yesNo",
     answerYes:
       {
@@ -347,10 +463,10 @@ const Questions = [
       }
   },
   {
-    idTable: 22,
-    id: 23,
+    idTable: 23,
+    id: 24,
     answerUser: -1,
-    title:"Prenez vous des médicaments ?",
+    title: "Avez-vous du diabète ?",
     type: "yesNo",
     answerYes:
       {
@@ -360,54 +476,96 @@ const Questions = [
     answerNo:
       {
         label: "Non",
-        nextStep: 25
-      }
-  },
-  {
-    idTable: 23,
-    id: 24,
-    answerUser: -1,
-    title:"Selectionnez les médicaments que vous prenez",
-    type: "number",
-    answer:
-      {
-        label: "",
-        nextStep: 25
+        nextStep: 24
       }
   },
   {
     idTable: 24,
     id: 25,
     answerUser: -1,
-    title: "Quelle est votre taille (en cm) ?",
-    type: "number",
-    answer:
+    title:"Prenez vous des médicaments ?",
+    type: "yesNo",
+    answerYes:
       {
-        label: "en cm",
+        label: "Oui",
+        nextStep: 25
+      },
+    answerNo:
+      {
+        label: "Non",
         nextStep: 26
       }
   },
   {
     idTable: 25,
     id: 26,
+    title:"Selectionner les médicament que vous prennez",
+    type:"multipleIf",
+    answerUser1: -1,
+    answerUser2 :-1,
+    answerUser3: -1,
+    answerUser4 :-1,
+    answerUser5: -1,
+    answerUser6: -1,
+    answerUser7: -1,
+    answerUser8: -1,
+
+    answer1:
+      {
+         label: "Anti-Epileptique",
+      },
+    answer2:
+      {
+        label: "Anticoagulent",
+      },
+    answer3:
+      {
+        label: "Antihypertenseur",
+      },
+    answer4:
+      {
+        label: "Insuline",
+      },
+    answer5:
+      {
+        label: "Antidepresseur",
+      },
+   
+    nextStep: 26
+  },
+  {
+    idTable: 26,
+    id: 27,
+    answerUser: -1,
+    title: "Quelle est votre taille (en cm) ?",
+    type: "number",
+    answer:
+      {
+        label: "en cm",
+        nextStep: 27
+      }
+  },
+  {
+    idTable: 27,
+    id: 28,
     title: "Quel est votre poids (en kg) ?",
     type: "number",
     answer:
       {
         label: "en kg",
-        nextStep: 27
+        nextStep: 28
       }
   },
   {
-    idTable: 26,
-    id: 27,
+    idTable: 28,
+    id: 29,
     answerUser: -1,
     title: "Travaillez-vous ?",
     type: "yesNo",
     answerYes:
       {
         label: "Oui",
-        nextStep: 28
+        nextStep: 29
       },
     answerNo:
       {
@@ -416,32 +574,32 @@ const Questions = [
       }
   },
   {
-    idTable: 27,
-    id: 28,
+    idTable: 29,
+    id: 30,
     answerUser: -1,
     title: "Combien d'heures de travail effectuez-vous par jour ?",
     type: "number",
     answer:
       {
         label: "en heure",
-        nextStep: 29
+        nextStep: 30
       }
   },
   {
-    idTable: 28,
-    id: 29,
+    idTable: 30,
+    id: 31,
     answerUser: -1,
     title: "Quel est votre temps de trajet par jour (en minute) ?",
     type: "number",
     answer:
       {
         label: "en minute",
-        nextStep: 30
+        nextStep: 31
       }
   },
   {
-    idTable: 29,
-    id: 30,
+    idTable: 31,
+    id: 32,
     answerUser: -1,
     title: "Travaillez-vous debout plus de 6 heures par jour ?",
     type: "yesNo",
@@ -461,7 +619,7 @@ const Questions = [
 export default Questions;
 
 
-//this.QuestionText.psychoTest1 = "Vous et votre fertilité";
+//this.QuestionText.multipleChoiceTest1 = "Vous et votre fertilité";
 //this.QuestionText.psychoTest1_1 = "recours à l'aide médicale à la procréation ";
 //this.QuestionText.psychoTest1_2 = "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse";
 //this.QuestionText.psychoTest1_3 = "combien de fois avez-vous eus recours à l'aide médicale à la procreation";
