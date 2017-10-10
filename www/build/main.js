@@ -2256,7 +2256,7 @@ var map = {
 		29
 	],
 	"../pages/result/result.module": [
-		315,
+		309,
 		28
 	],
 	"../pages/step1/step1.module": [
@@ -2264,27 +2264,27 @@ var map = {
 		27
 	],
 	"../pages/step10/step10.module": [
-		309,
+		310,
 		26
 	],
 	"../pages/step11/step11.module": [
-		310,
+		311,
 		25
 	],
 	"../pages/step12-1/step12-1.module": [
-		311,
+		312,
 		24
 	],
 	"../pages/step12/step12.module": [
-		312,
+		313,
 		23
 	],
 	"../pages/step13/step13.module": [
-		313,
+		314,
 		22
 	],
 	"../pages/step14/step14.module": [
-		314,
+		315,
 		21
 	],
 	"../pages/step15/step15.module": [
@@ -2704,13 +2704,13 @@ AppModule = __decorate([
                     { loadChildren: '../pages/psycho-test3/psycho-test3.module#PsychoTest3PageModule', name: 'PsychoTest3Page', segment: 'psycho-test3', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/psycho-test4/psycho-test4.module#PsychoTest4PageModule', name: 'PsychoTest4Page', segment: 'psycho-test4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step1/step1.module#Step1PageModule', name: 'Step1Page', segment: 'step1', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step10/step10.module#Step10PageModule', name: 'Step10Page', segment: 'step10', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step11/step11.module#Step11PageModule', name: 'Step11Page', segment: 'step11', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step12-1/step12-1.module#Step12_1PageModule', name: 'Step12_1Page', segment: 'step12-1', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step12/step12.module#Step12PageModule', name: 'Step12Page', segment: 'step12', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step13/step13.module#Step13PageModule', name: 'Step13Page', segment: 'step13', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step14/step14.module#Step14PageModule', name: 'Step14Page', segment: 'step14', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step15/step15.module#Step15PageModule', name: 'Step15Page', segment: 'step15', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step16/step16.module#Step16PageModule', name: 'Step16Page', segment: 'step16', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step17/step17.module#Step17PageModule', name: 'Step17Page', segment: 'step17', priority: 'low', defaultHistory: [] },
@@ -4216,10 +4216,10 @@ var ResultPage = (function () {
         this.navParams = navParams;
         this.activeWelcomeContent = false;
         this.isInitialized = false;
-        this.valueTestGyneco = navParams.get('userParams');
+        this.tableAnswer = navParams.get('userParams');
         this.resultRisk = 0;
         console.log("test");
-        console.log(this.valueTestGyneco);
+        console.log(this.tableAnswer);
     }
     ResultPage.prototype.nextBegin = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
@@ -4235,73 +4235,74 @@ var ResultPage = (function () {
             self.activeWelcomeContent = true;
         }, 250);
         this.slides.lockSwipes(false);
-        console.log(this.valueTestGyneco);
+        console.log(this.tableAnswer);
+        this.IMC = this.tableAnswer[26].answerUser / Math.pow(this.tableAnswer[27].answerUser / 100, 2);
         this.result = [];
         this.risk = [];
         this.conseil = [];
         this.positif = [];
         this.resultPsycho2 = 0;
-        if (this.valueTestGyneco[17].answerUser1 == 1)
+        if (this.tableAnswer[17].answerUser1 == 1)
             this.resultPsycho2 += 2;
-        if (this.valueTestGyneco[17].answerUser2 == 1)
+        if (this.tableAnswer[17].answerUser2 == 1)
             this.resultPsycho2 += 1;
-        if (this.valueTestGyneco[17].answerUser3 == 1)
+        if (this.tableAnswer[17].answerUser3 == 1)
             this.resultPsycho2 += 1;
-        if (this.valueTestGyneco[17].answerUser4 == 1)
+        if (this.tableAnswer[17].answerUser4 == 1)
             this.resultPsycho2 += 2;
-        if (this.valueTestGyneco[17].answerUser5 == 1)
+        if (this.tableAnswer[17].answerUser5 == 1)
             this.resultPsycho2 += 2;
-        if (this.valueTestGyneco[17].answerUser6 == 1)
+        if (this.tableAnswer[17].answerUser6 == 1)
             this.resultPsycho2 += 3;
-        if (this.valueTestGyneco[17].answerUser7 == 1)
+        if (this.tableAnswer[17].answerUser7 == 1)
             this.resultPsycho2 += 3;
-        if (this.valueTestGyneco[17].answerUser8 == 1)
+        if (this.tableAnswer[17].answerUser8 == 1)
             this.resultPsycho2 += 1;
-        if (this.valueTestGyneco[17].answerUser9 == 1)
+        if (this.tableAnswer[17].answerUser9 == 1)
             this.resultPsycho2 += 3;
-        if (this.valueTestGyneco[17].answerUser10 == 1)
+        if (this.tableAnswer[17].answerUser10 == 1)
             this.resultPsycho2 += 2;
-        if (this.valueTestGyneco[17].answerUser11 == 1)
+        if (this.tableAnswer[17].answerUser11 == 1)
             this.resultPsycho2 += 10;
-        if (this.valueTestGyneco[17].answerUser12 == 1)
+        if (this.tableAnswer[17].answerUser12 == 1)
             this.resultPsycho2 += 10;
         this.resultPsycho3 = 0;
-        if (this.valueTestGyneco[16].answerUser1 == 1)
+        if (this.tableAnswer[16].answerUser1 == 1)
             this.resultPsycho3 += 1;
-        if (this.valueTestGyneco[16].answerUser2 == 1)
+        if (this.tableAnswer[16].answerUser2 == 1)
             this.resultPsycho3 += 2;
-        if (this.valueTestGyneco[16].answerUser3 == 1)
+        if (this.tableAnswer[16].answerUser3 == 1)
             this.resultPsycho3 += 2;
-        if (this.valueTestGyneco[16].answerUser4 == 1)
+        if (this.tableAnswer[16].answerUser4 == 1)
             this.resultPsycho3 += 1;
-        if (this.valueTestGyneco[16].answerUser5 == 1)
+        if (this.tableAnswer[16].answerUser5 == 1)
             this.resultPsycho3 += 2;
-        if (this.valueTestGyneco[16].answerUser6 == 1)
+        if (this.tableAnswer[16].answerUser6 == 1)
             this.resultPsycho3 += 5;
-        if (this.valueTestGyneco[16].answerUser7 == 1)
+        if (this.tableAnswer[16].answerUser7 == 1)
             this.resultPsycho3 += 2;
-        if (this.valueTestGyneco[16].answerUser8 == 1)
+        if (this.tableAnswer[16].answerUser8 == 1)
             this.resultPsycho3 += 5;
-        if (this.valueTestGyneco[16].answerUser9 == 1)
+        if (this.tableAnswer[16].answerUser9 == 1)
             this.resultPsycho3 += 5;
         this.resultPsycho4 = 0;
-        if (this.valueTestGyneco[32].answerUser1 == 1)
+        if (this.tableAnswer[32].answerUser1 == 1)
             this.resultPsycho4 += 2;
-        if (this.valueTestGyneco[32].answerUser2 == 1)
+        if (this.tableAnswer[32].answerUser2 == 1)
             this.resultPsycho4 += 2;
-        if (this.valueTestGyneco[32].answerUser3 == 1)
+        if (this.tableAnswer[32].answerUser3 == 1)
             this.resultPsycho4 += 2;
-        if (this.valueTestGyneco[32].answerUser4 == 1)
+        if (this.tableAnswer[32].answerUser4 == 1)
             this.resultPsycho4 += 1;
-        if (this.valueTestGyneco[32].answerUser5 == 1)
+        if (this.tableAnswer[32].answerUser5 == 1)
             this.resultPsycho4 += 2;
-        if (this.valueTestGyneco[32].answerUser6 == 1)
+        if (this.tableAnswer[32].answerUser6 == 1)
             this.resultPsycho4 += 2;
-        if (this.valueTestGyneco[32].answerUser7 == 1)
+        if (this.tableAnswer[32].answerUser7 == 1)
             this.resultPsycho4 += 1;
-        if (this.valueTestGyneco[32].answerUser8 == 1)
+        if (this.tableAnswer[32].answerUser8 == 1)
             this.resultPsycho4 += 2;
-        if (this.valueTestGyneco[32].answerUser9 == 1)
+        if (this.tableAnswer[32].answerUser9 == 1)
             this.resultPsycho4 += 2;
         this.psycho = [];
         if (this.resultPsycho1 >= 2 || this.resultPsycho2 > 2 || this.resultPsycho3 >= 5) {
@@ -4309,66 +4310,66 @@ var ResultPage = (function () {
                 title: "D'après vos antécédent vous présentez un risque de dépression du post-Partum"
             });
         }
-        if (this.valueTestGyneco[0].answerUser > 42)
+        if (this.tableAnswer[0].answerUser > 42)
             this.resultRisk += 50;
-        else if (this.valueTestGyneco[0].answerUser == 42)
+        else if (this.tableAnswer[0].answerUser == 42)
             this.resultRisk += 20;
-        else if (this.valueTestGyneco[0].answerUser > 38)
+        else if (this.tableAnswer[0].answerUser > 38)
             this.resultRisk += 2;
-        if (this.valueTestGyneco[18].answerUser > 10)
+        if (this.tableAnswer[18].answerUser > 10)
             this.resultRisk += 400;
-        if (this.valueTestGyneco[5].answerUser == true)
+        if (this.tableAnswer[5].answerUser == true)
             this.resultRisk += 2;
-        if (this.valueTestGyneco[6].answerUser == true) {
-            if (this.valueTestGyneco[14].answerUser == true)
+        if (this.tableAnswer[6].answerUser == true) {
+            if (this.tableAnswer[14].answerUser == true)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco[8].answerUser == true)
+            if (this.tableAnswer[8].answerUser == true)
                 this.resultRisk += 50;
-            if (this.valueTestGyneco[10].answerUser == true)
+            if (this.tableAnswer[10].answerUser == true)
                 this.resultRisk += 50;
-            if (this.valueTestGyneco[12].answerUser == true)
+            if (this.tableAnswer[12].answerUser == true)
                 this.resultRisk += 50;
-            if (this.valueTestGyneco[13].answerUser == true)
+            if (this.tableAnswer[13].answerUser == true)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco[11].answerUser == true)
+            if (this.tableAnswer[11].answerUser == true)
                 this.resultRisk += 50;
         }
-        if (this.valueTestGyneco[17].answerUser > 0)
+        if (this.tableAnswer[17].answerUser > 0)
             this.resultRisk += 2;
-        if (this.valueTestGyneco[22].answerUser == true)
+        if (this.tableAnswer[22].answerUser == true)
             this.resultRisk += 50;
-        if (this.valueTestGyneco.epilepsy == true)
+        if (this.tableAnswer.epilepsy == true)
             this.resultRisk += 200;
-        if (this.valueTestGyneco[21].answerUser == true)
+        if (this.tableAnswer[21].answerUser == true)
             this.resultRisk += 2;
-        if (this.valueTestGyneco[20].answerUser == true)
+        if (this.tableAnswer[20].answerUser == true)
             this.resultRisk += 2;
-        if (this.valueTestGyneco[23].answerUser == true) {
-            if (this.valueTestGyneco.medicament1 == true)
+        if (this.tableAnswer[23].answerUser == true) {
+            if (this.tableAnswer.medicament1 == true)
                 this.resultRisk += 200;
-            if (this.valueTestGyneco.medicament2 == true)
+            if (this.tableAnswer.medicament2 == true)
                 this.resultRisk += 200;
-            if (this.valueTestGyneco.medicament3 == true)
+            if (this.tableAnswer.medicament3 == true)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco.medicament4 == true)
+            if (this.tableAnswer.medicament4 == true)
                 this.resultRisk += 200;
-            if (this.valueTestGyneco.medicament5 == true)
+            if (this.tableAnswer.medicament5 == true)
                 this.resultRisk += 2;
         }
-        if (this.valueTestGyneco.IMC > 28)
+        if (this.tableAnswer.IMC > 28)
             this.resultRisk += 50;
-        if (this.valueTestGyneco.IMC > 22)
+        if (this.tableAnswer.IMC > 22)
             this.resultRisk += 20;
-        if (this.valueTestGyneco.IMC > 17)
+        if (this.tableAnswer.IMC > 17)
             this.resultRisk += 0;
-        if (this.valueTestGyneco.IMC < 17)
+        if (this.tableAnswer.IMC < 17)
             this.resultRisk += 50;
-        if (this.valueTestGyneco[27].answerUser == true) {
-            if (this.valueTestGyneco[29].answerUser > 90)
+        if (this.tableAnswer[27].answerUser == true) {
+            if (this.tableAnswer[29].answerUser > 90)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco[29].answerUser == true)
+            if (this.tableAnswer[29].answerUser == true)
                 this.resultRisk += 2;
-            if (this.valueTestGyneco[28].answerUser > 10)
+            if (this.tableAnswer[28].answerUser > 10)
                 this.resultRisk += 2;
         }
         if (this.resultRisk >= 200)
@@ -4380,154 +4381,154 @@ var ResultPage = (function () {
         else
             this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
         console.log("debut risk");
-        if (this.valueTestGyneco[0].answerUser < 42 && this.valueTestGyneco[0].answerUser >= 38)
+        if (this.tableAnswer[0].answerUser < 42 && this.tableAnswer[0].answerUser >= 38)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale"
             });
-        else if (this.valueTestGyneco[0].answerUser > 42)
+        else if (this.tableAnswer[0].answerUser > 42)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
             });
-        if (this.valueTestGyneco[5].answerUser == true && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[5].answerUser == true && this.tableAnswer[1].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous fumez, ce qui peut entrainer de nombreuses complications."
             });
-        if (this.valueTestGyneco[5].answerUser == true && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[5].answerUser == true && this.tableAnswer[1].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous fumez, ce qui peut entrainer de nombreuses complications."
             });
-        else if (this.valueTestGyneco[5].answerUser == true)
+        else if (this.tableAnswer[5].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse."
             });
-        if (this.valueTestGyneco[8].answerUser == true)
+        if (this.tableAnswer[8].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."
             });
-        if (this.valueTestGyneco[11].answerUser == false && this.valueTestGyneco[10].answerUser == true)
+        if (this.tableAnswer[11].answerUser == false && this.tableAnswer[10].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %"
             });
-        if (this.valueTestGyneco[8].answerUser >= 3)
+        if (this.tableAnswer[8].answerUser >= 3)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous avez un nombre élevé de fausse couches"
             });
-        if (this.valueTestGyneco.IMG)
+        if (this.tableAnswer.IMG)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive"
             });
-        if (this.valueTestGyneco[19].answerUser < 10 && this.valueTestGyneco[19].answerUser > 0)
+        if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous consommez de l'alcool"
             });
-        if (this.valueTestGyneco[19].answerUser < 10 && this.valueTestGyneco[19].answerUser > 0 && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0 && this.tableAnswer[1].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Stoppez votre consommation d'alcool !"
             });
-        if (this.valueTestGyneco[19].answerUser >= 10 && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[19].answerUser >= 10 && this.tableAnswer[1].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Vous consommez une quantité d'alcool importante"
             });
-        if (this.valueTestGyneco[20].answerUser == true)
+        if (this.tableAnswer[20].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre epilepsie"
             });
-        if (this.valueTestGyneco[21].answerUser == true)
+        if (this.tableAnswer[21].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre antécédent de phlébite"
             });
-        if (this.valueTestGyneco[22].answerUser == true)
+        if (this.tableAnswer[22].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre hypertension"
             });
-        if (this.valueTestGyneco.IMC < 18.5)
+        if (this.IMC < 18.5)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre MAIGREUR"
             });
-        else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
+        else if (this.IMC > 35 && this.IMC < 40)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre obésité"
             });
-        else if (this.valueTestGyneco.IMC > 40)
+        else if (this.IMC > 40)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre obésité massive"
             });
-        if (this.valueTestGyneco[29].answerUser > 10 && this.valueTestGyneco[29].answerUser <= 12)
+        if (this.tableAnswer[29].answerUser > 10 && this.tableAnswer[29].answerUser <= 12)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre nombre d'heure de travail est élevé."
             });
-        if (this.valueTestGyneco[29].answerUser > 12)
+        if (this.tableAnswer[29].answerUser > 12)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre nombre d'heure de travail est vraiment très élevé"
             });
-        if (this.valueTestGyneco[30].answerUser > 90)
+        if (this.tableAnswer[30].answerUser > 90)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
                 idConseil: 0,
                 title: "Votre temps de trajet pour aller au travail est élevé"
             });
-        if (this.valueTestGyneco[30].answerUser == true)
+        if (this.tableAnswer[30].answerUser == true)
             this.risk.push({
                 type: "risk",
                 idPositif: 0,
@@ -4536,15 +4537,15 @@ var ResultPage = (function () {
             });
         console.log(this.risk);
         console.log("debut positif");
-        if (this.valueTestGyneco[3].answerUser == true)
+        if (this.tableAnswer[3].answerUser == true)
             this.positif.push({
                 title: "Félicitation vous êtes enceinte !"
             });
-        if (this.valueTestGyneco[6].answerUser == 0 && this.valueTestGyneco[3].answerUser == true)
+        if (this.tableAnswer[6].answerUser == 0 && this.tableAnswer[3].answerUser == true)
             this.positif.push({
                 title: "Félicitation vous allez avoir votre premier enfant"
             });
-        if (this.valueTestGyneco[0].answerUser < 38)
+        if (this.tableAnswer[0].answerUser < 38)
             this.positif.push({
                 title: "Vous avez le bon l'âge optimal pour faire un enfant"
             });
@@ -4552,84 +4553,84 @@ var ResultPage = (function () {
             this.positif.push({
                 title: "Être plus âgée pour élever ses enfants est ausi un gage de maturité !"
             });
-        if (this.valueTestGyneco.IMG == true)
+        if (this.tableAnswer.IMG == true)
             this.positif.push({
                 title: "La plus grande partie des anomalies foetales sont des accidents et leur récidive est rare"
             });
-        if (!this.valueTestGyneco[28].answerUser)
+        if (!this.tableAnswer[28].answerUser)
             this.positif.push({
                 title: "Vous ne travaillez pas, vous pouvez donc prendre le temps de vous occuper de vous et préparer la venue de votre enfant"
             });
         console.log("debut conseil");
-        if (this.valueTestGyneco[5].answerUser == true && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[5].answerUser == true && this.tableAnswer[1].answerUser == true)
             this.conseil.push({
                 title: "Arrêtez de fumer !"
             });
-        else if (this.valueTestGyneco[5].answerUser == true)
+        else if (this.tableAnswer[5].answerUser == true)
             this.conseil.push({
                 title: "Arrêtez de fumer avant d'entammer une grossesse !"
             });
-        if (this.valueTestGyneco[8].answerUser == true && this.valueTestGyneco[13].answerUser == true)
+        if (this.tableAnswer[8].answerUser == true && this.tableAnswer[13].answerUser == true)
             this.conseil.push({
                 title: "Effectuez un dépistage de diabète de grossesse"
             });
-        else if (this.valueTestGyneco[8].answerUser == true)
+        else if (this.tableAnswer[8].answerUser == true)
             this.conseil.push({
                 title: "Effectuez un dépistage de diabète de grossesse."
             });
-        if (this.valueTestGyneco[18].answerUser >= 3)
+        if (this.tableAnswer[18].answerUser >= 3)
             this.conseil.push({
                 title: "Effectuez un bilan de fausse couche à répétition et bénéficiez d'une prise en charge adaptée en fonction des résultats de ce bilan."
             });
-        if (this.valueTestGyneco.IMG == true)
+        if (this.tableAnswer.IMG == true)
             this.conseil.push({
                 title: "Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale."
             });
-        if (this.valueTestGyneco[19].answerUser >= 10 && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[19].answerUser >= 10 && this.tableAnswer[1].answerUser == true)
             this.conseil.push({
                 title: "Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool"
             });
-        if (this.valueTestGyneco[19].answerUser < 10 && this.valueTestGyneco[19].answerUser > 0 && this.valueTestGyneco[1].answerUser == true)
+        if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0 && this.tableAnswer[1].answerUser == true)
             this.conseil.push({
                 title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
             });
-        if (this.valueTestGyneco[25].answerUser1 == true)
+        if (this.tableAnswer[25].answerUser1 == true)
             this.conseil.push({
                 title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
-        if (this.valueTestGyneco[25].answerUser2 == true)
+        if (this.tableAnswer[25].answerUser2 == true)
             this.conseil.push({
                 title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des anticoagulent et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
-        if (this.valueTestGyneco[25].answerUser3 == true)
+        if (this.tableAnswer[25].answerUser3 == true)
             this.conseil.push({
                 title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
-        if (this.valueTestGyneco[25].answerUser4 == true)
+        if (this.tableAnswer[25].answerUser4 == true)
             this.conseil.push({
                 title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
-        if (this.valueTestGyneco[25].answerUser5 == true)
+        if (this.tableAnswer[25].answerUser5 == true)
             this.conseil.push({
                 title: ""
             });
-        if (this.valueTestGyneco.IMC < 18.5)
+        if (this.IMC < 18.5)
             this.conseil.push({
                 title: "Alimentez-vous correctement"
             });
-        else if (this.valueTestGyneco.IMC > 40)
+        else if (this.IMC > 40)
             this.conseil.push({
                 title: "Vous devez être prise en charge dans un centre spécialisé."
             });
-        if (this.valueTestGyneco[29].answerUser > 10)
+        if (this.tableAnswer[29].answerUser > 10)
             this.conseil.push({
                 title: "Essayer d'aménager vos heures de travail"
             });
-        if (this.valueTestGyneco[29].answerUser > 90)
+        if (this.tableAnswer[29].answerUser > 90)
             this.conseil.push({
                 title: "Essayer d'aménager vos heures de présence au travail pour diminuer les temps de trajets"
             });
-        if (this.valueTestGyneco[29].answerUser == true)
+        if (this.tableAnswer[29].answerUser == true)
             this.conseil.push({
                 title: "Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour"
             });
@@ -4681,10 +4682,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(renderer, navCtrl, navParams) {
+    function HomePage(renderer, navCtrl, navParams, alertCtrl) {
         this.renderer = renderer;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
         this.Questions = [];
         this.Answers = [];
         this.totalStep = 0;
@@ -4744,9 +4746,20 @@ var HomePage = (function () {
         console.log("before", question);
         this.questionForm = question;
         if (this.questionForm.type == "number") {
-            this.currentStep = this.questionForm.answer.nextStep;
-            this.Questions[this.questionForm.idTable].answerUser = this.number;
-            this.sliderOne.slideTo(this.currentStep, 350);
+            console.log(this.number);
+            if (this.number) {
+                this.currentStep = this.questionForm.answer.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = this.number;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+            else {
+                var alert = this.alertCtrl.create({
+                    title: 'Rentrez une réponse',
+                    subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                    buttons: ['OK']
+                });
+                alert.present();
+            }
         }
         else if (this.questionForm.type == "yesNoIdn") {
             if (this.yes) {
@@ -4764,6 +4777,14 @@ var HomePage = (function () {
                 this.Questions[this.questionForm.idTable].answerUser = 2;
                 this.sliderOne.slideTo(this.currentStep, 350);
             }
+            else {
+                var alert = this.alertCtrl.create({
+                    title: 'Selectionnez au moins une des réponses',
+                    subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                    buttons: ['OK']
+                });
+                alert.present();
+            }
         }
         else if (this.questionForm.type == "yesNo") {
             if (this.yes) {
@@ -4776,11 +4797,29 @@ var HomePage = (function () {
                 this.Questions[this.questionForm.idTable].answerUser = 0;
                 this.sliderOne.slideTo(this.currentStep, 350);
             }
+            else {
+                var alert = this.alertCtrl.create({
+                    title: 'Selectionnez au moins une des réponses',
+                    subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                    buttons: ['OK']
+                });
+                alert.present();
+            }
         }
         else if (this.questionForm.type == "date") {
-            this.currentStep = this.questionForm.answer.nextStep;
-            this.Questions[this.questionForm.idTable].answerUser = this.date;
-            this.sliderOne.slideTo(this.currentStep, 350);
+            if (this.date) {
+                this.currentStep = this.questionForm.answer.nextStep;
+                this.Questions[this.questionForm.idTable].answerUser = this.date;
+                this.sliderOne.slideTo(this.currentStep, 350);
+            }
+            else {
+                var alert = this.alertCtrl.create({
+                    title: 'Selectionnez au moins une des réponses',
+                    subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+                    buttons: ['OK']
+                });
+                alert.present();
+            }
         }
         else if (this.questionForm.type == "multipleChoice"
             || this.questionForm.type == "multipleIf") {
@@ -4852,10 +4891,10 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n          <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n          <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
 ], HomePage);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=home.js.map
 
 /***/ })

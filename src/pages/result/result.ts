@@ -19,6 +19,7 @@ export class ResultPage {
     resultRisk:number;
     resultPsycho2:number;
     resultPsycho3:number;
+    resultPsycho4:number;
     IMC:number;
     result:any;
     risk:any;

@@ -1,5 +1,5 @@
 import { Component, Renderer, ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { ResultPage } from '../result/result';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -36,7 +36,7 @@ export class HomePage {
 	questionForm:any;
 
 
-	constructor(private renderer: Renderer, public navCtrl: NavController, public navParams: NavParams) { }
+	constructor(private renderer: Renderer, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) { }
 
 	ngOnInit() {
 		var self = this;
@@ -101,9 +101,22 @@ export class HomePage {
 		this.questionForm = question;
 		if (this.questionForm.type == "number")
 		{
-			this.currentStep = this.questionForm.answer.nextStep;
-			this.Questions[this.questionForm.idTable].answerUser = this.number;
-			this.sliderOne.slideTo(this.currentStep, 350);
+			console.log(this.number);
+			if (this.number)
+			{
+				this.currentStep = this.questionForm.answer.nextStep;
+				this.Questions[this.questionForm.idTable].answerUser = this.number;
+				this.sliderOne.slideTo(this.currentStep, 350);
+			}
+			else
+			{
+				let alert = this.alertCtrl.create({
+					title: 'Rentrez une réponse',
+					subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+					buttons: ['OK']
+				});
+				alert.present();
+			}
 		}
 		else if (this.questionForm.type == "yesNoIdn")
 		{
@@ -126,6 +139,15 @@ export class HomePage {
 				this.Questions[this.questionForm.idTable].answerUser = 2;
 				this.sliderOne.slideTo(this.currentStep, 350);
 			}
+			else
+			{
+				let alert = this.alertCtrl.create({
+					title: 'Selectionnez au moins une des réponses',
+					subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+					buttons: ['OK']
+				});
+				alert.present();
+			}
 		}
 		else if (this.questionForm.type == "yesNo")
 		{
@@ -141,12 +163,33 @@ export class HomePage {
 				this.Questions[this.questionForm.idTable].answerUser = 0;
 				this.sliderOne.slideTo(this.currentStep, 350);
 			}
+			else
+			{
+				let alert = this.alertCtrl.create({
+					title: 'Selectionnez au moins une des réponses',
+					subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+					buttons: ['OK']
+				});
+				alert.present();
+			}
 		}
 		else if (this.questionForm.type == "date")
 		{
-			this.currentStep = this.questionForm.answer.nextStep;
-			this.Questions[this.questionForm.idTable].answerUser = this.date;
-			this.sliderOne.slideTo(this.currentStep, 350);
+			if (this.date)
+			{
+				this.currentStep = this.questionForm.answer.nextStep;
+				this.Questions[this.questionForm.idTable].answerUser = this.date;
+				this.sliderOne.slideTo(this.currentStep, 350);
+			}
+			else
+			{
+				let alert = this.alertCtrl.create({
+					title: 'Selectionnez au moins une des réponses',
+					subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+					buttons: ['OK']
+				});
+				alert.present();
+			}
 		}
 		else if (this.questionForm.type == "multipleChoice" 
 			|| this.questionForm.type == "multipleIf" )
