@@ -152,7 +152,10 @@ export class HomePage {
 			|| this.questionForm.type == "multipleIf" )
 		{
 			console.log("ICI");
+			if (this.questionForm.id == 18 && this.answer.one == false)
+				this.questionForm.nextStep = 19;
 			this.currentStep = this.questionForm.nextStep;
+			console.log
 			this.Questions[this.questionForm.idTable].answerUser1 = this.answer.one;
 			this.Questions[this.questionForm.idTable].answerUser2 = this.answer.two;
 			this.Questions[this.questionForm.idTable].answerUser3 = this.answer.three;
