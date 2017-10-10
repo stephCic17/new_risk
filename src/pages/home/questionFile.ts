@@ -313,8 +313,8 @@ const Questions = [
     answer8:
       {
         label: "penser que mon bébé allait mourrir",
-      }, 
-      answer8:
+      },
+      answer9:
       {
         label: "j'ai subit un accouchement traumatique",
       },
@@ -368,19 +368,19 @@ const Questions = [
     answer8:
       {
         label: "Enfant prématuré",
-      }, 
+      },
     answer9:
       {
         label: "Enfant atteint d'une maladie chronique",
-      }, 
+      },
     answer10:
       {
         label: "Mort d'un enfant",
-      }, 
+      },
     answer11:
       {
         label: "Ces expériences ont été traumatiques",
-      }, 
+      },
     answer12:
       {
         label: "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques",
@@ -530,7 +530,7 @@ const Questions = [
       {
         label: "Antidepresseur",
       },
-   
+
     nextStep: 26
   },
   {

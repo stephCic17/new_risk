@@ -11,6 +11,26 @@ html, body, .form-wrapper, .swiper-slide {
     margin: 0 3px;
 }
 
+.swiper-slide {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.scrollable-slide {
+  display: block !important;
+  h3 {
+    margin-bottom: 3rem;
+  }
+}
+
+.scroll-content {
+  overflow: hidden;
+}
+
+.slide-zoom {
+  padding: 50px 0;
+}
+
 .swiper-pagination-bullet {
     border-radius: 100%;
     display: inline-block;
