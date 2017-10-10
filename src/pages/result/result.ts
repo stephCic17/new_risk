@@ -17,6 +17,7 @@ export class ResultPage {
     answers: any;
     tableAnswer:any;
     resultRisk:number;
+    resultPsycho1:number;
     resultPsycho2:number;
     resultPsycho3:number;
     resultPsycho4:number;
@@ -55,80 +56,95 @@ export class ResultPage {
 
         this.slides.lockSwipes(false);
         console.log(this.tableAnswer);
-        this.IMC = this.tableAnswer[26].answerUser / Math.pow(this.tableAnswer[27].answerUser / 100, 2);
+        this.IMC = this.tableAnswer[27].answerUser / Math.pow(this.tableAnswer[26].answerUser / 100, 2);
+        console.log(this.IMC);
         this.result = [];
         this.risk = [];
         this.conseil = [];
         this.positif = [];
 
-        this.resultPsycho2= 0;
-        if (this.tableAnswer[17].answerUser1 == 1) 
+        this.resultPsycho1 = 0;
+        if (this.tableAnswer[4].answerUser1 == true)
+        {
+            this.resultPsycho1 += 1;
+            if (this.tableAnswer[4].answerUser3 <= 2 && this.tableAnswer[4].answerUser2 >= 0)
+                this.resultPsycho1 += 1;
+            else if (this.tableAnswer[4].answerUser2 > 2)
+                this.resultPsycho1 += 2;
+        }
+        if (this.tableAnswer[4].answerUser3 == true)
+            this.resultPsycho1 += 2;
+        if (this.tableAnswer[4].answerUser2 == true)
+            this.resultPsycho1 += 2;
+
+        this.resultPsycho2 = 0;
+        if (this.tableAnswer[17].answerUser1 == true) 
             this.resultPsycho2 += 2;
-        if (this.tableAnswer[17].answerUser2 == 1) 
+        if (this.tableAnswer[17].answerUser2 == true) 
             this.resultPsycho2 += 1;
-        if (this.tableAnswer[17].answerUser3 == 1) 
+        if (this.tableAnswer[17].answerUser3 == true) 
             this.resultPsycho2 += 1;   
-        if (this.tableAnswer[17].answerUser4 == 1) 
+        if (this.tableAnswer[17].answerUser4 == true) 
             this.resultPsycho2 += 2;
-        if (this.tableAnswer[17].answerUser5 == 1) 
+        if (this.tableAnswer[17].answerUser5 == true) 
             this.resultPsycho2 += 2;       
-        if (this.tableAnswer[17].answerUser6 == 1) 
+        if (this.tableAnswer[17].answerUser6 == true) 
             this.resultPsycho2 += 3;        
-        if (this.tableAnswer[17].answerUser7 == 1) 
+        if (this.tableAnswer[17].answerUser7 == true) 
             this.resultPsycho2 += 3;        
-        if (this.tableAnswer[17].answerUser8 == 1) 
+        if (this.tableAnswer[17].answerUser8 == true) 
             this.resultPsycho2 += 1;        
-        if (this.tableAnswer[17].answerUser9 == 1) 
+        if (this.tableAnswer[17].answerUser9 == true) 
             this.resultPsycho2 += 3;        
-        if (this.tableAnswer[17].answerUser10 == 1) 
+        if (this.tableAnswer[17].answerUser10 == true) 
             this.resultPsycho2 += 2;        
-        if (this.tableAnswer[17].answerUser11 == 1) 
+        if (this.tableAnswer[17].answerUser11 == true) 
             this.resultPsycho2 += 10;        
-        if (this.tableAnswer[17].answerUser12 == 1) 
+        if (this.tableAnswer[17].answerUser12 == true) 
             this.resultPsycho2 += 10;
 
         this.resultPsycho3 = 0;
-        if (this.tableAnswer[16].answerUser1 == 1) 
+        if (this.tableAnswer[16].answerUser1 == true) 
             this.resultPsycho3 += 1;
-        if (this.tableAnswer[16].answerUser2 == 1) 
+        if (this.tableAnswer[16].answerUser2 == true) 
             this.resultPsycho3 += 2;
-        if (this.tableAnswer[16].answerUser3 == 1) 
+        if (this.tableAnswer[16].answerUser3 == true) 
             this.resultPsycho3 += 2;   
-        if (this.tableAnswer[16].answerUser4 == 1) 
+        if (this.tableAnswer[16].answerUser4 == true) 
             this.resultPsycho3 += 1;
-        if (this.tableAnswer[16].answerUser5 == 1) 
+        if (this.tableAnswer[16].answerUser5 == true) 
             this.resultPsycho3 += 2;       
-        if (this.tableAnswer[16].answerUser6 == 1) 
+        if (this.tableAnswer[16].answerUser6 == true) 
             this.resultPsycho3 += 5;        
-        if (this.tableAnswer[16].answerUser7 == 1) 
+        if (this.tableAnswer[16].answerUser7 == true) 
             this.resultPsycho3 += 2;        
-        if (this.tableAnswer[16].answerUser8 == 1) 
+        if (this.tableAnswer[16].answerUser8 == true) 
             this.resultPsycho3 += 5;        
-        if (this.tableAnswer[16].answerUser9 == 1) 
+        if (this.tableAnswer[16].answerUser9 == true) 
             this.resultPsycho3 += 5;
 
         this.resultPsycho4 = 0;
-        if (this.tableAnswer[32].answerUser1 == 1) 
+        if (this.tableAnswer[32].answerUser1 == true) 
             this.resultPsycho4 += 2;
-        if (this.tableAnswer[32].answerUser2 == 1) 
+        if (this.tableAnswer[32].answerUser2 == true) 
             this.resultPsycho4 += 2;
-        if (this.tableAnswer[32].answerUser3 == 1) 
+        if (this.tableAnswer[32].answerUser3 == true) 
             this.resultPsycho4 += 2;   
-        if (this.tableAnswer[32].answerUser4 == 1) 
+        if (this.tableAnswer[32].answerUser4 == true) 
             this.resultPsycho4 += 1;
-        if (this.tableAnswer[32].answerUser5 == 1) 
+        if (this.tableAnswer[32].answerUser5 == true) 
             this.resultPsycho4 += 2;       
-        if (this.tableAnswer[32].answerUser6 == 1) 
+        if (this.tableAnswer[32].answerUser6 == true) 
             this.resultPsycho4 += 2;        
-        if (this.tableAnswer[32].answerUser7 == 1) 
+        if (this.tableAnswer[32].answerUser7 == true) 
             this.resultPsycho4 += 1;        
-        if (this.tableAnswer[32].answerUser8 == 1) 
+        if (this.tableAnswer[32].answerUser8 == true) 
             this.resultPsycho4 += 2;        
-        if (this.tableAnswer[32].answerUser9 == 1) 
+        if (this.tableAnswer[32].answerUser9 == true) 
             this.resultPsycho4 += 2;
         
         this.psycho = [];
-        if (this.resultPsycho1 >= 2 || this.resultPsycho2 > 2 || this.resultPsycho3 >= 5 )
+        if (this.resultPsycho1 >= 2 || this.resultPsycho2 >= 5 || this.resultPsycho3 > 4 || this.resultPsycho4 >= 2 )
         {
             this.psycho.push(
             {

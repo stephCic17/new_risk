@@ -107,12 +107,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 6
+    nextStep: 7
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 6
+    nextStep: 7
   }
 },
 {
@@ -124,12 +124,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 7
+    nextStep: 8
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 17
+    nextStep: 18
   }
 },
 {
@@ -141,7 +141,7 @@ const Questions = [
   answer:
   {
     label: "nombre d'enfant",
-    nextStep: 8
+    nextStep: 9
   }
 },
 {
@@ -153,12 +153,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 9
+    nextStep: 10
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 10
+    nextStep: 11
   }
 },
 {
@@ -170,7 +170,7 @@ const Questions = [
   answer:
   {
     label: "nombre d'enfants",
-    nextStep: 10
+    nextStep: 11
   }
 },
 {
@@ -182,12 +182,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 11
+    nextStep: 12
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 12
+    nextStep: 13
   }
 },
 {
@@ -199,12 +199,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 12
+    nextStep: 13
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 12
+    nextStep: 13
   }
 },
 {
@@ -216,12 +216,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 13
+    nextStep: 14
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 13
+    nextStep: 14
   }
 },
 {
@@ -233,12 +233,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 14
+    nextStep: 15
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 14
+    nextStep: 15
   }
 },
 {
@@ -249,12 +249,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 15
+    nextStep: 16
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 16
+    nextStep: 17
   }
 },
 {
@@ -266,7 +266,7 @@ const Questions = [
   answer:
   {
     label: "nombre de cesarienne",
-    nextStep: 16
+    nextStep: 17
   }
 },
 {
@@ -319,7 +319,7 @@ const Questions = [
   {
     label: "j'ai subit un accouchement traumatique",
   },
-  nextStep: 17
+  nextStep: 18
 },
 {
   idTable: 17,
@@ -386,7 +386,7 @@ const Questions = [
   {
     label: "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques",
   },
-  nextStep: 18
+  nextStep: 19
 },
 {
   idTable: 18,
@@ -397,7 +397,7 @@ const Questions = [
   answer:
   {
     label: "nombre",
-    nextStep: 19
+    nextStep: 20
   }
 },
 {
@@ -408,7 +408,7 @@ const Questions = [
   answer:
   {
     label: "nombre par semaine",
-    nextStep: 20
+    nextStep: 21
   },
   answerUser: -1,
 },
@@ -421,12 +421,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 21
+    nextStep: 22
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 21
+    nextStep: 22
   }
 },
 {
@@ -438,12 +438,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 22
+    nextStep: 23
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 22
+    nextStep: 23
   }
 },
 {
@@ -455,12 +455,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 23
+    nextStep: 24
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 23
+    nextStep: 24
   }
 },
 {
@@ -472,12 +472,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 24
+    nextStep: 25
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 24
+    nextStep: 25
   }
 },
 {
@@ -489,12 +489,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 25
+    nextStep: 26
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 26
+    nextStep: 27
   }
 },
 {
@@ -532,7 +532,7 @@ const Questions = [
     label: "Antidepresseur",
   },
 
-  nextStep: 26
+  nextStep: 27
 },
 {
   idTable: 26,
@@ -543,7 +543,7 @@ const Questions = [
   answer:
   {
     label: "en cm",
-    nextStep: 27
+    nextStep: 28
   }
 },
 {
@@ -554,7 +554,7 @@ const Questions = [
   answer:
   {
     label: "en kg",
-    nextStep: 28
+    nextStep: 29
   }
 },
 {
@@ -566,12 +566,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 29
+    nextStep: 30
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 32
+    nextStep: 33
   }
 },
 {
@@ -583,7 +583,7 @@ const Questions = [
   answer:
   {
     label: "en heure",
-    nextStep: 30
+    nextStep: 31
   }
 },
 {
@@ -595,7 +595,7 @@ const Questions = [
   answer:
   {
     label: "en minute",
-    nextStep: 31
+    nextStep: 32
   }
 },
 {
@@ -607,12 +607,12 @@ const Questions = [
   answerYes:
   {
     label: "Oui",
-    nextStep: 32
+    nextStep: 33
   },
   answerNo:
   {
     label: "Non",
-    nextStep: 32
+    nextStep: 33
   }
 },
 {

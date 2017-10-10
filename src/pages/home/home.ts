@@ -192,13 +192,12 @@ export class HomePage {
 			}
 		}
 		else if (this.questionForm.type == "multipleChoice" 
-			|| this.questionForm.type == "multipleIf" )
+			|| this.questionForm.type == "multipleIf" 
+			|| this.questionForm.type == "Psycho1")
 		{
-			console.log("ICI");
-			if (this.questionForm.id == 18 && this.answer.one == false)
-				this.questionForm.nextStep = 19;
+			if (this.questionForm.id == 18 && !this.answer.one)
+				this.questionForm.nextStep = 20;
 			this.currentStep = this.questionForm.nextStep;
-			console.log
 			this.Questions[this.questionForm.idTable].answerUser1 = this.answer.one;
 			this.Questions[this.questionForm.idTable].answerUser2 = this.answer.two;
 			this.Questions[this.questionForm.idTable].answerUser3 = this.answer.three;
@@ -215,7 +214,7 @@ export class HomePage {
 			this.sliderOne.slideTo(this.currentStep, 350);
 		}
 
-		this.number = "";
+		this.number = false;
 		this.yes = false;
 		this.no = false;
 		this.idn = false;
