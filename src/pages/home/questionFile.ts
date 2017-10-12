@@ -58,7 +58,7 @@ const Questions = [
   answerNo:
   {
     label: "Non",
-    nextStep: 99
+    nextStep: 250
   },
   answerIdn:
   {
@@ -661,7 +661,31 @@ const Questions = [
     label: "hospitalisation dans un service psychiatrique",
   },
   nextStep: 99
-}
+},
+{
+idTable: 33,
+       id: 34,
+       answerUser: -1,
+       title: "Nombre de semaine de grossesse",
+       type: "number",
+       answer:
+       {
+         label: "en semaine",
+         nextStep: 35
+       }
+     },
+     {
+       idTable: 34,
+       id: 35,
+       answerUser: -1,
+       title: "Nombre de semaine restante",
+       type: "number",
+       answer:
+       {
+         label: "en semaine",
+         nextStep: 35
+       }
+     }
 ];
 
 export default Questions;

@@ -1,6 +1,7 @@
 import { Component, Renderer, ElementRef } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { ResultPage } from '../result/result';
+import { IvgInfoPage } from '../ivg-info/ivg-info';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { ViewChild } from '@angular/core';
@@ -130,6 +131,10 @@ export class HomePage {
 			{
 				this.currentStep =this.questionForm.answerNo.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 0;
+if (this.currentStep == 250)
+					this.navCtrl.push(IvgInfoPage, {
+				userParams: this.Questions
+			});
 				this.sliderOne.slideTo(this.currentStep, 350);
 
 			}
@@ -137,6 +142,10 @@ export class HomePage {
 			{
 				this.currentStep = this.questionForm.answerIdn.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 2;
+				if (this.currentStep == 250)
+					this.navCtrl.push(IvgInfoPage, {
+				userParams: this.Questions
+			});
 				this.sliderOne.slideTo(this.currentStep, 350);
 			}
 			else
@@ -161,7 +170,7 @@ export class HomePage {
 			{
 				this.currentStep = this.questionForm.answerNo.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 0;
-				this.sliderOne.slideTo(this.currentStep, 350);
+								this.sliderOne.slideTo(this.currentStep, 350);
 			}
 			else
 			{
@@ -178,7 +187,7 @@ export class HomePage {
 			if (this.date)
 			{
 				this.currentStep = this.questionForm.answer.nextStep;
-				this.Questions[this.questionForm.idTable].answerUser = this.date;
+				this.Questions[this.questionForm.idTable].answerUser = new Date(this.date);
 				this.sliderOne.slideTo(this.currentStep, 350);
 			}
 			else

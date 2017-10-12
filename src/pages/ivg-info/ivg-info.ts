@@ -8,18 +8,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
-@Component({
-  selector: 'page-ivg-info',
-  templateUrl: 'ivg-info.html',
-})
-export class IvgInfoPage {
+ @IonicPage()
+ @Component({
+ 	selector: 'page-ivg-info',
+ 	templateUrl: 'ivg-info.html',
+ })
+ export class IvgInfoPage {
+ 	tableAnswer:any;
+ 	last:any;
+ 	result:any;
+ 	constructor(public navCtrl: NavController, public navParams: NavParams) {
+ 		this.tableAnswer = navParams.get('userParams');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IvgInfoPage');
-  }
+ 	}
 
-}
+ 	ionViewDidLoad() {
+ 		console.log('ionViewDidLoad IvgInfoPage');
+ 		this.tableAnswer[33].answerUser =  Math.round((( new Date().getTime() - this.tableAnswer[2].answerUser.getTime() ) / (1000 * 60 * 60 * 24 )) / 7);
+ 		this.tableAnswer[34].answerUser = 14 - this.tableAnswer[33].answerUser;
+
+ 		this.result = 14 - this.tableAnswer[33].answerUser;
+ 	}
+
+ }

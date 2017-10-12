@@ -16,7 +16,15 @@
 
     </ion-slide>
     <ion-slide *ngFor="let answer of answers" class="risk">
-      <h1>{{answer.title}}</h1>
+      <div *ngIf="answer.type == 'conseil'">
+      <h1 class="conseil">{{answer.title}}</h1>
+      </div>
+      <div *ngIf="answer.type == 'risk'">
+      <h1 class="risk">{{answer.title}}</h1>
+      </div>
+      <div *ngIf="answer.type == 'positif'">
+      <h1 class="positif">{{answer.title}}</h1>
+      </div>
     </ion-slide>
     <ion-slide class="positif">
       <h1>Et voilà !</h1>
