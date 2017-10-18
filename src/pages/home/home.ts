@@ -103,21 +103,10 @@ export class HomePage {
 		if (this.questionForm.type == "number")
 		{
 			console.log(this.number);
-			if (this.number)
-			{
-				this.currentStep = this.questionForm.answer.nextStep;
-				this.Questions[this.questionForm.idTable].answerUser = this.number;
-				this.sliderOne.slideTo(this.currentStep, 350);
-			}
-			else
-			{
-				let alert = this.alertCtrl.create({
-					title: 'Rentrez une réponse',
-					subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
-					buttons: ['OK']
-				});
-				alert.present();
-			}
+			this.currentStep = this.questionForm.answer.nextStep;
+			this.Questions[this.questionForm.idTable].answerUser = this.number;
+			this.sliderOne.slideTo(this.currentStep, 350);
+			
 		}
 		else if (this.questionForm.type == "yesNoIdn")
 		{
@@ -131,10 +120,10 @@ export class HomePage {
 			{
 				this.currentStep =this.questionForm.answerNo.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 0;
-if (this.currentStep == 250)
+				if (this.currentStep == 250)
 					this.navCtrl.push(IvgInfoPage, {
-				userParams: this.Questions
-			});
+						userParams: this.Questions
+					});
 				this.sliderOne.slideTo(this.currentStep, 350);
 
 			}
@@ -144,8 +133,8 @@ if (this.currentStep == 250)
 				this.Questions[this.questionForm.idTable].answerUser = 2;
 				if (this.currentStep == 250)
 					this.navCtrl.push(IvgInfoPage, {
-				userParams: this.Questions
-			});
+						userParams: this.Questions
+					});
 				this.sliderOne.slideTo(this.currentStep, 350);
 			}
 			else
@@ -170,7 +159,7 @@ if (this.currentStep == 250)
 			{
 				this.currentStep = this.questionForm.answerNo.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 0;
-								this.sliderOne.slideTo(this.currentStep, 350);
+				this.sliderOne.slideTo(this.currentStep, 350);
 			}
 			else
 			{
@@ -262,5 +251,39 @@ if (this.currentStep == 250)
 	prev() {
 		this.currentStep--;
 		this.sliderOne.slideTo(this.currentStep, 350);
+	}
+
+	testCheck(answer)
+	{
+		if (answer == "yes")
+		{
+			if (this.yes == false)
+			{
+				this.no = false;
+				this.idn = false;
+				this.yes = true;
+			}
+		}
+		else if (answer == "no")
+		{
+			if (this.no == false)
+			{
+				this.yes = false;
+				this.idn = false;
+				this.no = true;
+			}
+		}
+		else
+		{
+			if (this.idn == false)
+			{
+				this.no = false;
+				this.yes = false;
+				this.idn = true;
+			}
+		}
+		console.log("yes ==", this.yes);
+		console.log("no", this.no);
+		console.log("idn ==", this.idn);
 	}
 }

@@ -56,26 +56,26 @@
         <ion-slide *ngIf="question.type == 'yesNoIdn'">
           <h3>{{question.title}}</h3>
           <div class="checkbox">
-            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes">
+            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck('yes')">
             <label for="radio{{i}}-1">Oui</label>
           </div>
           <div class="checkbox">
-            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no">
+            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck('no')">
             <label for="radio{{i}}-2">Non</label>
           </div>
           <div class="checkbox checkbox--large">
-            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn">
+            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck('idn')">
             <label for="radio{{i}}-3">Je ne sais pas</label>
           </div>
         </ion-slide>
         <ion-slide *ngIf="question.type == 'yesNo'">
           <h3>{{question.title}}</h3>
           <div class="checkbox">
-            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes">
+            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck('yes')">
             <label for="radio{{i}}-1">Oui</label>
           </div>
           <div class="checkbox">
-            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no">
+            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck('no')">
             <label for="radio{{i}}-2">Non</label>
           </div>
         </ion-slide>
