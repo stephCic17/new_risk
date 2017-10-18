@@ -68,7 +68,7 @@ export class HomePage {
 		this.isInitialized = true;
 		this.currentStep = this.sliderOne.getActiveIndex();
 		this.totalStep = this.sliderOne.length();
-		this.sliderOne.lockSwipeToPrev(true);
+//		this.sliderOne.lockSwipeToPrev(true);
 		// this.sliderOne.lockSwipes(true);
 	}
 
@@ -104,12 +104,14 @@ export class HomePage {
 		{
 			console.log(this.number);
 			this.currentStep = this.questionForm.answer.nextStep;
+				this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
 			this.Questions[this.questionForm.idTable].answerUser = this.number;
 			this.sliderOne.slideTo(this.currentStep, 350);
-			
+			console.log(this.Questions);		
 		}
 		else if (this.questionForm.type == "yesNoIdn")
 		{
+		console.log(this.Questions);	
 			if (this.yes)
 			{
 				this.currentStep =this.questionForm.answerYes.nextStep;
@@ -149,6 +151,7 @@ export class HomePage {
 		}
 		else if (this.questionForm.type == "yesNo")
 		{
+	
 			if (this.yes)
 			{
 				this.currentStep = this.questionForm.answerYes.nextStep;
@@ -170,9 +173,11 @@ export class HomePage {
 				});
 				alert.present();
 			}
+
 		}
 		else if (this.questionForm.type == "date")
 		{
+	
 			if (this.date)
 			{
 				this.currentStep = this.questionForm.answer.nextStep;
@@ -193,6 +198,7 @@ export class HomePage {
 			|| this.questionForm.type == "multipleIf" 
 			|| this.questionForm.type == "Psycho1")
 		{
+
 			if (this.questionForm.id == 18 && !this.answer.one)
 				this.questionForm.nextStep = 20;
 			this.currentStep = this.questionForm.nextStep;
@@ -211,6 +217,7 @@ export class HomePage {
 
 			this.sliderOne.slideTo(this.currentStep, 350);
 		}
+		this.Questions[this.currentStep-1].prevStep = this.questionForm.id;
 
 		this.number = false;
 		this.yes = false;
@@ -252,7 +259,12 @@ export class HomePage {
 		this.currentStep--;
 		this.sliderOne.slideTo(this.currentStep, 350);
 	}
+	prevStep(question) {
 
+		this.currentStep = question.prevStep;
+		console.log(this.currentStep);
+		this.sliderOne.slideTo(this.currentStep, 350);
+	}
 	testCheck(answer)
 	{
 		if (answer == "yes")

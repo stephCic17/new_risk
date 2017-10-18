@@ -4,6 +4,7 @@ const Questions = [
   id: 1,
   title: "Quel âge avez-vous ?",
   type: "number",
+  prevStep:0,
   answer:
   {
     label: "age en année",
@@ -17,6 +18,7 @@ const Questions = [
   answerUser: -1,
   title: "Êtes-vous enceinte ?",
   type: "yesNoIdn",
+  prevStep:0,
   answerYes:
   {
     label: "Oui",
@@ -37,6 +39,7 @@ const Questions = [
   idTable: 2,
   id: 3,
   answerUser: -1,
+  prevStep:0,
   title: "Quel est la date de vos dernière règle ?",
   type: "date",
   answer: {
@@ -50,6 +53,7 @@ const Questions = [
   title:"Est-ce une bonne nouvelle ?",
   type:"yesNoIdn",
   answerUser: -1,
+  prevStep:0,
   answerYes:
   {
     label: "Oui",
@@ -76,6 +80,7 @@ const Questions = [
   answerUser3: -1,
   answerUser4 :-1,
   answerUser5: -1,
+  prevStep:0,
   answer1:
   {
     label: "recours à l'aide médicale à la procréation",
@@ -104,6 +109,7 @@ const Questions = [
   title:"Fumez-vous ?",
   type:"yesNo",
   answerUser: -1,
+  prevStep:0,
   answerYes:
   {
     label: "Oui",
@@ -121,6 +127,7 @@ const Questions = [
   answerUser: -1 ,
   title:"Avez-vous des enfants ?",
   type: "yesNo",
+  prevStep:0,
   answerYes:
   {
     label: "Oui",
@@ -136,6 +143,7 @@ const Questions = [
   idTable: 7,
   id: 8,
   answerUser: -1,
+  prevStep:0,
   title:"Combien avez-vous d'enfant ?",
   type: "number",
   answer:
@@ -148,6 +156,7 @@ const Questions = [
   idTable: 8,
   id: 9,
   answerUser: -1,
+  prevStep:0,
   title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
   type: "yesNo",
   answerYes:
@@ -165,6 +174,7 @@ const Questions = [
   idTable: 9,
   id: 10,
   answerUser: -1,
+  prevStep:0,
   title:"Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
   type: "number",
   answer:
@@ -177,6 +187,7 @@ const Questions = [
   idTable: 10,
   id: 11,
   answerUser: -1,
+  prevStep:0,
   title:"Avez-vous accouché d'enfant de moins de 2kg200 ?",
   type: "yesNo",
   answerYes:
@@ -194,6 +205,7 @@ const Questions = [
   idTable: 11,
   id: 12,
   answerUser: -1,
+  prevStep:0,
   title: "Votre enfant était il prématuré ?",
   type: "yesNo",
   answerYes:
@@ -211,6 +223,7 @@ const Questions = [
   idTable: 12,
   id: 13,
   answerUser: -1,
+  prevStep:0,
   title: "Avez-vous eu une prééclampsie ?",
   type: "yesNo",
   answerYes:
@@ -228,6 +241,7 @@ const Questions = [
   idTable: 13,
   id: 14,
   answerUser: -1,
+  prevStep:0,
   title:"Avez-vous un antécedent de diabète de grossesse ?",
   type: "yesNo",
   answerYes:
@@ -246,6 +260,7 @@ const Questions = [
   id: 15,
   title: "Avez-vous eu une césariennes ?",
   type: "yesNo",
+  prevStep:0,
   answerYes:
   {
     label: "Oui",
@@ -261,6 +276,7 @@ const Questions = [
   idTable: 15,
   id: 16,
   answerUser: -1,
+  prevStep:0,
   title: "Combien avez-vous eu de césarienne",
   type: "number",
   answer:
@@ -283,6 +299,7 @@ const Questions = [
   answerUser7: -1,
   answerUser8: -1,
   answerUser9: -1,
+  prevStep:0,
   answer1:
   {
     label: "forceps",
@@ -338,6 +355,7 @@ const Questions = [
   answerUser10: -1,
   answerUser11: -1,
   answerUser12: -1,
+  prevStep:0,
   answer1:
   {
     label: "Fauche couche",
@@ -392,6 +410,7 @@ const Questions = [
   idTable: 18,
   id: 19,
   answerUser: -1,
+  prevStep:0,
   title: "Combien de fausse couche avez-vous fait ?",
   type: "number",
   answer:
@@ -405,6 +424,7 @@ const Questions = [
   id: 20,
   title: "Combien de verres d'alcool buvez-vous par semaine ?",
   type: "number",
+  prevStep:0,
   answer:
   {
     label: "nombre par semaine",
@@ -416,6 +436,7 @@ const Questions = [
   idTable: 20,
   id: 21,
   answerUser: -1,
+  prevStep:0,
   title: "Avez-vous une épilepsie ?",
   type: "yesNo",
   answerYes:
@@ -435,6 +456,7 @@ const Questions = [
   answerUser: -1,
   title: "Avez-vous déjà eu une phlébite ?",
   type: "yesNo",
+  prevStep:0,
   answerYes:
   {
     label: "Oui",
@@ -450,6 +472,7 @@ const Questions = [
   idTable: 22,
   id: 23,
   answerUser: -1,
+  prevStep:0,
   title: "Avez-vous de l'hypertension artérielle ?",
   type: "yesNo",
   answerYes:
@@ -467,6 +490,7 @@ const Questions = [
   idTable: 23,
   id: 24,
   answerUser: -1,
+  prevStep:0,
   title: "Avez-vous du diabète ?",
   type: "yesNo",
   answerYes:
@@ -484,6 +508,7 @@ const Questions = [
   idTable: 24,
   id: 25,
   answerUser: -1,
+  prevStep:0,
   title:"Prenez vous des médicaments ?",
   type: "yesNo",
   answerYes:
@@ -510,7 +535,7 @@ const Questions = [
   answerUser6: -1,
   answerUser7: -1,
   answerUser8: -1,
-
+  prevStep:0,
   answer1:
   {
     label: "Anti-Epileptique",
@@ -538,6 +563,7 @@ const Questions = [
   idTable: 26,
   id: 27,
   answerUser: -1,
+  prevStep:0,
   title: "Quelle est votre taille (en cm) ?",
   type: "number",
   answer:
@@ -561,6 +587,7 @@ const Questions = [
   idTable: 28,
   id: 29,
   answerUser: -1,
+  prevStep:0,
   title: "Travaillez-vous ?",
   type: "yesNo",
   answerYes:
@@ -578,6 +605,7 @@ const Questions = [
   idTable: 29,
   id: 30,
   answerUser: -1,
+  prevStep:0,
   title: "Combien d'heures de travail effectuez-vous par jour ?",
   type: "number",
   answer:
@@ -590,6 +618,7 @@ const Questions = [
   idTable: 30,
   id: 31,
   answerUser: -1,
+  prevStep:0,
   title: "Quel est votre temps de trajet par jour (en minute) ?",
   type: "number",
   answer:
@@ -602,6 +631,7 @@ const Questions = [
   idTable: 31,
   id: 32,
   answerUser: -1,
+  prevStep:0,
   title: "Travaillez-vous debout plus de 6 heures par jour ?",
   type: "yesNo",
   answerYes:
@@ -621,6 +651,7 @@ const Questions = [
   title:"Vous et votre psychologie",
   type:"multipleChoice",
   answerUser1: -1,
+  prevStep:0,
   answerUser2 :-1,
   answerUser3: -1,
   answerUser4 :-1,
@@ -663,29 +694,31 @@ const Questions = [
   nextStep: 99
 },
 {
-idTable: 33,
-       id: 34,
-       answerUser: -1,
-       title: "Nombre de semaine de grossesse",
-       type: "number",
-       answer:
-       {
-         label: "en semaine",
-         nextStep: 35
-       }
-     },
-     {
-       idTable: 34,
-       id: 35,
-       answerUser: -1,
-       title: "Nombre de semaine restante",
-       type: "number",
-       answer:
-       {
-         label: "en semaine",
-         nextStep: 35
-       }
-     }
+  idTable: 33,
+  id: 34,
+  answerUser: -1,
+  title: "Nombre de semaine de grossesse",
+  type: "number",
+  prevStep:0,
+  answer:
+  {
+    label: "en semaine",
+    nextStep: 35
+  }
+},
+{
+  idTable: 34,
+  id: 35,
+  answerUser: -1,
+  prevStep:0,
+  title: "Nombre de semaine restante",
+  type: "number",
+  answer:
+  {
+    label: "en semaine",
+    nextStep: 35
+  }
+}
 ];
 
 export default Questions;

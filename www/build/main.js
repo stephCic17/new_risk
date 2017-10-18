@@ -643,6 +643,7 @@ var Questions = [
         id: 1,
         title: "Quel âge avez-vous ?",
         type: "number",
+        prevStep: 0,
         answer: {
             label: "age en année",
             nextStep: 2
@@ -655,6 +656,7 @@ var Questions = [
         answerUser: -1,
         title: "Êtes-vous enceinte ?",
         type: "yesNoIdn",
+        prevStep: 0,
         answerYes: {
             label: "Oui",
             nextStep: 3
@@ -672,6 +674,7 @@ var Questions = [
         idTable: 2,
         id: 3,
         answerUser: -1,
+        prevStep: 0,
         title: "Quel est la date de vos dernière règle ?",
         type: "date",
         answer: {
@@ -685,6 +688,7 @@ var Questions = [
         title: "Est-ce une bonne nouvelle ?",
         type: "yesNoIdn",
         answerUser: -1,
+        prevStep: 0,
         answerYes: {
             label: "Oui",
             nextStep: 5
@@ -708,6 +712,7 @@ var Questions = [
         answerUser3: -1,
         answerUser4: -1,
         answerUser5: -1,
+        prevStep: 0,
         answer1: {
             label: "recours à l'aide médicale à la procréation",
         },
@@ -731,6 +736,7 @@ var Questions = [
         title: "Fumez-vous ?",
         type: "yesNo",
         answerUser: -1,
+        prevStep: 0,
         answerYes: {
             label: "Oui",
             nextStep: 7
@@ -746,6 +752,7 @@ var Questions = [
         answerUser: -1,
         title: "Avez-vous des enfants ?",
         type: "yesNo",
+        prevStep: 0,
         answerYes: {
             label: "Oui",
             nextStep: 8
@@ -759,6 +766,7 @@ var Questions = [
         idTable: 7,
         id: 8,
         answerUser: -1,
+        prevStep: 0,
         title: "Combien avez-vous d'enfant ?",
         type: "number",
         answer: {
@@ -770,6 +778,7 @@ var Questions = [
         idTable: 8,
         id: 9,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
         type: "yesNo",
         answerYes: {
@@ -785,6 +794,7 @@ var Questions = [
         idTable: 9,
         id: 10,
         answerUser: -1,
+        prevStep: 0,
         title: "Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
         type: "number",
         answer: {
@@ -796,6 +806,7 @@ var Questions = [
         idTable: 10,
         id: 11,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous accouché d'enfant de moins de 2kg200 ?",
         type: "yesNo",
         answerYes: {
@@ -811,6 +822,7 @@ var Questions = [
         idTable: 11,
         id: 12,
         answerUser: -1,
+        prevStep: 0,
         title: "Votre enfant était il prématuré ?",
         type: "yesNo",
         answerYes: {
@@ -826,6 +838,7 @@ var Questions = [
         idTable: 12,
         id: 13,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous eu une prééclampsie ?",
         type: "yesNo",
         answerYes: {
@@ -841,6 +854,7 @@ var Questions = [
         idTable: 13,
         id: 14,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous un antécedent de diabète de grossesse ?",
         type: "yesNo",
         answerYes: {
@@ -857,6 +871,7 @@ var Questions = [
         id: 15,
         title: "Avez-vous eu une césariennes ?",
         type: "yesNo",
+        prevStep: 0,
         answerYes: {
             label: "Oui",
             nextStep: 16
@@ -870,6 +885,7 @@ var Questions = [
         idTable: 15,
         id: 16,
         answerUser: -1,
+        prevStep: 0,
         title: "Combien avez-vous eu de césarienne",
         type: "number",
         answer: {
@@ -891,6 +907,7 @@ var Questions = [
         answerUser7: -1,
         answerUser8: -1,
         answerUser9: -1,
+        prevStep: 0,
         answer1: {
             label: "forceps",
         },
@@ -937,6 +954,7 @@ var Questions = [
         answerUser10: -1,
         answerUser11: -1,
         answerUser12: -1,
+        prevStep: 0,
         answer1: {
             label: "Fauche couche",
         },
@@ -979,6 +997,7 @@ var Questions = [
         idTable: 18,
         id: 19,
         answerUser: -1,
+        prevStep: 0,
         title: "Combien de fausse couche avez-vous fait ?",
         type: "number",
         answer: {
@@ -991,6 +1010,7 @@ var Questions = [
         id: 20,
         title: "Combien de verres d'alcool buvez-vous par semaine ?",
         type: "number",
+        prevStep: 0,
         answer: {
             label: "nombre par semaine",
             nextStep: 21
@@ -1001,6 +1021,7 @@ var Questions = [
         idTable: 20,
         id: 21,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous une épilepsie ?",
         type: "yesNo",
         answerYes: {
@@ -1018,6 +1039,7 @@ var Questions = [
         answerUser: -1,
         title: "Avez-vous déjà eu une phlébite ?",
         type: "yesNo",
+        prevStep: 0,
         answerYes: {
             label: "Oui",
             nextStep: 23
@@ -1031,6 +1053,7 @@ var Questions = [
         idTable: 22,
         id: 23,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous de l'hypertension artérielle ?",
         type: "yesNo",
         answerYes: {
@@ -1046,6 +1069,7 @@ var Questions = [
         idTable: 23,
         id: 24,
         answerUser: -1,
+        prevStep: 0,
         title: "Avez-vous du diabète ?",
         type: "yesNo",
         answerYes: {
@@ -1061,6 +1085,7 @@ var Questions = [
         idTable: 24,
         id: 25,
         answerUser: -1,
+        prevStep: 0,
         title: "Prenez vous des médicaments ?",
         type: "yesNo",
         answerYes: {
@@ -1085,6 +1110,7 @@ var Questions = [
         answerUser6: -1,
         answerUser7: -1,
         answerUser8: -1,
+        prevStep: 0,
         answer1: {
             label: "Anti-Epileptique",
         },
@@ -1106,6 +1132,7 @@ var Questions = [
         idTable: 26,
         id: 27,
         answerUser: -1,
+        prevStep: 0,
         title: "Quelle est votre taille (en cm) ?",
         type: "number",
         answer: {
@@ -1127,6 +1154,7 @@ var Questions = [
         idTable: 28,
         id: 29,
         answerUser: -1,
+        prevStep: 0,
         title: "Travaillez-vous ?",
         type: "yesNo",
         answerYes: {
@@ -1142,6 +1170,7 @@ var Questions = [
         idTable: 29,
         id: 30,
         answerUser: -1,
+        prevStep: 0,
         title: "Combien d'heures de travail effectuez-vous par jour ?",
         type: "number",
         answer: {
@@ -1153,6 +1182,7 @@ var Questions = [
         idTable: 30,
         id: 31,
         answerUser: -1,
+        prevStep: 0,
         title: "Quel est votre temps de trajet par jour (en minute) ?",
         type: "number",
         answer: {
@@ -1164,6 +1194,7 @@ var Questions = [
         idTable: 31,
         id: 32,
         answerUser: -1,
+        prevStep: 0,
         title: "Travaillez-vous debout plus de 6 heures par jour ?",
         type: "yesNo",
         answerYes: {
@@ -1181,6 +1212,7 @@ var Questions = [
         title: "Vous et votre psychologie",
         type: "multipleChoice",
         answerUser1: -1,
+        prevStep: 0,
         answerUser2: -1,
         answerUser3: -1,
         answerUser4: -1,
@@ -1220,6 +1252,7 @@ var Questions = [
         answerUser: -1,
         title: "Nombre de semaine de grossesse",
         type: "number",
+        prevStep: 0,
         answer: {
             label: "en semaine",
             nextStep: 35
@@ -1229,6 +1262,7 @@ var Questions = [
         idTable: 34,
         id: 35,
         answerUser: -1,
+        prevStep: 0,
         title: "Nombre de semaine restante",
         type: "number",
         answer: {
@@ -1381,7 +1415,7 @@ var HomePage = (function () {
         this.isInitialized = true;
         this.currentStep = this.sliderOne.getActiveIndex();
         this.totalStep = this.sliderOne.length();
-        this.sliderOne.lockSwipeToPrev(true);
+        //		this.sliderOne.lockSwipeToPrev(true);
         // this.sliderOne.lockSwipes(true);
     };
     HomePage.prototype.ionSlideDidChange = function () {
@@ -1409,10 +1443,13 @@ var HomePage = (function () {
         if (this.questionForm.type == "number") {
             console.log(this.number);
             this.currentStep = this.questionForm.answer.nextStep;
+            this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
             this.Questions[this.questionForm.idTable].answerUser = this.number;
             this.sliderOne.slideTo(this.currentStep, 350);
+            console.log(this.Questions);
         }
         else if (this.questionForm.type == "yesNoIdn") {
+            console.log(this.Questions);
             if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
                 this.Questions[this.questionForm.idTable].answerUser = 1;
@@ -1500,6 +1537,7 @@ var HomePage = (function () {
             this.Questions[this.questionForm.idTable].answerUser12 = this.answer.twelve;
             this.sliderOne.slideTo(this.currentStep, 350);
         }
+        this.Questions[this.currentStep - 1].prevStep = this.questionForm.id;
         this.number = false;
         this.yes = false;
         this.no = false;
@@ -1533,6 +1571,11 @@ var HomePage = (function () {
     };
     HomePage.prototype.prev = function () {
         this.currentStep--;
+        this.sliderOne.slideTo(this.currentStep, 350);
+    };
+    HomePage.prototype.prevStep = function (question) {
+        this.currentStep = question.prevStep;
+        console.log(this.currentStep);
         this.sliderOne.slideTo(this.currentStep, 350);
     };
     HomePage.prototype.testCheck = function (answer) {
@@ -1573,7 +1616,7 @@ __decorate([
 ], HomePage.prototype, "realFormButton", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck(\'idn\')">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'Psycho1\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">\n            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div *ngIf="answer.one">\n          <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">\n            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>\n            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">\n            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">\n            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">\n            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n          <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n          <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n          <button class="button next-button touch" (click)="prevStep(question)">Precedent</button>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck(\'idn\')">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'Psycho1\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">\n            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div *ngIf="answer.one">\n          <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">\n            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>\n            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">\n            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">\n            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">\n            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n          <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n          <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n\n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
 ], HomePage);
