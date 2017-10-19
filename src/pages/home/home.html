@@ -49,7 +49,6 @@
     </ion-slide>
     <div class="form-wrapper" *ngFor="let question of Questions; let i of index">
       <form id={{question.idForm}} [ngClass]="{'form-wrapper--hidden': changing, 'form-wrapper': true }" novalidate>
-          <button class="button next-button touch" (click)="prevStep(question)">Precedent</button>
         <ion-slide *ngIf="question.type == 'number'">
           <h3>{{question.title}}</h3>
           <input type="number" name="number" [(ngModel)]="number" required>
@@ -182,8 +181,8 @@
         </ion-slide>
 
         <div [ngClass]="{'visible': currentStep != 0, next: true }" >
+          <button class="button button--line prev-button touch" (click)="prevStep(question)">Precedent</button>
           <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>
-
         </div>
       </form>
 

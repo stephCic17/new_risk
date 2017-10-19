@@ -65,11 +65,14 @@ export class HomePage {
 	}
 
 	init() {
+		let self = this;
 		this.isInitialized = true;
 		this.currentStep = this.sliderOne.getActiveIndex();
 		this.totalStep = this.sliderOne.length();
 //		this.sliderOne.lockSwipeToPrev(true);
-		// this.sliderOne.lockSwipes(true);
+	  this.sliderOne.lockSwipes(true);
+	  // setTimeout(function(){
+		// }, 500);
 	}
 
 	ionSlideDidChange() {
@@ -106,17 +109,17 @@ export class HomePage {
 			this.currentStep = this.questionForm.answer.nextStep;
 				this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
 			this.Questions[this.questionForm.idTable].answerUser = this.number;
-			this.sliderOne.slideTo(this.currentStep, 350);
-			console.log(this.Questions);		
+			this.manageSlideTo();
+			console.log(this.Questions);
 		}
 		else if (this.questionForm.type == "yesNoIdn")
 		{
-		console.log(this.Questions);	
+		console.log(this.Questions);
 			if (this.yes)
 			{
 				this.currentStep =this.questionForm.answerYes.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 1;
-				this.sliderOne.slideTo(this.currentStep, 350);
+				this.manageSlideTo();
 			}
 			else if (this.no)
 			{
@@ -126,7 +129,7 @@ export class HomePage {
 					this.navCtrl.push(IvgInfoPage, {
 						userParams: this.Questions
 					});
-				this.sliderOne.slideTo(this.currentStep, 350);
+					this.manageSlideTo();
 
 			}
 			else if (this.idn)
@@ -137,7 +140,7 @@ export class HomePage {
 					this.navCtrl.push(IvgInfoPage, {
 						userParams: this.Questions
 					});
-				this.sliderOne.slideTo(this.currentStep, 350);
+					this.manageSlideTo();
 			}
 			else
 			{
@@ -151,18 +154,18 @@ export class HomePage {
 		}
 		else if (this.questionForm.type == "yesNo")
 		{
-	
+
 			if (this.yes)
 			{
 				this.currentStep = this.questionForm.answerYes.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 1;
-				this.sliderOne.slideTo(this.currentStep, 350);
+				this.manageSlideTo();
 			}
 			else if (this.no)
 			{
 				this.currentStep = this.questionForm.answerNo.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = 0;
-				this.sliderOne.slideTo(this.currentStep, 350);
+				this.manageSlideTo();
 			}
 			else
 			{
@@ -177,12 +180,12 @@ export class HomePage {
 		}
 		else if (this.questionForm.type == "date")
 		{
-	
+
 			if (this.date)
 			{
 				this.currentStep = this.questionForm.answer.nextStep;
 				this.Questions[this.questionForm.idTable].answerUser = new Date(this.date);
-				this.sliderOne.slideTo(this.currentStep, 350);
+				this.manageSlideTo();
 			}
 			else
 			{
@@ -194,8 +197,8 @@ export class HomePage {
 				alert.present();
 			}
 		}
-		else if (this.questionForm.type == "multipleChoice" 
-			|| this.questionForm.type == "multipleIf" 
+		else if (this.questionForm.type == "multipleChoice"
+			|| this.questionForm.type == "multipleIf"
 			|| this.questionForm.type == "Psycho1")
 		{
 
@@ -214,8 +217,7 @@ export class HomePage {
 			this.Questions[this.questionForm.idTable].answerUser10 = this.answer.ten;
 			this.Questions[this.questionForm.idTable].answerUser11 = this.answer.eleven;
 			this.Questions[this.questionForm.idTable].answerUser12 = this.answer.twelve;
-
-			this.sliderOne.slideTo(this.currentStep, 350);
+			this.manageSlideTo();
 		}
 		this.Questions[this.currentStep-1].prevStep = this.questionForm.id;
 
@@ -249,21 +251,25 @@ export class HomePage {
 
 	}
 
+	manageSlideTo() {
+		this.sliderOne.lockSwipes(false)
+		this.sliderOne.slideTo(this.currentStep, 350);
+		this.sliderOne.lockSwipes(true);
+	}
+
 	next() {
 		if(!this.isInitialized)
 			this.init();
 		this.currentStep++;
-		this.sliderOne.slideTo(this.currentStep, 350);
+		this.manageSlideTo();
 	}
 	prev() {
 		this.currentStep--;
-		this.sliderOne.slideTo(this.currentStep, 350);
+		this.manageSlideTo();
 	}
 	prevStep(question) {
-
 		this.currentStep = question.prevStep;
-		console.log(this.currentStep);
-		this.sliderOne.slideTo(this.currentStep, 350);
+		this.manageSlideTo();
 	}
 	testCheck(answer)
 	{

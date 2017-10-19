@@ -5,6 +5,7 @@
   padding: 10px 20px;
   border: none;
   background-color: $green;
+  border: 1px solid $green;
   color: white;
   border-radius: 3px;
   font-size: 14px;
@@ -14,6 +15,11 @@
   font-size: 10px;
   letter-spacing: .05rem;
   cursor: pointer;
+  &--line {
+    background-color: white;
+    border: 1px solid $green;
+    color: $green;
+  }
   &:focus {
     outline: 0;
   }
