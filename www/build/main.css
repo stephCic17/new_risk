@@ -25940,6 +25940,7 @@ input:not([type="radio"]):focus {
   padding: 10px 20px;
   border: none;
   background-color: #609297;
+  border: 1px solid #609297;
   color: white;
   border-radius: 3px;
   font-size: 14px;
@@ -25949,6 +25950,12 @@ input:not([type="radio"]):focus {
   font-size: 10px;
   letter-spacing: .05rem;
   cursor: pointer;
+}
+
+.button--line {
+  background-color: white;
+  border: 1px solid #609297;
+  color: #609297;
 }
 
 .button:focus {
@@ -26511,6 +26518,11 @@ input:not([type="radio"]):focus {
   right: 5px;
   top: 5px;
   margin: 0;
+}
+
+.next .prev-button {
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .back-button {

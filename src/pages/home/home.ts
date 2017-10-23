@@ -219,6 +219,12 @@ export class HomePage {
 			this.Questions[this.questionForm.idTable].answerUser12 = this.answer.twelve;
 			this.manageSlideTo();
 		}
+		if (this.currentStep == 99) {
+			this.navCtrl.push(ResultPage, {
+				userParams: this.Questions
+			});
+		}
+		if (this.Questions[this.currentStep-1])
 		this.Questions[this.currentStep-1].prevStep = this.questionForm.id;
 
 		this.number = false;
@@ -242,32 +248,40 @@ export class HomePage {
 		console.log("after", question);
 
 		console.log("questions", this.Questions);
-
-		if (this.currentStep == 99) {
-			this.navCtrl.push(ResultPage, {
-				userParams: this.Questions
-			});
-		}
+		console.log("before changement page");
+		
+		
 
 	}
 
 	manageSlideTo() {
-		this.sliderOne.lockSwipes(false)
+		console.log("mange");
+		this.sliderOne.lockSwipes(false);
+		if (this.currentStep == 99) {
+			console.log("next == 99");
+			this.navCtrl.push(ResultPage, {
+				userParams: this.Questions
+			});
+		}
+		else
 		this.sliderOne.slideTo(this.currentStep, 350);
 		this.sliderOne.lockSwipes(true);
 	}
 
 	next() {
+		console.log("next");
 		if(!this.isInitialized)
 			this.init();
 		this.currentStep++;
 		this.manageSlideTo();
 	}
 	prev() {
+		console.log("prev");
 		this.currentStep--;
 		this.manageSlideTo();
 	}
-	prevStep(question) {
+	prevStepFunction(question) {
+		console.log("prevStepFunction");
 		this.currentStep = question.prevStep;
 		this.manageSlideTo();
 	}

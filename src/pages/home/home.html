@@ -181,8 +181,9 @@
         </ion-slide>
 
         <div [ngClass]="{'visible': currentStep != 0, next: true }" >
-          <button class="button button--line prev-button touch" (click)="prevStep(question)">Precedent</button>
           <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>
+          <button class="button button--line prev-button touch" (click)="prevStepFunction(question)">Precedent</button>
+          
         </div>
       </form>
 
