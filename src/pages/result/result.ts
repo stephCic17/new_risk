@@ -148,6 +148,7 @@ export class ResultPage {
         {
             this.psycho.push(
             {
+                type: "psycho",
                 title: "D'après vos antécédent vous présentez un risque de dépression du post-Partum"
             });
         }
@@ -510,15 +511,10 @@ export class ResultPage {
                 title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
             });
 
-
-
-
-        
-
-
         this.answers = this.resultSlide.concat(this.psycho);
 
-        console.log("risk:",this.resultSlide);
+        console.log(this.answers);
+
     }
 /*defineRisk() {
 

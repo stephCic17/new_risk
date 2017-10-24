@@ -80,16 +80,17 @@
           </div>
         </ion-slide>
         <ion-slide *ngIf="question.type == 'Psycho1'">
+          <div class="psycho">
           <h3>{{question.title}}</h3>
           <div class="checkbox">
             <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">
             <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>
           </div>
-          <div *ngIf="answer.one">
-          <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">
+          <div class="psycho1" *ngIf="answer.one">
             <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>
-            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">
+            <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">
             <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>
+            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">
           </div>
           <div class="checkbox">
             <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">
@@ -99,15 +100,17 @@
             <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">
             <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>
           </div>
+          </div>
         </ion-slide>
         <ion-slide *ngIf="question.type == 'multipleIf'">
           <h3>{{question.title}}</h3>
+                   <div class="psycho">
           <div class="checkbox" *ngIf="Questions[20].answerUser == '1'">
             <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">
             <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>
           </div>
           <div class="checkbox" *ngIf="Questions[21].answerUser == '1'">
-          <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">
+            <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">
             <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>
           </div>
           <div class="checkbox" *ngIf="Questions[22].answerUser == '1'">
@@ -122,15 +125,17 @@
             <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">
             <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>
           </div>
+          </div>
         </ion-slide>
         <ion-slide class="scrollable-slide" *ngIf="question.type == 'multipleChoice'">
           <h3>{{question.title}}</h3>
+                   <div class="psycho">
           <div class="checkbox checkbox--large">
             <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">
             <label for="multiple{{i}}-1">{{question.answer1.label}}</label>
           </div>
           <div class="checkbox checkbox--large" *ngIf="question.answer2">
-          <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">
+            <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">
             <label for="multiple{{i}}-2">{{question.answer2.label}}</label>
           </div>
           <div class="checkbox checkbox--large" *ngIf="question.answer3">
@@ -173,6 +178,7 @@
             <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">
             <label for="multiple{{i}}-12">{{question.answer12.label}}</label>
           </div>
+</div>
         </ion-slide>
 
         <ion-slide *ngIf="question.type == 'date'">

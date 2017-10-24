@@ -26429,6 +26429,10 @@ input:not([type="radio"]):focus {
   opacity: 0.5;
 }
 
+.psycho .checkbox {
+  min-width: 100%;
+}
+
 @-webkit-keyframes ripple {
   100% {
     opacity: 0;
@@ -26670,6 +26674,17 @@ input:not([type="radio"]):focus {
 
 .visible {
   opacity: 1;
+}
+
+.psycho1 {
+  padding: 10px 15px 10px 40px;
+  display: block;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: 400;
+  font-family: "Open Sans";
+  font-size: 14px;
+  margin-bottom: 1rem;
 }
 
 page-result .risk {

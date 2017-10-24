@@ -2,127 +2,127 @@
 $green: #609297;
 
 html, body, .form-wrapper, .swiper-slide {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+width: 100%;
+height: 100%;
+margin: 0;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 3px;
+margin: 0 3px;
 }
 
 .swiper-slide {
-  overflow-y: scroll;
-  overflow-x: hidden;
+overflow-y: scroll;
+overflow-x: hidden;
 }
 
 .scrollable-slide {
-  display: block !important;
-  h3 {
-    margin-bottom: 3rem;
-  }
+display: block !important;
+h3 {
+margin-bottom: 3rem;
+}
 }
 
 .scroll-content {
-  overflow: hidden;
+overflow: hidden;
 }
 
 .slide-zoom {
-  padding: 50px 0;
+padding: 50px 0;
 }
 
 .swiper-pagination-bullet {
-    border-radius: 100%;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    padding: 10px!important;
-    pointer-events: auto;
-    box-sizing: content-box;
-    position: relative;
-    background: none !important;
-    &:after, &:before {
-      border-radius: 100%;
-      content: "";
-      position: absolute;
-      transition: all 200ms ease;
-    }
-    &:before {
-      width: 10px;
-      height: 10px;
-      top:12.5px;
-      left:12.5px;
-      z-index: 2;
-      background: rgba(0,0,0,0.3);
-    }
-    &:after {
-      width: 20px;
-      height: 20px;
-      top:7.5px;
-      left:7.5px;
-      transform: scale(0);
-      background: $green;
-      z-index: 1;
-    }
+border-radius: 100%;
+display: inline-block;
+width: 20px;
+height: 20px;
+padding: 10px!important;
+pointer-events: auto;
+box-sizing: content-box;
+position: relative;
+background: none !important;
+&:after, &:before {
+border-radius: 100%;
+content: "";
+position: absolute;
+transition: all 200ms ease;
+}
+&:before {
+width: 10px;
+height: 10px;
+top:12.5px;
+left:12.5px;
+z-index: 2;
+background: rgba(0,0,0,0.3);
+}
+&:after {
+width: 20px;
+height: 20px;
+top:7.5px;
+left:7.5px;
+transform: scale(0);
+background: $green;
+z-index: 1;
+}
 }
 
 .swiper-pagination-bullet-active {
-    &:after {
-      transform: scale(1);
-    }
+&:after {
+transform: scale(1);
+}
 }
 
 .swiper-pagination {
-  bottom: 30px!important;
+bottom: 30px!important;
 }
 
 
 
 .swiper-slide {
-  opacity: 0.3;
-  transition: all 50ms ease;
+opacity: 0.3;
+transition: all 50ms ease;
 }
 
 .swiper-slide-active {
-  opacity: 1;
-  transition: all 50ms ease;
+opacity: 1;
+transition: all 50ms ease;
 }
 
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 fieldset {
-  border: none;
+border: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $green;
-  font-family: "Open Sans";
-  font-weight: 100;
+color: $green;
+font-family: "Open Sans";
+font-weight: 100;
 }
 p {
-  color: rgba(0,0,0,0.5);
-  font-family: "Open Sans";
-  font-size: 13px;
-  line-height: 1.5;
-  // text-rendering: geometricPrecision;
+color: rgba(0,0,0,0.5);
+font-family: "Open Sans";
+font-size: 13px;
+line-height: 1.5;
+// text-rendering: geometricPrecision;
 }
 
 input:not([type="radio"]) {
-  padding: 10px 10px 10px 10px;
-  border-radius: 3px;
-  border: 1px dashed #bababa;
-  width: 80%;
-  &:focus {
-    outline: 1px solid $green;
-    outline: 0;
-  }
+padding: 10px 10px 10px 10px;
+border-radius: 3px;
+border: 1px dashed #bababa;
+width: 80%;
+&:focus {
+outline: 1px solid $green;
+outline: 0;
+}
 }
 
 .slide {
-  overflow-y: auto;
-  overflow-x: hidden;
+overflow-y: auto;
+overflow-x: hidden;
 }
 
 @import 'utils/_ease';
@@ -142,5 +142,16 @@ input:not([type="radio"]) {
 @import 'components/_result';
 
 .visible {
-  opacity: 1;
+opacity: 1;
+}
+
+.psycho1 {
+padding: 10px 15px 10px 40px;
+display: block;
+margin-bottom: 0;
+cursor: pointer;
+font-weight: 400;
+font-family: "Open Sans";
+font-size: 14px;
+margin-bottom: 1rem;
 }

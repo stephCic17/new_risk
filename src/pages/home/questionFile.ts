@@ -67,7 +67,7 @@ const Questions = [
   answerIdn:
   {
     label: "Je ne sais pas",
-    nextStep: 30
+    nextStep: 250
   }
 },
 {
