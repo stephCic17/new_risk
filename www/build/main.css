@@ -13911,6 +13911,7 @@ ion-item-group .item-wrapper:last-child .item-ios .item-inner {
 
 .item-md.item-block .item-inner {
   padding-right: 8px;
+  border-bottom: 1px solid #dedede;
 }
 
 .item-md [item-left],

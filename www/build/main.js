@@ -2673,15 +2673,15 @@ var map = {
 		9
 	],
 	"../pages/step25/step25.module": [
-		329,
+		327,
 		8
 	],
 	"../pages/step26/step26.module": [
-		327,
+		328,
 		7
 	],
 	"../pages/step3/step3.module": [
-		328,
+		329,
 		6
 	],
 	"../pages/step4/step4.module": [
@@ -3086,9 +3086,9 @@ AppModule = __decorate([
                     { loadChildren: '../pages/step22/step22.module#Step22PageModule', name: 'Step22Page', segment: 'step22', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step23/step23.module#Step23PageModule', name: 'Step23Page', segment: 'step23', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step24/step24.module#Step24PageModule', name: 'Step24Page', segment: 'step24', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/step25/step25.module#Step25PageModule', name: 'Step25Page', segment: 'step25', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step26/step26.module#Step26PageModule', name: 'Step26Page', segment: 'step26', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step3/step3.module#Step3PageModule', name: 'Step3Page', segment: 'step3', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/step25/step25.module#Step25PageModule', name: 'Step25Page', segment: 'step25', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step4/step4.module#Step4PageModule', name: 'Step4Page', segment: 'step4', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step5/step5.module#Step5PageModule', name: 'Step5Page', segment: 'step5', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/step6/step6.module#Step6PageModule', name: 'Step6Page', segment: 'step6', priority: 'low', defaultHistory: [] },
