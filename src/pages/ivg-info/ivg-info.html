@@ -7,21 +7,35 @@
 <ion-header>
 
 	<ion-navbar>
-		<ion-title>ivgInfo</ion-title>
+		<ion-title>Info</ion-title>
 	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<p>
-		Prenez le temps de la réflexion et pour se faire allez surfer sur 
-		<a href="http://ivg.org">
-			IVG.org
-		</a>
-	</p>
-	<p>
-		Il vous reste {{result}} semaine pour vous décider
-	</p>
-	<button class="button touch" (click)="nextBegin()">Recommencer</button>
+
+<ion-slides>
+<ion-slide>
+<div class="form-wrapper" *ngIf="result >= 1">
+			<h3>Il vous reste {{result}} semaines pour vous décider</h3>
+			<p>
+				Prenez le temps de la réflexion et pour se faire allez surfer sur 
+				<a href="http://ivg.org">
+					IVG.org
+				</a>
+			</p>
+			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>
+	</div>
+
+	<div class="form-wrapper" *ngIf="result < 0">
+			<h3>Le delai d'avortement légal est dépassé</h3>
+			<p>
+			On dit quoi??
+			</p>
+			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>
+	</div>
+	</ion-slide>
+	    
+        </ion-slides>
 </ion-content>
