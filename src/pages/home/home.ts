@@ -1,87 +1,347 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Step1Page } from '../step1/step1';
+import { Component, Renderer } from '@angular/core';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { ResultPage } from '../result/result';
+import { IvgInfoPage } from '../ivg-info/ivg-info';
+
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
+import Questions from './questionFile';
+import Stat from '../../app/statistique';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+	selector: 'page-home',
+	templateUrl: 'home.html'
 })
+
 export class HomePage {
+	@ViewChild('sliderOne') sliderOne: Slides;
+	@ViewChild('realFormButton') realFormButton;
 
-	QuestionText:any;
+	Questions = [];
+	Answers = [];
+	totalStep = 0;
+	currentStep = 0;
+	activeLogo = false;
+	activeLogoWrapper = false;
+	activeWelcomeContent = false;
+	isInitialized = false;
+	changing = false;
+	Question:any;
+	number:any;
+	yes:any;
+	no:any;
+	idn:any;
+	date:any;
+	answer:any;
 
-  constructor(public navCtrl: NavController) {
-
-  }
+	questionForm:any;
 
 
-  	openStep1() {
-  		this.QuestionText = [];
-  		this.QuestionText.step1 = "Quel âge avez-vous ?";
-  		this.QuestionText.step2 = "Êtes-vous enceinte ?";
-  		this.QuestionText.step3 = "Fumez-vous ?";
-  		this.QuestionText.step4 = "Avez-vous des enfants ?";
-  		this.QuestionText.step5 = "Combien avez-vous d'enfant ?";
-  		this.QuestionText.step6 = "Avez-vous accouché d'enfants de plus de 4 kilos ?";
-  		this.QuestionText.step7 = "Combien d'un enfant de plus de 4 kilos avez-vous eus ?";
-  		this.QuestionText.step8 = "Avez-vous accouché d'enfant de moins de 2kg200 ?";
-  		this.QuestionText.step9 = "Votre enfant était il prématuré ?";
-  		this.QuestionText.step10 = "Avez-vous eu une prééclampsie ?";
-  		this.QuestionText.step11 = "Avez-vous un antécedent de diabète de grossesse ?";
-  		this.QuestionText.step12 = "Avez-vous eu une césariennes ?";
-      this.QuestionText.step12_1 = "Combien avez-vous eu de césarienne";
- 	  	this.QuestionText.step13 = "Combien de fausse couche avez-vous fait ?";
-   		this.QuestionText.step14 = "Combien de verres d'alcool buvez-vous par semaine ?";
- 	  	this.QuestionText.step15 = "Avez-vous une épilepsie ?";
- 	  	this.QuestionText.step16 = "Avez-vous déjà eu une phlébite ?";
- 	  	this.QuestionText.step17 = "Avez-vous de l'hypertension artérielle ?";
- 	   	this.QuestionText.step18 = "Avez-vous du diabète ?";
- 		  this.QuestionText.step19 = "Prenez vous des médicaments ?";
- 	  	this.QuestionText.step20 = "Selectionnez les médicaments que vous prenez";
- 		  this.QuestionText.step21 = "Quelle est votre taille (en cm) ?";
- 	  	this.QuestionText.step22 = "Quel est votre poids (en kg) ?";
- 	  	this.QuestionText.step23 = "Travaillez-vous ?";
- 	  	this.QuestionText.step24 = "Combien d'heures de travail effectuez-vous par jour ?";
- 	  	this.QuestionText.step25 = "Quel est votre temps de trajet par jour (en minute) ?";
- 	  	this.QuestionText.step26 = "Travaillez-vous debout plus de 6 heures par jour ?";
- 	  	this.QuestionText.step28 = "";
- 	  	this.QuestionText.step2_1 = "Est-ce une bonne nouvelle ?";
-   		this.QuestionText.menstruation = "Quel est la date de vos dernière règle ?";
+	constructor(private renderer: Renderer, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) { }
+	ngOnInit() {
+		var self = this;
+		this.activeLogoWrapper = true;
 
-      this.QuestionText.psychoTest1 = "Vous et votre fertilité";
-      this.QuestionText.psychoTest1_1 = "recours à l'aide médicale à la procréation ";
-      this.QuestionText.psychoTest1_2 = "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse";
-      this.QuestionText.psychoTest1_3 = "combien de fois avez-vous eus recours à l'aide médicale à la procreation";
-      this.QuestionText.psychoTest1_4 = "Bénéficié d'un don d'ovocyte";
-      this.QuestionText.psychoTest1_5 = "Bénéficié d'un don de sperme";
+		setTimeout(function() {
+			self.activeLogo = true;
+		}, 500);
 
-      this.QuestionText.psychoTest2 = "Avez-vous connu une de ces situation ?";
-      this.QuestionText.psychoTest2_1 = "Fauche couche";
-      this.QuestionText.psychoTest2_2 = "Interruption volontaire de grossesse";
-      this.QuestionText.psychoTest2_3 = "Grossesse extra utérine";
-      this.QuestionText.psychoTest2_4 = "Mort foetale in utéro";
-      this.QuestionText.psychoTest2_5 = "Interruption médical de la grossesse";
-      this.QuestionText.psychoTest2_6 = "Interruption sélective de la grossesse";
-      this.QuestionText.psychoTest2_7 = "Enfant porteur de handicap";
-      this.QuestionText.psychoTest2_8 = "Enfant prématuré";
-      this.QuestionText.psychoTest2_9 = "Enfant atteint d'une maladie chronique";
-      this.QuestionText.psychoTest2_10 = "Mort d'un enfant";
-      this.QuestionText.psychoTest2_11 = "Ces expériences ont été traumatiques";
-      this.QuestionText.psychoTest2_12 = "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques";
+		setTimeout(function() {
+			self.activeLogoWrapper = false;
+			self.activeWelcomeContent = true;
+		}, 2500);
 
-      this.QuestionText.psychoTest4 = "Vous et votre psychologie";
-      this.QuestionText.psychoTest4_1 = "Crises d'angoisse";
-      this.QuestionText.psychoTest4_2 = "Boulimie";
-      this.QuestionText.psychoTest4_3 = "Anorexie";
-      this.QuestionText.psychoTest4_4 = "Trouble Obsessionnels compulsif TOC";
-      this.QuestionText.psychoTest4_5 = "Dépression";
-      this.QuestionText.psychoTest4_6 = "Phobie";
-      this.QuestionText.psychoTest4_7 = "trouble bipolaires";
-      this.QuestionText.psychoTest4_8 = "hospitalisation dans un service psychiatrique";
+		this.answer = [];
+		this.Questions = Questions;
+		console.log(this.Questions);
 
-  		this.navCtrl.push(Step1Page, {
-  			QuestionText: this.QuestionText
-  		});
-  	}
+	}
 
-}
+	init() {
+		this.isInitialized = true;
+		this.currentStep = this.sliderOne.getActiveIndex();
+		this.totalStep = this.sliderOne.length();
+		//		this.sliderOne.lockSwipeToPrev(true);
+		this.sliderOne.lockSwipes(true);
+		// setTimeout(function(){
+			// }, 500);
+		}
+
+		ionSlideDidChange() {
+			this.changing = false;
+		}
+
+		ionSlideWillChange() {
+			this.changing = true;
+		}
+
+		slideChanged() {
+			this.currentStep = this.sliderOne.getActiveIndex();
+		}
+
+		ngAfterViewInit() {
+		}
+
+		handleNext() {
+			console.log(this.renderer);
+			let mouseclick = new MouseEvent('click', {bubbles: false});
+			setTimeout(() => {
+				this.renderer.invokeElementMethod(this.realFormButton.nativeElement, 'dispatchEvent', [mouseclick]);
+			}, 10);
+		}
+
+		nextForm(question) {
+
+			console.log("before", question);
+			Stat.push({
+				id: question.id,
+				type: question.type,
+				title: "question",
+				timestamp: new Date()
+			});
+			console.log(Stat);
+			this.questionForm = question;
+			if (this.questionForm.type == "number")
+			{
+				console.log(this.number);
+				this.currentStep = this.questionForm.answer.nextStep;
+				this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
+				this.Questions[this.questionForm.idTable].answerUser = this.number;
+				this.manageSlideTo();
+				console.log(this.Questions);
+			}
+			else if (this.questionForm.type == "yesNoIdn")
+			{
+				console.log(this.Questions);
+				if (this.yes)
+				{
+					this.currentStep =this.questionForm.answerYes.nextStep;
+					this.Questions[this.questionForm.idTable].answerUser = 1;
+					this.manageSlideTo();
+				}
+				else if (this.no)
+				{
+					this.currentStep =this.questionForm.answerNo.nextStep;
+					this.Questions[this.questionForm.idTable].answerUser = 0;
+					if (this.currentStep == 250)
+					{
+						this.yes = false;
+						this.no = false;
+						this.idn = false;
+						this.navCtrl.push(IvgInfoPage, {
+							userParams: this.Questions
+						});
+					}
+					this.manageSlideTo();
+
+				}
+				else if (this.idn)
+				{
+					this.currentStep = this.questionForm.answerIdn.nextStep;
+					this.Questions[this.questionForm.idTable].answerUser = 2;
+					if (this.currentStep == 250)
+						this.navCtrl.push(IvgInfoPage, {
+							userParams: this.Questions
+						});
+					this.manageSlideTo();
+				}
+				else
+				{
+					let alert = this.alertCtrl.create({
+						title: 'Selectionnez au moins une des réponses',
+						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+						buttons: ['OK']
+					});
+					alert.present();
+				}
+			}
+			else if (this.questionForm.type == "yesNo")
+			{
+
+				if (this.yes)
+				{
+					this.currentStep = this.questionForm.answerYes.nextStep;
+					this.Questions[this.questionForm.idTable].answerUser = 1;
+					this.manageSlideTo();
+				}
+				else if (this.no)
+				{
+					this.currentStep = this.questionForm.answerNo.nextStep;
+					this.Questions[this.questionForm.idTable].answerUser = 0;
+					this.manageSlideTo();
+				}
+				else
+				{
+					let alert = this.alertCtrl.create({
+						title: 'Selectionnez au moins une des réponses',
+						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+						buttons: ['OK']
+					});
+					alert.present();
+				}
+
+			}
+			else if (this.questionForm.type == "date")
+			{
+
+				if (this.date)
+				{
+					this.currentStep = this.questionForm.answer.nextStep;
+					this.Questions[this.questionForm.idTable].answerUser = new Date(this.date);
+					this.manageSlideTo();
+				}
+				else
+				{
+					let alert = this.alertCtrl.create({
+						title: 'Selectionnez au moins une des réponses',
+						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+						buttons: ['OK']
+					});
+					alert.present();
+				}
+			}
+			else if (this.questionForm.type == "multipleChoice"
+				|| this.questionForm.type == "multipleIf"
+				|| this.questionForm.type == "Psycho1")
+			{
+
+				if (this.questionForm.id == 18 && !this.answer.one)
+					this.questionForm.nextStep = 20;
+				this.currentStep = this.questionForm.nextStep;
+				this.Questions[this.questionForm.idTable].answerUser1 = this.answer.one;
+				this.Questions[this.questionForm.idTable].answerUser2 = this.answer.two;
+				this.Questions[this.questionForm.idTable].answerUser3 = this.answer.three;
+				this.Questions[this.questionForm.idTable].answerUser4 = this.answer.four;
+				this.Questions[this.questionForm.idTable].answerUser5 = this.answer.five;
+				this.Questions[this.questionForm.idTable].answerUser6 = this.answer.six;
+				this.Questions[this.questionForm.idTable].answerUser7 = this.answer.seven;
+				this.Questions[this.questionForm.idTable].answerUser8 = this.answer.eight;
+				this.Questions[this.questionForm.idTable].answerUser9 = this.answer.nine;
+				this.Questions[this.questionForm.idTable].answerUser10 = this.answer.ten;
+				this.Questions[this.questionForm.idTable].answerUser11 = this.answer.eleven;
+				this.Questions[this.questionForm.idTable].answerUser12 = this.answer.twelve;
+				this.manageSlideTo();
+			}
+			if (this.currentStep == 99) {
+				this.navCtrl.push(ResultPage, {
+					userParams: this.Questions
+				});
+			}
+			if (this.Questions[this.currentStep-1])
+				this.Questions[this.currentStep-1].prevStep = this.questionForm.id;
+
+			this.number = false;
+			this.yes = false;
+			this.no = false;
+			this.idn = false;
+			this.date = 0;
+			this.answer.one = false;
+			this.answer.two = false;
+			this.answer.three = false;
+			this.answer.four = false;
+			this.answer.five = false;
+			this.answer.six = false;
+			this.answer.seven = false;
+			this.answer.eight = false;
+			this.answer.nine = false;
+			this.answer.ten = false;
+			this.answer.eleven = false;
+			this.answer.twelve = false;
+
+			console.log("after", question);
+
+			console.log("questions", this.Questions);
+			console.log("before changement page");
+
+
+
+		}
+
+		manageSlideTo() {
+			console.log("mange");
+			this.sliderOne.lockSwipes(false);
+			if (this.currentStep == 99) {
+				console.log("next == 99");
+				this.navCtrl.push(ResultPage, {
+					userParams: this.Questions
+				});
+			}
+			else
+				this.sliderOne.slideTo(this.currentStep, 350);
+			this.sliderOne.lockSwipes(true);
+		}
+
+		next() {
+			console.log("next");
+			if(!this.isInitialized)
+				this.init();
+			this.currentStep++;
+			this.manageSlideTo();
+		}
+		prev() {
+			console.log("prev");
+			this.currentStep--;
+			this.manageSlideTo();
+		}
+		prevStepFunction(question) {
+			console.log("prevStepFunction");
+			this.currentStep = question.prevStep;
+			this.manageSlideTo();
+		}
+		testCheck(answer)
+		{
+			if (answer == "yes")
+			{
+				
+				if (this.yes == false)
+				{
+					Stat.push({
+						id: 1,
+						type: "yes",
+						title: "question",
+						timestamp: new Date()
+					});
+					console.log(Stat);
+					this.no = false;
+					this.idn = false;
+					this.yes = true;
+
+				}
+			}
+			else if (answer == "no")
+			{
+				Stat.push({
+					id: 1,
+					type: "no",
+					title: "question",
+					timestamp: new Date()
+				});
+				console.log(Stat);
+				if (this.no == false)
+				{
+					this.yes = false;
+					this.idn = false;
+					this.no = true;
+				}
+			}
+			else
+			{
+				if (this.idn == false)
+				{
+					Stat.push({
+						id: 1,
+						type: "idn",
+						title: "question",
+						timestamp: new Date()
+					});
+					console.log(Stat);
+					this.no = false;
+					this.yes = false;
+					this.idn = true;
+				}
+			}
+			console.log("yes ==", this.yes);
+			console.log("no", this.no);
+			console.log("idn ==", this.idn);
+		}
+	}

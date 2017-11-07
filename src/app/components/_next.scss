@@ -1,0 +1,56 @@
+.next {
+  position: fixed;
+  bottom: 0;
+  // left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  border-top: 1px solid #fafafa;
+  transition: all 150ms ease("swift-out");
+  transform: translateY(100%);
+  &.visible {
+    transform: translateY(0%);
+    opacity: 1;
+    transition: all 250ms ease("swift-in");
+  }
+  .next-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    margin: 0;
+  }
+  .prev-button {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+}
+
+
+
+.back-button {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: $green;
+  opacity: 0;
+  transition: all 75ms ease-out;
+  z-index: 9999;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fafafa;
+  user-select: none;
+  margin-top: 0;
+  padding-left: 35px;
+  i {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 9px;
+  }
+  &.visible {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 150ms ease-in;
+  }
+}
