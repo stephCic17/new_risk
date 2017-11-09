@@ -3,7 +3,7 @@ const Stat = [
   id: 0,
   title: "first",
   type: "launchApp",
-  timestamp: new Date()
+  timestamp:  Date.now()
 }
 ];
 

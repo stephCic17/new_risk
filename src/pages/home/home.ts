@@ -91,28 +91,23 @@ export class HomePage {
 		}
 
 		nextForm(question) {
-
-			console.log("before", question);
 			Stat.push({
 				id: question.id,
 				type: question.type,
-				title: "question",
-				timestamp: new Date()
+				title: "clic next",
+				timestamp: Date.now()
 			});
 			console.log(Stat);
 			this.questionForm = question;
 			if (this.questionForm.type == "number")
 			{
-				console.log(this.number);
 				this.currentStep = this.questionForm.answer.nextStep;
 				this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
 				this.Questions[this.questionForm.idTable].answerUser = this.number;
 				this.manageSlideTo();
-				console.log(this.Questions);
 			}
 			else if (this.questionForm.type == "yesNoIdn")
 			{
-				console.log(this.Questions);
 				if (this.yes)
 				{
 					this.currentStep =this.questionForm.answerYes.nextStep;
@@ -248,13 +243,7 @@ export class HomePage {
 			this.answer.eleven = false;
 			this.answer.twelve = false;
 
-			console.log("after", question);
-
 			console.log("questions", this.Questions);
-			console.log("before changement page");
-
-
-
 		}
 
 		manageSlideTo() {
@@ -273,6 +262,12 @@ export class HomePage {
 
 		next() {
 			console.log("next");
+			Stat.push({
+				id: 1,
+				type: "begin",
+				title: "clic next after begin",
+				timestamp: Date.now()
+			});
 			if(!this.isInitialized)
 				this.init();
 			this.currentStep++;
@@ -284,6 +279,12 @@ export class HomePage {
 			this.manageSlideTo();
 		}
 		prevStepFunction(question) {
+			Stat.push({
+				id: question.id,
+				type: question.type,
+				title: "clic prev",
+				timestamp: Date.now()
+			});
 			console.log("prevStepFunction");
 			this.currentStep = question.prevStep;
 			this.manageSlideTo();
@@ -296,10 +297,10 @@ export class HomePage {
 				if (this.yes == false)
 				{
 					Stat.push({
-						id: 1,
+						id: this.currentStep,
 						type: "yes",
 						title: "question",
-						timestamp: new Date()
+						timestamp: Date.now()
 					});
 					console.log(Stat);
 					this.no = false;
@@ -311,10 +312,10 @@ export class HomePage {
 			else if (answer == "no")
 			{
 				Stat.push({
-					id: 1,
+					id: this.currentStep,
 					type: "no",
 					title: "question",
-					timestamp: new Date()
+					timestamp: Date.now()
 				});
 				console.log(Stat);
 				if (this.no == false)
@@ -329,10 +330,10 @@ export class HomePage {
 				if (this.idn == false)
 				{
 					Stat.push({
-						id: 1,
+						id: this.currentStep,
 						type: "idn",
 						title: "question",
-						timestamp: new Date()
+						timestamp: Date.now()
 					});
 					console.log(Stat);
 					this.no = false;
@@ -340,8 +341,5 @@ export class HomePage {
 					this.idn = true;
 				}
 			}
-			console.log("yes ==", this.yes);
-			console.log("no", this.no);
-			console.log("idn ==", this.idn);
 		}
 	}

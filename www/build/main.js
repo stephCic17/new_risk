@@ -45,7 +45,7 @@ var IvgInfoPage = (function () {
 }());
 IvgInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-ivg-info',template:/*ion-inline-start:"/Users/kwame/Desktop/CalendarNew/src/pages/ivg-info/ivg-info.html"*/'<!--\n  Generated template for the IvgInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Info</ion-title>\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-slides>\n<ion-slide>\n<div class="form-wrapper" *ngIf="result >= 1">\n			<h3>Il vous reste {{result}} semaines pour vous décider</h3>\n			<p>\n				Prenez le temps de la réflexion et pour se faire allez surfer sur \n				<a href="http://ivg.org">\n					IVG.org\n				</a>\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n\n	<div class="form-wrapper" *ngIf="result < 0">\n			<h3>Le delai d\'avortement légal est dépassé</h3>\n			<p>\n			On dit quoi??\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n	</ion-slide>\n	    \n        </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/CalendarNew/src/pages/ivg-info/ivg-info.html"*/,
+        selector: 'page-ivg-info',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/ivg-info/ivg-info.html"*/'<!--\n  Generated template for the IvgInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Info</ion-title>\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-slides>\n<ion-slide>\n<div class="form-wrapper" *ngIf="result >= 1">\n			<h3>Il vous reste {{result}} semaines pour vous décider</h3>\n			<p>\n				Prenez le temps de la réflexion et pour se faire allez surfer sur \n				<a href="http://ivg.org">\n					IVG.org\n				</a>\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n\n	<div class="form-wrapper" *ngIf="result < 0">\n			<h3>Le delai d\'avortement légal est dépassé</h3>\n			<p>\n			On dit quoi??\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n	</ion-slide>\n	    \n        </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/ivg-info/ivg-info.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], IvgInfoPage);
@@ -62,6 +62,7 @@ IvgInfoPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_statistique__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76,18 +77,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ResultPage = (function () {
     function ResultPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.activeWelcomeContent = false;
         this.isInitialized = false;
+        __WEBPACK_IMPORTED_MODULE_3__app_statistique__["a" /* default */].push({
+            id: 2,
+            type: "resultBegin",
+            title: "begin result",
+            timestamp: Date.now()
+        });
         this.tableAnswer = navParams.get('userParams');
         this.resultRisk = 0;
-        console.log("test");
-        console.log(this.tableAnswer);
     }
     ResultPage.prototype.nextBegin = function () {
+        __WEBPACK_IMPORTED_MODULE_3__app_statistique__["a" /* default */].push({
+            id: 3,
+            type: "end result",
+            title: "clic return home",
+            timestamp: Date.now()
+        });
+        console.log(__WEBPACK_IMPORTED_MODULE_3__app_statistique__["a" /* default */]);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
     };
     ResultPage.prototype.ngAfterViewInit = function () {
@@ -101,9 +114,7 @@ var ResultPage = (function () {
             self.activeWelcomeContent = true;
         }, 250);
         this.slides.lockSwipes(false);
-        console.log(this.tableAnswer);
         this.IMC = this.tableAnswer[27].answerUser / Math.pow(this.tableAnswer[26].answerUser / 100, 2);
-        console.log(this.IMC);
         this.result = [];
         this.resultSlide = [];
         this.conseil = [];
@@ -493,15 +504,16 @@ var ResultPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Slides */]) === "function" && _a || Object)
 ], ResultPage.prototype, "slides", void 0);
 ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/CalendarNew/src/pages/result/result.html"*/'<ion-content>\n  <div class="result-info visible" >\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <ion-slides pager>\n    <ion-slide>\n\n      <div class="welcome">\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h1>Bravo !</h1>\n            <p>{{riskAssessment}}</p>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <ion-slide *ngFor="let answer of answers" class="risk">\n      <div *ngIf="answer.type == \'conseil\'">\n      <h1 class="conseil">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'risk\'">\n      <h1 class="risk">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'positif\'">\n      <h1 class="positif">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'psycho\'">\n      <h1>{{answer.title}}</h1>\n      </div>\n    </ion-slide>\n    <ion-slide class="positif">\n      <h1>Et voilà !</h1>\n      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>\n      <button class="button touch" (click)="nextBegin()">Recommencer</button>\n    </ion-slide>\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/CalendarNew/src/pages/result/result.html"*/,
+        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<ion-content>\n  <div class="result-info visible" >\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <ion-slides pager>\n    <ion-slide>\n\n      <div class="welcome">\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h1>Bravo !</h1>\n            <p>{{riskAssessment}}</p>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <ion-slide *ngFor="let answer of answers" class="risk">\n      <div *ngIf="answer.type == \'conseil\'">\n      <h1 class="conseil">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'risk\'">\n      <h1 class="risk">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'positif\'">\n      <h1 class="positif">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'psycho\'">\n      <h1>{{answer.title}}</h1>\n      </div>\n    </ion-slide>\n    <ion-slide class="positif">\n      <h1>Et voilà !</h1>\n      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>\n      <button class="button touch" (click)="nextBegin()">Recommencer</button>\n    </ion-slide>\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object])
 ], ResultPage);
 
+var _a, _b, _c;
 //# sourceMappingURL=result.js.map
 
 /***/ }),
@@ -528,11 +540,11 @@ webpackEmptyAsyncContext.id = 110;
 
 var map = {
 	"../pages/ivg-info/ivg-info.module": [
-		269,
+		270,
 		1
 	],
 	"../pages/result/result.module": [
-		270,
+		271,
 		0
 	]
 };
@@ -575,13 +587,13 @@ console.log(this.Stat);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_result_result__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_ivg_info_ivg_info__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(266);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1311,7 +1323,24 @@ var Questions = [
 
 /***/ }),
 
-/***/ 256:
+/***/ 239:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var Stat = [
+    {
+        id: 0,
+        title: "first",
+        type: "launchApp",
+        timestamp: Date.now()
+    }
+];
+/* harmony default export */ __webpack_exports__["a"] = (Stat);
+//# sourceMappingURL=statistique.js.map
+
+/***/ }),
+
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1348,29 +1377,12 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/CalendarNew/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/kwame/Desktop/CalendarNew/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 271:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var Stat = [
-    {
-        id: 0,
-        title: "first",
-        type: "launchApp",
-        timestamp: new Date()
-    }
-];
-/* harmony default export */ __webpack_exports__["a"] = (Stat);
-//# sourceMappingURL=statistique.js.map
 
 /***/ }),
 
@@ -1384,7 +1396,7 @@ var Stat = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ivg_info_ivg_info__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__questionFile__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_statistique__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_statistique__ = __webpack_require__(239);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1461,25 +1473,21 @@ var HomePage = (function () {
         }, 10);
     };
     HomePage.prototype.nextForm = function (question) {
-        console.log("before", question);
         __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
             id: question.id,
             type: question.type,
-            title: "question",
-            timestamp: new Date()
+            title: "clic next",
+            timestamp: Date.now()
         });
         console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
         this.questionForm = question;
         if (this.questionForm.type == "number") {
-            console.log(this.number);
             this.currentStep = this.questionForm.answer.nextStep;
             this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
             this.Questions[this.questionForm.idTable].answerUser = this.number;
             this.manageSlideTo();
-            console.log(this.Questions);
         }
         else if (this.questionForm.type == "yesNoIdn") {
-            console.log(this.Questions);
             if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
                 this.Questions[this.questionForm.idTable].answerUser = 1;
@@ -1595,9 +1603,7 @@ var HomePage = (function () {
         this.answer.ten = false;
         this.answer.eleven = false;
         this.answer.twelve = false;
-        console.log("after", question);
         console.log("questions", this.Questions);
-        console.log("before changement page");
     };
     HomePage.prototype.manageSlideTo = function () {
         console.log("mange");
@@ -1614,6 +1620,12 @@ var HomePage = (function () {
     };
     HomePage.prototype.next = function () {
         console.log("next");
+        __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+            id: 1,
+            type: "begin",
+            title: "clic next after begin",
+            timestamp: Date.now()
+        });
         if (!this.isInitialized)
             this.init();
         this.currentStep++;
@@ -1625,6 +1637,12 @@ var HomePage = (function () {
         this.manageSlideTo();
     };
     HomePage.prototype.prevStepFunction = function (question) {
+        __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+            id: question.id,
+            type: question.type,
+            title: "clic prev",
+            timestamp: Date.now()
+        });
         console.log("prevStepFunction");
         this.currentStep = question.prevStep;
         this.manageSlideTo();
@@ -1633,10 +1651,10 @@ var HomePage = (function () {
         if (answer == "yes") {
             if (this.yes == false) {
                 __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
-                    id: 1,
+                    id: this.currentStep,
                     type: "yes",
                     title: "question",
-                    timestamp: new Date()
+                    timestamp: Date.now()
                 });
                 console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
                 this.no = false;
@@ -1646,10 +1664,10 @@ var HomePage = (function () {
         }
         else if (answer == "no") {
             __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
-                id: 1,
+                id: this.currentStep,
                 type: "no",
                 title: "question",
-                timestamp: new Date()
+                timestamp: Date.now()
             });
             console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
             if (this.no == false) {
@@ -1661,10 +1679,10 @@ var HomePage = (function () {
         else {
             if (this.idn == false) {
                 __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
-                    id: 1,
+                    id: this.currentStep,
                     type: "idn",
                     title: "question",
-                    timestamp: new Date()
+                    timestamp: Date.now()
                 });
                 console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
                 this.no = false;
@@ -1672,9 +1690,6 @@ var HomePage = (function () {
                 this.idn = true;
             }
         }
-        console.log("yes ==", this.yes);
-        console.log("no", this.no);
-        console.log("idn ==", this.idn);
     };
     return HomePage;
 }());
@@ -1688,7 +1703,7 @@ __decorate([
 ], HomePage.prototype, "realFormButton", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/CalendarNew/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck(\'idn\')">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'Psycho1\'">\n          <div class="psycho">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">\n            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="psycho1" *ngIf="answer.one">\n            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>\n            <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">\n            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>\n            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">\n            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">\n            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n            <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n</div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n          <button class="button button--line prev-button touch" (click)="prevStepFunction(question)">Precedent</button>\n          \n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/CalendarNew/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck(\'idn\')">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'Psycho1\'">\n          <div class="psycho">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">\n            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="psycho1" *ngIf="answer.one">\n            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>\n            <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">\n            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>\n            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">\n            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">\n            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n            <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n</div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n          <button class="button button--line prev-button touch" (click)="prevStepFunction(question)">Precedent</button>\n          \n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
 ], HomePage);

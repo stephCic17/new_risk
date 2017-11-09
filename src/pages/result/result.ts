@@ -4,6 +4,7 @@ import { HomePage } from '../home/home';
 
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
+import Stat from '../../app/statistique';
 
 @IonicPage()
 @Component({
@@ -31,13 +32,24 @@ export class ResultPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+        Stat.push({
+            id: 2,
+            type: "resultBegin",
+            title: "begin result",
+            timestamp: Date.now()
+        });
         this.tableAnswer = navParams.get('userParams');
         this.resultRisk = 0;
-        console.log("test");
-        console.log(this.tableAnswer);
     }
 
     nextBegin(){
+        Stat.push({
+            id: 3,
+            type: "end result",
+            title: "clic return home",
+            timestamp: Date.now()
+        });
+        console.log(Stat);        
         this.navCtrl.push(HomePage);
     }
 
@@ -55,9 +67,7 @@ export class ResultPage {
         }, 250);
 
         this.slides.lockSwipes(false);
-        console.log(this.tableAnswer);
         this.IMC = this.tableAnswer[27].answerUser / Math.pow(this.tableAnswer[26].answerUser / 100, 2);
-        console.log(this.IMC);
         this.result = [];
         this.resultSlide = [];
         this.conseil = [];
@@ -316,7 +326,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title: "Effectuez un dépistage de diabète de grossesse."
+                title: "Anticipez ! Effectuez un dépistage de diabète de grossesse dès le début de grossesse, c’est le mieux pour éviter la récidive ! "
             });
         if (this.tableAnswer[11].answerUser == false && this.tableAnswer[10].answerUser == true)
             this.resultSlide.push(
@@ -352,7 +362,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "risk",
-                title:"Vous consommez une quantité d'alcool importante"
+                title:"Votre consommation est d’alcool est décidément trop élevée… votre bébé court des risques important de malformations et de retard mental :-( "
             });
         if (this.tableAnswer[20].answerUser == true)
             this.resultSlide.push(
@@ -496,7 +506,7 @@ export class ResultPage {
             this.resultSlide.push(
             {
                 type: "conseil",
-                title:"title:&quot;Le risque de récidive d’une malformation fœtale est généralement très rare. Prenez rendez-vous pour une consultation spécialisée pour vous le faire confirmer. Vous serez plus zen évidemment ! "
+                title:"Le risque de récidive d’une malformation fœtale est généralement très rare. Prenez rendez-vous pour une consultation spécialisée pour vous le faire confirmer. Vous serez plus zen évidemment ! "
             });
         if (this.tableAnswer[19].answerUser >= 10 && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push(
@@ -512,60 +522,7 @@ export class ResultPage {
             });
 
         this.answers = this.resultSlide.concat(this.psycho);
-
         console.log(this.answers);
 
     }
-/*defineRisk() {
-
-        if (this.valueTestGyneco[0].answerUser < 42)
-             this.resultSlide.push("A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale")
-        else if (this.valueTestGyneco0[0].answerUser > 42)
-             this.risk.push("A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
-             });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
-             this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications."
-             });
-        if (this.valueTestGyneco[5].answerUser == 1 && this.valueTestGyneco[1].answerUser == 1)
-             this.risk.push("Vous fumez, ce qui peut entrainer de nombreuses complications.");
-        else if (this.valueTestGyneco[5].answerUser == 1)
-           this.risk.push("Vous fumez, ce qui va entrainer de nombreuses complications lors d'une future grossesse.");
-        if (this.valueTestGyneco[8].answerUser == 1)
-            this.risk.push("Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse.");
-        if (this.valueTestGyneco[11].answerUser == 0 && this.valueTestGyneco[10].answerUser == 1)
-            this.risk.push("Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %");
-        if (this.valueTestGyneco[17].answerUser >= 3)
-            this.risk.push("Vous avez un nombre élevé de fausse couches");
-        if (this.valueTestGyneco.IMG)
-            this.risk.push("Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive");
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0)
-            this.risk.push("Vous consommez de l'alcool");
-        if (this.valueTestGyneco[18].answerUser < 10 && this.valueTestGyneco[18].answerUser > 0 && this.valueTestGyneco[1].answerUser == 1)
-            this.risk.push("Stoppez votre consommation d'alcool !");
-        if (this.valueTestGyneco[18].answerUser >= 10 && this.valueTestGyneco[1].answerUser == 1)
-            this.risk.push("Vous consommez une quantité d'alcool importante");
-        if (this.valueTestGyneco.epilepsy == 1)
-            this.risk.push("Votre epilepsie");
-        if (this.valueTestGyneco[20].answerUser == 1)
-            this.risk.push("Votre antécédent de phlébite");
-        if (this.valueTestGyneco[21].answerUser == 1)
-            this.risk.push("Votre hypertension");
-
-        if (this.valueTestGyneco.IMC < 18.5)
-            this.risk.push("Votre MAIGREUR");
-        else if (this.valueTestGyneco.IMC > 35 && this.valueTestGyneco.IMC < 40)
-            this.risk.push("Votre obésité");
-        else if (this.valueTestGyneco.IMC > 40)
-            this.risk.push("Votre obésité massive");
-
-        if (this.valueTestGyneco[28].answerUser > 10 && this.valueTestGyneco[28].answerUser <= 12)
-            this.risk.push("Votre nombre d'heure de travail est élevé.");
-        if (this.valueTestGyneco[28].answerUser > 12)
-            this.risk.push("Votre nombre d'heure de travail est vraiment très élevé");
-        if (this.valueTestGyneco[29].answerUser > 90)
-            this.risk.push("Votre temps de trajet pour aller au travail est élevé");
-        if (this.valueTestGyneco[29].answerUser == 1)
-            this.risk.push("Vous travaillez debout plus de 6 heures par jour");
-     }
-     */
- }
+}
