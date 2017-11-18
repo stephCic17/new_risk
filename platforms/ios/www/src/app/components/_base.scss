@@ -1,0 +1,57 @@
+
+.iphone-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.iphone {
+  background-image: url("../img/iphone.svg");
+  width: 290px;
+  height: 570px;
+  background-size: cover;
+  position: relative;
+}
+
+.iphone-top-bar {
+  background-image: url("../img/bar.svg");
+  width: 224px;
+  height: 20px;
+  background-size: cover;
+  position: absolute;
+  top: 83px;
+  left: 34px;
+  z-index: 1;
+}
+
+.iphone-content {
+  margin: 103px 36px;
+  width: 222px;
+  height: 376px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.owl-carousel, .owl-stage-outer, .owl-stage, .owl-item {
+  height: 100%;
+}
+
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+
+}
+
+.slide-wrapper {
+}

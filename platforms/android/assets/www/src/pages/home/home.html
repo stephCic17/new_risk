@@ -1,0 +1,201 @@
+<!-- <ion-header>
+<ion-navbar>
+<ion-title>Ciconia</ion-title>
+</ion-navbar>
+</ion-header> -->
+
+<ion-content>
+  <div [ngClass]="{'visible': currentStep != 0, counter: true }">
+    {{ currentStep }} / {{ totalStep }}
+  </div>
+  <div class="result-info">
+    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>
+  </div>
+  <div [ngClass]="{'visible': currentStep != 0, progress: true }">
+    <div class="bar" ng-change="totalStep" [ngStyle]="{'width': (100 / totalStep) * currentStep + '%'}" ></div>
+  </div>
+  <div class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-label">Fiche info</div>
+    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>
+    <div class="modal-content">
+      <h3>Alcool</h3>
+      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>
+      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>
+    </div>
+  </div>
+  <!-- <div [ngClass]="{'visible': currentStep != 0, next: true }" >
+    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>
+    <button class="button next-button touch" (click)="handleNext()">Suivant</button>
+  </div> -->
+  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">
+
+    <ion-slide>
+
+      <div class="welcome">
+        <div [ngClass]="{'visible': activeLogoWrapper, 'slide-wrapper logo-wrapper': true }">
+          <div [ngClass]="{'logo--active': activeLogo, logo: true }"></div>
+        </div>
+        <div class="slide-wrapper welcome-wrapper">
+          <div [ngClass]="{'visible': activeWelcomeContent, 'welcome-content': true }">
+            <h2>Bienvenue !</h2>
+            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>
+            <button class="button touch" (click)="next()">Commencer</button>
+            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">
+      <form id={{question.idForm}} [ngClass]="{'form-wrapper--hidden': changing, 'form-wrapper': true }" novalidate>
+        <ion-slide *ngIf="question.type == 'number'">
+          <h3>{{question.title}}</h3>
+          <input type="number" name="number" [(ngModel)]="number" required>
+        </ion-slide>
+        <ion-slide *ngIf="question.type == 'yesNoIdn'">
+          <h3>{{question.title}}</h3>
+          <div class="checkbox">
+            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck('yes')">
+            <label for="radio{{i}}-1">Oui</label>
+          </div>
+          <div class="checkbox">
+            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck('no')">
+            <label for="radio{{i}}-2">Non</label>
+          </div>
+          <div class="checkbox checkbox--large">
+            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck('idn')">
+            <label for="radio{{i}}-3">Je ne sais pas</label>
+          </div>
+        </ion-slide>
+        <ion-slide *ngIf="question.type == 'yesNo'">
+          <h3>{{question.title}}</h3>
+          <div class="checkbox">
+            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck('yes')">
+            <label for="radio{{i}}-1">Oui</label>
+          </div>
+          <div class="checkbox">
+            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck('no')">
+            <label for="radio{{i}}-2">Non</label>
+          </div>
+        </ion-slide>
+        <ion-slide *ngIf="question.type == 'Psycho1'">
+          <div class="psycho">
+          <h3>{{question.title}}</h3>
+          <div class="checkbox">
+            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">
+            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>
+          </div>
+          <div class="psycho1" *ngIf="answer.one">
+            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>
+            <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">
+            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>
+            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">
+          </div>
+          <div class="checkbox">
+            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">
+            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>
+          </div>
+          <div class="checkbox">
+            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">
+            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>
+          </div>
+          </div>
+        </ion-slide>
+        <ion-slide *ngIf="question.type == 'multipleIf'">
+          <h3>{{question.title}}</h3>
+                   <div class="psycho">
+          <div class="checkbox" *ngIf="Questions[20].answerUser == '1'">
+            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">
+            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>
+          </div>
+          <div class="checkbox" *ngIf="Questions[21].answerUser == '1'">
+            <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">
+            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>
+          </div>
+          <div class="checkbox" *ngIf="Questions[22].answerUser == '1'">
+            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">
+            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>
+          </div>
+          <div class="checkbox" *ngIf="Questions[23].answerUser == '1'">
+            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">
+            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>
+          </div>
+          <div class="checkbox">
+            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">
+            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>
+          </div>
+          </div>
+        </ion-slide>
+        <ion-slide class="scrollable-slide" *ngIf="question.type == 'multipleChoice'">
+          <h3>{{question.title}}</h3>
+                   <div class="psycho">
+          <div class="checkbox checkbox--large">
+            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">
+            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer2">
+            <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">
+            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer3">
+            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">
+            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer4">
+            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">
+            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer5">
+            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">
+            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer6">
+            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">
+            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer7">
+            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">
+            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer8">
+            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">
+            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer9">
+            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">
+            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer10">
+            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">
+            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer11">
+            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">
+            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>
+          </div>
+          <div class="checkbox checkbox--large" *ngIf="question.answer12">
+            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">
+            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>
+          </div>
+</div>
+        </ion-slide>
+
+        <ion-slide *ngIf="question.type == 'date'">
+          <h3>{{question.title}}</h3>
+          <input type="date" name="date" [(ngModel)]="date">
+        </ion-slide>
+
+        <div [ngClass]="{'visible': currentStep != 0, next: true }" >
+          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>
+          <button class="button button--line prev-button touch" (click)="prevStepFunction(question)">Precedent</button>
+          
+        </div>
+      </form>
+
+    </div>
+
+
+  </ion-slides>
+
+</ion-content>

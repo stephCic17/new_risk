@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="result-info visible" >
+    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>
+  </div>
+  <ion-slides pager>
+    <ion-slide>
+
+      <div class="welcome">
+        <div class="slide-wrapper welcome-wrapper">
+          <div [ngClass]="{'visible': activeWelcomeContent, 'welcome-content': true }">
+            <h1>Bravo !</h1>
+            <p>{{riskAssessment}}</p>
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+    <ion-slide *ngFor="let answer of answers" class="risk">
+      <div *ngIf="answer.type == 'conseil'">
+      <h1 class="conseil">{{answer.title}}</h1>
+      </div>
+      <div *ngIf="answer.type == 'risk'">
+      <h1 class="risk">{{answer.title}}</h1>
+      </div>
+      <div *ngIf="answer.type == 'positif'">
+      <h1 class="positif">{{answer.title}}</h1>
+      </div>
+      <div *ngIf="answer.type == 'psycho'">
+      <h1>{{answer.title}}</h1>
+      </div>
+    </ion-slide>
+    <ion-slide class="positif">
+      <h1>Et voilà !</h1>
+      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>
+      <button class="button touch" (click)="nextBegin()">Recommencer</button>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

@@ -1,0 +1,36 @@
+
+.helper {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+  font-family: "Open Sans";
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  cursor: pointer;
+  color: #dadada;
+  margin-top: 15px;
+}
+
+@keyframes rotate {
+    0% { transform: translateX(0px);}
+    40% { transform: translateX(0px);}
+    42.5% { transform: translateX(5px);}
+    45% { transform: translateX(0px);}
+    47.5% { transform: translateX(-5px);}
+    50% { transform: translateX(0px);}
+    100% { transform: translateX(0px);}
+}
+
+.swipe-helper {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: "Open Sans";
+  color: #dadada;
+  margin-top: 15px;
+  animation: rotate 7s infinite;
+  transition: all 50ms ease;
+  overflow: hidden;
+}

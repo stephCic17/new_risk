@@ -45,7 +45,7 @@ var IvgInfoPage = (function () {
 }());
 IvgInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-ivg-info',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/ivg-info/ivg-info.html"*/'<!--\n  Generated template for the IvgInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Info</ion-title>\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-slides>\n<ion-slide>\n<div class="form-wrapper" *ngIf="result >= 1">\n			<h3>Il vous reste {{result}} semaines pour vous décider</h3>\n			<p>\n				Prenez le temps de la réflexion et pour se faire allez surfer sur \n				<a href="http://ivg.org">\n					IVG.org\n				</a>\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n\n	<div class="form-wrapper" *ngIf="result < 0">\n			<h3>Le delai d\'avortement légal est dépassé</h3>\n			<p>\n			On dit quoi??\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n	</ion-slide>\n	    \n        </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/ivg-info/ivg-info.html"*/,
+        selector: 'page-ivg-info',template:/*ion-inline-start:"/Users/kwame/Desktop/gitSave/src/pages/ivg-info/ivg-info.html"*/'<!--\n  Generated template for the IvgInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Info</ion-title>\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<ion-slides>\n<ion-slide>\n<div class="form-wrapper" *ngIf="result >= 1">\n			<h3>Il vous reste {{result}} semaines pour vous décider</h3>\n			<p>\n				Prenez le temps de la réflexion et pour se faire allez surfer sur \n				<a href="http://ivg.org">\n					IVG.org\n				</a>\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n\n	<div class="form-wrapper" *ngIf="result < 0">\n			<h3>Le delai d\'avortement légal est dépassé</h3>\n			<p>\n			On dit quoi??\n			</p>\n			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>\n	</div>\n	</ion-slide>\n	    \n        </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitSave/src/pages/ivg-info/ivg-info.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], IvgInfoPage);
@@ -62,6 +62,7 @@ IvgInfoPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_statistique__ = __webpack_require__(152);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76,18 +77,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ResultPage = (function () {
     function ResultPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.activeWelcomeContent = false;
         this.isInitialized = false;
+        __WEBPACK_IMPORTED_MODULE_3__app_statistique__["a" /* default */].push({
+            id: 2,
+            type: "resultBegin",
+            title: "begin result",
+            timestamp: Date.now()
+        });
         this.tableAnswer = navParams.get('userParams');
         this.resultRisk = 0;
-        console.log("test");
-        console.log(this.tableAnswer);
     }
     ResultPage.prototype.nextBegin = function () {
+        __WEBPACK_IMPORTED_MODULE_3__app_statistique__["a" /* default */].push({
+            id: 3,
+            type: "end result",
+            title: "clic return home",
+            timestamp: Date.now()
+        });
+        console.log(__WEBPACK_IMPORTED_MODULE_3__app_statistique__["a" /* default */]);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
     };
     ResultPage.prototype.ngAfterViewInit = function () {
@@ -101,9 +114,7 @@ var ResultPage = (function () {
             self.activeWelcomeContent = true;
         }, 250);
         this.slides.lockSwipes(false);
-        console.log(this.tableAnswer);
         this.IMC = this.tableAnswer[27].answerUser / Math.pow(this.tableAnswer[26].answerUser / 100, 2);
-        console.log(this.IMC);
         this.result = [];
         this.resultSlide = [];
         this.conseil = [];
@@ -253,43 +264,43 @@ var ResultPage = (function () {
                 this.resultRisk += 2;
         }
         if (this.resultRisk >= 200)
-            this.riskAssessment = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à risque et ce serait bien d'être suivie dans une maternité de type 3.";
         else if (this.resultRisk >= 50)
-            this.riskAssessment = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à risque mais qui ne necessite pas un suivi dans une maternité de type 3";
         else if (this.resultRisk >= 20)
-            this.riskAssessment = "D'apres vos réponses vous présentez une grossesse à risque.";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à risque.";
         else
-            this.riskAssessment = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse.";
+            this.riskAssessment = "D'après vos réponses vous présentez une grossesse à bas risque, youpi !";
         console.log("debut risk");
         if (this.tableAnswer[3].answerUser == true)
             this.resultSlide.push({
                 type: "positif",
-                title: "Félicitation vous êtes enceinte !"
+                title: "Félicitations vous êtes enceinte !"
             });
         if (this.tableAnswer[6].answerUser == 0 && this.tableAnswer[3].answerUser == true)
             this.resultSlide.push({
                 type: "positif",
-                title: "Félicitation vous allez avoir votre premier enfant"
+                title: "Félicitations vous allez avoir votre premier enfant"
             });
         if (this.tableAnswer[0].answerUser < 42 && this.tableAnswer[0].answerUser >= 38)
             this.resultSlide.push({
                 type: "risk",
-                title: "A votre Age, vous présentez un risque élevé d'anomalie chromosomique foetale"
+                title: "A votre âge, vous présentez un risque d'anomalie chromosomique foetale qui n'est pas négligeable"
             });
         else if (this.tableAnswer[0].answerUser > 42)
             this.resultSlide.push({
                 type: "risk",
-                title: "A votre Age, vous présentez un risque très élevé d'anomalie chromosomique foetale"
+                title: "A votre âge, vous présentez un risque élevé d'anomalie chromosomique foetale"
             });
         if (this.tableAnswer[0].answerUser < 38)
             this.resultSlide.push({
                 type: "positif",
-                title: "Vous avez le bon l'âge optimal pour faire un enfant"
+                title: "Vous avez l'âge optimal pour faire un enfant"
             });
         else
             this.resultSlide.push({
                 type: "positif",
-                title: "Être plus âgée pour élever ses enfants est ausi un gage de maturité !"
+                title: "Être plus âgée pour élever ses enfants est aussi un gage de maturité !"
             });
         if (this.tableAnswer[5].answerUser == true && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push({
@@ -309,17 +320,17 @@ var ResultPage = (function () {
         if (this.tableAnswer[5].answerUser == true && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Arrêtez de fumer !"
+                title: "Ce serait tellement chouette pour votre bébé de vous arrêter ! faites vous aider !"
             });
         else if (this.tableAnswer[5].answerUser == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Arrêtez de fumer avant d'entammer une grossesse !"
+                title: "Profitez de votre projet de grossesse pour motiver à vous arrêter ! Faites vous aider ! Arrêtez de fumer avant débuter une grossesse !"
             });
         if (this.tableAnswer[8].answerUser == true)
             this.resultSlide.push({
                 type: "risk",
-                title: "Vous avez eus un enfant de + de 4kg, ce qui peut favoriser l'apparition du vous place dans un groupe à risque de développer un diabète de grossesse."
+                title: "Vous avez eu un enfant de + de 4kg, ce qui peut vous placer dans un groupe à risque de développer un diabète de grossesse."
             });
         if (this.tableAnswer[8].answerUser == true && this.tableAnswer[13].answerUser == true)
             this.resultSlide.push({
@@ -329,12 +340,12 @@ var ResultPage = (function () {
         else if (this.tableAnswer[8].answerUser == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Effectuez un dépistage de diabète de grossesse."
+                title: "Anticipez ! Effectuez un dépistage de diabète de grossesse dès le début de grossesse, c’est le mieux pour éviter la récidive ! "
             });
         if (this.tableAnswer[11].answerUser == false && this.tableAnswer[10].answerUser == true)
             this.resultSlide.push({
                 type: "risk",
-                title: "Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin qui vous expose à un risque de récidive d'environ 10 %"
+                title: "Vous avez eu un enfant de - de 2kg200 qui n'était pas prématuré, il s'agit donc d'un antécédent de retard de croissance intra-utérin et vous avez 9 chances sur 10 d’avoir un bébé de poids normal cette fois ci !"
             });
         if (this.tableAnswer[8].answerUser >= 3)
             this.resultSlide.push({
@@ -344,7 +355,7 @@ var ResultPage = (function () {
         if (this.tableAnswer.IMG)
             this.resultSlide.push({
                 type: "risk",
-                title: "Vous avez déjà effectué une IMG et vous pourriez avoir un risque de récidive"
+                title: "Vous avez déjà subi une IMG mais votre risque de récidive est faible"
             });
         if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0)
             this.resultSlide.push({
@@ -359,7 +370,7 @@ var ResultPage = (function () {
         if (this.tableAnswer[19].answerUser >= 10 && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push({
                 type: "risk",
-                title: "Vous consommez une quantité d'alcool importante"
+                title: "Votre consommation est d’alcool est décidément trop élevée… votre bébé court des risques important de malformations et de retard mental :-( "
             });
         if (this.tableAnswer[20].answerUser == true)
             this.resultSlide.push({
@@ -369,12 +380,12 @@ var ResultPage = (function () {
         if (this.tableAnswer[25].answerUser1 == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title: "Votre grossesse pourrait déséquilibrer votre épilepsie, ce serait bien que vous soyez prise en charge par une équipe spécialisée pour le choix des antiépileptiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.tableAnswer[25].answerUser2 == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des anticoagulent et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title: "Votre grossesse pourrait déséquilibrer votre traitement, ce serait bien que vous soyez prise en charge par une équipe spécialisée pour le choix des anticoagulents et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.tableAnswer[21].answerUser == true)
             this.resultSlide.push({
@@ -384,7 +395,7 @@ var ResultPage = (function () {
         if (this.tableAnswer[25].answerUser3 == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title: "Votre grossesse pourrait déséquilibrer votre HTA donc ce serait bien d’être prise en charge par une équipe spécialisée pour le choix des antihypertenseurs et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.tableAnswer[22].answerUser == true)
             this.resultSlide.push({
@@ -394,47 +405,47 @@ var ResultPage = (function () {
         if (this.tableAnswer[25].answerUser4 == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Vous devez être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
+                title: "Pendant la grossesse, votre diabète sera déséquilibré donc vous devez être prise en être prise en charge par une équipe spécialisée pour le choix des antidiabetiques et leur dosage ainsi que pour la mise en place d'une surveillance foetale adaptée."
             });
         if (this.IMC < 18.5)
             this.resultSlide.push({
                 type: "risk",
-                title: "Votre MAIGREUR"
+                title: "Vous êtes en sous poids"
             });
         else if (this.IMC > 35 && this.IMC < 40)
             this.resultSlide.push({
                 type: "risk",
-                title: "Votre obésité"
+                title: "Vous êtes en surpoids"
             });
         else if (this.IMC > 40)
             this.resultSlide.push({
                 type: "risk",
-                title: "Votre obésité massive"
+                title: "Vous êtes en surpoids"
             });
         if (this.IMC < 18.5)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Alimentez-vous correctement"
+                title: "Essayez de vous alimentez suffisamment"
             });
         else if (this.IMC > 40)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Vous devez être prise en charge dans un centre spécialisé."
+                title: "Ce serait bien d'être prise en charge dans un centre spécialisé auprès de professionnels qui en ont l’ habitude et l’expertise."
             });
         if (this.tableAnswer[29].answerUser > 10 && this.tableAnswer[29].answerUser <= 12)
             this.resultSlide.push({
                 type: "risk",
-                title: "Votre nombre d'heure de travail est élevé."
+                title: "Votre nombre d'heures de travail est élevé."
             });
         if (this.tableAnswer[29].answerUser > 12)
             this.resultSlide.push({
                 type: "risk",
-                title: "Votre nombre d'heure de travail est vraiment très élevé"
+                title: "Votre nombre d'heures de travail est vraiment très élevé"
             });
         if (this.tableAnswer[30].answerUser > 90)
             this.resultSlide.push({
                 type: "risk",
-                title: "Votre temps de trajet pour aller au travail est élevé"
+                title: "Votre temps de trajet pour aller travailler est élevé"
             });
         if (this.tableAnswer[30].answerUser == true)
             this.resultSlide.push({
@@ -454,37 +465,37 @@ var ResultPage = (function () {
         if (this.tableAnswer[29].answerUser > 10)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Essayer d'aménager vos heures de travail"
+                title: "Ce serait chouette d'aménager vos heures de travail"
             });
         if (this.tableAnswer[29].answerUser > 90)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Essayer d'aménager vos heures de présence au travail pour diminuer les temps de trajets"
+                title: "Ce serait chouette d'aménager vos heures de présence au travail pour diminuer les temps de trajets"
             });
         if (this.tableAnswer[29].answerUser == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Nous vous conseillons de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour"
+                title: "Ce serait chouette de discuter dès à présent avec votre employeur de la possibilité d'aménager vos conditions de travail. Vous risquez d'être en difficulté pendant votre grossesse si vous restez debout plus de 6 heures par jour et ce serait malin s'il acceptait ! Car qui ménage sa monture va loin"
             });
         if (this.tableAnswer[18].answerUser >= 3)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Effectuez un bilan de fausse couche à répétition et bénéficiez d'une prise en charge adaptée en fonction des résultats de ce bilan."
+                title: "Vos fausses à répétition vous angoissent certainement. Prenez RDV chez un spécialiste pour vous faire confirmer qu’elles sont accidentelles. Vous serez plus zen pour la suite "
             });
         if (this.tableAnswer.IMG == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Prenez rendez-vous pour une consultation spécialisée afin d'évaluer le risque de récidive de malformation foetale."
+                title: "Le risque de récidive d’une malformation fœtale est généralement très rare. Prenez rendez-vous pour une consultation spécialisée pour vous le faire confirmer. Vous serez plus zen évidemment ! "
             });
         if (this.tableAnswer[19].answerUser >= 10 && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Prenez rendez-vous dans un centre spécialisée pour vous aider à arrêter l'alcool"
+                title: "Profitez de votre grossesse annoncée pour vous motiver à stopper l’alcool ! Prenez rendez-vous dans un centre spécialisée pour vous aider"
             });
         if (this.tableAnswer[19].answerUser < 10 && this.tableAnswer[19].answerUser > 0 && this.tableAnswer[1].answerUser == true)
             this.resultSlide.push({
                 type: "conseil",
-                title: "Il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
+                title: "Motivez-vous ! ca il sera nécessaire de stopper votre consommation d'alcool lorsque vous serez enceinte!"
             });
         this.answers = this.resultSlide.concat(this.psycho);
         console.log(this.answers);
@@ -497,7 +508,7 @@ __decorate([
 ], ResultPage.prototype, "slides", void 0);
 ResultPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/'<ion-content>\n  <div class="result-info visible" >\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <ion-slides pager>\n    <ion-slide>\n\n      <div class="welcome">\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h1>Bravo !</h1>\n            <p>{{riskAssessment}}</p>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <ion-slide *ngFor="let answer of answers" class="risk">\n      <div *ngIf="answer.type == \'conseil\'">\n      <h1 class="conseil">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'risk\'">\n      <h1 class="risk">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'positif\'">\n      <h1 class="positif">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'psycho\'">\n      <h1>{{answer.title}}</h1>\n      </div>\n    </ion-slide>\n    <ion-slide class="positif">\n      <h1>Et voilà !</h1>\n      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>\n      <button class="button touch" (click)="nextBegin()">Recommencer</button>\n    </ion-slide>\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/result/result.html"*/,
+        selector: 'page-result',template:/*ion-inline-start:"/Users/kwame/Desktop/gitSave/src/pages/result/result.html"*/'<ion-content>\n  <div class="result-info visible" >\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <ion-slides pager>\n    <ion-slide>\n\n      <div class="welcome">\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h1>Bravo !</h1>\n            <p>{{riskAssessment}}</p>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <ion-slide *ngFor="let answer of answers" class="risk">\n      <div *ngIf="answer.type == \'conseil\'">\n      <h1 class="conseil">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'risk\'">\n      <h1 class="risk">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'positif\'">\n      <h1 class="positif">{{answer.title}}</h1>\n      </div>\n      <div *ngIf="answer.type == \'psycho\'">\n      <h1>{{answer.title}}</h1>\n      </div>\n    </ion-slide>\n    <ion-slide class="positif">\n      <h1>Et voilà !</h1>\n      <p>Pour recommencer, cliquez sur le bouton juste en dessous</p>\n      <button class="button touch" (click)="nextBegin()">Recommencer</button>\n    </ion-slide>\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitSave/src/pages/result/result.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ResultPage);
@@ -528,11 +539,11 @@ webpackEmptyAsyncContext.id = 110;
 
 var map = {
 	"../pages/ivg-info/ivg-info.module": [
-		269,
+		270,
 		1
 	],
 	"../pages/result/result.module": [
-		270,
+		271,
 		0
 	]
 };
@@ -552,21 +563,39 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 195:
+/***/ 152:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var Stat = [
+    {
+        id: 0,
+        title: "first",
+        type: "launchApp",
+        timestamp: Date.now()
+    }
+];
+/* harmony default export */ __webpack_exports__["a"] = (Stat);
+//# sourceMappingURL=statistique.js.map
+
+/***/ }),
+
+/***/ 196:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(215);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+console.log(this.Stat);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -574,13 +603,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_result_result__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_ivg_info_ivg_info__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(266);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -639,7 +668,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1310,15 +1339,15 @@ var Questions = [
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1347,7 +1376,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/kwame/Desktop/gitSave/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitSave/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -1365,7 +1394,8 @@ MyApp = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__result_result__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ivg_info_ivg_info__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__questionFile__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__questionFile__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_statistique__ = __webpack_require__(152);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1375,6 +1405,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1411,11 +1442,6 @@ var HomePage = (function () {
         this.answer = [];
         this.Questions = __WEBPACK_IMPORTED_MODULE_4__questionFile__["a" /* default */];
         console.log(this.Questions);
-        // type 1 = number
-        // type 2 = Oui non
-        // type 3 = oui non je ne sais pas
-        // type 4 = select
-        // type 5 = date
     };
     HomePage.prototype.init = function () {
         this.isInitialized = true;
@@ -1446,18 +1472,21 @@ var HomePage = (function () {
         }, 10);
     };
     HomePage.prototype.nextForm = function (question) {
-        console.log("before", question);
+        __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+            id: question.id,
+            type: question.type,
+            title: "clic next",
+            timestamp: Date.now()
+        });
+        console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
         this.questionForm = question;
         if (this.questionForm.type == "number") {
-            console.log(this.number);
             this.currentStep = this.questionForm.answer.nextStep;
             this.Questions[this.questionForm.idTable].prevStep = this.questionForm.idTable;
             this.Questions[this.questionForm.idTable].answerUser = this.number;
             this.manageSlideTo();
-            console.log(this.Questions);
         }
         else if (this.questionForm.type == "yesNoIdn") {
-            console.log(this.Questions);
             if (this.yes) {
                 this.currentStep = this.questionForm.answerYes.nextStep;
                 this.Questions[this.questionForm.idTable].answerUser = 1;
@@ -1573,9 +1602,7 @@ var HomePage = (function () {
         this.answer.ten = false;
         this.answer.eleven = false;
         this.answer.twelve = false;
-        console.log("after", question);
         console.log("questions", this.Questions);
-        console.log("before changement page");
     };
     HomePage.prototype.manageSlideTo = function () {
         console.log("mange");
@@ -1592,6 +1619,12 @@ var HomePage = (function () {
     };
     HomePage.prototype.next = function () {
         console.log("next");
+        __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+            id: 1,
+            type: "begin",
+            title: "clic next after begin",
+            timestamp: Date.now()
+        });
         if (!this.isInitialized)
             this.init();
         this.currentStep++;
@@ -1603,6 +1636,12 @@ var HomePage = (function () {
         this.manageSlideTo();
     };
     HomePage.prototype.prevStepFunction = function (question) {
+        __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+            id: question.id,
+            type: question.type,
+            title: "clic prev",
+            timestamp: Date.now()
+        });
         console.log("prevStepFunction");
         this.currentStep = question.prevStep;
         this.manageSlideTo();
@@ -1610,12 +1649,26 @@ var HomePage = (function () {
     HomePage.prototype.testCheck = function (answer) {
         if (answer == "yes") {
             if (this.yes == false) {
+                __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+                    id: this.currentStep,
+                    type: "yes",
+                    title: "question",
+                    timestamp: Date.now()
+                });
+                console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
                 this.no = false;
                 this.idn = false;
                 this.yes = true;
             }
         }
         else if (answer == "no") {
+            __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+                id: this.currentStep,
+                type: "no",
+                title: "question",
+                timestamp: Date.now()
+            });
+            console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
             if (this.no == false) {
                 this.yes = false;
                 this.idn = false;
@@ -1624,14 +1677,18 @@ var HomePage = (function () {
         }
         else {
             if (this.idn == false) {
+                __WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */].push({
+                    id: this.currentStep,
+                    type: "idn",
+                    title: "question",
+                    timestamp: Date.now()
+                });
+                console.log(__WEBPACK_IMPORTED_MODULE_5__app_statistique__["a" /* default */]);
                 this.no = false;
                 this.yes = false;
                 this.idn = true;
             }
         }
-        console.log("yes ==", this.yes);
-        console.log("no", this.no);
-        console.log("idn ==", this.idn);
     };
     return HomePage;
 }());
@@ -1645,7 +1702,7 @@ __decorate([
 ], HomePage.prototype, "realFormButton", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck(\'idn\')">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'Psycho1\'">\n          <div class="psycho">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">\n            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="psycho1" *ngIf="answer.one">\n            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>\n            <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">\n            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>\n            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">\n            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">\n            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n            <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n</div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n          <button class="button button--line prev-button touch" (click)="prevStepFunction(question)">Precedent</button>\n          \n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitNew_risk/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/kwame/Desktop/gitSave/src/pages/home/home.html"*/'<!-- <ion-header>\n<ion-navbar>\n<ion-title>Ciconia</ion-title>\n</ion-navbar>\n</ion-header> -->\n\n<ion-content>\n  <div [ngClass]="{\'visible\': currentStep != 0, counter: true }">\n    {{ currentStep }} / {{ totalStep }}\n  </div>\n  <div class="result-info">\n    <label>Résultats</label><i class="result-info-icon icon icon-gift"></i>\n  </div>\n  <div [ngClass]="{\'visible\': currentStep != 0, progress: true }">\n    <div class="bar" ng-change="totalStep" [ngStyle]="{\'width\': (100 / totalStep) * currentStep + \'%\'}" ></div>\n  </div>\n  <div class="modal">\n    <div class="modal-overlay"></div>\n    <div class="modal-label">Fiche info</div>\n    <div class="modal-close-button touch"><i class="icon icon-cross"></i></div>\n    <div class="modal-content">\n      <h3>Alcool</h3>\n      <p>Comme on ignore si de petites doses sont toxiques, on préfère dire que <b>toute consommation est déconseillée</b>. Une prise de boissons alcoolisées, <b>même en petite quantité</b> ou <b>même une seule fois en grande quantité</b>, pourrait être <b>nocive</b> pour le foetus.</p>\n      <p>En cas de besoin, vous pouvez joindre <b>Ecoute Alcool</b> au <a href="tel:05454545">0811 91 30 30</a>.</p>\n    </div>\n  </div>\n  <!-- <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n    <button class="button back-button touch" (click)="prev()"><i class="icon icon-chevron-left"></i>Retour</button>\n    <button class="button next-button touch" (click)="handleNext()">Suivant</button>\n  </div> -->\n  <ion-slides #sliderOne (slider)="false" (centeredSlides)="false" (zoom)="false" (ionSlideDidChange)="ionSlideDidChange()" (ionSlideWillChange)="ionSlideWillChange()">\n\n    <ion-slide>\n\n      <div class="welcome">\n        <div [ngClass]="{\'visible\': activeLogoWrapper, \'slide-wrapper logo-wrapper\': true }">\n          <div [ngClass]="{\'logo--active\': activeLogo, logo: true }"></div>\n        </div>\n        <div class="slide-wrapper welcome-wrapper">\n          <div [ngClass]="{\'visible\': activeWelcomeContent, \'welcome-content\': true }">\n            <h2>Bienvenue !</h2>\n            <p><b>Ciconia</b> est une application de sante dediée à la <b>grossesse en cours</b> ou <b>future</b>. Elle <b>évalue</b> si vous êtes à bas risque ou à haut risque.  Elle calcule aussi si vous etes éxposée à faire une depression post natale. </p>\n            <button class="button touch" (click)="next()">Commencer</button>\n            <div class="swipe-helper"><i class="icon icon-fingers-scroll-horizontal"></i></div>\n          </div>\n        </div>\n      </div>\n\n    </ion-slide>\n    <div class="form-wrapper" *ngFor="let question of Questions; let i of index">\n      <form id={{question.idForm}} [ngClass]="{\'form-wrapper--hidden\': changing, \'form-wrapper\': true }" novalidate>\n        <ion-slide *ngIf="question.type == \'number\'">\n          <h3>{{question.title}}</h3>\n          <input type="number" name="number" [(ngModel)]="number" required>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNoIdn\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="radio{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="radio{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n          <div class="checkbox checkbox--large">\n            <input id="radio{{i}}-3" type="checkbox" name="radio{{i}}-3" [(ngModel)]="idn" (click)="testCheck(\'idn\')">\n            <label for="radio{{i}}-3">Je ne sais pas</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'yesNo\'">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="radio{{i}}-1" type="checkbox" name="checkbox{{i}}-1" [(ngModel)]="yes" (click)="testCheck(\'yes\')">\n            <label for="radio{{i}}-1">Oui</label>\n          </div>\n          <div class="checkbox">\n            <input id="radio{{i}}-2" type="checkbox" name="checkbox{{i}}-2" [(ngModel)]="no" (click)="testCheck(\'no\')">\n            <label for="radio{{i}}-2">Non</label>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'Psycho1\'">\n          <div class="psycho">\n          <h3>{{question.title}}</h3>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-1" type="checkbox" name="Psycho1{{i}}-1" [(ngModel)]="answer.one">\n            <label for="Psycho1{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="psycho1" *ngIf="answer.one">\n            <label for="Psycho1{{i}}-2">{{question.answer2.label}}</label>\n            <input type="number" name="Psycho1{{i}}-2" [(ngModel)]="answer.two">\n            <label for="Psycho1{{i}}-3">{{question.answer3.label}}</label>\n            <input type="number" name="Psycho1{{i}}-3" [(ngModel)]="answer.three">\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-4" type="checkbox" name="Psycho1{{i}}-4" [(ngModel)]="answer.four">\n            <label for="Psycho1{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="Psycho1{{i}}-5" type="checkbox" name="Psycho1{{i}}-5" [(ngModel)]="answer.five">\n            <label for="Psycho1{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide *ngIf="question.type == \'multipleIf\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox" *ngIf="Questions[20].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-1" type="checkbox" name="multipleIf{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multipleIf{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[21].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-2" type="checkbox" name="multipleIf{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multipleIf{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[22].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-3" type="checkbox" name="multipleIf{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multipleIf{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox" *ngIf="Questions[23].answerUser == \'1\'">\n            <input id="multipleIf{{i}}-4" type="checkbox" name="multipleIf{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multipleIf{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox">\n            <input id="multipleIf{{i}}-5" type="checkbox" name="multipleIf{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multipleIf{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          </div>\n        </ion-slide>\n        <ion-slide class="scrollable-slide" *ngIf="question.type == \'multipleChoice\'">\n          <h3>{{question.title}}</h3>\n                   <div class="psycho">\n          <div class="checkbox checkbox--large">\n            <input id="multiple{{i}}-1" type="checkbox" name="multiple{{i}}-1" [(ngModel)]="answer.one">\n            <label for="multiple{{i}}-1">{{question.answer1.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer2">\n            <input id="multiple{{i}}-2" type="checkbox" name="multiple{{i}}-2" [(ngModel)]="answer.two">\n            <label for="multiple{{i}}-2">{{question.answer2.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer3">\n            <input id="multiple{{i}}-3" type="checkbox" name="multiple{{i}}-3" [(ngModel)]="answer.three">\n            <label for="multiple{{i}}-3">{{question.answer3.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer4">\n            <input id="multiple{{i}}-4" type="checkbox" name="multiple{{i}}-4" [(ngModel)]="answer.four">\n            <label for="multiple{{i}}-4">{{question.answer4.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer5">\n            <input id="multiple{{i}}-5" type="checkbox" name="multiple{{i}}-5" [(ngModel)]="answer.five">\n            <label for="multiple{{i}}-5">{{question.answer5.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer6">\n            <input id="multiple{{i}}-6" type="checkbox" name="multiple{{i}}-6" [(ngModel)]="answer.six">\n            <label for="multiple{{i}}-6">{{question.answer6.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer7">\n            <input id="multiple{{i}}-7" type="checkbox" name="multiple{{i}}-7" [(ngModel)]="answer.seven">\n            <label for="multiple{{i}}-7">{{question.answer7.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer8">\n            <input id="multiple{{i}}-8" type="checkbox" name="multiple{{i}}-8" [(ngModel)]="answer.eight">\n            <label for="multiple{{i}}-8">{{question.answer8.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer9">\n            <input id="multiple{{i}}-9" type="checkbox" name="multiple{{i}}-9" [(ngModel)]="answer.nine">\n            <label for="multiple{{i}}-9">{{question.answer9.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer10">\n            <input id="multiple{{i}}-10" type="checkbox" name="multiple{{i}}-10" [(ngModel)]="answer.ten">\n            <label for="multiple{{i}}-10">{{question.answer10.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer11">\n            <input id="multiple{{i}}-11" type="checkbox" name="multiple{{i}}-11" [(ngModel)]="answer.eleven">\n            <label for="multiple{{i}}-11">{{question.answer11.label}}</label>\n          </div>\n          <div class="checkbox checkbox--large" *ngIf="question.answer12">\n            <input id="multiple{{i}}-12" type="checkbox" name="multiple{{i}}-12" [(ngModel)]="answer.twelve">\n            <label for="multiple{{i}}-12">{{question.answer12.label}}</label>\n          </div>\n</div>\n        </ion-slide>\n\n        <ion-slide *ngIf="question.type == \'date\'">\n          <h3>{{question.title}}</h3>\n          <input type="date" name="date" [(ngModel)]="date">\n        </ion-slide>\n\n        <div [ngClass]="{\'visible\': currentStep != 0, next: true }" >\n          <button #realFormButton class="button next-button touch" (click)="nextForm(question)">Suivant</button>\n          <button class="button button--line prev-button touch" (click)="prevStepFunction(question)">Precedent</button>\n          \n        </div>\n      </form>\n\n    </div>\n\n\n  </ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/kwame/Desktop/gitSave/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Renderer */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
 ], HomePage);
@@ -1654,5 +1711,5 @@ HomePage = __decorate([
 
 /***/ })
 
-},[195]);
+},[196]);
 //# sourceMappingURL=main.js.map

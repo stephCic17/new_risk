@@ -1,0 +1,28 @@
+
+.progress {
+  width:100%;
+  margin-bottom: 10px;
+  height:5px;
+  border-radius: 3px;
+  position:relative;
+  background-color: #fafafa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  .bar {
+    border-radius: 3px;
+    position:absolute;
+    min-width:5px;
+    width:5%;
+    min-height:5px;
+    top:0;
+    left:0;
+    z-index: 1;
+    background-color: pink;
+    overflow: hidden;
+    transition: width 300ms ease-in-out, background-color 100ms linear;
+  }
+
+}
