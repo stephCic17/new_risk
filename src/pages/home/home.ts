@@ -144,7 +144,7 @@ export class HomePage {
 				{
 					let alert = this.alertCtrl.create({
 						title: 'Selectionnez au moins une des réponses',
-						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandées pour établir votre profil',
 						buttons: ['OK']
 					});
 					alert.present();
@@ -169,7 +169,7 @@ export class HomePage {
 				{
 					let alert = this.alertCtrl.create({
 						title: 'Selectionnez au moins une des réponses',
-						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandées pour établir votre profil',
 						buttons: ['OK']
 					});
 					alert.present();
@@ -178,7 +178,10 @@ export class HomePage {
 			}
 			else if (this.questionForm.type == "date")
 			{
+				console.log(this.Questions[2]);
 
+				if (this.Questions[1].answerUser == 2)
+					this.Questions[3].title = "Désireriez-vous cette grossesse ?";
 				if (this.date)
 				{
 					this.currentStep = this.questionForm.answer.nextStep;
@@ -189,7 +192,7 @@ export class HomePage {
 				{
 					let alert = this.alertCtrl.create({
 						title: 'Selectionnez au moins une des réponses',
-						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandé pour établir votre profil',
+						subTitle: 'Nous avons besoin de toutes les informations qui vous sont demandées pour établir votre profil',
 						buttons: ['OK']
 					});
 					alert.present();

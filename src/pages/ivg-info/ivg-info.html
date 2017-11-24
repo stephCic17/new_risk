@@ -18,20 +18,38 @@
 <ion-slides>
 <ion-slide>
 <div class="form-wrapper" *ngIf="result >= 1">
-			<h3>Il vous reste {{result}} semaines pour vous décider</h3>
-			<p>
-				Prenez le temps de la réflexion et pour se faire allez surfer sur 
+			<h3>Vous avez plusieurs possibilités :</h3>
+			<p> - Continuer votre grossesse et le garder<br/>
+			 - Continuer votre grossesse et considérer l'adoption<br/>
+			 - Interrompre votre grossesse</p>
+				<p>
+				<i>Prenez le temps de la réflexion en allant surfer sur </i>
+				<br/>
 				<a href="http://ivg.org">
 					IVG.org
 				</a>
+				<br/>
+				<a href="http://www.adoption.gouv.fr/">
+					adoption.gouv
+				</a>
 			</p>
+			<p><b>Il vous reste {{result}} semaines pour vous décider</b></p>
+		
 			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>
 	</div>
 
 	<div class="form-wrapper" *ngIf="result < 0">
-			<h3>Le delai d'avortement légal est dépassé</h3>
-			<p>
-			On dit quoi??
+
+				<h3>Le delai d'avortement légal est dépassé</h3> 
+				<p><b>Vous avez plusieurs possibilités :</b></p>
+			<p> - Continuer votre grossesse et le garder<br/>
+			 - Continuer votre grossesse et considérer l'adoption</p>
+				<p>
+				<i>Prenez le temps de la réflexion en allant surfer sur </i>
+				<br/>
+				<a href="http://www.adoption.gouv.fr/">
+					adoption.gouv
+				</a>
 			</p>
 			<button class="button button--line prev-button touch" (click)="nextBegin()">Recommencer</button>
 	</div>

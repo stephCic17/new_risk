@@ -40,7 +40,7 @@ const Questions = [
   id: 3,
   answerUser: -1,
   prevStep:0,
-  title: "Quel est la date de vos dernière règle ?",
+  title: "Quelle est la date de vos dernières règles ?",
   type: "date",
   answer: {
     label: "jj/mm/aaaa",
@@ -73,7 +73,7 @@ const Questions = [
 {
   idTable: 4,
   id: 5,
-  title:"Vous et votre fertilité",
+  title:"Avez vous déjà eu recours à ces procédés ?",
   type:"Psycho1",
   answerUser1: -1,
   answerUser2 :-1,
@@ -83,15 +83,15 @@ const Questions = [
   prevStep:0,
   answer1:
   {
-    label: "recours à l'aide médicale à la procréation",
+    label: "Procréation médicalement assistée",
   },
   answer2:
   {
-    label: "combien d'années avez vous passé entre le début du traitement et l'arrivée d'une grossesse",
+    label: "Depuis combien de temps avez-vous commencé ?",
   },
   answer3:
   {
-    label: "combien de fois avez-vous eus recours à l'aide médicale à la procreation",
+    label: "Combien de tentatives avez-vous faites ?",
   },
   answer4:
   {
@@ -144,7 +144,7 @@ const Questions = [
   id: 8,
   answerUser: -1,
   prevStep:0,
-  title:"Combien avez-vous d'enfant ?",
+  title:"Combien avez-vous d'enfant(s) ?",
   type: "number",
   answer:
   {
@@ -157,7 +157,7 @@ const Questions = [
   id: 9,
   answerUser: -1,
   prevStep:0,
-  title: "Avez-vous accouché d'enfants de plus de 4 kilos ?",
+  title: "Avez-vous accouché d'enfant(s) de plus de 4 kilos ?",
   type: "yesNo",
   answerYes:
   {
@@ -175,7 +175,7 @@ const Questions = [
   id: 10,
   answerUser: -1,
   prevStep:0,
-  title:"Combien d'un enfant de plus de 4 kilos avez-vous eus ?",
+  title:"Combien d'enfant(s) de plus de 4 kilos avez-vous eu ?",
   type: "number",
   answer:
   {
@@ -188,7 +188,7 @@ const Questions = [
   id: 11,
   answerUser: -1,
   prevStep:0,
-  title:"Avez-vous accouché d'enfant de moins de 2kg200 ?",
+  title:"Avez-vous accouché d'enfant(s) de moins de 2kg200 ?",
   type: "yesNo",
   answerYes:
   {
@@ -258,7 +258,7 @@ const Questions = [
 {
   idTable: 14,
   id: 15,
-  title: "Avez-vous eu une césariennes ?",
+  title: "Avez-vous déjà eu une césarienne ?",
   type: "yesNo",
   prevStep:0,
   answerYes:
@@ -277,7 +277,7 @@ const Questions = [
   id: 16,
   answerUser: -1,
   prevStep:0,
-  title: "Combien avez-vous eu de césarienne",
+  title: "Combien de césarienne(s) avez-vous eu ?",
   type: "number",
   answer:
   {
@@ -288,7 +288,7 @@ const Questions = [
 {
   idTable: 16,
   id: 17,
-  title:"Vous et votre accouchement",
+  title:"Avez-vous déjà été confrontée à une de ces situations ?",
   type:"multipleChoice",
   answerUser1: -1,
   answerUser2 :-1,
@@ -302,23 +302,23 @@ const Questions = [
   prevStep:0,
   answer1:
   {
-    label: "forceps",
+    label: "Forceps",
   },
   answer2:
   {
-    label: "ventouse",
+    label: "Ventouse",
   },
   answer3:
   {
-    label: "césarienne en urgence",
+    label: "Césarienne en urgence",
   },
   answer4:
   {
-    label: "anesthésie générale",
+    label: "Anesthésie générale",
   },
   answer5:
   {
-    label: "hémorragie",
+    label: "Hémorragie",
   },
   answer6:
   {
@@ -326,15 +326,15 @@ const Questions = [
   },
   answer7:
   {
-    label: "penser que j'allais mourrir en accouchant",
+    label: "Peur de mourrir en accouchant",
   },
   answer8:
   {
-    label: "penser que mon bébé allait mourrir",
+    label: "Peur de perdre mon bébé ",
   },
   answer9:
   {
-    label: "j'ai subit un accouchement traumatique",
+    label: "J'ai subit un accouchement traumatique",
   },
   nextStep: 18
 },
@@ -358,7 +358,7 @@ const Questions = [
   prevStep:0,
   answer1:
   {
-    label: "Fauche couche",
+    label: "Fausse couche",
   },
   answer2:
   {
@@ -374,7 +374,7 @@ const Questions = [
   },
   answer5:
   {
-    label: "Interruption médical de la grossesse",
+    label: "Interruption médicale de la grossesse",
   },
   answer6:
   {
@@ -402,7 +402,7 @@ const Questions = [
   },
   answer12:
   {
-    label: "en dehors des situation de grossesse j'ai connu des évènement que je qualifierais de traumatiques",
+    label: "En dehors des situations de grossesse(s) j'ai connu des évènements que je qualifierais de traumatiques",
   },
   nextStep: 19
 },
@@ -411,7 +411,7 @@ const Questions = [
   id: 19,
   answerUser: -1,
   prevStep:0,
-  title: "Combien de fausse couche avez-vous fait ?",
+  title: "Combien de fausses couches avez-vous fait ?",
   type: "number",
   answer:
   {
@@ -437,7 +437,7 @@ const Questions = [
   id: 21,
   answerUser: -1,
   prevStep:0,
-  title: "Avez-vous une épilepsie ?",
+  title: "Etes-vous sujette aux crises d'épilepsie ?",
   type: "yesNo",
   answerYes:
   {
@@ -474,7 +474,7 @@ const Questions = [
   answerUser: -1,
   prevStep:0,
   title: "Avez-vous de l'hypertension artérielle ?",
-  type: "yesNo",
+  type: "yesNoIdn",
   answerYes:
   {
     label: "Oui",
@@ -483,6 +483,11 @@ const Questions = [
   answerNo:
   {
     label: "Non",
+    nextStep: 24
+  },
+  answerIdn:
+  {
+    label: "Je ne sais pas",
     nextStep: 24
   }
 },
@@ -525,7 +530,7 @@ const Questions = [
 {
   idTable: 25,
   id: 26,
-  title:"Selectionner les médicament que vous prennez",
+  title:"Selectionnez les médicaments que vous prenez",
   type:"multipleIf",
   answerUser1: -1,
   answerUser2 :-1,
@@ -619,7 +624,7 @@ const Questions = [
   id: 31,
   answerUser: -1,
   prevStep:0,
-  title: "Quel est votre temps de trajet par jour (en minute) ?",
+  title: "Quel est votre temps de trajet par jour (en minutes) ?",
   type: "number",
   answer:
   {
@@ -648,7 +653,7 @@ const Questions = [
 {
   idTable: 32,
   id: 33,
-  title:"Vous et votre psychologie",
+  title:"Etes-vous concernée par les éléments ci-dessous ?",
   type:"multipleChoice",
   answerUser1: -1,
   prevStep:0,
@@ -673,7 +678,7 @@ const Questions = [
   },
   answer4:
   {
-    label: "Trouble Obsessionnels compulsif TOC",
+    label: "Trouble obsessionnels compulsif TOC",
   },
   answer5:
   {
@@ -685,11 +690,11 @@ const Questions = [
   },
   answer7:
   {
-    label: "trouble bipolaires",
+    label: "Troubles bipolaires",
   },
   answer8:
   {
-    label: "hospitalisation dans un service psychiatrique",
+    label: "Hospitalisation dans un service psychiatrique",
   },
   nextStep: 99
 },
@@ -697,7 +702,7 @@ const Questions = [
   idTable: 33,
   id: 34,
   answerUser: -1,
-  title: "Nombre de semaine de grossesse",
+  title: "Nombre de semaines de grossesse",
   type: "number",
   prevStep:0,
   answer:
@@ -711,7 +716,7 @@ const Questions = [
   id: 35,
   answerUser: -1,
   prevStep:0,
-  title: "Nombre de semaine restante",
+  title: "Nombre de semaines restantes",
   type: "number",
   answer:
   {
